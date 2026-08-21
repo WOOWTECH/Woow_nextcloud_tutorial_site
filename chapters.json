@@ -11,6 +11,11 @@
     "ogImage": "assets/screenshots/ch4/01_ui_overview.png",
     "license": {"name":"CC BY 4.0","url":"https://creativecommons.org/licenses/by/4.0/deed.zh-hant","holder":"woowtech"}
   },
+  "hub": {
+    "catalog": "tutorial.html",
+    "navLabel": "資源總覽",
+    "pages": ["sales.html", "prompts.html", "skills.html"]
+  },
   "chapters": [
     {"file":"ch1_intro.html","num":"01","navLabel":"開始前","title":"開始前","pagerTitle":"01 · 需求與安全邊界","card":"先確認 Nextcloud 的角色、自架雲端的價值，以及帳號與公開範圍的安全邊界。","description":"Nextcloud 自架雲端使用前規劃：自架價值、帳號角色、公開範圍與安全邊界。","part":"基礎：認識與登入"},
     {"file":"ch2_install.html","num":"02","navLabel":"安裝","title":"安裝 Nextcloud","pagerTitle":"02 · 安裝 Nextcloud","card":"把 Nextcloud add-on 裝進 Home Assistant，認識安裝後的初始狀態。","description":"Home Assistant Nextcloud add-on 安裝教學：加入安裝、啟動與首次開啟準備。","part":"基礎：認識與登入"},
