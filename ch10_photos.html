@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>第 10 章 · Photos 照片管理 · Nextcloud 自架雲端指南</title>
+  <meta name="description" content="Nextcloud Photos 教學：自動上傳、時間軸、相簿與人物辨識。" />
+  <meta name="author" content="woowtech" />
+  <link rel="canonical" href="https://nextcloud-guide.woowtech.io/ch10_photos.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nextcloud 自架雲端指南" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:title" content="第 10 章 · Photos 照片管理 · Nextcloud 自架雲端指南" />
+  <meta property="og:description" content="Nextcloud Photos 教學：自動上傳、時間軸、相簿與人物辨識。" />
+  <meta property="og:url" content="https://nextcloud-guide.woowtech.io/ch10_photos.html" />
+  <meta property="og:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="第 10 章 · Photos 照片管理 · Nextcloud 自架雲端指南" />
+  <meta name="twitter:description" content="Nextcloud Photos 教學：自動上傳、時間軸、相簿與人物辨識。" />
+  <meta name="twitter:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.png" />
+  <meta name="theme-color" content="#6183FC" />
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Yellowtail&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="brand" href="index.html">Nextcloud 指南</a>
+    <div class="brand-sub">把檔案收在自己家</div>
+    <h2>章節</h2>
+    <ol>
+      <li class="part-label">基礎：認識與登入</li>
+      <li><a href="ch1_intro.html">開始前</a></li>
+      <li><a href="ch2_install.html">安裝</a></li>
+      <li><a href="ch3_first_open.html">第一次開啟</a></li>
+      <li><a href="ch4_ui_tour.html">介面導覽</a></li>
+      <li><a href="ch5_profile.html">帳號設定</a></li>
+      <li><a href="ch6_files_basics.html">檔案基礎</a></li>
+      <li class="part-label">檔案：管理與分享</li>
+      <li><a href="ch7_upload.html">上傳</a></li>
+      <li><a href="ch8_share.html">檔案分享</a></li>
+      <li><a href="ch9_share_manage.html">分享管理</a></li>
+      <li><a href="ch10_photos.html" class="active">照片</a></li>
+      <li><a href="ch11_calendar.html">行事曆</a></li>
+      <li><a href="ch12_contacts.html">聯絡人</a></li>
+      <li class="part-label">協作：溝通與生產力</li>
+      <li><a href="ch13_talk.html">Talk</a></li>
+      <li><a href="ch14_deck.html">Deck</a></li>
+      <li><a href="ch15_office.html">Office</a></li>
+      <li><a href="ch16_notes.html">Notes</a></li>
+      <li><a href="ch17_tasks.html">Tasks</a></li>
+      <li class="part-label">同步：跨裝置</li>
+      <li><a href="ch18_desktop.html">桌面同步</a></li>
+      <li><a href="ch19_mobile.html">手機 App</a></li>
+      <li><a href="ch20_webdav.html">WebDAV</a></li>
+      <li class="part-label">管理：安全與維護</li>
+      <li><a href="ch21_admin.html">管理員</a></li>
+      <li><a href="ch22_security.html">安全排錯</a></li>
+    </ol>
+    <div class="toc-in-chapter">
+      <h2>本章</h2>
+      <a href="#why">為什麼要學</a>
+      <a href="#concept">Photos 觀念</a>
+      <a href="#steps">使用步驟</a>
+      <a href="#privacy">隱私提醒</a>
+      <a href="#troubleshoot">照片卡關</a>
+      <a href="#faq">FAQ</a>
+      <a href="#sources">官方來源</a>
+    </div>
+    <div class="toc-in-chapter">
+      <h2>附錄</h2>
+      <a href="appendix_apps.html">Apps 商店</a>
+      <a href="appendix_config.html">設定速查</a>
+      <a href="appendix_integrations.html">外部整合</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="chapter-header">
+      <div class="kicker">第 10 章</div>
+      <h1>Photos 照片管理</h1>
+      <p class="lead">Nextcloud 的 Photos 讓你像雲端相簿一樣瀏覽照片、建相簿，並搭配手機 App 自動備份。讀完這章，你的照片會有時間軸、相簿與（依版本）人物地點整理。</p>
+    </div>
+
+    <section id="why" data-nav="為什麼要學">
+      <h2 data-icon="why">照片不只是檔案</h2>
+      <p>照片放在 Files 裡只是一堆檔案；透過 Photos App，它們會依拍攝時間排成時間軸、能建相簿、能用地點與人物找。搭配手機自動備份，就是一個自架的相簿服務。</p>
+      <div class="callout"><strong>本章任務：</strong>認識 Photos 的時間軸與相簿，了解手機自動備份怎麼接。全程唯讀瀏覽。</div>
+    </section>
+
+    <section id="concept" data-nav="Photos 觀念">
+      <h2 data-icon="concept">Photos 與 Files 的關係</h2>
+      <p>Photos 不是另一個儲存空間，而是把 Files 裡的照片「用相簿的方式呈現」。照片實體仍在 Files 的資料夾（常見是 <code>/Photos</code> 或手機備份資料夾）。</p>
+      <table class="data-table">
+        <thead><tr><th>Photos 功能</th><th>說明</th></tr></thead>
+        <tbody>
+          <tr><td>時間軸</td><td>依拍攝時間由新到舊排列</td></tr>
+          <tr><td>相簿</td><td>手動整理的照片集合（不搬動原檔）</td></tr>
+          <tr><td>我的最愛</td><td>標記的照片集中一處</td></tr>
+          <tr><td>地點／人物</td><td>依版本與設定，用地圖與人臉整理</td></tr>
+        </tbody>
+      </table>
+      <div class="callout tip"><strong>時間依 EXIF：</strong>照片依內嵌的拍攝時間排序，跟上傳時間無關。日期怪怪的通常是 EXIF 缺失。</div>
+    </section>
+
+    <section id="steps" data-nav="使用步驟">
+      <h2 data-icon="album">五步用起 Photos</h2>
+      <ol class="steps">
+        <li><h3>打開 Photos</h3><p>頂欄點「照片」進入，預設看到時間軸。</p></li>
+        <li><h3>瀏覽時間軸</h3><p>往下捲看更早的照片，點縮圖開大圖，用方向鍵切換。</p></li>
+        <li><h3>建立相簿</h3><p>左側「相簿」→ 新增，命名後把照片加進去（不影響原檔位置）。</p></li>
+        <li><h3>標最愛</h3><p>在照片上標最愛，之後從左側「我的最愛」一次找到。</p></li>
+        <li><h3>接手機自動備份</h3><p>裝手機 App（第 19 章）開自動上傳，手機新照片會自動進 Nextcloud，並出現在 Photos。</p></li>
+      </ol>
+    </section>
+
+    <section id="privacy" data-nav="隱私提醒">
+      <h2 data-icon="security">照片的隱私</h2>
+      <ul>
+        <li>照片存在你自己的伺服器，AI／人臉辨識（若啟用）也在本機跑，不外傳。</li>
+        <li>相簿分享等同檔案分享（第 8 章），連結就是鑰匙，設密碼與期限。</li>
+        <li>敏感照片可放進有存取限制的資料夾，或不要分享。</li>
+      </ul>
+    </section>
+
+    <section id="troubleshoot" data-nav="照片卡關">
+      <h2 data-icon="troubleshoot">照片常見卡關</h2>
+      <ol class="steps">
+        <li><h3>照片沒出現在 Photos</h3><p>確認照片在 Photos 掃描的資料夾內；剛上傳可能要等產生縮圖與索引。</p></li>
+        <li><h3>縮圖一直轉圈</h3><p>大量照片首次索引需要時間；伺服器背景任務跑完會變順（第 21 章的背景工作）。</p></li>
+        <li><h3>日期排錯</h3><p>多半是 EXIF 拍攝時間缺失或錯誤，屬照片本身的中繼資料問題。</p></li>
+        <li><h3>沒有人物／地點</h3><p>這些功能依版本與是否啟用對應 app／設定，不是每台都有。</p></li>
+      </ol>
+    </section>
+
+    <section id="faq" data-nav="FAQ">
+      <h2 data-icon="faq">照片常見問題</h2>
+      <details class="faq"><summary>Photos 和把照片放 Files 有什麼差？</summary><div class="body">照片實體都在 Files，Photos 只是用相簿與時間軸的方式呈現，方便瀏覽與整理。</div></details>
+      <details class="faq"><summary>手機照片會自動進來嗎？</summary><div class="body">裝手機 App 並開自動上傳後會（第 19 章）。之後拍的照片在 Wi-Fi 下自動備份。</div></details>
+      <details class="faq"><summary>建相簿會複製照片、佔兩份空間嗎？</summary><div class="body">不會。相簿是「收錄」，同一張照片可在多個相簿，只佔一份空間。</div></details>
+      <details class="faq"><summary>可以分享整本相簿嗎？</summary><div class="body">可以，等同分享資料夾／集合，用連結加密碼與期限（第 8 章）。</div></details>
+      <details class="faq"><summary>刪照片會怎樣？</summary><div class="body">刪除會進回收桶（第 6 章），期限內可還原。相簿移除只是移出相簿，不刪原檔。</div></details>
+    </section>
+
+    <section id="sources" data-nav="官方來源">
+      <h2 data-icon="records">官方來源</h2>
+      <table class="data-table">
+        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/photos.html" rel="noopener">Nextcloud：Photos</a></td><td>時間軸、相簿與整理</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="pager">
+      <a class="prev" href="ch9_share_manage.html">
+        <span class="label"><i class="mdi mdi-arrow-left" aria-hidden="true"></i> 上一章</span>
+        <span class="title">09 · 分享管理與收回</span>
+      </a>
+      <a class="next" href="ch11_calendar.html">
+        <span class="label">下一章 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></span>
+        <span class="title">11 · Calendar 行事曆</span>
+      </a>
+    </div>
+
+    <footer class="site-footer">
+      <p>《Nextcloud 自架雲端指南》由 <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">woowtech</a> 製作，以 <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant">CC BY 4.0</a> 授權釋出 — 可自由分享與改作，請保留出處。</p>
+      <p class="footer-meta">截圖取自 Home Assistant 與 Cloudflared Web GUI。Home Assistant 與 Cloudflare 為其各自權利人的商標，本站與其無隸屬關係。 · <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">原始碼與勘誤</a></p>
+    </footer>
+  </main>
+</div>
+<script src="assets/js/toc.js"></script>
+</body>
+</html>

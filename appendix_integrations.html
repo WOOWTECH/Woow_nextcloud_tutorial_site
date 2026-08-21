@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>附錄 C · 外部整合 · Nextcloud 自架雲端指南</title>
+  <meta name="description" content="Nextcloud 外部整合：與 Home Assistant 及其他服務串接。" />
+  <meta name="author" content="woowtech" />
+  <link rel="canonical" href="https://nextcloud-guide.woowtech.io/appendix_integrations.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nextcloud 自架雲端指南" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:title" content="附錄 C · 外部整合 · Nextcloud 自架雲端指南" />
+  <meta property="og:description" content="Nextcloud 外部整合：與 Home Assistant 及其他服務串接。" />
+  <meta property="og:url" content="https://nextcloud-guide.woowtech.io/appendix_integrations.html" />
+  <meta property="og:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="附錄 C · 外部整合 · Nextcloud 自架雲端指南" />
+  <meta name="twitter:description" content="Nextcloud 外部整合：與 Home Assistant 及其他服務串接。" />
+  <meta name="twitter:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.png" />
+  <meta name="theme-color" content="#6183FC" />
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Yellowtail&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="brand" href="index.html">Nextcloud 指南</a>
+    <div class="brand-sub">把檔案收在自己家</div>
+    <h2>章節</h2>
+    <ol>
+      <li class="part-label">基礎：認識與登入</li>
+      <li><a href="ch1_intro.html">開始前</a></li>
+      <li><a href="ch2_install.html">安裝</a></li>
+      <li><a href="ch3_first_open.html">第一次開啟</a></li>
+      <li><a href="ch4_ui_tour.html">介面導覽</a></li>
+      <li><a href="ch5_profile.html">帳號設定</a></li>
+      <li><a href="ch6_files_basics.html">檔案基礎</a></li>
+      <li class="part-label">檔案：管理與分享</li>
+      <li><a href="ch7_upload.html">上傳</a></li>
+      <li><a href="ch8_share.html">檔案分享</a></li>
+      <li><a href="ch9_share_manage.html">分享管理</a></li>
+      <li><a href="ch10_photos.html">照片</a></li>
+      <li><a href="ch11_calendar.html">行事曆</a></li>
+      <li><a href="ch12_contacts.html">聯絡人</a></li>
+      <li class="part-label">協作：溝通與生產力</li>
+      <li><a href="ch13_talk.html">Talk</a></li>
+      <li><a href="ch14_deck.html">Deck</a></li>
+      <li><a href="ch15_office.html">Office</a></li>
+      <li><a href="ch16_notes.html">Notes</a></li>
+      <li><a href="ch17_tasks.html">Tasks</a></li>
+      <li class="part-label">同步：跨裝置</li>
+      <li><a href="ch18_desktop.html">桌面同步</a></li>
+      <li><a href="ch19_mobile.html">手機 App</a></li>
+      <li><a href="ch20_webdav.html">WebDAV</a></li>
+      <li class="part-label">管理：安全與維護</li>
+      <li><a href="ch21_admin.html">管理員</a></li>
+      <li><a href="ch22_security.html">安全排錯</a></li>
+    </ol>
+    <div class="toc-in-chapter">
+      <h2>本章</h2>
+      <a href="#why">為什麼要學</a>
+      <a href="#ha">接 Home Assistant</a>
+      <a href="#backup">備份整合</a>
+      <a href="#api">API 與自動化</a>
+      <a href="#troubleshoot">整合卡關</a>
+      <a href="#faq">FAQ</a>
+      <a href="#sources">官方來源</a>
+    </div>
+    <div class="toc-in-chapter">
+      <h2>附錄</h2>
+      <a href="appendix_apps.html">Apps 商店</a>
+      <a href="appendix_config.html">設定速查</a>
+      <a href="appendix_integrations.html" class="active">外部整合</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="chapter-header">
+      <div class="kicker">附錄 C</div>
+      <h1>外部整合</h1>
+      <p class="lead">Nextcloud 不是孤島。這份附錄整理它和 Home Assistant、備份工具與其他服務串接的方向，讓你的雲端成為家中數位基礎設施的一環。</p>
+    </div>
+
+    <section id="why" data-nav="為什麼要學">
+      <h2 data-icon="why">把雲端接進生活自動化</h2>
+      <p>Nextcloud 有開放的 API（WebDAV、OCS）與標準協定（CalDAV／CardDAV），能和 Home Assistant、備份工具、腳本串接。整合得好，檔案、行事曆、通知都能自動流動。</p>
+      <div class="callout"><strong>本附錄：</strong>介紹整合方向與注意事項，不是逐步安裝教學；實際串接依你用的工具而定。</div>
+    </section>
+
+    <section id="ha" data-nav="接 Home Assistant">
+      <h2 data-icon="integration">與 Home Assistant 串接</h2>
+      <table class="data-table">
+        <thead><tr><th>整合方式</th><th>能做什麼</th></tr></thead>
+        <tbody>
+          <tr><td>行事曆整合</td><td>把 Nextcloud Calendar（CalDAV）接進 HA，做行程觸發自動化</td></tr>
+          <tr><td>檔案／WebDAV</td><td>HA 產生的備份、快照、記錄丟進 Nextcloud 保存</td></tr>
+          <tr><td>通知</td><td>用 Nextcloud Talk 當 HA 的通知管道（依整合支援）</td></tr>
+        </tbody>
+      </table>
+      <div class="callout tip"><strong>同機共存：</strong>本站環境 Nextcloud 與 HA 都在同一台，內部互連更快；對外都走 Cloudflare Tunnel，不用各自開埠。</div>
+    </section>
+
+    <section id="backup" data-nav="備份整合">
+      <h2 data-icon="restore">備份與同步工具</h2>
+      <ul>
+        <li><strong>rclone</strong>：把 Nextcloud（WebDAV）當 remote，定期同步到別的儲存（異地備份），或反向把外部資料拉進來。</li>
+        <li><strong>HA 快照／備份</strong>：add-on 情境可搭配 HA 的備份機制，一起保護設定與資料。</li>
+        <li><strong>3-2-1 原則</strong>：至少三份、兩種媒介、一份異地。自架雲端也要有第二層備份。</li>
+      </ul>
+      <div class="callout danger"><strong>Nextcloud 本身不是備份：</strong>它是你的主要儲存，還是要另外備份到別處，才擋得住硬碟壞掉或誤刪。</div>
+    </section>
+
+    <section id="api" data-nav="API 與自動化">
+      <h2 data-icon="advanced">API 與自動化</h2>
+      <table class="data-table">
+        <thead><tr><th>介面</th><th>用途</th></tr></thead>
+        <tbody>
+          <tr><td>WebDAV</td><td>檔案讀寫、掛載、腳本搬檔（第 20 章）</td></tr>
+          <tr><td>OCS API</td><td>使用者、分享、capabilities 等管理操作</td></tr>
+          <tr><td>CalDAV／CardDAV</td><td>行事曆與聯絡人同步（第 11、12 章）</td></tr>
+        </tbody>
+      </table>
+      <div class="callout warn"><strong>用 App 密碼：</strong>任何自動化串接都用 App 密碼（第 5 章），不要把主密碼寫進腳本或設定檔。</div>
+    </section>
+
+    <section id="troubleshoot" data-nav="整合卡關">
+      <h2 data-icon="troubleshoot">整合常見卡關</h2>
+      <ol class="steps">
+        <li><h3>HA 接不到行事曆</h3><p>確認 CalDAV 網址、帳號與 App 密碼；時區要一致。</p></li>
+        <li><h3>rclone 連不上</h3><p>用 WebDAV 網址（含帳號路徑）與 App 密碼；確認 https 憑證有效。</p></li>
+        <li><h3>自動化沒觸發</h3><p>先手動測 API 是否通，再檢查自動化條件與權限。</p></li>
+        <li><h3>權限不足</h3><p>某些操作需要 admin 或特定權限；用對的帳號與 token。</p></li>
+      </ol>
+    </section>
+
+    <section id="faq" data-nav="FAQ">
+      <h2 data-icon="faq">整合常見問題</h2>
+      <details class="faq"><summary>一定要會寫程式才能整合嗎？</summary><div class="body">不一定。行事曆／聯絡人同步、rclone 備份多半是設定就好；深度自動化才需要一點腳本。</div></details>
+      <details class="faq"><summary>整合會不會有安全風險？</summary><div class="body">會，所以一律用 App 密碼、走 HTTPS、給最小權限，並定期檢查已連線裝置。</div></details>
+      <details class="faq"><summary>能把 Nextcloud 當唯一備份嗎？</summary><div class="body">不建議。它是主儲存，仍要用 rclone 等做第二層異地備份。</div></details>
+      <details class="faq"><summary>HA 和 Nextcloud 要分開兩台嗎？</summary><div class="body">看資源。同機省事、互連快；分開則互不影響、較好擴充。依需求決定。</div></details>
+      <details class="faq"><summary>OCS API 文件在哪？</summary><div class="body">在 Nextcloud 開發者文件，包含分享、使用者、capabilities 等端點。</div></details>
+    </section>
+
+    <section id="sources" data-nav="官方來源">
+      <h2 data-icon="records">官方來源</h2>
+      <table class="data-table">
+        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/developer_manual/" rel="noopener">Nextcloud 開發者文件</a></td><td>WebDAV、OCS API 等整合介面</td></tr>
+          <tr><td><a href="https://www.home-assistant.io/integrations/caldav/" rel="noopener">Home Assistant：CalDAV 整合</a></td><td>把 Nextcloud 行事曆接進 HA</td></tr>
+          <tr><td><a href="https://rclone.org/webdav/" rel="noopener">rclone：WebDAV</a></td><td>用 rclone 對接 Nextcloud 做備份／同步</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="pager">
+      <a class="prev" href="appendix_config.html">
+        <span class="label"><i class="mdi mdi-arrow-left" aria-hidden="true"></i> 附錄 B</span>
+        <span class="title">B · 設定參數速查</span>
+      </a>
+      <a class="next" href="index.html">
+        <span class="label">回目錄 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></span>
+        <span class="title">全套完成！</span>
+      </a>
+    </div>
+
+    <footer class="site-footer">
+      <p>《Nextcloud 自架雲端指南》由 <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">woowtech</a> 製作，以 <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant">CC BY 4.0</a> 授權釋出 — 可自由分享與改作，請保留出處。</p>
+      <p class="footer-meta">截圖取自 Home Assistant 與 Cloudflared Web GUI。Home Assistant 與 Cloudflare 為其各自權利人的商標，本站與其無隸屬關係。 · <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">原始碼與勘誤</a></p>
+    </footer>
+  </main>
+</div>
+<script src="assets/js/toc.js"></script>
+</body>
+</html>

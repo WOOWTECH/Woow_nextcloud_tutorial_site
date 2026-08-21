@@ -1,0 +1,36 @@
+{
+  "_readme": [
+    "Nextcloud Web UI read-only captures. Never upload, delete, share, or change any file/account/server state.",
+    "Login page and dashboard overview only. Account identity (avatar/settings menu) is redacted."
+  ],
+  "shots": [
+    {
+      "chapter": "ch3",
+      "filename": "01_login.png",
+      "url": "/login",
+      "login": false,
+      "waitMs": 3500,
+      "viewport": { "width": 1440, "height": 900 },
+      "annotations": [
+        { "type": "callout", "at": { "x": 880, "y": 305 }, "number": 1, "text": "使用者名稱" },
+        { "type": "callout", "at": { "x": 880, "y": 356 }, "number": 2, "text": "密碼" },
+        { "type": "callout", "at": { "x": 880, "y": 449 }, "number": 3, "text": "按 Log in 登入" }
+      ]
+    },
+    {
+      "chapter": "ch4",
+      "filename": "01_ui_overview.png",
+      "url": "/apps/dashboard/",
+      "login": true,
+      "waitMs": 6000,
+      "viewport": { "width": 1440, "height": 900 },
+      "redact": [
+        { "at": { "x": 1364, "y": 0 }, "w": 76, "h": 50, "text": "帳號已遮罩" }
+      ],
+      "annotations": [
+        { "type": "callout", "at": { "x": 120, "y": 25 }, "number": 1, "text": "頂欄：切換 App（儀表板／檔案／照片…）" },
+        { "type": "callout", "at": { "x": 1150, "y": 78 }, "number": 2, "text": "右上：搜尋、通知、設定選單" }
+      ]
+    }
+  ]
+}

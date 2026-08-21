@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>第 15 章 · Office 線上文件 · Nextcloud 自架雲端指南</title>
+  <meta name="description" content="Nextcloud Office 教學：線上編輯文件、試算表與共同協作。" />
+  <meta name="author" content="woowtech" />
+  <link rel="canonical" href="https://nextcloud-guide.woowtech.io/ch15_office.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nextcloud 自架雲端指南" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:title" content="第 15 章 · Office 線上文件 · Nextcloud 自架雲端指南" />
+  <meta property="og:description" content="Nextcloud Office 教學：線上編輯文件、試算表與共同協作。" />
+  <meta property="og:url" content="https://nextcloud-guide.woowtech.io/ch15_office.html" />
+  <meta property="og:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="第 15 章 · Office 線上文件 · Nextcloud 自架雲端指南" />
+  <meta name="twitter:description" content="Nextcloud Office 教學：線上編輯文件、試算表與共同協作。" />
+  <meta name="twitter:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.png" />
+  <meta name="theme-color" content="#6183FC" />
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Yellowtail&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="brand" href="index.html">Nextcloud 指南</a>
+    <div class="brand-sub">把檔案收在自己家</div>
+    <h2>章節</h2>
+    <ol>
+      <li class="part-label">基礎：認識與登入</li>
+      <li><a href="ch1_intro.html">開始前</a></li>
+      <li><a href="ch2_install.html">安裝</a></li>
+      <li><a href="ch3_first_open.html">第一次開啟</a></li>
+      <li><a href="ch4_ui_tour.html">介面導覽</a></li>
+      <li><a href="ch5_profile.html">帳號設定</a></li>
+      <li><a href="ch6_files_basics.html">檔案基礎</a></li>
+      <li class="part-label">檔案：管理與分享</li>
+      <li><a href="ch7_upload.html">上傳</a></li>
+      <li><a href="ch8_share.html">檔案分享</a></li>
+      <li><a href="ch9_share_manage.html">分享管理</a></li>
+      <li><a href="ch10_photos.html">照片</a></li>
+      <li><a href="ch11_calendar.html">行事曆</a></li>
+      <li><a href="ch12_contacts.html">聯絡人</a></li>
+      <li class="part-label">協作：溝通與生產力</li>
+      <li><a href="ch13_talk.html">Talk</a></li>
+      <li><a href="ch14_deck.html">Deck</a></li>
+      <li><a href="ch15_office.html" class="active">Office</a></li>
+      <li><a href="ch16_notes.html">Notes</a></li>
+      <li><a href="ch17_tasks.html">Tasks</a></li>
+      <li class="part-label">同步：跨裝置</li>
+      <li><a href="ch18_desktop.html">桌面同步</a></li>
+      <li><a href="ch19_mobile.html">手機 App</a></li>
+      <li><a href="ch20_webdav.html">WebDAV</a></li>
+      <li class="part-label">管理：安全與維護</li>
+      <li><a href="ch21_admin.html">管理員</a></li>
+      <li><a href="ch22_security.html">安全排錯</a></li>
+    </ol>
+    <div class="toc-in-chapter">
+      <h2>本章</h2>
+      <a href="#why">為什麼要學</a>
+      <a href="#concept">Office 觀念</a>
+      <a href="#steps">使用步驟</a>
+      <a href="#collab">多人協作</a>
+      <a href="#troubleshoot">Office 卡關</a>
+      <a href="#faq">FAQ</a>
+      <a href="#sources">官方來源</a>
+    </div>
+    <div class="toc-in-chapter">
+      <h2>附錄</h2>
+      <a href="appendix_apps.html">Apps 商店</a>
+      <a href="appendix_config.html">設定速查</a>
+      <a href="appendix_integrations.html">外部整合</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="chapter-header">
+      <div class="kicker">第 15 章</div>
+      <h1>Office 線上文件</h1>
+      <p class="lead">Nextcloud Office 讓你直接在瀏覽器編輯 Word／Excel／PowerPoint 文件，還能多人同時協作。讀完這章，你不用下載檔案就能改文件，改完自動存回雲端。</p>
+    </div>
+
+    <section id="why" data-nav="為什麼要學">
+      <h2 data-icon="why">文件不用下載來下載去</h2>
+      <p>傳統流程是「下載→編輯→再上傳」，麻煩又容易版本混亂。Nextcloud Office 讓你直接在瀏覽器開文件、編輯、多人協作，改完就存回原檔，省掉來回搬檔的痛。</p>
+      <div class="callout"><strong>本章任務：</strong>用 Office 開一份文件、線上編輯、體驗多人協作。</div>
+    </section>
+
+    <section id="concept" data-nav="Office 觀念">
+      <h2 data-icon="concept">Office 是什麼、怎麼來的</h2>
+      <p>Nextcloud Office 底層是 <strong>Collabora Online</strong> 或 <strong>OnlyOffice</strong>（依站台安裝哪個）。它們是開源的線上文書引擎，支援 <code>.docx</code>、<code>.xlsx</code>、<code>.pptx</code> 及 OpenDocument（<code>.odt/.ods/.odp</code>）。</p>
+      <table class="data-table">
+        <thead><tr><th>檔案類型</th><th>對應</th></tr></thead>
+        <tbody>
+          <tr><td>文件</td><td>Word（.docx）／ODF（.odt）</td></tr>
+          <tr><td>試算表</td><td>Excel（.xlsx）／ODF（.ods）</td></tr>
+          <tr><td>簡報</td><td>PowerPoint（.pptx）／ODF（.odp）</td></tr>
+        </tbody>
+      </table>
+      <div class="callout tip"><strong>範本可直接用：</strong>Files 裡常見 <code>/Templates</code> 資料夾（發票、履歷、時間表等），開新文件時能套用。</div>
+    </section>
+
+    <section id="steps" data-nav="使用步驟">
+      <h2 data-icon="steps">五步用起 Office</h2>
+      <ol class="steps">
+        <li><h3>在 Files 開文件</h3><p>點一個 <code>.docx</code> 或 <code>.xlsx</code> 檔，會直接在瀏覽器開啟編輯器。</p></li>
+        <li><h3>建立新文件</h3><p>在 Files 按「＋」→ 新增文件／試算表／簡報，命名後開始編輯。</p></li>
+        <li><h3>編輯與自動儲存</h3><p>像用桌面版一樣編輯，內容會自動存回原檔，不用手動上傳。</p></li>
+        <li><h3>邀人協作</h3><p>把文件分享給站內帳號（可編輯），大家能同時編輯，看到彼此的游標。</p></li>
+        <li><h3>下載或匯出</h3><p>需要離線版就用「下載」，可選原格式或轉 PDF。</p></li>
+      </ol>
+    </section>
+
+    <section id="collab" data-nav="多人協作">
+      <h2 data-icon="remote">多人即時協作</h2>
+      <ul>
+        <li>多人同時編輯，看到彼此游標與變更。</li>
+        <li>用註解與追蹤修訂討論內容。</li>
+        <li>版本歷史可回溯（在檔案的版本或活動裡）。</li>
+      </ul>
+      <div class="callout warn"><strong>格式相容性：</strong>複雜的 Word／Excel 排版在開源引擎可能略有差異。重要文件下載後再確認一次排版。</div>
+    </section>
+
+    <section id="troubleshoot" data-nav="Office 卡關">
+      <h2 data-icon="troubleshoot">Office 常見卡關</h2>
+      <ol class="steps">
+        <li><h3>點檔案打不開編輯器</h3><p>Office 元件（Collabora／OnlyOffice）可能未安裝或未啟動，屬管理員設定（第 21 章）。</p></li>
+        <li><h3>載入很久或空白</h3><p>Office 引擎較吃資源，首次載入慢。伺服器效能不足時會明顯。</p></li>
+        <li><h3>排版跑掉</h3><p>複雜格式在開源引擎可能有差異，重要文件下載回原軟體確認。</p></li>
+        <li><h3>協作時卡住</h3><p>多人同時編輯很吃連線，網路差時會延遲，減少同時人數。</p></li>
+      </ol>
+    </section>
+
+    <section id="faq" data-nav="FAQ">
+      <h2 data-icon="faq">Office 常見問題</h2>
+      <details class="faq"><summary>要另外付費嗎？</summary><div class="body">Collabora／OnlyOffice 的社群版是開源免費的；企業版有額外功能。本站用哪個由管理員決定。</div></details>
+      <details class="faq"><summary>能開 Google 文件嗎？</summary><div class="body">先把 Google 文件匯出成 .docx／.xlsx 上傳，再用 Office 開。</div></details>
+      <details class="faq"><summary>編輯會自動存嗎？</summary><div class="body">會，編輯內容自動存回原檔，並保留版本歷史。</div></details>
+      <details class="faq"><summary>手機能編輯嗎？</summary><div class="body">能，但小螢幕編輯體驗有限，複雜文件建議在電腦上做。</div></details>
+      <details class="faq"><summary>會不會把我的文件傳到外部？</summary><div class="body">不會。Office 引擎在你自己的伺服器上跑，文件不外傳。</div></details>
+    </section>
+
+    <section id="sources" data-nav="官方來源">
+      <h2 data-icon="records">官方來源</h2>
+      <table class="data-table">
+        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/office/index.html" rel="noopener">Nextcloud：Office</a></td><td>線上編輯與協作</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="pager">
+      <a class="prev" href="ch14_deck.html">
+        <span class="label"><i class="mdi mdi-arrow-left" aria-hidden="true"></i> 上一章</span>
+        <span class="title">14 · Deck 看板</span>
+      </a>
+      <a class="next" href="ch16_notes.html">
+        <span class="label">下一章 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></span>
+        <span class="title">16 · Notes 筆記</span>
+      </a>
+    </div>
+
+    <footer class="site-footer">
+      <p>《Nextcloud 自架雲端指南》由 <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">woowtech</a> 製作，以 <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant">CC BY 4.0</a> 授權釋出 — 可自由分享與改作，請保留出處。</p>
+      <p class="footer-meta">截圖取自 Home Assistant 與 Cloudflared Web GUI。Home Assistant 與 Cloudflare 為其各自權利人的商標，本站與其無隸屬關係。 · <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">原始碼與勘誤</a></p>
+    </footer>
+  </main>
+</div>
+<script src="assets/js/toc.js"></script>
+</body>
+</html>

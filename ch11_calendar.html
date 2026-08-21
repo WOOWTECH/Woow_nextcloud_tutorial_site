@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>第 11 章 · Calendar 行事曆 · Nextcloud 自架雲端指南</title>
+  <meta name="description" content="Nextcloud Calendar 教學：事件、提醒、共享日曆與外部訂閱。" />
+  <meta name="author" content="woowtech" />
+  <link rel="canonical" href="https://nextcloud-guide.woowtech.io/ch11_calendar.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nextcloud 自架雲端指南" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:title" content="第 11 章 · Calendar 行事曆 · Nextcloud 自架雲端指南" />
+  <meta property="og:description" content="Nextcloud Calendar 教學：事件、提醒、共享日曆與外部訂閱。" />
+  <meta property="og:url" content="https://nextcloud-guide.woowtech.io/ch11_calendar.html" />
+  <meta property="og:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="第 11 章 · Calendar 行事曆 · Nextcloud 自架雲端指南" />
+  <meta name="twitter:description" content="Nextcloud Calendar 教學：事件、提醒、共享日曆與外部訂閱。" />
+  <meta name="twitter:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.png" />
+  <meta name="theme-color" content="#6183FC" />
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Yellowtail&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="brand" href="index.html">Nextcloud 指南</a>
+    <div class="brand-sub">把檔案收在自己家</div>
+    <h2>章節</h2>
+    <ol>
+      <li class="part-label">基礎：認識與登入</li>
+      <li><a href="ch1_intro.html">開始前</a></li>
+      <li><a href="ch2_install.html">安裝</a></li>
+      <li><a href="ch3_first_open.html">第一次開啟</a></li>
+      <li><a href="ch4_ui_tour.html">介面導覽</a></li>
+      <li><a href="ch5_profile.html">帳號設定</a></li>
+      <li><a href="ch6_files_basics.html">檔案基礎</a></li>
+      <li class="part-label">檔案：管理與分享</li>
+      <li><a href="ch7_upload.html">上傳</a></li>
+      <li><a href="ch8_share.html">檔案分享</a></li>
+      <li><a href="ch9_share_manage.html">分享管理</a></li>
+      <li><a href="ch10_photos.html">照片</a></li>
+      <li><a href="ch11_calendar.html" class="active">行事曆</a></li>
+      <li><a href="ch12_contacts.html">聯絡人</a></li>
+      <li class="part-label">協作：溝通與生產力</li>
+      <li><a href="ch13_talk.html">Talk</a></li>
+      <li><a href="ch14_deck.html">Deck</a></li>
+      <li><a href="ch15_office.html">Office</a></li>
+      <li><a href="ch16_notes.html">Notes</a></li>
+      <li><a href="ch17_tasks.html">Tasks</a></li>
+      <li class="part-label">同步：跨裝置</li>
+      <li><a href="ch18_desktop.html">桌面同步</a></li>
+      <li><a href="ch19_mobile.html">手機 App</a></li>
+      <li><a href="ch20_webdav.html">WebDAV</a></li>
+      <li class="part-label">管理：安全與維護</li>
+      <li><a href="ch21_admin.html">管理員</a></li>
+      <li><a href="ch22_security.html">安全排錯</a></li>
+    </ol>
+    <div class="toc-in-chapter">
+      <h2>本章</h2>
+      <a href="#why">為什麼要學</a>
+      <a href="#concept">行事曆觀念</a>
+      <a href="#steps">使用步驟</a>
+      <a href="#share">共享日曆</a>
+      <a href="#troubleshoot">行事曆卡關</a>
+      <a href="#faq">FAQ</a>
+      <a href="#sources">官方來源</a>
+    </div>
+    <div class="toc-in-chapter">
+      <h2>附錄</h2>
+      <a href="appendix_apps.html">Apps 商店</a>
+      <a href="appendix_config.html">設定速查</a>
+      <a href="appendix_integrations.html">外部整合</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="chapter-header">
+      <div class="kicker">第 11 章</div>
+      <h1>Calendar 行事曆</h1>
+      <p class="lead">用 Nextcloud 的 Calendar 建立事件、設提醒、共享日曆，並和手機／電腦的行事曆同步。讀完這章，全家或團隊能有一本共用、自己掌控的行事曆。</p>
+    </div>
+
+    <section id="why" data-nav="為什麼要學">
+      <h2 data-icon="why">自己的行事曆自己管</h2>
+      <p>行事曆是家庭與團隊協調的核心。用 Nextcloud Calendar，事件資料存在自己家，還能共享日曆、跨裝置同步，不必把行程交給第三方雲端。</p>
+      <div class="callout"><strong>本章任務：</strong>建立一個日曆與事件、設提醒，並了解怎麼共享與同步。</div>
+    </section>
+
+    <section id="concept" data-nav="行事曆觀念">
+      <h2 data-icon="concept">日曆、事件與同步協定</h2>
+      <table class="data-table">
+        <thead><tr><th>概念</th><th>說明</th></tr></thead>
+        <tbody>
+          <tr><td>日曆（Calendar）</td><td>一組事件的集合，可多本（工作、家庭、生日）</td></tr>
+          <tr><td>事件（Event）</td><td>單一行程，含時間、地點、提醒、參與者</td></tr>
+          <tr><td>CalDAV</td><td>行事曆同步的標準協定，手機／電腦靠它同步</td></tr>
+          <tr><td>訂閱（ICS）</td><td>唯讀訂閱外部日曆（如國定假日）</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="steps" data-nav="使用步驟">
+      <h2 data-icon="steps">五步用起行事曆</h2>
+      <ol class="steps">
+        <li><h3>打開 Calendar</h3><p>頂欄或 Apps 選單點「行事曆」。左側是你的日曆清單。</p></li>
+        <li><h3>建立新日曆</h3><p>左側「＋ 新增日曆」，命名（例如「家庭」）並選顏色，方便區分。</p></li>
+        <li><h3>建立事件</h3><p>在日期格點一下，填標題、時間、地點；可設「整天」或重複。</p></li>
+        <li><h3>設提醒與參與者</h3><p>在事件裡加提醒（幾分鐘前）、加參與者 email 發送邀請。</p></li>
+        <li><h3>共享或訂閱</h3><p>把日曆分享給站內帳號或用連結；也可「訂閱」外部 ICS 日曆（唯讀）。</p></li>
+      </ol>
+      <div class="callout tip"><strong>跨裝置同步：</strong>用 CalDAV 網址（設定裡可複製）在手機／電腦行事曆加帳號，事件就會雙向同步。</div>
+    </section>
+
+    <section id="share" data-nav="共享日曆">
+      <h2 data-icon="remote">共享與訂閱</h2>
+      <ul>
+        <li><strong>共享給站內帳號</strong>：對方能看到（或編輯）你的日曆，適合家庭共用。</li>
+        <li><strong>公開連結</strong>：產生唯讀連結給沒帳號的人看。</li>
+        <li><strong>訂閱外部</strong>：貼上國定假日、球隊賽程等 ICS 網址，唯讀顯示在你的行事曆。</li>
+      </ul>
+    </section>
+
+    <section id="troubleshoot" data-nav="行事曆卡關">
+      <h2 data-icon="troubleshoot">行事曆常見卡關</h2>
+      <ol class="steps">
+        <li><h3>時間差一小時</h3><p>時區沒設對。到個人設定確認時區（第 5 章），事件時間才正確。</p></li>
+        <li><h3>手機同步不到</h3><p>檢查 CalDAV 網址與帳密（建議用 App 密碼），或用官方 app 設定。</p></li>
+        <li><h3>提醒沒響</h3><p>確認事件有加提醒、通知設定有開（第 5 章），手機端也要允許通知。</p></li>
+        <li><h3>重複事件全改到</h3><p>編輯重複事件時，看清楚是改「這一個」還是「整個系列」。</p></li>
+      </ol>
+    </section>
+
+    <section id="faq" data-nav="FAQ">
+      <h2 data-icon="faq">行事曆常見問題</h2>
+      <details class="faq"><summary>能和 Google 行事曆同步嗎？</summary><div class="body">可用 CalDAV 或訂閱／匯入 ICS 的方式互通，設定較進階，細節見官方文件。</div></details>
+      <details class="faq"><summary>可以有很多本日曆嗎？</summary><div class="body">可以，用不同顏色區分工作、家庭、生日等，各自可獨立共享。</div></details>
+      <details class="faq"><summary>共享日曆對方能改嗎？</summary><div class="body">看你給的權限。可設唯讀或可編輯，家庭共用常給可編輯。</div></details>
+      <details class="faq"><summary>訂閱的外部日曆能編輯嗎？</summary><div class="body">不能，訂閱是唯讀。要編輯得是你自己的日曆。</div></details>
+      <details class="faq"><summary>手機上要用哪個 App？</summary><div class="body">用系統行事曆加 CalDAV 帳號，或 Nextcloud 官方相關 app。iOS／Android 皆支援 CalDAV。</div></details>
+    </section>
+
+    <section id="sources" data-nav="官方來源">
+      <h2 data-icon="records">官方來源</h2>
+      <table class="data-table">
+        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/groupware/calendar.html" rel="noopener">Nextcloud：Calendar</a></td><td>事件、共享、CalDAV 與訂閱</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="pager">
+      <a class="prev" href="ch10_photos.html">
+        <span class="label"><i class="mdi mdi-arrow-left" aria-hidden="true"></i> 上一章</span>
+        <span class="title">10 · Photos 照片管理</span>
+      </a>
+      <a class="next" href="ch12_contacts.html">
+        <span class="label">下一章 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></span>
+        <span class="title">12 · Contacts 聯絡人</span>
+      </a>
+    </div>
+
+    <footer class="site-footer">
+      <p>《Nextcloud 自架雲端指南》由 <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">woowtech</a> 製作，以 <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant">CC BY 4.0</a> 授權釋出 — 可自由分享與改作，請保留出處。</p>
+      <p class="footer-meta">截圖取自 Home Assistant 與 Cloudflared Web GUI。Home Assistant 與 Cloudflare 為其各自權利人的商標，本站與其無隸屬關係。 · <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">原始碼與勘誤</a></p>
+    </footer>
+  </main>
+</div>
+<script src="assets/js/toc.js"></script>
+</body>
+</html>

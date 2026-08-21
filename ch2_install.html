@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>第 2 章 · 安裝 Nextcloud · Nextcloud 自架雲端指南</title>
+  <meta name="description" content="Home Assistant Nextcloud add-on 安裝教學：加入安裝、啟動與首次開啟準備。" />
+  <meta name="author" content="woowtech" />
+  <link rel="canonical" href="https://nextcloud-guide.woowtech.io/ch2_install.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nextcloud 自架雲端指南" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:title" content="第 2 章 · 安裝 Nextcloud · Nextcloud 自架雲端指南" />
+  <meta property="og:description" content="Home Assistant Nextcloud add-on 安裝教學：加入安裝、啟動與首次開啟準備。" />
+  <meta property="og:url" content="https://nextcloud-guide.woowtech.io/ch2_install.html" />
+  <meta property="og:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="第 2 章 · 安裝 Nextcloud · Nextcloud 自架雲端指南" />
+  <meta name="twitter:description" content="Home Assistant Nextcloud add-on 安裝教學：加入安裝、啟動與首次開啟準備。" />
+  <meta name="twitter:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.png" />
+  <meta name="theme-color" content="#6183FC" />
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Yellowtail&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="brand" href="index.html">Nextcloud 指南</a>
+    <div class="brand-sub">把檔案收在自己家</div>
+    <h2>章節</h2>
+    <ol>
+      <li class="part-label">基礎：認識與登入</li>
+      <li><a href="ch1_intro.html">開始前</a></li>
+      <li><a href="ch2_install.html" class="active">安裝</a></li>
+      <li><a href="ch3_first_open.html">第一次開啟</a></li>
+      <li><a href="ch4_ui_tour.html">介面導覽</a></li>
+      <li><a href="ch5_profile.html">帳號設定</a></li>
+      <li><a href="ch6_files_basics.html">檔案基礎</a></li>
+      <li class="part-label">檔案：管理與分享</li>
+      <li><a href="ch7_upload.html">上傳</a></li>
+      <li><a href="ch8_share.html">檔案分享</a></li>
+      <li><a href="ch9_share_manage.html">分享管理</a></li>
+      <li><a href="ch10_photos.html">照片</a></li>
+      <li><a href="ch11_calendar.html">行事曆</a></li>
+      <li><a href="ch12_contacts.html">聯絡人</a></li>
+      <li class="part-label">協作：溝通與生產力</li>
+      <li><a href="ch13_talk.html">Talk</a></li>
+      <li><a href="ch14_deck.html">Deck</a></li>
+      <li><a href="ch15_office.html">Office</a></li>
+      <li><a href="ch16_notes.html">Notes</a></li>
+      <li><a href="ch17_tasks.html">Tasks</a></li>
+      <li class="part-label">同步：跨裝置</li>
+      <li><a href="ch18_desktop.html">桌面同步</a></li>
+      <li><a href="ch19_mobile.html">手機 App</a></li>
+      <li><a href="ch20_webdav.html">WebDAV</a></li>
+      <li class="part-label">管理：安全與維護</li>
+      <li><a href="ch21_admin.html">管理員</a></li>
+      <li><a href="ch22_security.html">安全排錯</a></li>
+    </ol>
+    <div class="toc-in-chapter">
+      <h2>本章</h2>
+      <a href="#why">為什麼要學</a>
+      <a href="#concept">add-on 觀念</a>
+      <a href="#steps">安裝步驟</a>
+      <a href="#trusted">信任網域</a>
+      <a href="#test">安裝驗收</a>
+      <a href="#troubleshoot">安裝卡關</a>
+      <a href="#faq">FAQ</a>
+      <a href="#sources">官方來源</a>
+    </div>
+    <div class="toc-in-chapter">
+      <h2>附錄</h2>
+      <a href="appendix_apps.html">Apps 商店</a>
+      <a href="appendix_config.html">設定速查</a>
+      <a href="appendix_integrations.html">外部整合</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="chapter-header">
+      <div class="kicker">第 2 章</div>
+      <h1>安裝 Nextcloud</h1>
+      <p class="lead">把 Nextcloud 裝進 Home Assistant，並認識安裝後的初始狀態。讀完這章，你會知道 add-on 是什麼、啟動時在忙什麼，以及第一次開啟前該確認哪些事。</p>
+    </div>
+
+    <section id="why" data-nav="為什麼要學">
+      <h2 data-icon="why">先把地基裝好</h2>
+      <p>Nextcloud 是一整套雲端服務，得先「裝起來」才能用。在 Home Assistant（HA）上，最省事的方式是透過 <strong>add-on（附加元件）</strong>安裝：不用自己弄伺服器、資料庫、憑證，按幾下就跑起來。</p>
+      <p>這章帶你把 add-on 裝好、啟動，並理解啟動時它在背景做什麼，避免你以為「怎麼開不起來」其實只是還在初始化。</p>
+      <div class="callout"><strong>本章任務：</strong>加入套件來源、安裝 add-on、啟動，並確認狀態正常。真正登入使用從第 3 章開始。</div>
+    </section>
+
+    <section id="concept" data-nav="add-on 觀念">
+      <h2 data-icon="concept">add-on 是什麼、幫你省了什麼</h2>
+      <p>add-on 可以想成「一鍵安裝的伺服器套裝」。Nextcloud 本體需要 PHP、資料庫、Web 伺服器，add-on 把這些打包成一個容器，你只要按安裝，它會自動把該裝的都裝好。</p>
+      <table class="data-table">
+        <thead><tr><th>你不用自己做的事</th><th>add-on 幫你處理</th></tr></thead>
+        <tbody>
+          <tr><td>裝資料庫</td><td>內建或連好資料庫</td></tr>
+          <tr><td>設定 Web 伺服器</td><td>容器內已設好</td></tr>
+          <tr><td>處理對外連線</td><td>搭配 Cloudflare Tunnel（本站環境）從外部安全連入</td></tr>
+        </tbody>
+      </table>
+      <div class="callout tip"><strong>本站環境：</strong>你要用的這台已由 WoowTech 裝好、對外網址是 <code>https://woowtech-nextcloud.woowtech.io</code>。如果只是要「使用」，可以略過安裝、直接看第 3 章登入。</div>
+    </section>
+
+    <section id="steps" data-nav="安裝步驟">
+      <h2 data-icon="steps">六步把 Nextcloud 裝起來</h2>
+      <ol class="steps">
+        <li><h3>打開 HA 的 Apps 商店</h3><p>在 Home Assistant 左側選單找到「設定 → 附加元件（Add-ons）」，進入附加元件商店。</p></li>
+        <li><h3>加入 WoowTech 套件來源</h3><p>在商店右上角選單選「套件來源（Repositories）」，貼上 WoowTech 的 repository 網址並加入。</p></li>
+        <li><h3>找到 Nextcloud add-on 並安裝</h3><p>重新整理商店，找到 Nextcloud，點進去按「安裝」。首次安裝會下載映像檔，需要幾分鐘，別中途關掉。</p></li>
+        <li><h3>檢視設定選項</h3><p>安裝後先看「設定（Configuration）」分頁，確認資料目錄、管理員帳密等選項。第一次可以先用預設，之後再依需要調整。</p></li>
+        <li><h3>啟動 add-on</h3><p>回到「資訊（Info）」分頁按「啟動（Start）」。第一次啟動會初始化資料庫與 Nextcloud，需要等一段時間。</p></li>
+        <li><h3>確認狀態與日誌</h3><p>啟動後看「日誌（Log）」分頁，出現初始化完成的訊息表示就緒。狀態顯示執行中即可進入第 3 章。</p></li>
+      </ol>
+      <div class="callout warn"><strong>初次啟動要有耐心：</strong>第一次啟動要建資料庫、產生設定，可能要好幾分鐘。日誌還在跑就代表正常，不要反覆重啟。</div>
+    </section>
+
+    <section id="trusted" data-nav="信任網域">
+      <h2 data-icon="security">對外網址與信任網域</h2>
+      <p>Nextcloud 有一個安全機制叫 <strong>trusted_domains（信任網域）</strong>：只接受清單內網域的連線。用自訂網址（如 <code>woowtech-nextcloud.woowtech.io</code>）對外時，這個網址必須加進信任網域，否則會看到「Access through untrusted domain」錯誤。</p>
+      <div class="callout danger"><strong>看到「untrusted domain」時：</strong>不是壞掉，是這個網址還沒被加進信任清單。這屬於管理員設定（第 22 章、附錄 B），請聯絡管理員處理，不要自行改伺服器檔案。</div>
+    </section>
+
+    <section id="test" data-nav="安裝驗收">
+      <h2 data-icon="test">安裝完成的驗收</h2>
+      <table class="data-table">
+        <thead><tr><th>檢查項</th><th>通過條件</th></tr></thead>
+        <tbody>
+          <tr><td>add-on 狀態</td><td>顯示「執行中」</td></tr>
+          <tr><td>日誌</td><td>沒有反覆錯誤，出現就緒訊息</td></tr>
+          <tr><td>開啟網址</td><td>能看到 Nextcloud 登入頁（第 3 章）</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="troubleshoot" data-nav="安裝卡關">
+      <h2 data-icon="troubleshoot">安裝常見卡關</h2>
+      <ol class="steps">
+        <li><h3>安裝一直轉圈</h3><p>首次下載映像檔本來就慢，確認網路正常、耐心等。真的卡住看日誌有沒有錯誤。</p></li>
+        <li><h3>啟動後狀態變回停止</h3><p>看日誌找第一個錯誤訊息（多半是設定或連接埠衝突），修正後再啟動。</p></li>
+        <li><h3>開網址出現 untrusted domain</h3><p>網址未加進信任網域，屬管理員設定，見第 22 章、附錄 B。</p></li>
+        <li><h3>找不到 add-on</h3><p>確認套件來源網址加對、商店有重新整理；必要時重開商店頁面。</p></li>
+      </ol>
+    </section>
+
+    <section id="faq" data-nav="FAQ">
+      <h2 data-icon="faq">安裝常見問題</h2>
+      <details class="faq"><summary>我只是要用，需要自己安裝嗎？</summary><div class="body">不用。本站環境已由 WoowTech 裝好，直接看第 3 章登入即可。這章是給要自己裝的人參考。</div></details>
+      <details class="faq"><summary>安裝會佔很多空間嗎？</summary><div class="body">Nextcloud 本體加資料庫會佔一些空間，之後上傳的檔案才是主要用量。安裝前確認主機有足夠儲存。</div></details>
+      <details class="faq"><summary>可以裝在非 HA 的環境嗎？</summary><div class="body">可以，Nextcloud 有官方 Docker、AIO 等多種安裝方式。本教學以 HA add-on 情境為主，其他方式請參考官方文件。</div></details>
+      <details class="faq"><summary>安裝後要先做什麼設定？</summary><div class="body">先確認管理員帳密、資料目錄與對外網址（信任網域）。細節在第 21、22 章與附錄 B。</div></details>
+      <details class="faq"><summary>啟動很久是正常的嗎？</summary><div class="body">第一次啟動要初始化資料庫與設定，幾分鐘內都算正常。看日誌還在動就別重啟。</div></details>
+    </section>
+
+    <section id="sources" data-nav="官方來源">
+      <h2 data-icon="records">官方來源</h2>
+      <table class="data-table">
+        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/admin_manual/installation/" rel="noopener">Nextcloud 安裝文件</a></td><td>各種安裝方式與需求</td></tr>
+          <tr><td><a href="https://nextcloud.com/" rel="noopener">Nextcloud 官網</a></td><td>產品與下載</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="pager">
+      <a class="prev" href="ch1_intro.html">
+        <span class="label"><i class="mdi mdi-arrow-left" aria-hidden="true"></i> 上一章</span>
+        <span class="title">01 · 需求與安全邊界</span>
+      </a>
+      <a class="next" href="ch3_first_open.html">
+        <span class="label">下一章 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></span>
+        <span class="title">03 · 第一次開啟與登入</span>
+      </a>
+    </div>
+
+    <footer class="site-footer">
+      <p>《Nextcloud 自架雲端指南》由 <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">woowtech</a> 製作，以 <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant">CC BY 4.0</a> 授權釋出 — 可自由分享與改作，請保留出處。</p>
+      <p class="footer-meta">截圖取自 Home Assistant 與 Cloudflared Web GUI。Home Assistant 與 Cloudflare 為其各自權利人的商標，本站與其無隸屬關係。 · <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">原始碼與勘誤</a></p>
+    </footer>
+  </main>
+</div>
+<script src="assets/js/toc.js"></script>
+</body>
+</html>

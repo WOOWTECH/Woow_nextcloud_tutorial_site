@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>第 5 章 · 帳號與個人設定 · Nextcloud 自架雲端指南</title>
+  <meta name="description" content="Nextcloud 個人設定：密碼、語言、顯示名稱與個人資料。" />
+  <meta name="author" content="woowtech" />
+  <link rel="canonical" href="https://nextcloud-guide.woowtech.io/ch5_profile.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nextcloud 自架雲端指南" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:title" content="第 5 章 · 帳號與個人設定 · Nextcloud 自架雲端指南" />
+  <meta property="og:description" content="Nextcloud 個人設定：密碼、語言、顯示名稱與個人資料。" />
+  <meta property="og:url" content="https://nextcloud-guide.woowtech.io/ch5_profile.html" />
+  <meta property="og:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="第 5 章 · 帳號與個人設定 · Nextcloud 自架雲端指南" />
+  <meta name="twitter:description" content="Nextcloud 個人設定：密碼、語言、顯示名稱與個人資料。" />
+  <meta name="twitter:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.png" />
+  <meta name="theme-color" content="#6183FC" />
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Yellowtail&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="brand" href="index.html">Nextcloud 指南</a>
+    <div class="brand-sub">把檔案收在自己家</div>
+    <h2>章節</h2>
+    <ol>
+      <li class="part-label">基礎：認識與登入</li>
+      <li><a href="ch1_intro.html">開始前</a></li>
+      <li><a href="ch2_install.html">安裝</a></li>
+      <li><a href="ch3_first_open.html">第一次開啟</a></li>
+      <li><a href="ch4_ui_tour.html">介面導覽</a></li>
+      <li><a href="ch5_profile.html" class="active">帳號設定</a></li>
+      <li><a href="ch6_files_basics.html">檔案基礎</a></li>
+      <li class="part-label">檔案：管理與分享</li>
+      <li><a href="ch7_upload.html">上傳</a></li>
+      <li><a href="ch8_share.html">檔案分享</a></li>
+      <li><a href="ch9_share_manage.html">分享管理</a></li>
+      <li><a href="ch10_photos.html">照片</a></li>
+      <li><a href="ch11_calendar.html">行事曆</a></li>
+      <li><a href="ch12_contacts.html">聯絡人</a></li>
+      <li class="part-label">協作：溝通與生產力</li>
+      <li><a href="ch13_talk.html">Talk</a></li>
+      <li><a href="ch14_deck.html">Deck</a></li>
+      <li><a href="ch15_office.html">Office</a></li>
+      <li><a href="ch16_notes.html">Notes</a></li>
+      <li><a href="ch17_tasks.html">Tasks</a></li>
+      <li class="part-label">同步：跨裝置</li>
+      <li><a href="ch18_desktop.html">桌面同步</a></li>
+      <li><a href="ch19_mobile.html">手機 App</a></li>
+      <li><a href="ch20_webdav.html">WebDAV</a></li>
+      <li class="part-label">管理：安全與維護</li>
+      <li><a href="ch21_admin.html">管理員</a></li>
+      <li><a href="ch22_security.html">安全排錯</a></li>
+    </ol>
+    <div class="toc-in-chapter">
+      <h2>本章</h2>
+      <a href="#why">為什麼要學</a>
+      <a href="#concept">設定分頁</a>
+      <a href="#steps">設定步驟</a>
+      <a href="#security">帳號安全</a>
+      <a href="#troubleshoot">設定卡關</a>
+      <a href="#faq">FAQ</a>
+      <a href="#sources">官方來源</a>
+    </div>
+    <div class="toc-in-chapter">
+      <h2>附錄</h2>
+      <a href="appendix_apps.html">Apps 商店</a>
+      <a href="appendix_config.html">設定速查</a>
+      <a href="appendix_integrations.html">外部整合</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="chapter-header">
+      <div class="kicker">第 5 章</div>
+      <h1>帳號與個人設定</h1>
+      <p class="lead">改密碼、換語言、設定顯示名稱與個人資料。讀完這章，你會把帳號調整成順手又安全的狀態，並知道個人設定的每個分頁在管什麼。</p>
+    </div>
+
+    <section id="why" data-nav="為什麼要學">
+      <h2 data-icon="why">先把帳號設順</h2>
+      <p>個人設定是你對自己帳號的控制台：密碼、語言、通知、佈景、裝置連線都在這裡。花五分鐘把它設順，之後用起來會安心很多——尤其是密碼安全。</p>
+      <div class="callout"><strong>本章任務：</strong>進個人設定、改密碼、確認語言與顯示名稱。這些只影響你自己的帳號，不影響別人。</div>
+    </section>
+
+    <section id="concept" data-nav="設定分頁">
+      <h2 data-icon="concept">個人設定有哪些分頁</h2>
+      <p>從右上角頭像「設定選單」進入個人設定，左側有數個分頁：</p>
+      <table class="data-table">
+        <thead><tr><th>分頁</th><th>管什麼</th></tr></thead>
+        <tbody>
+          <tr><td>個人資訊</td><td>顯示名稱、email、電話、頭像、語言、時區</td></tr>
+          <tr><td>安全性</td><td>改密碼、裝置與工作階段、App 密碼、兩步驟驗證</td></tr>
+          <tr><td>通知</td><td>哪些事件要通知、用什麼方式</td></tr>
+          <tr><td>外觀與便利性</td><td>佈景、深色模式、字型</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="steps" data-nav="設定步驟">
+      <h2 data-icon="profile">五步把帳號設順</h2>
+      <ol class="steps">
+        <li><h3>進個人設定</h3><p>點右上角頭像 → 選「設定」，進入個人設定頁。</p></li>
+        <li><h3>改密碼</h3><p>到「安全性」分頁，輸入舊密碼與新密碼。密碼要夠長、不與其他服務共用。</p></li>
+        <li><h3>確認語言與時區</h3><p>在「個人資訊」把語言設為繁體中文、時區設為台北，行事曆與時間才會正確。</p></li>
+        <li><h3>設顯示名稱與頭像</h3><p>填顯示名稱、上傳頭像，別人看到你的分享與聊天時比較好認。</p></li>
+        <li><h3>檢查通知偏好</h3><p>到「通知」分頁，關掉不需要的、留下重要的（如分享、提及）。</p></li>
+      </ol>
+      <div class="callout tip"><strong>App 密碼是什麼：</strong>「安全性」分頁可建立 App 專用密碼，給桌面 client、手機 App、WebDAV 用（第 18–20 章）。這樣主密碼就不用到處輸入。</div>
+    </section>
+
+    <section id="security" data-nav="帳號安全">
+      <h2 data-icon="security">帳號安全建議</h2>
+      <ul>
+        <li><strong>強密碼</strong>：長、不重複，尤其管理員帳號。</li>
+        <li><strong>兩步驟驗證</strong>：若站台支援，強烈建議開啟，帳號安全大幅提升。</li>
+        <li><strong>檢查已連線裝置</strong>：「安全性」分頁會列出登入中的裝置與 App 密碼，看到不認得的就撤銷。</li>
+        <li><strong>公用電腦登出</strong>：用完從頭像選單登出並關瀏覽器。</li>
+      </ul>
+      <div class="callout danger"><strong>撤銷可疑連線：</strong>在「安全性」看到不明的裝置或 App 密碼，立刻撤銷，並改主密碼。</div>
+    </section>
+
+    <section id="troubleshoot" data-nav="設定卡關">
+      <h2 data-icon="troubleshoot">設定常見卡關</h2>
+      <ol class="steps">
+        <li><h3>改密碼被拒</h3><p>可能不符密碼強度政策（太短、太常見）。換更長、更複雜的組合。</p></li>
+        <li><h3>語言改了沒變</h3><p>重新整理頁面；部分文字要重新登入才會全部套用。</p></li>
+        <li><h3>找不到某個設定分頁</h3><p>部分分頁需要對應 App 啟用；管理員設定則在另一個「管理設定」入口（第 21 章）。</p></li>
+        <li><h3>兩步驟驗證裝置遺失</h3><p>用備援碼登入；沒有備援碼就請管理員協助停用該帳號的兩步驟驗證。</p></li>
+      </ol>
+    </section>
+
+    <section id="faq" data-nav="FAQ">
+      <h2 data-icon="faq">個人設定常見問題</h2>
+      <details class="faq"><summary>個人設定和管理設定有什麼不同？</summary><div class="body">個人設定只影響你自己的帳號；管理設定（只有管理員看得到）影響整站，見第 21 章。</div></details>
+      <details class="faq"><summary>App 密碼一定要設嗎？</summary><div class="body">不一定，但建議。給第三方 client 用 App 密碼，主密碼外洩風險更低，也能單獨撤銷。</div></details>
+      <details class="faq"><summary>頭像會被誰看到？</summary><div class="body">同站的其他使用者在分享、聊天、共用檔案時會看到你的顯示名稱與頭像。</div></details>
+      <details class="faq"><summary>可以改預設進入的 App 嗎？</summary><div class="body">部分版本可在個人設定指定登入後的預設 App（例如直接進檔案而非儀表板）。</div></details>
+      <details class="faq"><summary>忘記舊密碼還能改嗎？</summary><div class="body">改密碼需要舊密碼；真的忘了要請管理員重設（第 21 章）。</div></details>
+    </section>
+
+    <section id="sources" data-nav="官方來源">
+      <h2 data-icon="records">官方來源</h2>
+      <table class="data-table">
+        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/userpreferences.html" rel="noopener">Nextcloud：個人設定</a></td><td>個人資訊、安全性與通知</td></tr>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/session_management.html" rel="noopener">Nextcloud：裝置與工作階段</a></td><td>App 密碼與兩步驟驗證</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="pager">
+      <a class="prev" href="ch4_ui_tour.html">
+        <span class="label"><i class="mdi mdi-arrow-left" aria-hidden="true"></i> 上一章</span>
+        <span class="title">04 · 介面導覽</span>
+      </a>
+      <a class="next" href="ch6_files_basics.html">
+        <span class="label">下一章 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></span>
+        <span class="title">06 · 檔案管理基礎</span>
+      </a>
+    </div>
+
+    <footer class="site-footer">
+      <p>《Nextcloud 自架雲端指南》由 <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">woowtech</a> 製作，以 <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant">CC BY 4.0</a> 授權釋出 — 可自由分享與改作，請保留出處。</p>
+      <p class="footer-meta">截圖取自 Home Assistant 與 Cloudflared Web GUI。Home Assistant 與 Cloudflare 為其各自權利人的商標，本站與其無隸屬關係。 · <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">原始碼與勘誤</a></p>
+    </footer>
+  </main>
+</div>
+<script src="assets/js/toc.js"></script>
+</body>
+</html>

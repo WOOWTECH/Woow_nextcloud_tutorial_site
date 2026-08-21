@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>第 9 章 · 分享管理與收回 · Nextcloud 自架雲端指南</title>
+  <meta name="description" content="Nextcloud 分享管理：盤點、修改權限、停用與收回分享。" />
+  <meta name="author" content="woowtech" />
+  <link rel="canonical" href="https://nextcloud-guide.woowtech.io/ch9_share_manage.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nextcloud 自架雲端指南" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:title" content="第 9 章 · 分享管理與收回 · Nextcloud 自架雲端指南" />
+  <meta property="og:description" content="Nextcloud 分享管理：盤點、修改權限、停用與收回分享。" />
+  <meta property="og:url" content="https://nextcloud-guide.woowtech.io/ch9_share_manage.html" />
+  <meta property="og:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="第 9 章 · 分享管理與收回 · Nextcloud 自架雲端指南" />
+  <meta name="twitter:description" content="Nextcloud 分享管理：盤點、修改權限、停用與收回分享。" />
+  <meta name="twitter:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.png" />
+  <meta name="theme-color" content="#6183FC" />
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Yellowtail&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="brand" href="index.html">Nextcloud 指南</a>
+    <div class="brand-sub">把檔案收在自己家</div>
+    <h2>章節</h2>
+    <ol>
+      <li class="part-label">基礎：認識與登入</li>
+      <li><a href="ch1_intro.html">開始前</a></li>
+      <li><a href="ch2_install.html">安裝</a></li>
+      <li><a href="ch3_first_open.html">第一次開啟</a></li>
+      <li><a href="ch4_ui_tour.html">介面導覽</a></li>
+      <li><a href="ch5_profile.html">帳號設定</a></li>
+      <li><a href="ch6_files_basics.html">檔案基礎</a></li>
+      <li class="part-label">檔案：管理與分享</li>
+      <li><a href="ch7_upload.html">上傳</a></li>
+      <li><a href="ch8_share.html">檔案分享</a></li>
+      <li><a href="ch9_share_manage.html" class="active">分享管理</a></li>
+      <li><a href="ch10_photos.html">照片</a></li>
+      <li><a href="ch11_calendar.html">行事曆</a></li>
+      <li><a href="ch12_contacts.html">聯絡人</a></li>
+      <li class="part-label">協作：溝通與生產力</li>
+      <li><a href="ch13_talk.html">Talk</a></li>
+      <li><a href="ch14_deck.html">Deck</a></li>
+      <li><a href="ch15_office.html">Office</a></li>
+      <li><a href="ch16_notes.html">Notes</a></li>
+      <li><a href="ch17_tasks.html">Tasks</a></li>
+      <li class="part-label">同步：跨裝置</li>
+      <li><a href="ch18_desktop.html">桌面同步</a></li>
+      <li><a href="ch19_mobile.html">手機 App</a></li>
+      <li><a href="ch20_webdav.html">WebDAV</a></li>
+      <li class="part-label">管理：安全與維護</li>
+      <li><a href="ch21_admin.html">管理員</a></li>
+      <li><a href="ch22_security.html">安全排錯</a></li>
+    </ol>
+    <div class="toc-in-chapter">
+      <h2>本章</h2>
+      <a href="#why">為什麼要學</a>
+      <a href="#concept">分享清單</a>
+      <a href="#steps">盤點步驟</a>
+      <a href="#security">最小暴露</a>
+      <a href="#troubleshoot">管理卡關</a>
+      <a href="#faq">FAQ</a>
+      <a href="#sources">官方來源</a>
+    </div>
+    <div class="toc-in-chapter">
+      <h2>附錄</h2>
+      <a href="appendix_apps.html">Apps 商店</a>
+      <a href="appendix_config.html">設定速查</a>
+      <a href="appendix_integrations.html">外部整合</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="chapter-header">
+      <div class="kicker">第 9 章</div>
+      <h1>分享管理與收回</h1>
+      <p class="lead">分享出去容易，管好不容易。這章教你盤點所有分享、修改權限、停用連結與收回，讓「方便」不會變成「過度公開」。</p>
+    </div>
+
+    <section id="why" data-nav="為什麼要學">
+      <h2 data-icon="why">分享要收得回來</h2>
+      <p>分享連結像借出去的鑰匙。借出去後如果從不盤點、從不收回，久了你根本不知道有多少人還能看你的東西。定期管理分享，是自架雲端最重要的安全習慣之一。</p>
+      <div class="callout"><strong>本章任務：</strong>盤點你分享出去與別人分享給你的內容，修改權限、停用不需要的連結。全程只做「收緊」，不刪檔。</div>
+    </section>
+
+    <section id="concept" data-nav="分享清單">
+      <h2 data-icon="concept">兩種分享清單</h2>
+      <p>在 Files 左側的「分享」分類裡，通常會看到：</p>
+      <table class="data-table">
+        <thead><tr><th>清單</th><th>內容</th></tr></thead>
+        <tbody>
+          <tr><td>你分享的（Shared by you）</td><td>你分享給別人的檔案與連結</td></tr>
+          <tr><td>分享給你的（Shared with you）</td><td>別人分享給你的檔案</td></tr>
+          <tr><td>分享連結（Shared by link）</td><td>你建立的公開連結</td></tr>
+          <tr><td>待接受</td><td>還沒接受的分享邀請</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="steps" data-nav="盤點步驟">
+      <h2 data-icon="steps">五步盤點與收回</h2>
+      <ol class="steps">
+        <li><h3>打開「你分享的」</h3><p>Files 左側「分享 → 你分享的／分享連結」，看目前對外開了哪些。</p></li>
+        <li><h3>逐一檢查</h3><p>點檔案的分享面板，看每個分享的對象、權限、密碼與到期日。</p></li>
+        <li><h3>修改權限</h3><p>把不該可編輯的改回唯讀；沒設期限的補上到期日。</p></li>
+        <li><h3>停用或刪除連結</h3><p>不再需要的連結，直接在分享面板移除，立刻失效。</p></li>
+        <li><h3>檢查「分享給你的」</h3><p>別人分享給你的，用不到的可以移除，保持清爽。</p></li>
+      </ol>
+      <div class="callout tip"><strong>養成節奏：</strong>每月做一次分享盤點，尤其臨時分享給廠商、活動的連結，用完立刻收回。</div>
+    </section>
+
+    <section id="security" data-nav="最小暴露">
+      <h2 data-icon="security">最小暴露原則</h2>
+      <ul>
+        <li>只分享真正需要的檔案或資料夾，不整個檔案庫開出去。</li>
+        <li>對外連結預設加密碼、設期限。</li>
+        <li>能用站內分享就別用公開連結（對方要登入，較安全）。</li>
+        <li>定期檢查「分享連結」清單，把忘了收的收回。</li>
+      </ul>
+      <div class="callout danger"><strong>發現連結外流：</strong>立刻停用該連結，重新產生新的（若還需要），並評估外流範圍。</div>
+    </section>
+
+    <section id="troubleshoot" data-nav="管理卡關">
+      <h2 data-icon="troubleshoot">管理常見卡關</h2>
+      <ol class="steps">
+        <li><h3>找不到某個分享</h3><p>用「分享連結」清單或搜尋檔名；分享是掛在檔案上的。</p></li>
+        <li><h3>停用了對方還能看</h3><p>對方可能已下載副本。停用只擋後續存取，已下載的無法收回。</p></li>
+        <li><h3>想一次收回全部</h3><p>需逐一處理；把重要的先收，臨時的優先清。</p></li>
+        <li><h3>對方一直收到通知</h3><p>調整通知設定，或移除分享關係。</p></li>
+      </ol>
+    </section>
+
+    <section id="faq" data-nav="FAQ">
+      <h2 data-icon="faq">分享管理常見問題</h2>
+      <details class="faq"><summary>停用連結後對方就完全看不到了嗎？</summary><div class="body">後續無法再用該連結存取，但對方先前已下載的副本無法收回。所以敏感內容分享要謹慎。</div></details>
+      <details class="faq"><summary>可以看到誰下載過嗎？</summary><div class="body">檔案的「活動」會記錄存取／下載等事件，可作為稽核參考。</div></details>
+      <details class="faq"><summary>別人分享給我的可以移除嗎？</summary><div class="body">可以移除自己這端的分享關係，不影響對方的原檔。</div></details>
+      <details class="faq"><summary>群組分享怎麼收回？</summary><div class="body">在分享面板移除該群組即可，整個群組會一起失去存取。</div></details>
+      <details class="faq"><summary>多久盤點一次比較好？</summary><div class="body">建議每月一次；有臨時分享時，用完就立刻收回。</div></details>
+    </section>
+
+    <section id="sources" data-nav="官方來源">
+      <h2 data-icon="records">官方來源</h2>
+      <table class="data-table">
+        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/files/sharing.html" rel="noopener">Nextcloud：分享與管理</a></td><td>分享清單、權限與收回</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="pager">
+      <a class="prev" href="ch8_share.html">
+        <span class="label"><i class="mdi mdi-arrow-left" aria-hidden="true"></i> 上一章</span>
+        <span class="title">08 · 檔案與資料夾分享</span>
+      </a>
+      <a class="next" href="ch10_photos.html">
+        <span class="label">下一章 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></span>
+        <span class="title">10 · Photos 照片管理</span>
+      </a>
+    </div>
+
+    <footer class="site-footer">
+      <p>《Nextcloud 自架雲端指南》由 <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">woowtech</a> 製作，以 <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant">CC BY 4.0</a> 授權釋出 — 可自由分享與改作，請保留出處。</p>
+      <p class="footer-meta">截圖取自 Home Assistant 與 Cloudflared Web GUI。Home Assistant 與 Cloudflare 為其各自權利人的商標，本站與其無隸屬關係。 · <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">原始碼與勘誤</a></p>
+    </footer>
+  </main>
+</div>
+<script src="assets/js/toc.js"></script>
+</body>
+</html>

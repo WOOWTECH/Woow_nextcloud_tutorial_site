@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>第 16 章 · Notes 筆記 · Nextcloud 自架雲端指南</title>
+  <meta name="description" content="Nextcloud Notes 教學：Markdown 筆記、分類與跨裝置同步。" />
+  <meta name="author" content="woowtech" />
+  <link rel="canonical" href="https://nextcloud-guide.woowtech.io/ch16_notes.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nextcloud 自架雲端指南" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:title" content="第 16 章 · Notes 筆記 · Nextcloud 自架雲端指南" />
+  <meta property="og:description" content="Nextcloud Notes 教學：Markdown 筆記、分類與跨裝置同步。" />
+  <meta property="og:url" content="https://nextcloud-guide.woowtech.io/ch16_notes.html" />
+  <meta property="og:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="第 16 章 · Notes 筆記 · Nextcloud 自架雲端指南" />
+  <meta name="twitter:description" content="Nextcloud Notes 教學：Markdown 筆記、分類與跨裝置同步。" />
+  <meta name="twitter:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.png" />
+  <meta name="theme-color" content="#6183FC" />
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Yellowtail&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="brand" href="index.html">Nextcloud 指南</a>
+    <div class="brand-sub">把檔案收在自己家</div>
+    <h2>章節</h2>
+    <ol>
+      <li class="part-label">基礎：認識與登入</li>
+      <li><a href="ch1_intro.html">開始前</a></li>
+      <li><a href="ch2_install.html">安裝</a></li>
+      <li><a href="ch3_first_open.html">第一次開啟</a></li>
+      <li><a href="ch4_ui_tour.html">介面導覽</a></li>
+      <li><a href="ch5_profile.html">帳號設定</a></li>
+      <li><a href="ch6_files_basics.html">檔案基礎</a></li>
+      <li class="part-label">檔案：管理與分享</li>
+      <li><a href="ch7_upload.html">上傳</a></li>
+      <li><a href="ch8_share.html">檔案分享</a></li>
+      <li><a href="ch9_share_manage.html">分享管理</a></li>
+      <li><a href="ch10_photos.html">照片</a></li>
+      <li><a href="ch11_calendar.html">行事曆</a></li>
+      <li><a href="ch12_contacts.html">聯絡人</a></li>
+      <li class="part-label">協作：溝通與生產力</li>
+      <li><a href="ch13_talk.html">Talk</a></li>
+      <li><a href="ch14_deck.html">Deck</a></li>
+      <li><a href="ch15_office.html">Office</a></li>
+      <li><a href="ch16_notes.html" class="active">Notes</a></li>
+      <li><a href="ch17_tasks.html">Tasks</a></li>
+      <li class="part-label">同步：跨裝置</li>
+      <li><a href="ch18_desktop.html">桌面同步</a></li>
+      <li><a href="ch19_mobile.html">手機 App</a></li>
+      <li><a href="ch20_webdav.html">WebDAV</a></li>
+      <li class="part-label">管理：安全與維護</li>
+      <li><a href="ch21_admin.html">管理員</a></li>
+      <li><a href="ch22_security.html">安全排錯</a></li>
+    </ol>
+    <div class="toc-in-chapter">
+      <h2>本章</h2>
+      <a href="#why">為什麼要學</a>
+      <a href="#concept">Notes 觀念</a>
+      <a href="#steps">使用步驟</a>
+      <a href="#tips">好用技巧</a>
+      <a href="#troubleshoot">Notes 卡關</a>
+      <a href="#faq">FAQ</a>
+      <a href="#sources">官方來源</a>
+    </div>
+    <div class="toc-in-chapter">
+      <h2>附錄</h2>
+      <a href="appendix_apps.html">Apps 商店</a>
+      <a href="appendix_config.html">設定速查</a>
+      <a href="appendix_integrations.html">外部整合</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="chapter-header">
+      <div class="kicker">第 16 章</div>
+      <h1>Notes 筆記</h1>
+      <p class="lead">Notes 是 Nextcloud 的 Markdown 筆記本。讀完這章，你能寫筆記、分類、跨裝置同步，把零散的想法與清單集中在自己家。</p>
+    </div>
+
+    <section id="why" data-nav="為什麼要學">
+      <h2 data-icon="why">把想法收在一處</h2>
+      <p>購物清單、旅行規劃、會議記錄、隨手靈感——這些筆記散在便利貼、手機備忘、各種 app 裡很難找。Notes 讓你把它們集中在 Nextcloud，跨裝置同步、還是純文字（Markdown），簡單又持久。</p>
+      <div class="callout"><strong>本章任務：</strong>建一則筆記、用分類整理、了解跨裝置同步。</div>
+    </section>
+
+    <section id="concept" data-nav="Notes 觀念">
+      <h2 data-icon="concept">Markdown 與同步</h2>
+      <p>Notes 的筆記是 <strong>Markdown</strong> 純文字檔，存在 Files 的一個資料夾（通常是 <code>/Notes</code>）。這代表：</p>
+      <ul>
+        <li>筆記就是檔案，能被備份、分享、用其他工具開。</li>
+        <li>Markdown 用簡單符號排版（<code>#</code> 標題、<code>-</code> 清單、<code>**粗體**</code>）。</li>
+        <li>跨裝置同步靠手機 Notes app 或直接同步該資料夾。</li>
+      </ul>
+      <div class="callout tip"><strong>不會 Markdown 也沒關係：</strong>直接打字就是純文字筆記，符號是「想排版時」才用。</div>
+    </section>
+
+    <section id="steps" data-nav="使用步驟">
+      <h2 data-icon="steps">五步用起 Notes</h2>
+      <ol class="steps">
+        <li><h3>打開 Notes</h3><p>從 Apps 選單點「Notes」。左側是筆記清單。</p></li>
+        <li><h3>新增筆記</h3><p>按「＋ 新增筆記」，第一行通常會變成標題。</p></li>
+        <li><h3>用 Markdown 排版</h3><p>需要時用 <code># 標題</code>、<code>- 項目</code>、<code>[ ] 待辦</code> 排版，或就打純文字。</p></li>
+        <li><h3>分類</h3><p>給筆記設「分類（Category）」，例如「購物」「工作」，左側可依分類篩選。</p></li>
+        <li><h3>跨裝置同步</h3><p>手機裝 Notes app 登入同帳號，筆記雙向同步，隨手記隨處看。</p></li>
+      </ol>
+    </section>
+
+    <section id="tips" data-nav="好用技巧">
+      <h2 data-icon="tips">幾個好用技巧</h2>
+      <ul>
+        <li><strong>釘選</strong>：常用筆記釘到最上面。</li>
+        <li><strong>待辦清單</strong>：用 <code>- [ ]</code> 打勾清單，購物、打包很好用。</li>
+        <li><strong>搜尋</strong>：筆記多了用搜尋找關鍵字最快。</li>
+        <li><strong>就是檔案</strong>：在 Files 的 Notes 資料夾也能看到這些 <code>.md</code> 檔，能分享、備份。</li>
+      </ul>
+    </section>
+
+    <section id="troubleshoot" data-nav="Notes 卡關">
+      <h2 data-icon="troubleshoot">Notes 常見卡關</h2>
+      <ol class="steps">
+        <li><h3>找不到 Notes</h3><p>Notes 是獨立 app，可能未啟用，請管理員在 Apps 商店啟用（第 21 章）。</p></li>
+        <li><h3>手機同步不到</h3><p>確認手機 app 登入同一帳號、指到同一個 Notes 資料夾。</p></li>
+        <li><h3>Markdown 符號沒生效</h3><p>切到預覽模式看排版；編輯模式會顯示原始符號。</p></li>
+        <li><h3>筆記不見了</h3><p>到 Files 的 Notes 資料夾與回收桶找；筆記就是檔案。</p></li>
+      </ol>
+    </section>
+
+    <section id="faq" data-nav="FAQ">
+      <h2 data-icon="faq">Notes 常見問題</h2>
+      <details class="faq"><summary>Notes 和一般文字檔差在哪？</summary><div class="body">底層就是 Markdown 檔，Notes 只是給它更好的清單、分類與編輯介面。</div></details>
+      <details class="faq"><summary>可以分享筆記嗎？</summary><div class="body">可以，筆記是檔案，用第 8 章的分享方式分享 .md 檔。</div></details>
+      <details class="faq"><summary>手機要用哪個 app？</summary><div class="body">Nextcloud Notes 有官方手機 app（iOS／Android），登入同帳號即可。</div></details>
+      <details class="faq"><summary>支援圖片或附件嗎？</summary><div class="body">Notes 以純文字為主；要放圖片可用 Markdown 連到 Files 裡的圖檔。</div></details>
+      <details class="faq"><summary>筆記有數量上限嗎？</summary><div class="body">沒有硬限制，受你的儲存空間影響。純文字很小，通常不是問題。</div></details>
+    </section>
+
+    <section id="sources" data-nav="官方來源">
+      <h2 data-icon="records">官方來源</h2>
+      <table class="data-table">
+        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://github.com/nextcloud/notes" rel="noopener">Nextcloud Notes（GitHub）</a></td><td>功能、手機 app 與同步</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="pager">
+      <a class="prev" href="ch15_office.html">
+        <span class="label"><i class="mdi mdi-arrow-left" aria-hidden="true"></i> 上一章</span>
+        <span class="title">15 · Office 線上文件</span>
+      </a>
+      <a class="next" href="ch17_tasks.html">
+        <span class="label">下一章 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></span>
+        <span class="title">17 · Tasks 待辦</span>
+      </a>
+    </div>
+
+    <footer class="site-footer">
+      <p>《Nextcloud 自架雲端指南》由 <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">woowtech</a> 製作，以 <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant">CC BY 4.0</a> 授權釋出 — 可自由分享與改作，請保留出處。</p>
+      <p class="footer-meta">截圖取自 Home Assistant 與 Cloudflared Web GUI。Home Assistant 與 Cloudflare 為其各自權利人的商標，本站與其無隸屬關係。 · <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">原始碼與勘誤</a></p>
+    </footer>
+  </main>
+</div>
+<script src="assets/js/toc.js"></script>
+</body>
+</html>

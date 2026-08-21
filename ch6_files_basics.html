@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>第 6 章 · Files 檔案管理基礎 · Nextcloud 自架雲端指南</title>
+  <meta name="description" content="Nextcloud Files 基礎：上傳、下載、資料夾、重新命名與移動。" />
+  <meta name="author" content="woowtech" />
+  <link rel="canonical" href="https://nextcloud-guide.woowtech.io/ch6_files_basics.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nextcloud 自架雲端指南" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:title" content="第 6 章 · Files 檔案管理基礎 · Nextcloud 自架雲端指南" />
+  <meta property="og:description" content="Nextcloud Files 基礎：上傳、下載、資料夾、重新命名與移動。" />
+  <meta property="og:url" content="https://nextcloud-guide.woowtech.io/ch6_files_basics.html" />
+  <meta property="og:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="第 6 章 · Files 檔案管理基礎 · Nextcloud 自架雲端指南" />
+  <meta name="twitter:description" content="Nextcloud Files 基礎：上傳、下載、資料夾、重新命名與移動。" />
+  <meta name="twitter:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.png" />
+  <meta name="theme-color" content="#6183FC" />
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Yellowtail&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="brand" href="index.html">Nextcloud 指南</a>
+    <div class="brand-sub">把檔案收在自己家</div>
+    <h2>章節</h2>
+    <ol>
+      <li class="part-label">基礎：認識與登入</li>
+      <li><a href="ch1_intro.html">開始前</a></li>
+      <li><a href="ch2_install.html">安裝</a></li>
+      <li><a href="ch3_first_open.html">第一次開啟</a></li>
+      <li><a href="ch4_ui_tour.html">介面導覽</a></li>
+      <li><a href="ch5_profile.html">帳號設定</a></li>
+      <li><a href="ch6_files_basics.html" class="active">檔案基礎</a></li>
+      <li class="part-label">檔案：管理與分享</li>
+      <li><a href="ch7_upload.html">上傳</a></li>
+      <li><a href="ch8_share.html">檔案分享</a></li>
+      <li><a href="ch9_share_manage.html">分享管理</a></li>
+      <li><a href="ch10_photos.html">照片</a></li>
+      <li><a href="ch11_calendar.html">行事曆</a></li>
+      <li><a href="ch12_contacts.html">聯絡人</a></li>
+      <li class="part-label">協作：溝通與生產力</li>
+      <li><a href="ch13_talk.html">Talk</a></li>
+      <li><a href="ch14_deck.html">Deck</a></li>
+      <li><a href="ch15_office.html">Office</a></li>
+      <li><a href="ch16_notes.html">Notes</a></li>
+      <li><a href="ch17_tasks.html">Tasks</a></li>
+      <li class="part-label">同步：跨裝置</li>
+      <li><a href="ch18_desktop.html">桌面同步</a></li>
+      <li><a href="ch19_mobile.html">手機 App</a></li>
+      <li><a href="ch20_webdav.html">WebDAV</a></li>
+      <li class="part-label">管理：安全與維護</li>
+      <li><a href="ch21_admin.html">管理員</a></li>
+      <li><a href="ch22_security.html">安全排錯</a></li>
+    </ol>
+    <div class="toc-in-chapter">
+      <h2>本章</h2>
+      <a href="#why">為什麼要學</a>
+      <a href="#concept">Files 版面</a>
+      <a href="#steps">基本操作</a>
+      <a href="#tips">好用功能</a>
+      <a href="#troubleshoot">檔案卡關</a>
+      <a href="#faq">FAQ</a>
+      <a href="#sources">官方來源</a>
+    </div>
+    <div class="toc-in-chapter">
+      <h2>附錄</h2>
+      <a href="appendix_apps.html">Apps 商店</a>
+      <a href="appendix_config.html">設定速查</a>
+      <a href="appendix_integrations.html">外部整合</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="chapter-header">
+      <div class="kicker">第 6 章</div>
+      <h1>Files 檔案管理基礎</h1>
+      <p class="lead">Files 是 Nextcloud 最核心的 App。這章帶你建資料夾、上傳、下載、重新命名與移動，並認識回收桶。讀完，你就能像用雲端硬碟一樣管理檔案。</p>
+    </div>
+
+    <section id="why" data-nav="為什麼要學">
+      <h2 data-icon="why">檔案是雲端的核心</h2>
+      <p>不管你之後用照片、行事曆還是協作，底層都是檔案。先把 Files 的基本操作練熟，後面一切都順。這章是純基礎，沒有風險。</p>
+      <div class="callout"><strong>本章任務：</strong>建一個資料夾、上傳一個檔案、下載、重新命名與移動。刪除會先進回收桶，可還原。</div>
+    </section>
+
+    <section id="concept" data-nav="Files 版面">
+      <h2 data-icon="concept">Files 的版面</h2>
+      <p>點頂欄「檔案」進入 Files：</p>
+      <table class="data-table">
+        <thead><tr><th>區域</th><th>內容</th></tr></thead>
+        <tbody>
+          <tr><td>左側清單</td><td>所有檔案、最愛、最近、分享、回收桶等分類</td></tr>
+          <tr><td>中間主區</td><td>目前資料夾的檔案與子資料夾清單</td></tr>
+          <tr><td>上方「＋」</td><td>新增：上傳檔案、新資料夾、新文件</td></tr>
+          <tr><td>每列右側「⋯」</td><td>單一檔案的操作：分享、重新命名、移動、刪除、下載</td></tr>
+        </tbody>
+      </table>
+      <div class="callout tip"><strong>麵包屑導覽：</strong>上方會顯示你目前在哪個資料夾路徑，點路徑上一層可以往回。</div>
+    </section>
+
+    <section id="steps" data-nav="基本操作">
+      <h2 data-icon="steps">六步練熟基本操作</h2>
+      <ol class="steps">
+        <li><h3>建立新資料夾</h3><p>按上方「＋」→「新資料夾」，命名（例如「文件」）後建立。</p></li>
+        <li><h3>進入資料夾並上傳</h3><p>點進資料夾，按「＋」→「上傳檔案」，選一個檔案上傳。也可直接把檔案拖進畫面（第 7 章詳談）。</p></li>
+        <li><h3>下載檔案</h3><p>在檔案列右側「⋯」選「下載」，或點檔名開啟後下載。</p></li>
+        <li><h3>重新命名</h3><p>「⋯」→「重新命名」，改完按 Enter。</p></li>
+        <li><h3>移動或複製</h3><p>「⋯」→「移動或複製」，選目標資料夾。也可直接拖曳。</p></li>
+        <li><h3>刪除與回收桶</h3><p>「⋯」→「刪除」。刪除的檔案會進左側「刪除的檔案（回收桶）」，可在期限內還原。</p></li>
+      </ol>
+      <div class="callout warn"><strong>刪除不是永久：</strong>刪掉的檔案先進回收桶，過保留期或手動清空才真的消失。誤刪先去回收桶找。</div>
+    </section>
+
+    <section id="tips" data-nav="好用功能">
+      <h2 data-icon="tips">幾個馬上好用的功能</h2>
+      <ul>
+        <li><strong>最愛</strong>：在檔案上標星號，之後從左側「最愛」一次找到。</li>
+        <li><strong>檔案資訊面板</strong>：點檔案右側資訊圖示，看大小、修改時間、分享與活動。</li>
+        <li><strong>排序</strong>：點欄位標題（名稱、大小、修改時間）切換排序。</li>
+        <li><strong>選取多個</strong>：勾選多個檔案，可一次移動、下載或刪除。</li>
+      </ul>
+    </section>
+
+    <section id="troubleshoot" data-nav="檔案卡關">
+      <h2 data-icon="troubleshoot">檔案常見卡關</h2>
+      <ol class="steps">
+        <li><h3>檔案不見了</h3><p>先看回收桶、最愛與搜尋；可能被移到別的資料夾或誤刪。</p></li>
+        <li><h3>重新命名失敗</h3><p>檔名不能含特殊字元，或同資料夾已有同名檔。換個名字。</p></li>
+        <li><h3>下載很慢</h3><p>大檔或大量檔案本來就慢；多檔下載會打包成 zip，需要時間。</p></li>
+        <li><h3>移動後找不到</h3><p>用麵包屑或搜尋回到目標資料夾；移動只是換位置，檔案還在。</p></li>
+      </ol>
+    </section>
+
+    <section id="faq" data-nav="FAQ">
+      <h2 data-icon="faq">檔案常見問題</h2>
+      <details class="faq"><summary>回收桶的檔案會自動清除嗎？</summary><div class="body">會，依站台設定的保留期。期限內可還原，之後自動清除。也可手動清空回收桶釋放空間。</div></details>
+      <details class="faq"><summary>可以直接在 Nextcloud 編輯文件嗎？</summary><div class="body">可以，搭配 Office App 線上編輯 docx／xlsx（第 15 章）；文字檔與 Markdown 也能直接編輯。</div></details>
+      <details class="faq"><summary>檔名有長度或字元限制嗎？</summary><div class="body">有。避免使用 <code>/ \ : * ? " &lt; &gt; |</code> 等字元，檔名也不宜過長。</div></details>
+      <details class="faq"><summary>怎麼一次下載整個資料夾？</summary><div class="body">在資料夾列「⋯」選下載，會打包成 zip；大資料夾需要一點時間。</div></details>
+      <details class="faq"><summary>刪除會影響有分享的人嗎？</summary><div class="body">會。刪掉已分享的檔案，對方也會失去存取。刪除前先確認沒有人還需要它。</div></details>
+    </section>
+
+    <section id="sources" data-nav="官方來源">
+      <h2 data-icon="records">官方來源</h2>
+      <table class="data-table">
+        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/files/index.html" rel="noopener">Nextcloud：Files 使用手冊</a></td><td>檔案操作、回收桶與版本</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="pager">
+      <a class="prev" href="ch5_profile.html">
+        <span class="label"><i class="mdi mdi-arrow-left" aria-hidden="true"></i> 上一章</span>
+        <span class="title">05 · 帳號與個人設定</span>
+      </a>
+      <a class="next" href="ch7_upload.html">
+        <span class="label">下一章 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></span>
+        <span class="title">07 · 上傳檔案與資料夾</span>
+      </a>
+    </div>
+
+    <footer class="site-footer">
+      <p>《Nextcloud 自架雲端指南》由 <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">woowtech</a> 製作，以 <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant">CC BY 4.0</a> 授權釋出 — 可自由分享與改作，請保留出處。</p>
+      <p class="footer-meta">截圖取自 Home Assistant 與 Cloudflared Web GUI。Home Assistant 與 Cloudflare 為其各自權利人的商標，本站與其無隸屬關係。 · <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">原始碼與勘誤</a></p>
+    </footer>
+  </main>
+</div>
+<script src="assets/js/toc.js"></script>
+</body>
+</html>

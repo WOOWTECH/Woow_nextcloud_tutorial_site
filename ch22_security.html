@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>第 22 章 · 安全與排錯 · Nextcloud 自架雲端指南</title>
+  <meta name="description" content="Nextcloud 安全與排錯：trusted_domains、憑證、備份與常見問題。" />
+  <meta name="author" content="woowtech" />
+  <link rel="canonical" href="https://nextcloud-guide.woowtech.io/ch22_security.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nextcloud 自架雲端指南" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:title" content="第 22 章 · 安全與排錯 · Nextcloud 自架雲端指南" />
+  <meta property="og:description" content="Nextcloud 安全與排錯：trusted_domains、憑證、備份與常見問題。" />
+  <meta property="og:url" content="https://nextcloud-guide.woowtech.io/ch22_security.html" />
+  <meta property="og:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="第 22 章 · 安全與排錯 · Nextcloud 自架雲端指南" />
+  <meta name="twitter:description" content="Nextcloud 安全與排錯：trusted_domains、憑證、備份與常見問題。" />
+  <meta name="twitter:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.png" />
+  <meta name="theme-color" content="#6183FC" />
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Yellowtail&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="brand" href="index.html">Nextcloud 指南</a>
+    <div class="brand-sub">把檔案收在自己家</div>
+    <h2>章節</h2>
+    <ol>
+      <li class="part-label">基礎：認識與登入</li>
+      <li><a href="ch1_intro.html">開始前</a></li>
+      <li><a href="ch2_install.html">安裝</a></li>
+      <li><a href="ch3_first_open.html">第一次開啟</a></li>
+      <li><a href="ch4_ui_tour.html">介面導覽</a></li>
+      <li><a href="ch5_profile.html">帳號設定</a></li>
+      <li><a href="ch6_files_basics.html">檔案基礎</a></li>
+      <li class="part-label">檔案：管理與分享</li>
+      <li><a href="ch7_upload.html">上傳</a></li>
+      <li><a href="ch8_share.html">檔案分享</a></li>
+      <li><a href="ch9_share_manage.html">分享管理</a></li>
+      <li><a href="ch10_photos.html">照片</a></li>
+      <li><a href="ch11_calendar.html">行事曆</a></li>
+      <li><a href="ch12_contacts.html">聯絡人</a></li>
+      <li class="part-label">協作：溝通與生產力</li>
+      <li><a href="ch13_talk.html">Talk</a></li>
+      <li><a href="ch14_deck.html">Deck</a></li>
+      <li><a href="ch15_office.html">Office</a></li>
+      <li><a href="ch16_notes.html">Notes</a></li>
+      <li><a href="ch17_tasks.html">Tasks</a></li>
+      <li class="part-label">同步：跨裝置</li>
+      <li><a href="ch18_desktop.html">桌面同步</a></li>
+      <li><a href="ch19_mobile.html">手機 App</a></li>
+      <li><a href="ch20_webdav.html">WebDAV</a></li>
+      <li class="part-label">管理：安全與維護</li>
+      <li><a href="ch21_admin.html">管理員</a></li>
+      <li><a href="ch22_security.html" class="active">安全排錯</a></li>
+    </ol>
+    <div class="toc-in-chapter">
+      <h2>本章</h2>
+      <a href="#why">為什麼要學</a>
+      <a href="#trusted">信任網域</a>
+      <a href="#checklist">安全清單</a>
+      <a href="#backup">備份</a>
+      <a href="#troubleshoot">分層排錯</a>
+      <a href="#faq">FAQ</a>
+      <a href="#sources">官方來源</a>
+    </div>
+    <div class="toc-in-chapter">
+      <h2>附錄</h2>
+      <a href="appendix_apps.html">Apps 商店</a>
+      <a href="appendix_config.html">設定速查</a>
+      <a href="appendix_integrations.html">外部整合</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="chapter-header">
+      <div class="kicker">第 22 章</div>
+      <h1>安全與排錯</h1>
+      <p class="lead">從信任網域、HTTPS、備份到常見排錯，做一次系統性的安全與維護檢查。讀完這章，你會知道遇到問題怎麼分層排查，以及哪些安全習慣要長期守住。</p>
+    </div>
+
+    <section id="why" data-nav="為什麼要學">
+      <h2 data-icon="why">先冷靜分層，別亂重啟</h2>
+      <p>雲端出問題時，最常見的錯誤是「重開看看」「亂改設定」碰運氣，往往把線索洗掉。正確做法是先看現象、分層排查、找到證據再動手。安全則是幾個習慣長期守住。</p>
+      <div class="callout"><strong>本章任務：</strong>學會安全檢查清單與分層排錯流程。</div>
+    </section>
+
+    <section id="trusted" data-nav="信任網域">
+      <h2 data-icon="security">信任網域（trusted_domains）</h2>
+      <p>Nextcloud 只接受清單內網域的連線。用自訂網址對外時，該網址必須加進 <code>trusted_domains</code>，否則會出現「Access through untrusted domain」。</p>
+      <div class="callout warn"><strong>看到 untrusted domain：</strong>不是壞掉，是網址沒在信任清單裡。這屬管理員設定（附錄 B），要在 add-on 設定或 <code>config.php</code> 加入該網域。</div>
+    </section>
+
+    <section id="checklist" data-nav="安全清單">
+      <h2 data-icon="steps">六步安全檢查清單</h2>
+      <ol class="steps">
+        <li><h3>入口是 https</h3><p>網址列 <code>https</code> 且有鎖頭。憑證警告就停，不要輸入帳密。</p></li>
+        <li><h3>強密碼與兩步驟</h3><p>密碼夠長、不共用；管理員帳號開兩步驟驗證。</p></li>
+        <li><h3>盤點帳號</h3><p>停用的帳號別留著開，多餘的管理員降權（第 21 章）。</p></li>
+        <li><h3>盤點分享</h3><p>把不需要的分享連結停用，公開連結設密碼與期限（第 9 章）。</p></li>
+        <li><h3>檢查已連線裝置</h3><p>個人設定「安全性」撤銷不明的 App 密碼與工作階段（第 5 章）。</p></li>
+        <li><h3>確認備份</h3><p>管理員確認資料庫與資料目錄有定期備份，且做過還原演練。</p></li>
+      </ol>
+    </section>
+
+    <section id="backup" data-nav="備份">
+      <h2 data-icon="restore">備份與還原</h2>
+      <p>自架雲端最怕伺服器出事。完整備份要涵蓋三塊：</p>
+      <table class="data-table">
+        <thead><tr><th>要備份的</th><th>是什麼</th></tr></thead>
+        <tbody>
+          <tr><td>資料庫</td><td>使用者、分享、metadata 等結構資料</td></tr>
+          <tr><td>資料目錄</td><td>實際的檔案內容</td></tr>
+          <tr><td>設定檔</td><td><code>config.php</code> 等站台設定</td></tr>
+        </tbody>
+      </table>
+      <div class="callout danger"><strong>備份要驗證：</strong>沒還原過的備份不算數。定期做一次還原演練，確認真的救得回來。</div>
+    </section>
+
+    <section id="troubleshoot" data-nav="分層排錯">
+      <h2 data-icon="troubleshoot">分層排錯</h2>
+      <ol class="steps">
+        <li><h3>先確認範圍</h3><p>問「只有我這樣還是大家都這樣」，判斷是個人裝置還是全站問題。</p></li>
+        <li><h3>Access through untrusted domain</h3><p>網址未加信任網域，屬管理員設定（附錄 B）。</p></li>
+        <li><h3>無法連線／502</h3><p>可能伺服器重啟、更新中或 Tunnel 斷。稍等再試，或請管理員看服務狀態。</p></li>
+        <li><h3>空間滿無法上傳</h3><p>清回收桶、刪重複、檢查配額；必要時管理員擴充儲存。</p></li>
+        <li><h3>預覽／搜尋不更新</h3><p>背景工作沒正常跑（第 21 章），改 Cron 模式。</p></li>
+        <li><h3>登入異常</h3><p>密碼、兩步驟、憑證逐一排除；可疑就改密碼並撤銷裝置。</p></li>
+      </ol>
+    </section>
+
+    <section id="faq" data-nav="FAQ">
+      <h2 data-icon="faq">安全與排錯常見問題</h2>
+      <details class="faq"><summary>自架真的比雲端安全嗎？</summary><div class="body">資料掌控在你，但安全責任也在你。守住帳號、分享、備份三件事，自架的隱私優勢才成立。</div></details>
+      <details class="faq"><summary>「untrusted domain」怎麼修？</summary><div class="body">把對外網址加進 trusted_domains（add-on 設定或 config.php），屬管理員操作（附錄 B）。</div></details>
+      <details class="faq"><summary>要開兩步驟驗證嗎？</summary><div class="body">強烈建議，尤其管理員帳號。這是提升帳號安全最有效的一步。</div></details>
+      <details class="faq"><summary>多久備份一次？</summary><div class="body">依資料變動頻率，至少每日或每週一次，並定期驗證還原。</div></details>
+      <details class="faq"><summary>回報問題要附什麼？</summary><div class="body">時間、做了什麼、錯誤訊息（遮敏感資訊）、影響範圍（只有我還是全部），越完整越好處理。</div></details>
+    </section>
+
+    <section id="sources" data-nav="官方來源">
+      <h2 data-icon="records">官方來源</h2>
+      <table class="data-table">
+        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/admin_manual/maintenance/backup.html" rel="noopener">Nextcloud：備份</a></td><td>資料庫、資料目錄與設定備份</td></tr>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/admin_manual/installation/harden_server.html" rel="noopener">Nextcloud：伺服器強化</a></td><td>安全設定與 trusted_domains</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="pager">
+      <a class="prev" href="ch21_admin.html">
+        <span class="label"><i class="mdi mdi-arrow-left" aria-hidden="true"></i> 上一章</span>
+        <span class="title">21 · 管理員設定</span>
+      </a>
+      <a class="next" href="appendix_apps.html">
+        <span class="label">附錄 A <i class="mdi mdi-arrow-right" aria-hidden="true"></i></span>
+        <span class="title">A · Apps 商店</span>
+      </a>
+    </div>
+
+    <footer class="site-footer">
+      <p>《Nextcloud 自架雲端指南》由 <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">woowtech</a> 製作，以 <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant">CC BY 4.0</a> 授權釋出 — 可自由分享與改作，請保留出處。</p>
+      <p class="footer-meta">截圖取自 Home Assistant 與 Cloudflared Web GUI。Home Assistant 與 Cloudflare 為其各自權利人的商標，本站與其無隸屬關係。 · <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">原始碼與勘誤</a></p>
+    </footer>
+  </main>
+</div>
+<script src="assets/js/toc.js"></script>
+</body>
+</html>

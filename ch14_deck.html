@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>第 14 章 · Deck 看板 · Nextcloud 自架雲端指南</title>
+  <meta name="description" content="Nextcloud Deck 教學：看板、卡片、列表與任務追蹤。" />
+  <meta name="author" content="woowtech" />
+  <link rel="canonical" href="https://nextcloud-guide.woowtech.io/ch14_deck.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nextcloud 自架雲端指南" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:title" content="第 14 章 · Deck 看板 · Nextcloud 自架雲端指南" />
+  <meta property="og:description" content="Nextcloud Deck 教學：看板、卡片、列表與任務追蹤。" />
+  <meta property="og:url" content="https://nextcloud-guide.woowtech.io/ch14_deck.html" />
+  <meta property="og:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="第 14 章 · Deck 看板 · Nextcloud 自架雲端指南" />
+  <meta name="twitter:description" content="Nextcloud Deck 教學：看板、卡片、列表與任務追蹤。" />
+  <meta name="twitter:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.png" />
+  <meta name="theme-color" content="#6183FC" />
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Yellowtail&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="brand" href="index.html">Nextcloud 指南</a>
+    <div class="brand-sub">把檔案收在自己家</div>
+    <h2>章節</h2>
+    <ol>
+      <li class="part-label">基礎：認識與登入</li>
+      <li><a href="ch1_intro.html">開始前</a></li>
+      <li><a href="ch2_install.html">安裝</a></li>
+      <li><a href="ch3_first_open.html">第一次開啟</a></li>
+      <li><a href="ch4_ui_tour.html">介面導覽</a></li>
+      <li><a href="ch5_profile.html">帳號設定</a></li>
+      <li><a href="ch6_files_basics.html">檔案基礎</a></li>
+      <li class="part-label">檔案：管理與分享</li>
+      <li><a href="ch7_upload.html">上傳</a></li>
+      <li><a href="ch8_share.html">檔案分享</a></li>
+      <li><a href="ch9_share_manage.html">分享管理</a></li>
+      <li><a href="ch10_photos.html">照片</a></li>
+      <li><a href="ch11_calendar.html">行事曆</a></li>
+      <li><a href="ch12_contacts.html">聯絡人</a></li>
+      <li class="part-label">協作：溝通與生產力</li>
+      <li><a href="ch13_talk.html">Talk</a></li>
+      <li><a href="ch14_deck.html" class="active">Deck</a></li>
+      <li><a href="ch15_office.html">Office</a></li>
+      <li><a href="ch16_notes.html">Notes</a></li>
+      <li><a href="ch17_tasks.html">Tasks</a></li>
+      <li class="part-label">同步：跨裝置</li>
+      <li><a href="ch18_desktop.html">桌面同步</a></li>
+      <li><a href="ch19_mobile.html">手機 App</a></li>
+      <li><a href="ch20_webdav.html">WebDAV</a></li>
+      <li class="part-label">管理：安全與維護</li>
+      <li><a href="ch21_admin.html">管理員</a></li>
+      <li><a href="ch22_security.html">安全排錯</a></li>
+    </ol>
+    <div class="toc-in-chapter">
+      <h2>本章</h2>
+      <a href="#why">為什麼要學</a>
+      <a href="#concept">Deck 觀念</a>
+      <a href="#steps">使用步驟</a>
+      <a href="#collab">協作與分享</a>
+      <a href="#troubleshoot">Deck 卡關</a>
+      <a href="#faq">FAQ</a>
+      <a href="#sources">官方來源</a>
+    </div>
+    <div class="toc-in-chapter">
+      <h2>附錄</h2>
+      <a href="appendix_apps.html">Apps 商店</a>
+      <a href="appendix_config.html">設定速查</a>
+      <a href="appendix_integrations.html">外部整合</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="chapter-header">
+      <div class="kicker">第 14 章</div>
+      <h1>Deck 看板</h1>
+      <p class="lead">Deck 是 Nextcloud 的看板式專案管理，像自架的 Trello。讀完這章，你能用看板、列表與卡片安排家庭或團隊的待辦，指派負責人與期限。</p>
+    </div>
+
+    <section id="why" data-nav="為什麼要學">
+      <h2 data-icon="why">把事情看板化</h2>
+      <p>待辦事項寫在紙上容易忘、散在各處難追蹤。Deck 用「看板 → 列表 → 卡片」把事情視覺化：一眼看出什麼待辦、什麼進行中、什麼完成，適合家庭分工與小團隊專案。</p>
+      <div class="callout"><strong>本章任務：</strong>建一個看板、拉出列表、加卡片、指派與設期限。</div>
+    </section>
+
+    <section id="concept" data-nav="Deck 觀念">
+      <h2 data-icon="concept">看板、列表與卡片</h2>
+      <table class="data-table">
+        <thead><tr><th>層級</th><th>是什麼</th><th>例子</th></tr></thead>
+        <tbody>
+          <tr><td>看板（Board）</td><td>一個專案或主題</td><td>「搬家計畫」</td></tr>
+          <tr><td>列表（List/Stack）</td><td>看板內的階段欄</td><td>待辦／進行中／完成</td></tr>
+          <tr><td>卡片（Card）</td><td>單一任務</td><td>「聯絡搬家公司」</td></tr>
+        </tbody>
+      </table>
+      <div class="callout tip"><strong>卡片能放很多東西：</strong>指派負責人、期限、標籤、描述、附件、子任務清單，甚至連到 Nextcloud 檔案。</div>
+    </section>
+
+    <section id="steps" data-nav="使用步驟">
+      <h2 data-icon="steps">五步用起 Deck</h2>
+      <ol class="steps">
+        <li><h3>打開 Deck</h3><p>從 Apps 選單點「Deck」。</p></li>
+        <li><h3>建立看板</h3><p>按「＋」新增看板，命名並選顏色（例如「搬家計畫」）。</p></li>
+        <li><h3>建立列表</h3><p>在看板裡建列表：待辦、進行中、完成。</p></li>
+        <li><h3>加卡片</h3><p>在「待辦」列表加卡片，填任務名稱。點卡片可加期限、負責人、描述。</p></li>
+        <li><h3>拖動追蹤進度</h3><p>任務開始就把卡片拖到「進行中」，完成拖到「完成」，進度一目了然。</p></li>
+      </ol>
+    </section>
+
+    <section id="collab" data-nav="協作與分享">
+      <h2 data-icon="remote">分工與協作</h2>
+      <ul>
+        <li>把看板分享給站內帳號，全家或團隊一起用。</li>
+        <li>卡片指派負責人，各自認領任務。</li>
+        <li>用標籤（顏色）分類任務類型或優先度。</li>
+        <li>卡片可設期限，快到期會提醒。</li>
+      </ul>
+    </section>
+
+    <section id="troubleshoot" data-nav="Deck 卡關">
+      <h2 data-icon="troubleshoot">Deck 常見卡關</h2>
+      <ol class="steps">
+        <li><h3>找不到 Deck</h3><p>Deck 是獨立 app，可能未啟用，請管理員在 Apps 商店啟用（第 21 章）。</p></li>
+        <li><h3>分享的人看不到看板</h3><p>確認有把看板分享給對方帳號，且對方已接受。</p></li>
+        <li><h3>卡片拖不動</h3><p>重新整理；手機上改用長按拖曳或用選單移動。</p></li>
+        <li><h3>期限提醒沒出現</h3><p>確認通知設定（第 5 章）有開，卡片有設到期日。</p></li>
+      </ol>
+    </section>
+
+    <section id="faq" data-nav="FAQ">
+      <h2 data-icon="faq">Deck 常見問題</h2>
+      <details class="faq"><summary>Deck 和 Tasks 有什麼不同？</summary><div class="body">Deck 是看板式（欄位拖卡片，適合專案）；Tasks 是清單式待辦（第 17 章），且和行事曆整合。看你習慣哪種。</div></details>
+      <details class="faq"><summary>看板數量有限制嗎？</summary><div class="body">沒有硬限制，但建議一個專案一個看板，太多反而難管理。</div></details>
+      <details class="faq"><summary>卡片能連到檔案嗎？</summary><div class="body">能，卡片可附加 Nextcloud 檔案或連結，方便任務與資料放一起。</div></details>
+      <details class="faq"><summary>手機能用嗎？</summary><div class="body">有 Deck 手機 App，或用手機瀏覽器操作。</div></details>
+      <details class="faq"><summary>完成的卡片會消失嗎？</summary><div class="body">不會，拖到「完成」列表或封存即可，隨時能回顧。</div></details>
+    </section>
+
+    <section id="sources" data-nav="官方來源">
+      <h2 data-icon="records">官方來源</h2>
+      <table class="data-table">
+        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/deck.html" rel="noopener">Nextcloud：Deck</a></td><td>看板、列表、卡片與分享</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="pager">
+      <a class="prev" href="ch13_talk.html">
+        <span class="label"><i class="mdi mdi-arrow-left" aria-hidden="true"></i> 上一章</span>
+        <span class="title">13 · Talk 聊天與視訊</span>
+      </a>
+      <a class="next" href="ch15_office.html">
+        <span class="label">下一章 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></span>
+        <span class="title">15 · Office 線上文件</span>
+      </a>
+    </div>
+
+    <footer class="site-footer">
+      <p>《Nextcloud 自架雲端指南》由 <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">woowtech</a> 製作，以 <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant">CC BY 4.0</a> 授權釋出 — 可自由分享與改作，請保留出處。</p>
+      <p class="footer-meta">截圖取自 Home Assistant 與 Cloudflared Web GUI。Home Assistant 與 Cloudflare 為其各自權利人的商標，本站與其無隸屬關係。 · <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">原始碼與勘誤</a></p>
+    </footer>
+  </main>
+</div>
+<script src="assets/js/toc.js"></script>
+</body>
+</html>

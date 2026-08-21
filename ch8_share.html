@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>第 8 章 · 檔案與資料夾分享 · Nextcloud 自架雲端指南</title>
+  <meta name="description" content="Nextcloud 分享教學：分享連結、密碼、期限與權限設定。" />
+  <meta name="author" content="woowtech" />
+  <link rel="canonical" href="https://nextcloud-guide.woowtech.io/ch8_share.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nextcloud 自架雲端指南" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:title" content="第 8 章 · 檔案與資料夾分享 · Nextcloud 自架雲端指南" />
+  <meta property="og:description" content="Nextcloud 分享教學：分享連結、密碼、期限與權限設定。" />
+  <meta property="og:url" content="https://nextcloud-guide.woowtech.io/ch8_share.html" />
+  <meta property="og:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="第 8 章 · 檔案與資料夾分享 · Nextcloud 自架雲端指南" />
+  <meta name="twitter:description" content="Nextcloud 分享教學：分享連結、密碼、期限與權限設定。" />
+  <meta name="twitter:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.png" />
+  <meta name="theme-color" content="#6183FC" />
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Yellowtail&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="brand" href="index.html">Nextcloud 指南</a>
+    <div class="brand-sub">把檔案收在自己家</div>
+    <h2>章節</h2>
+    <ol>
+      <li class="part-label">基礎：認識與登入</li>
+      <li><a href="ch1_intro.html">開始前</a></li>
+      <li><a href="ch2_install.html">安裝</a></li>
+      <li><a href="ch3_first_open.html">第一次開啟</a></li>
+      <li><a href="ch4_ui_tour.html">介面導覽</a></li>
+      <li><a href="ch5_profile.html">帳號設定</a></li>
+      <li><a href="ch6_files_basics.html">檔案基礎</a></li>
+      <li class="part-label">檔案：管理與分享</li>
+      <li><a href="ch7_upload.html">上傳</a></li>
+      <li><a href="ch8_share.html" class="active">檔案分享</a></li>
+      <li><a href="ch9_share_manage.html">分享管理</a></li>
+      <li><a href="ch10_photos.html">照片</a></li>
+      <li><a href="ch11_calendar.html">行事曆</a></li>
+      <li><a href="ch12_contacts.html">聯絡人</a></li>
+      <li class="part-label">協作：溝通與生產力</li>
+      <li><a href="ch13_talk.html">Talk</a></li>
+      <li><a href="ch14_deck.html">Deck</a></li>
+      <li><a href="ch15_office.html">Office</a></li>
+      <li><a href="ch16_notes.html">Notes</a></li>
+      <li><a href="ch17_tasks.html">Tasks</a></li>
+      <li class="part-label">同步：跨裝置</li>
+      <li><a href="ch18_desktop.html">桌面同步</a></li>
+      <li><a href="ch19_mobile.html">手機 App</a></li>
+      <li><a href="ch20_webdav.html">WebDAV</a></li>
+      <li class="part-label">管理：安全與維護</li>
+      <li><a href="ch21_admin.html">管理員</a></li>
+      <li><a href="ch22_security.html">安全排錯</a></li>
+    </ol>
+    <div class="toc-in-chapter">
+      <h2>本章</h2>
+      <a href="#why">為什麼要學</a>
+      <a href="#concept">分享觀念</a>
+      <a href="#steps">分享步驟</a>
+      <a href="#scenario">常見情境</a>
+      <a href="#troubleshoot">分享卡關</a>
+      <a href="#faq">FAQ</a>
+      <a href="#sources">官方來源</a>
+    </div>
+    <div class="toc-in-chapter">
+      <h2>附錄</h2>
+      <a href="appendix_apps.html">Apps 商店</a>
+      <a href="appendix_config.html">設定速查</a>
+      <a href="appendix_integrations.html">外部整合</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="chapter-header">
+      <div class="kicker">第 8 章</div>
+      <h1>檔案與資料夾分享</h1>
+      <p class="lead">把一個檔案或資料夾安全地分享給別人：產生連結、設密碼與期限、控制權限。讀完這章，你能在不交出帳號的前提下，讓別人看到或協作你選定的內容。</p>
+    </div>
+
+    <section id="why" data-nav="為什麼要學">
+      <h2 data-icon="why">分享是給鑰匙，不是給門</h2>
+      <p>想讓別人拿到檔案，最糟的做法是給帳號密碼——那等於整個雲端都交出去。正確做法是<strong>分享連結</strong>：只開你要開的那個檔案或資料夾，還能設密碼、期限與權限。學會它，分享才不會變洩漏。</p>
+      <div class="callout"><strong>本章任務：</strong>為一個檔案／資料夾建立分享連結、設定權限與期限。分享是「對外開放」，操作前先想清楚範圍。</div>
+    </section>
+
+    <section id="concept" data-nav="分享觀念">
+      <h2 data-icon="concept">分享的對象與權限</h2>
+      <table class="data-table">
+        <thead><tr><th>對象</th><th>方式</th><th>風險</th></tr></thead>
+        <tbody>
+          <tr><td>站內使用者／群組</td><td>直接分享給對方帳號</td><td>低，對方仍需登入</td></tr>
+          <tr><td>外部（無帳號）</td><td>產生公開分享連結</td><td>中，連結＝鑰匙，要控管</td></tr>
+        </tbody>
+      </table>
+      <p>權限常見選項：<strong>唯讀</strong>（只能看／下載）、<strong>可編輯</strong>（能改、能上傳）、<strong>檔案投放</strong>（只能上傳、看不到別人的檔）。</p>
+      <div class="callout warn"><strong>連結＝鑰匙：</strong>公開連結一旦流出，任何拿到的人都能依權限存取。分享前先確認內容沒有不該外流的東西。</div>
+    </section>
+
+    <section id="steps" data-nav="分享步驟">
+      <h2 data-icon="steps">六步完成一次分享</h2>
+      <ol class="steps">
+        <li><h3>選好要分享的檔案或資料夾</h3><p>在 Files 找到目標，點右側的分享圖示（或「⋯ → 分享」）開啟分享面板。</p></li>
+        <li><h3>選對象或建連結</h3><p>站內：輸入對方帳號／群組。外部：點「分享連結」旁的「＋」建立公開連結。</p></li>
+        <li><h3>設定權限</h3><p>選唯讀、可編輯或檔案投放。分享資料夾給人協作才用可編輯。</p></li>
+        <li><h3>設密碼與期限</h3><p>在連結設定裡加密碼、設到期日。臨時分享一定要設期限。</p></li>
+        <li><h3>複製連結傳給對方</h3><p>複製連結，用你信任的管道傳給對方，並提醒別轉傳。</p></li>
+        <li><h3>用完準備收回</h3><p>記住這個分享，之後不需要就到分享管理停用（第 9 章）。</p></li>
+      </ol>
+      <div class="callout danger"><strong>停止線：</strong>不要把分享連結貼到公開社群或群組。需要長期公開展示才另外評估風險。</div>
+    </section>
+
+    <section id="scenario" data-nav="常見情境">
+      <h2 data-icon="compare">常見分享情境怎麼設</h2>
+      <table class="data-table">
+        <thead><tr><th>情境</th><th>建議設定</th></tr></thead>
+        <tbody>
+          <tr><td>傳一份文件給親友看</td><td>公開連結、唯讀、設期限</td></tr>
+          <tr><td>收集大家的照片／作業</td><td>資料夾、檔案投放（只能上傳）</td></tr>
+          <tr><td>和同事共同編輯</td><td>分享給站內帳號、可編輯</td></tr>
+          <tr><td>對外公開的下載</td><td>唯讀、加密碼、留意內容不敏感</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="troubleshoot" data-nav="分享卡關">
+      <h2 data-icon="troubleshoot">分享常見卡關</h2>
+      <ol class="steps">
+        <li><h3>對方說連結打不開</h3><p>確認連結完整、沒過期、沒被停用；有設密碼要一起給對方。</p></li>
+        <li><h3>沒有「分享連結」選項</h3><p>可能管理員關閉了公開連結分享，或你沒有該檔的分享權限。</p></li>
+        <li><h3>對方不能上傳</h3><p>權限要設成「可編輯」或「檔案投放」，唯讀不能上傳。</p></li>
+        <li><h3>不小心分享太多</h3><p>到第 9 章的分享管理盤點並停用多餘的分享。</p></li>
+      </ol>
+    </section>
+
+    <section id="faq" data-nav="FAQ">
+      <h2 data-icon="faq">分享常見問題</h2>
+      <details class="faq"><summary>分享連結可以設期限嗎？</summary><div class="body">可以，且臨時分享強烈建議設。到期後連結自動失效。</div></details>
+      <details class="faq"><summary>對方需要 Nextcloud 帳號嗎？</summary><div class="body">公開連結不需要；分享給站內帳號則對方要能登入。</div></details>
+      <details class="faq"><summary>可以只讓對方上傳、看不到別人檔案嗎？</summary><div class="body">可以，用「檔案投放（File drop）」權限，適合收集作業或照片。</div></details>
+      <details class="faq"><summary>分享出去的檔案我還能改嗎？</summary><div class="body">能。你是擁有者，隨時能改內容或收回分享。</div></details>
+      <details class="faq"><summary>怎麼知道誰存取過？</summary><div class="body">檔案的「活動」與分享面板會顯示相關記錄，細節見第 9 章。</div></details>
+    </section>
+
+    <section id="sources" data-nav="官方來源">
+      <h2 data-icon="records">官方來源</h2>
+      <table class="data-table">
+        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/files/sharing.html" rel="noopener">Nextcloud：檔案分享</a></td><td>連結、權限、密碼與期限</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="pager">
+      <a class="prev" href="ch7_upload.html">
+        <span class="label"><i class="mdi mdi-arrow-left" aria-hidden="true"></i> 上一章</span>
+        <span class="title">07 · 上傳檔案與資料夾</span>
+      </a>
+      <a class="next" href="ch9_share_manage.html">
+        <span class="label">下一章 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></span>
+        <span class="title">09 · 分享管理與收回</span>
+      </a>
+    </div>
+
+    <footer class="site-footer">
+      <p>《Nextcloud 自架雲端指南》由 <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">woowtech</a> 製作，以 <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant">CC BY 4.0</a> 授權釋出 — 可自由分享與改作，請保留出處。</p>
+      <p class="footer-meta">截圖取自 Home Assistant 與 Cloudflared Web GUI。Home Assistant 與 Cloudflare 為其各自權利人的商標，本站與其無隸屬關係。 · <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">原始碼與勘誤</a></p>
+    </footer>
+  </main>
+</div>
+<script src="assets/js/toc.js"></script>
+</body>
+</html>
