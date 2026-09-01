@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nextcloud API/WebDAV 提示詞庫 · WoowTech</title>
+  <meta name="description" content="40+ 條「透過 API/WebDAV/OCS 控制 Nextcloud」的自然語言提示詞：檔案整理、分享盤點、使用者管理、備份、行事曆聯絡人、Deck、metadata、排錯，每條可複製。" />
+  <meta name="author" content="WoowTech" />
+  <meta name="theme-color" content="#6183FC" />
+  <link rel="canonical" href="https://nextcloud-guide.woowtech.io/en/prompts.html" />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Yellowtail&display=swap" />
+  <style>
+:root { --ww-blue: #6183FC; --ww-blue-700: #3F63E8; --ww-blue-050: #EEF2FF; --ink-900: #1B2033; --ink-700: #3A4054; --ink-500: #6B7186; --paper: #F7F8FC; --surface: #FFFFFF; --surface-alt: #F1F3FA; --hairline: #E2E5EF; --radius: 20px; --radius-sm: 12px; --radius-xs: 8px; --radius-pill: 999px; --shadow-sm: 0 2px 6px rgba(27,32,51,0.05); --font-display: "Outfit","Poppins",-apple-system,"Noto Sans TC",sans-serif; --font-body: "Poppins",-apple-system,"Noto Sans TC",sans-serif; --font-script: "Yellowtail",cursive; --font-mono: "SF Mono",Menlo,Consolas,monospace; --sidebar-w: 268px; --max-content: 780px; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; font-family: var(--font-body); color: var(--ink-900); background: var(--paper); line-height: 1.7; }
+html { scroll-behavior: smooth; } h1,h2,h3 { font-family: var(--font-display); } a { color: var(--ww-blue-700); text-decoration: none; }
+.layout { display: grid; grid-template-columns: var(--sidebar-w) 1fr; min-height: 100vh; }
+.sidebar { background: var(--surface); border-right: 1px solid var(--hairline); padding: 28px 22px; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+.sidebar .brand { display: block; font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--ink-900); margin-bottom: 4px; }
+.sidebar .brand-sub { font-size: 13px; color: var(--ink-500); margin-bottom: 6px; }
+.sidebar .hub-link { display: inline-block; font-size: 12.5px; color: var(--ink-500); margin-bottom: 22px; } .sidebar .hub-link:hover { color: var(--ww-blue-700); }
+.sidebar h2 { font-size: 12px; color: var(--ink-500); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin: 0 0 12px; }
+.sidebar .toc-in-chapter a { display: block; padding: 7px 12px; border-radius: var(--radius-xs); color: var(--ink-700); font-size: 13.5px; } .sidebar .toc-in-chapter a:hover { background: var(--surface-alt); }
+.content { padding: 56px 64px 96px; max-width: calc(var(--max-content) + 128px); }
+.chapter-header { margin-bottom: 40px; }
+.chapter-header .kicker-script { font-family: var(--font-script); font-size: 30px; color: var(--ww-blue); display: block; margin-bottom: 10px; }
+.chapter-header .kicker { color: var(--ww-blue); font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
+.chapter-header h1 { font-family: "Noto Sans TC", var(--font-display); font-size: 38px; font-weight: 700; margin: 0 0 14px; line-height: 1.25; }
+.chapter-header .lead { font-size: 17px; color: var(--ink-700); margin: 0; }
+section { margin-bottom: 52px; } section h2 { font-size: 22px; font-weight: 700; margin: 0 0 16px; padding-left: 14px; border-left: 4px solid var(--ww-blue); }
+.callout { padding: 14px 18px; border-radius: var(--radius-sm); background: var(--surface-alt); border: 1px solid var(--hairline); margin: 18px 0; font-size: 14.5px; }
+.prompt-card { background: var(--surface); border: 1px solid var(--hairline); border-radius: var(--radius-sm); padding: 16px 18px; margin-bottom: 14px; box-shadow: var(--shadow-sm); }
+.prompt-card .p-label { font-size: 12px; color: var(--ww-blue-700); font-weight: 600; margin-bottom: 6px; }
+.prompt-card pre { margin: 0 0 10px; font-family: var(--font-mono); font-size: 13px; white-space: pre-wrap; color: var(--ink-900); background: #F7F8FC; padding: 12px; border-radius: var(--radius-xs); }
+.copy-btn { font-family: var(--font-display); font-size: 12.5px; font-weight: 600; color: var(--ww-blue-700); background: var(--ww-blue-050); border: 0; padding: 6px 14px; border-radius: var(--radius-pill); cursor: pointer; } .copy-btn:hover { background: var(--ww-blue-700); color: #fff; }
+footer.site-footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--hairline); font-size: 13px; color: var(--ink-500); }
+@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } .sidebar { position: static; height: auto; } .content { padding: 32px 20px 64px; } }
+  </style>
+<!-- i18n:css --><link rel="stylesheet" href="../assets/css/i18n.css" /><!-- /i18n:css -->
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a class="brand" href="tutorial.html">Nextcloud 指南</a>
+      <div class="brand-sub">把檔案收在自己家</div>
+      <!-- i18n:switch --><nav class="lang-switch" aria-label="Language"><a href="../prompts.html" lang="zh-Hant" hreflang="zh-Hant">中文</a><a class="active" href="prompts.html" lang="en" aria-current="page">EN</a></nav><!-- /i18n:switch -->
+      <a class="hub-link" href="index.html">◂ 資源總覽</a>
+      <h2>本頁</h2>
+      <div class="toc-in-chapter">
+        <a href="#why">這本是什麼</a>
+        <a href="#howto">怎麼用</a>
+        <a href="#cat-files">檔案整理</a>
+        <a href="#cat-share">分享盤點</a>
+        <a href="#cat-users">使用者管理</a>
+        <a href="#cat-backup">備份策略</a>
+        <a href="#cat-groupware">行事曆聯絡人</a>
+        <a href="#cat-deck">Deck 與協作</a>
+        <a href="#cat-ops">排錯維運</a>
+        <a href="#faq">常見問題</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="chapter-header">
+        <span class="kicker-script">talk to your cloud</span>
+        <div class="kicker">WoowTech · Nextcloud API/WebDAV 提示詞庫</div>
+        <h1>用一句話，指揮你的雲端</h1>
+        <p class="lead">透過 Nextcloud 的 WebDAV、OCS API 與 CalDAV/CardDAV，把下面這些自然語言提示詞交給 AI agent，讓它幫你整理檔案、盤點分享、管使用者、顧備份。每一條都能複製，改成你家的說法就能用。</p>
+      </div>
+
+      <section id="why" data-nav="why"><h2>這本是什麼</h2>
+        <p>Nextcloud 有開放的 API：<strong>WebDAV</strong>（檔案讀寫）、<strong>OCS API</strong>（分享、使用者、capabilities）、<strong>CalDAV/CardDAV</strong>（行事曆、聯絡人）。把這些包成 MCP 工具或用腳本呼叫後，AI agent 就能用自然語言幫你操作。這本是「你要對 agent 說的話」的範本庫。</p>
+        <div class="callout"><strong>前提：</strong>需要環境已接好 Nextcloud API 存取（App 密碼）。第一次使用前，先確認 agent 能連到你的 Nextcloud。</div>
+      </section>
+
+      <section id="howto" data-nav="howto"><h2>怎麼用這些提示詞</h2>
+        <p>複製 → 貼進 agent → 把佔位詞換成真實說法 → 送出。關鍵是講清楚「範圍」與「要做什麼」，避免誤動整庫。</p>
+        <div class="callout"><strong>安全習慣：</strong>任何「刪除、批次修改、分享」類動作，都先要求 agent 回報「將影響 N 個項目」讓你確認，再執行。一律用 App 密碼、不要用主密碼。</div>
+      </section>
+
+      <section id="cat-files" data-nav="cat-files"><h2>檔案整理</h2>
+        <div class="prompt-card"><div class="p-label">盤點大檔</div><pre>用 WebDAV 掃描我的檔案，列出前 20 大的檔案（含路徑與大小），先不要刪，讓我決定。</pre><button class="copy-btn">複製</button></div>
+        <div class="prompt-card"><div class="p-label">整理資料夾</div><pre>把「下載」資料夾裡超過一年沒動過的檔案，整理到「封存/2025」資料夾（先列清單讓我確認）。</pre><button class="copy-btn">複製</button></div>
+        <div class="prompt-card"><div class="p-label">找重複</div><pre>找出內容重複的檔案（用雜湊比對），列出重複組別與可釋放空間，不要自動刪。</pre><button class="copy-btn">複製</button></div>
+        <div class="prompt-card"><div class="p-label">依副檔名分類</div><pre>把某個資料夾裡的檔案依副檔名分到子資料夾（圖片、文件、影片），先給我預覽對照表。</pre><button class="copy-btn">複製</button></div>
+        <div class="prompt-card"><div class="p-label">清回收桶</div><pre>列出回收桶內容與各自佔用空間，計算清空可釋放多少，等我確認再清。</pre><button class="copy-btn">複製</button></div>
+      </section>
+
+      <section id="cat-share" data-nav="cat-share"><h2>分享盤點</h2>
+        <div class="prompt-card"><div class="p-label">盤點所有分享</div><pre>用 OCS API 列出我所有的分享：對象、權限、有無密碼與到期日，標出「公開且無密碼」的風險項。</pre><button class="copy-btn">複製</button></div>
+        <div class="prompt-card"><div class="p-label">找快過期</div><pre>列出 7 天內到期的分享連結，讓我決定要續期還是收回。</pre><button class="copy-btn">複製</button></div>
+        <div class="prompt-card"><div class="p-label">收回舊分享</div><pre>找出建立超過 90 天、且是公開連結的分享，列出清單，等我確認後停用。</pre><button class="copy-btn">複製</button></div>
+        <div class="prompt-card"><div class="p-label">批次補密碼</div><pre>把所有沒設密碼的公開分享，補上密碼與 30 天到期（先列出會影響幾個）。</pre><button class="copy-btn">複製</button></div>
+        <div class="prompt-card"><div class="p-label">建立分享</div><pre>幫資料夾「聚會照片」建一個公開分享連結，唯讀、加密碼、7 天到期，回傳連結。</pre><button class="copy-btn">複製</button></div>
+      </section>
+
+      <section id="cat-users" data-nav="cat-users"><h2>使用者管理（管理員）</h2>
+        <div class="prompt-card"><div class="p-label">盤點帳號</div><pre>用 OCS API 列出所有使用者：狀態（啟用/停用）、群組、配額與已用空間，標出停用中仍佔空間的。</pre><button class="copy-btn">複製</button></div>
+        <div class="prompt-card"><div class="p-label">建立帳號</div><pre>幫我建一個使用者「爸爸」，加入「家人」群組，配額 50GB，並回傳初始設定資訊（不要在對話貼明碼）。</pre><button class="copy-btn">複製</button></div>
+        <div class="prompt-card"><div class="p-label">配額檢查</div><pre>列出配額使用率超過 80% 的使用者，提醒我可能要加配額或請他們清理。</pre><button class="copy-btn">複製</button></div>
+        <div class="prompt-card"><div class="p-label">停用而非刪除</div><pre>把離開的成員帳號停用（不刪資料），列出被停用的帳號讓我複核。</pre><button class="copy-btn">複製</button></div>
+      </section>
+
+      <section id="cat-backup" data-nav="cat-backup"><h2>備份策略</h2>
+        <div class="prompt-card"><div class="p-label">備份盤點</div><pre>盤點目前 Nextcloud 的備份狀態：資料庫、資料目錄、config.php 各有沒有備份機制，缺口在哪。</pre><button class="copy-btn">複製</button></div>
+        <div class="prompt-card"><div class="p-label">還原演練</div><pre>寫一份 Nextcloud 災難還原步驟：假設伺服器掛了，怎麼從備份把資料庫與檔案還原回來。</pre><button class="copy-btn">複製</button></div>
+        <div class="prompt-card"><div class="p-label">rclone 異地備份</div><pre>規畫用 rclone 透過 WebDAV 把我的 Nextcloud 每日增量備份到另一個儲存，給我設定步驟。</pre><button class="copy-btn">複製</button></div>
+        <div class="prompt-card"><div class="p-label">容量預估</div><pre>依過去一年的成長量，預估多久會用到儲存上限，並建議清理或擴充。</pre><button class="copy-btn">複製</button></div>
+      </section>
+
+      <section id="cat-groupware" data-nav="cat-groupware"><h2>行事曆與聯絡人</h2>
+        <div class="prompt-card"><div class="p-label">匯出通訊錄</div><pre>透過 CardDAV 把「家人」通訊錄匯出成 vCard 備份一份。</pre><button class="copy-btn">複製</button></div>
+        <div class="prompt-card"><div class="p-label">去重聯絡人</div><pre>找出通訊錄裡疑似重複的聯絡人（同名或同電話），列出待合併清單讓我確認。</pre><button class="copy-btn">複製</button></div>
+        <div class="prompt-card"><div class="p-label">建立事件</div><pre>在「家庭」日曆建一個下週六下午 2 點的事件「大掃除」，提前一天提醒。</pre><button class="copy-btn">複製</button></div>
+        <div class="prompt-card"><div class="p-label">盤點日曆</div><pre>列出我所有日曆與事件數量，標出很久沒更新、可以封存的。</pre><button class="copy-btn">複製</button></div>
+      </section>
+
+      <section id="cat-deck" data-nav="cat-deck"><h2>Deck 與協作</h2>
+        <div class="prompt-card"><div class="p-label">建立看板</div><pre>幫我在 Deck 建一個「搬家計畫」看板，含待辦/進行中/完成三個列表，並加幾張常見任務卡片。</pre><button class="copy-btn">複製</button></div>
+        <div class="prompt-card"><div class="p-label">盤點逾期</div><pre>列出 Deck 裡所有已逾期、未完成的卡片，依看板分組，提醒我處理。</pre><button class="copy-btn">複製</button></div>
+        <div class="prompt-card"><div class="p-label">週報</div><pre>整理本週在 Deck 完成的卡片，做成一份簡短週報。</pre><button class="copy-btn">複製</button></div>
+        <div class="prompt-card"><div class="p-label">文件盤點</div><pre>列出最近 30 天有多人編輯的 Office 文件，方便我掌握協作狀況。</pre><button class="copy-btn">複製</button></div>
+      </section>
+
+      <section id="cat-ops" data-nav="cat-ops"><h2>排錯與維運</h2>
+        <div class="prompt-card"><div class="p-label">健康檢查</div><pre>做一次 Nextcloud 健康檢查：伺服器版本、安全與設定警告、背景工作、儲存，逐項回報與建議。</pre><button class="copy-btn">複製</button></div>
+        <div class="prompt-card"><div class="p-label">信任網域</div><pre>檢查目前的 trusted_domains 設定，確認對外網址有在清單裡，沒有就提示我該加什麼。</pre><button class="copy-btn">複製</button></div>
+        <div class="prompt-card"><div class="p-label">背景工作</div><pre>檢查背景工作（cron）是否正常執行，找出最久沒跑的工作並建議處理。</pre><button class="copy-btn">複製</button></div>
+        <div class="prompt-card"><div class="p-label">空間告警</div><pre>當整體儲存低於 15% 時，列出釋放空間的優先順序（回收桶、重複檔、超額使用者）。</pre><button class="copy-btn">複製</button></div>
+      </section>
+
+      <section id="faq" data-nav="faq"><h2>常見問題</h2>
+        <div class="callout"><strong>提示詞怎麼改才不會誤動整庫？</strong><br>永遠加「範圍」與「先回報、再執行」兩句。例如「先列出會影響的項目數量，等我確認再執行」。</div>
+        <div class="callout"><strong>用什麼認證？</strong><br>一律用 App 密碼（個人設定→安全性建立），不要把主密碼寫進 agent 或腳本。</div>
+        <div class="callout"><strong>找不到某個 API？</strong><br>Nextcloud 的 WebDAV、OCS、CalDAV/CardDAV 端點在官方開發者文件；不同版本略有差異，先讓 agent 查文件。</div>
+        <div class="callout"><strong>能讓 agent 直接刪檔嗎？</strong><br>建議關掉「直接刪除」，改「移到回收桶＋回報」，多一層保護。</div>
+      </section>
+
+      <footer class="site-footer"><p>《Nextcloud 自架雲端指南》由 <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">WoowTech</a> 製作，以 CC BY 4.0 授權釋出。Nextcloud 為其權利人的商標，本站與其無隸屬關係。</p></footer>
+    </main>
+  </div>
+  <script>
+    document.querySelectorAll('.copy-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var txt = btn.parentElement.querySelector('pre').innerText;
+        function done(){ btn.textContent='已複製'; setTimeout(function(){ btn.textContent='複製'; },1500); }
+        if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(txt).then(done, fb); } else { fb(); }
+        function fb(){ var ta=document.createElement('textarea'); ta.value=txt; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} document.body.removeChild(ta); done(); }
+      });
+    });
+  </script>
+</body>
+</html>

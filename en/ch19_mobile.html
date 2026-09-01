@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chapter 19 · 手機 App · Nextcloud 自架雲端指南</title>
+  <meta name="description" content="Nextcloud 手機 App：安裝、自動上傳照片與離線存取。" />
+  <meta name="author" content="woowtech" />
+  <link rel="canonical" href="https://nextcloud-guide.woowtech.io/en/ch19_mobile.html" />
+  <meta name="robots" content="noindex, follow" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nextcloud 自架雲端指南" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="zh_TW" />
+  <meta property="og:title" content="Chapter 19 · 手機 App · Nextcloud 自架雲端指南" />
+  <meta property="og:description" content="Nextcloud 手機 App：安裝、自動上傳照片與離線存取。" />
+  <meta property="og:url" content="https://nextcloud-guide.woowtech.io/en/ch19_mobile.html" />
+  <meta property="og:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Chapter 19 · 手機 App · Nextcloud 自架雲端指南" />
+  <meta name="twitter:description" content="Nextcloud 手機 App：安裝、自動上傳照片與離線存取。" />
+  <meta name="twitter:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.en.png" />
+  <meta name="theme-color" content="#6183FC" />
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.en" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Yellowtail&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/i18n.css" />
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="brand" href="tutorial.html">Nextcloud 指南</a>
+    <div class="brand-sub">把檔案收在自己家</div>
+    <nav class="lang-switch" aria-label="Language"><a href="../ch19_mobile.html" lang="zh-Hant" hreflang="zh-Hant">中文</a><a class="active" href="ch19_mobile.html" lang="en" aria-current="page">EN</a></nav>
+    <a class="hub-link" href="index.html">◂ 資源總覽</a>
+    <h2>Chapters</h2>
+    <ol>
+      <li class="part-label">基礎：認識與登入</li>
+      <li data-i18n="pending"><a href="ch1_intro.html">開始前</a></li>
+      <li data-i18n="pending"><a href="ch2_install.html">安裝</a></li>
+      <li data-i18n="pending"><a href="ch3_first_open.html">第一次開啟</a></li>
+      <li data-i18n="pending"><a href="ch4_ui_tour.html">介面導覽</a></li>
+      <li data-i18n="pending"><a href="ch5_profile.html">帳號設定</a></li>
+      <li data-i18n="pending"><a href="ch6_files_basics.html">檔案基礎</a></li>
+      <li class="part-label">檔案：管理與分享</li>
+      <li data-i18n="pending"><a href="ch7_upload.html">上傳</a></li>
+      <li data-i18n="pending"><a href="ch8_share.html">檔案分享</a></li>
+      <li data-i18n="pending"><a href="ch9_share_manage.html">分享管理</a></li>
+      <li data-i18n="pending"><a href="ch10_photos.html">照片</a></li>
+      <li data-i18n="pending"><a href="ch11_calendar.html">行事曆</a></li>
+      <li data-i18n="pending"><a href="ch12_contacts.html">聯絡人</a></li>
+      <li class="part-label">協作：溝通與生產力</li>
+      <li data-i18n="pending"><a href="ch13_talk.html">Talk</a></li>
+      <li data-i18n="pending"><a href="ch14_deck.html">Deck</a></li>
+      <li data-i18n="pending"><a href="ch15_office.html">Office</a></li>
+      <li data-i18n="pending"><a href="ch16_notes.html">Notes</a></li>
+      <li data-i18n="pending"><a href="ch17_tasks.html">Tasks</a></li>
+      <li class="part-label">同步：跨裝置</li>
+      <li data-i18n="pending"><a href="ch18_desktop.html">桌面同步</a></li>
+      <li data-i18n="pending"><a href="ch19_mobile.html" class="active">手機 App</a></li>
+      <li data-i18n="pending"><a href="ch20_webdav.html">WebDAV</a></li>
+      <li class="part-label">管理：安全與維護</li>
+      <li data-i18n="pending"><a href="ch21_admin.html">管理員</a></li>
+      <li data-i18n="pending"><a href="ch22_security.html">安全排錯</a></li>
+    </ol>
+    <div class="toc-in-chapter">
+      <h2>This chapter</h2>
+      <a href="#why">為什麼要學</a>
+      <a href="#concept">App 觀念</a>
+      <a href="#steps">安裝步驟</a>
+      <a href="#settings">值得調的設定</a>
+      <a href="#troubleshoot">App 卡關</a>
+      <a href="#faq">FAQ</a>
+      <a href="#sources">官方來源</a>
+    </div>
+    <div class="toc-in-chapter">
+      <h2>Appendices</h2>
+      <a href="appendix_apps.html">Apps 商店</a>
+      <a href="appendix_config.html">設定速查</a>
+      <a href="appendix_integrations.html">外部整合</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="callout i18n-pending"><strong>This chapter has not been translated yet.</strong> You are reading the original Chinese text. <a href="../ch19_mobile.html" hreflang="zh-Hant">Open the Chinese version</a></div>
+    <div class="chapter-header">
+      <div class="kicker">Chapter 19</div>
+      <h1>手機 App</h1>
+      <p class="lead">在手機裝 Nextcloud App，連到你的伺服器，讓照片自動備份、檔案隨身帶。讀完這章，你手機的照片會自動收進家裡，重要檔案離線也能看。</p>
+    </div>
+
+    <section id="why" data-nav="為什麼要學">
+      <h2 data-icon="why">手機是照片最多的地方</h2>
+      <p>手機是你拍照、存檔最頻繁的裝置，也最容易遺失或損壞。裝 Nextcloud App 開自動上傳，手機照片就會持續備份到家裡；需要的檔案也能隨身存取。</p>
+      <div class="callout"><strong>本章任務：</strong>安裝 App、登入伺服器、開自動上傳照片、了解離線存取。</div>
+    </section>
+
+    <section id="concept" data-nav="App 觀念">
+      <h2 data-icon="concept">自動上傳 vs 手動</h2>
+      <table class="data-table">
+        <thead><tr><th>方式</th><th>做法</th><th>適合</th></tr></thead>
+        <tbody>
+          <tr><td>自動上傳</td><td>App 在背景把新照片傳上伺服器</td><td>日常，裝好就忘了它</td></tr>
+          <tr><td>手動上傳</td><td>手動選檔案上傳</td><td>補傳舊檔、控制時機</td></tr>
+          <tr><td>離線存取</td><td>把檔案標記為離線可用</td><td>沒網路也要看的重要檔</td></tr>
+        </tbody>
+      </table>
+      <div class="callout tip"><strong>背景備份要權限：</strong>iOS／Android 會限制背景運作，App 要相應權限（照片、背景重新整理）才能自動備份。第一次設定時把權限開好。</div>
+    </section>
+
+    <section id="steps" data-nav="安裝步驟">
+      <h2 data-icon="app">六步設定手機備份</h2>
+      <ol class="steps">
+        <li><h3>下載 App</h3><p>App Store（iOS）或 Google Play（Android）搜尋「Nextcloud」安裝官方 App。</p></li>
+        <li><h3>輸入伺服器網址</h3><p>開 App，填 <code>https://woowtech-nextcloud.woowtech.io</code>（完整含 https）。</p></li>
+        <li><h3>登入授權</h3><p>用帳密登入並授權；建議搭配 App 密碼（第 5 章）。</p></li>
+        <li><h3>開自動上傳</h3><p>在 App 設定開「自動上傳（Auto upload）」，選相機相簿與目標資料夾。</p></li>
+        <li><h3>給權限</h3><p>允許存取照片、背景重新整理、通知，自動備份才會順。</p></li>
+        <li><h3>確認開始備份</h3><p>回 Web 的 Files／Photos，看到手機照片開始出現，代表生效。</p></li>
+      </ol>
+      <div class="callout warn"><strong>第一次備份很花時間：</strong>手機若已有大量照片，第一次全量備份會很久、耗流量。建議連 Wi-Fi 再開始，並讓 App 在前景一段時間。</div>
+    </section>
+
+    <section id="settings" data-nav="值得調的設定">
+      <h2 data-icon="tips">值得調整的設定</h2>
+      <ul>
+        <li><strong>只在 Wi-Fi 上傳</strong>：省行動流量。</li>
+        <li><strong>包含影片</strong>：影片大、選擇性納入。</li>
+        <li><strong>原畫質</strong>：確認上傳原檔而非壓縮版。</li>
+        <li><strong>離線標記</strong>：把常用檔標為離線可用，沒網路也能開。</li>
+      </ul>
+    </section>
+
+    <section id="troubleshoot" data-nav="App 卡關">
+      <h2 data-icon="troubleshoot">App 常見卡關</h2>
+      <ol class="steps">
+        <li><h3>連不上伺服器</h3><p>確認網址完整含 https、網路正常。用手機瀏覽器開同網址測試。</p></li>
+        <li><h3>背景備份不跑</h3><p>檢查照片、背景重新整理、通知權限；把 App 從省電最佳化排除。</p></li>
+        <li><h3>備份到一半停</h3><p>切 Wi-Fi、確認電量、把 App 開到前景繼續。大影片容易卡，先備份照片。</p></li>
+        <li><h3>照片重複</h3><p>確認自動上傳沒設重複來源；換手機時登入同帳號，不會重複上傳已備份的。</p></li>
+      </ol>
+    </section>
+
+    <section id="faq" data-nav="FAQ">
+      <h2 data-icon="faq">手機 App 常見問題</h2>
+      <details class="faq"><summary>App 和 Web 資料一樣嗎？</summary><div class="body">一樣，連同一伺服器、同一帳號，檔案互通。</div></details>
+      <details class="faq"><summary>會用掉很多行動流量嗎？</summary><div class="body">會，尤其第一次全量備份。設「只在 Wi-Fi 上傳」，或先在 Wi-Fi 跑完第一次。</div></details>
+      <details class="faq"><summary>刪手機照片，伺服器的也會刪嗎？</summary><div class="body">自動上傳是「備份」，預設不會因刪手機照片而刪伺服器副本，但仍要看設定，先確認再刪。</div></details>
+      <details class="faq"><summary>換手機備份會重來嗎？</summary><div class="body">登入同帳號即可，已備份的不會重傳；新照片繼續備份。</div></details>
+      <details class="faq"><summary>手機也能用行事曆／聯絡人嗎？</summary><div class="body">能，透過 CalDAV／CardDAV 同步（第 11、12 章），或用對應官方 app。</div></details>
+    </section>
+
+    <section id="sources" data-nav="官方來源">
+      <h2 data-icon="records">官方來源</h2>
+      <table class="data-table">
+        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/files/access_mobile.html" rel="noopener">Nextcloud：行動 App</a></td><td>安裝、自動上傳與離線存取</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="pager">
+      <a class="prev" href="ch18_desktop.html">
+        <span class="label">← Previous</span>
+        <span class="title">18 · 桌面同步</span>
+      </a>
+      <a class="next" href="ch20_webdav.html">
+        <span class="label">Next →</span>
+        <span class="title">20 · WebDAV 進階</span>
+      </a>
+    </div>
+
+    <footer class="site-footer">
+      <p>Nextcloud 自架雲端指南 is produced by <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">woowtech</a> and released under <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/deed.en">CC BY 4.0</a> — share and adapt freely, with attribution.</p>
+      <p class="footer-meta">截圖取自 Nextcloud 官方介面。Nextcloud 為其權利人的商標，本站與其無隸屬關係。 · <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">Source &amp; errata</a></p>
+    </footer>
+  </main>
+</div>
+<script id="ui-strings" type="application/json">{"tocToggle":"Contents","tocExpand":"Expand chapter navigation","tocCollapse":"Collapse chapter navigation"}</script>
+<script src="../assets/js/toc.js"></script>
+</body>
+</html>

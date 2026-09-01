@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Appendix A · Apps 商店與常用 apps · Nextcloud 自架雲端指南</title>
+  <meta name="description" content="Nextcloud Apps 商店：安裝、啟用、停用與常用 apps 清單。" />
+  <meta name="author" content="woowtech" />
+  <link rel="canonical" href="https://nextcloud-guide.woowtech.io/en/appendix_apps.html" />
+  <meta name="robots" content="noindex, follow" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nextcloud 自架雲端指南" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="zh_TW" />
+  <meta property="og:title" content="Appendix A · Apps 商店與常用 apps · Nextcloud 自架雲端指南" />
+  <meta property="og:description" content="Nextcloud Apps 商店：安裝、啟用、停用與常用 apps 清單。" />
+  <meta property="og:url" content="https://nextcloud-guide.woowtech.io/en/appendix_apps.html" />
+  <meta property="og:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Appendix A · Apps 商店與常用 apps · Nextcloud 自架雲端指南" />
+  <meta name="twitter:description" content="Nextcloud Apps 商店：安裝、啟用、停用與常用 apps 清單。" />
+  <meta name="twitter:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.en.png" />
+  <meta name="theme-color" content="#6183FC" />
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.en" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Yellowtail&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/i18n.css" />
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="brand" href="tutorial.html">Nextcloud 指南</a>
+    <div class="brand-sub">把檔案收在自己家</div>
+    <nav class="lang-switch" aria-label="Language"><a href="../appendix_apps.html" lang="zh-Hant" hreflang="zh-Hant">中文</a><a class="active" href="appendix_apps.html" lang="en" aria-current="page">EN</a></nav>
+    <a class="hub-link" href="index.html">◂ 資源總覽</a>
+    <h2>Chapters</h2>
+    <ol>
+      <li class="part-label">基礎：認識與登入</li>
+      <li data-i18n="pending"><a href="ch1_intro.html">開始前</a></li>
+      <li data-i18n="pending"><a href="ch2_install.html">安裝</a></li>
+      <li data-i18n="pending"><a href="ch3_first_open.html">第一次開啟</a></li>
+      <li data-i18n="pending"><a href="ch4_ui_tour.html">介面導覽</a></li>
+      <li data-i18n="pending"><a href="ch5_profile.html">帳號設定</a></li>
+      <li data-i18n="pending"><a href="ch6_files_basics.html">檔案基礎</a></li>
+      <li class="part-label">檔案：管理與分享</li>
+      <li data-i18n="pending"><a href="ch7_upload.html">上傳</a></li>
+      <li data-i18n="pending"><a href="ch8_share.html">檔案分享</a></li>
+      <li data-i18n="pending"><a href="ch9_share_manage.html">分享管理</a></li>
+      <li data-i18n="pending"><a href="ch10_photos.html">照片</a></li>
+      <li data-i18n="pending"><a href="ch11_calendar.html">行事曆</a></li>
+      <li data-i18n="pending"><a href="ch12_contacts.html">聯絡人</a></li>
+      <li class="part-label">協作：溝通與生產力</li>
+      <li data-i18n="pending"><a href="ch13_talk.html">Talk</a></li>
+      <li data-i18n="pending"><a href="ch14_deck.html">Deck</a></li>
+      <li data-i18n="pending"><a href="ch15_office.html">Office</a></li>
+      <li data-i18n="pending"><a href="ch16_notes.html">Notes</a></li>
+      <li data-i18n="pending"><a href="ch17_tasks.html">Tasks</a></li>
+      <li class="part-label">同步：跨裝置</li>
+      <li data-i18n="pending"><a href="ch18_desktop.html">桌面同步</a></li>
+      <li data-i18n="pending"><a href="ch19_mobile.html">手機 App</a></li>
+      <li data-i18n="pending"><a href="ch20_webdav.html">WebDAV</a></li>
+      <li class="part-label">管理：安全與維護</li>
+      <li data-i18n="pending"><a href="ch21_admin.html">管理員</a></li>
+      <li data-i18n="pending"><a href="ch22_security.html">安全排錯</a></li>
+    </ol>
+    <div class="toc-in-chapter">
+      <h2>This chapter</h2>
+      <a href="#why">為什麼要學</a>
+      <a href="#store">Apps 商店</a>
+      <a href="#picks">常用 apps</a>
+      <a href="#troubleshoot">Apps 卡關</a>
+      <a href="#faq">FAQ</a>
+      <a href="#sources">官方來源</a>
+    </div>
+    <div class="toc-in-chapter">
+      <h2>Appendices</h2>
+      <a href="appendix_apps.html" class="active">Apps 商店</a>
+      <a href="appendix_config.html">設定速查</a>
+      <a href="appendix_integrations.html">外部整合</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="callout i18n-pending"><strong>This chapter has not been translated yet.</strong> You are reading the original Chinese text. <a href="../appendix_apps.html" hreflang="zh-Hant">Open the Chinese version</a></div>
+    <div class="chapter-header">
+      <div class="kicker">Appendix A</div>
+      <h1>Apps 商店與常用 apps</h1>
+      <p class="lead">Nextcloud 的功能都以 App 呈現。這份附錄帶你認識 Apps 商店怎麼安裝、啟用、停用，並整理家庭與小團隊最實用的一批 App。</p>
+    </div>
+
+    <section id="why" data-nav="為什麼要學">
+      <h2 data-icon="why">Apps 決定你有哪些功能</h2>
+      <p>Nextcloud 本體就是檔案；照片、行事曆、Talk、Deck 這些都是 App。想要什麼功能，就啟用對應的 App。這份附錄是給管理員的 App 管理速查與推薦清單。</p>
+      <div class="callout"><strong>誰能裝：</strong>安裝／啟用／停用 App 是管理員權限（第 21 章）。一般使用者看到的功能取決於管理員啟用了哪些。</div>
+    </section>
+
+    <section id="store" data-nav="Apps 商店">
+      <h2 data-icon="addons">Apps 商店怎麼用</h2>
+      <ol class="steps">
+        <li><h3>進 Apps 頁</h3><p>右上頭像 →「Apps」（需 admin）。左側依分類瀏覽。</p></li>
+        <li><h3>找 App</h3><p>用分類或搜尋找目標 App，看說明與相容版本。</p></li>
+        <li><h3>安裝／啟用</h3><p>按「下載並啟用」。已內建的直接「啟用」即可。</p></li>
+        <li><h3>停用或移除</h3><p>不用的可停用；確認沒人依賴再移除。</p></li>
+      </ol>
+      <div class="callout warn"><strong>更新前看相容性：</strong>更新 App 前看它標示的相容 Nextcloud 版本，避免更新後某功能壞掉。</div>
+    </section>
+
+    <section id="picks" data-nav="常用 apps">
+      <h2 data-icon="app">家庭與小團隊常用 apps</h2>
+      <table class="data-table">
+        <thead><tr><th>App</th><th>用途</th><th>對應章節</th></tr></thead>
+        <tbody>
+          <tr><td>Photos</td><td>照片時間軸與相簿</td><td>第 10 章</td></tr>
+          <tr><td>Calendar</td><td>行事曆與事件</td><td>第 11 章</td></tr>
+          <tr><td>Contacts</td><td>通訊錄</td><td>第 12 章</td></tr>
+          <tr><td>Talk</td><td>聊天與視訊</td><td>第 13 章</td></tr>
+          <tr><td>Deck</td><td>看板專案管理</td><td>第 14 章</td></tr>
+          <tr><td>Office（Collabora／OnlyOffice）</td><td>線上文件</td><td>第 15 章</td></tr>
+          <tr><td>Notes</td><td>Markdown 筆記</td><td>第 16 章</td></tr>
+          <tr><td>Tasks</td><td>待辦清單</td><td>第 17 章</td></tr>
+        </tbody>
+      </table>
+      <div class="callout tip"><strong>其他值得看的：</strong>Activity（活動記錄）、Group folders（群組共用資料夾）、External storage（外部儲存掛載）、Two-Factor（兩步驟驗證）。依需求評估。</div>
+    </section>
+
+    <section id="troubleshoot" data-nav="Apps 卡關">
+      <h2 data-icon="troubleshoot">Apps 常見卡關</h2>
+      <ol class="steps">
+        <li><h3>裝了但頂欄沒出現</h3><p>重新整理；確認 App 已「啟用」而非只「下載」。</p></li>
+        <li><h3>安裝失敗</h3><p>看錯誤訊息：可能相容版本不符或伺服器缺套件（如 PHP 模組）。</p></li>
+        <li><h3>停用後資料還在嗎</h3><p>停用通常保留資料，移除才可能清資料。移除前先確認。</p></li>
+        <li><h3>更新後功能壞了</h3><p>先看該 App 的相容性與 release notes；必要時降回舊版或等修正。</p></li>
+      </ol>
+    </section>
+
+    <section id="faq" data-nav="FAQ">
+      <h2 data-icon="faq">Apps 常見問題</h2>
+      <details class="faq"><summary>App 是免費的嗎？</summary><div class="body">商店裡多數是開源免費；少數企業功能需授權。安裝前看說明。</div></details>
+      <details class="faq"><summary>裝越多越好嗎？</summary><div class="body">不是。每個啟用的 App 都會佔資源、增加維護面。只裝真的會用的。</div></details>
+      <details class="faq"><summary>一般使用者能自己裝 App 嗎？</summary><div class="body">不能，屬管理員權限。跟管理員反映需求即可。</div></details>
+      <details class="faq"><summary>停用 App 會影響資料嗎？</summary><div class="body">停用通常保留資料，重新啟用即回來；移除才可能清除，操作前確認。</div></details>
+      <details class="faq"><summary>怎麼知道 App 安不安全？</summary><div class="body">優先用官方商店、標示相容與有維護的 App；來路不明的謹慎。</div></details>
+    </section>
+
+    <section id="sources" data-nav="官方來源">
+      <h2 data-icon="records">官方來源</h2>
+      <table class="data-table">
+        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://apps.nextcloud.com/" rel="noopener">Nextcloud Apps 商店</a></td><td>App 清單、相容版本與說明</td></tr>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/admin_manual/apps_management.html" rel="noopener">Nextcloud：Apps 管理</a></td><td>安裝、啟用、停用與更新</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="pager">
+      <a class="prev" href="ch22_security.html">
+        <span class="label">← Previous</span>
+        <span class="title">22 · 安全與排錯</span>
+      </a>
+      <a class="next" href="appendix_config.html">
+        <span class="label">Next appendix →</span>
+        <span class="title">B · 設定參數速查</span>
+      </a>
+    </div>
+
+    <footer class="site-footer">
+      <p>Nextcloud 自架雲端指南 is produced by <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">woowtech</a> and released under <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/deed.en">CC BY 4.0</a> — share and adapt freely, with attribution.</p>
+      <p class="footer-meta">截圖取自 Nextcloud 官方介面。Nextcloud 為其權利人的商標，本站與其無隸屬關係。 · <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">Source &amp; errata</a></p>
+    </footer>
+  </main>
+</div>
+<script id="ui-strings" type="application/json">{"tocToggle":"Contents","tocExpand":"Expand chapter navigation","tocCollapse":"Collapse chapter navigation"}</script>
+<script src="../assets/js/toc.js"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chapter 17 · Tasks 待辦 · Nextcloud 自架雲端指南</title>
+  <meta name="description" content="Nextcloud Tasks 教學：待辦清單、期限與行事曆整合。" />
+  <meta name="author" content="woowtech" />
+  <link rel="canonical" href="https://nextcloud-guide.woowtech.io/en/ch17_tasks.html" />
+  <meta name="robots" content="noindex, follow" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nextcloud 自架雲端指南" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="zh_TW" />
+  <meta property="og:title" content="Chapter 17 · Tasks 待辦 · Nextcloud 自架雲端指南" />
+  <meta property="og:description" content="Nextcloud Tasks 教學：待辦清單、期限與行事曆整合。" />
+  <meta property="og:url" content="https://nextcloud-guide.woowtech.io/en/ch17_tasks.html" />
+  <meta property="og:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Chapter 17 · Tasks 待辦 · Nextcloud 自架雲端指南" />
+  <meta name="twitter:description" content="Nextcloud Tasks 教學：待辦清單、期限與行事曆整合。" />
+  <meta name="twitter:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.en.png" />
+  <meta name="theme-color" content="#6183FC" />
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.en" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Yellowtail&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/i18n.css" />
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="brand" href="tutorial.html">Nextcloud 指南</a>
+    <div class="brand-sub">把檔案收在自己家</div>
+    <nav class="lang-switch" aria-label="Language"><a href="../ch17_tasks.html" lang="zh-Hant" hreflang="zh-Hant">中文</a><a class="active" href="ch17_tasks.html" lang="en" aria-current="page">EN</a></nav>
+    <a class="hub-link" href="index.html">◂ 資源總覽</a>
+    <h2>Chapters</h2>
+    <ol>
+      <li class="part-label">基礎：認識與登入</li>
+      <li data-i18n="pending"><a href="ch1_intro.html">開始前</a></li>
+      <li data-i18n="pending"><a href="ch2_install.html">安裝</a></li>
+      <li data-i18n="pending"><a href="ch3_first_open.html">第一次開啟</a></li>
+      <li data-i18n="pending"><a href="ch4_ui_tour.html">介面導覽</a></li>
+      <li data-i18n="pending"><a href="ch5_profile.html">帳號設定</a></li>
+      <li data-i18n="pending"><a href="ch6_files_basics.html">檔案基礎</a></li>
+      <li class="part-label">檔案：管理與分享</li>
+      <li data-i18n="pending"><a href="ch7_upload.html">上傳</a></li>
+      <li data-i18n="pending"><a href="ch8_share.html">檔案分享</a></li>
+      <li data-i18n="pending"><a href="ch9_share_manage.html">分享管理</a></li>
+      <li data-i18n="pending"><a href="ch10_photos.html">照片</a></li>
+      <li data-i18n="pending"><a href="ch11_calendar.html">行事曆</a></li>
+      <li data-i18n="pending"><a href="ch12_contacts.html">聯絡人</a></li>
+      <li class="part-label">協作：溝通與生產力</li>
+      <li data-i18n="pending"><a href="ch13_talk.html">Talk</a></li>
+      <li data-i18n="pending"><a href="ch14_deck.html">Deck</a></li>
+      <li data-i18n="pending"><a href="ch15_office.html">Office</a></li>
+      <li data-i18n="pending"><a href="ch16_notes.html">Notes</a></li>
+      <li data-i18n="pending"><a href="ch17_tasks.html" class="active">Tasks</a></li>
+      <li class="part-label">同步：跨裝置</li>
+      <li data-i18n="pending"><a href="ch18_desktop.html">桌面同步</a></li>
+      <li data-i18n="pending"><a href="ch19_mobile.html">手機 App</a></li>
+      <li data-i18n="pending"><a href="ch20_webdav.html">WebDAV</a></li>
+      <li class="part-label">管理：安全與維護</li>
+      <li data-i18n="pending"><a href="ch21_admin.html">管理員</a></li>
+      <li data-i18n="pending"><a href="ch22_security.html">安全排錯</a></li>
+    </ol>
+    <div class="toc-in-chapter">
+      <h2>This chapter</h2>
+      <a href="#why">為什麼要學</a>
+      <a href="#concept">Tasks 觀念</a>
+      <a href="#steps">使用步驟</a>
+      <a href="#sync">跨裝置</a>
+      <a href="#troubleshoot">Tasks 卡關</a>
+      <a href="#faq">FAQ</a>
+      <a href="#sources">官方來源</a>
+    </div>
+    <div class="toc-in-chapter">
+      <h2>Appendices</h2>
+      <a href="appendix_apps.html">Apps 商店</a>
+      <a href="appendix_config.html">設定速查</a>
+      <a href="appendix_integrations.html">外部整合</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="callout i18n-pending"><strong>This chapter has not been translated yet.</strong> You are reading the original Chinese text. <a href="../ch17_tasks.html" hreflang="zh-Hant">Open the Chinese version</a></div>
+    <div class="chapter-header">
+      <div class="kicker">Chapter 17</div>
+      <h1>Tasks 待辦</h1>
+      <p class="lead">Tasks 是 Nextcloud 的待辦清單，和行事曆整合、能跨裝置同步。讀完這章，你能建立待辦、設期限與優先度，並讓待辦出現在行事曆裡。</p>
+    </div>
+
+    <section id="why" data-nav="為什麼要學">
+      <h2 data-icon="why">待辦清單也自己管</h2>
+      <p>待辦事項用一般 app 記，換裝置就散掉。Tasks 把待辦存在 Nextcloud，和 Calendar 共用同一套資料，能設期限、優先度，還能跨裝置同步，事情不漏接。</p>
+      <div class="callout"><strong>本章任務：</strong>建一個待辦清單與項目、設期限與優先度、了解和行事曆的整合。</div>
+    </section>
+
+    <section id="concept" data-nav="Tasks 觀念">
+      <h2 data-icon="concept">Tasks 和 Calendar 是一家</h2>
+      <p>Tasks 和 Calendar 底層共用 <strong>CalDAV</strong>：一個「清單」其實對應一本日曆。所以待辦能和行事曆一起同步、一起顯示。</p>
+      <table class="data-table">
+        <thead><tr><th>概念</th><th>說明</th></tr></thead>
+        <tbody>
+          <tr><td>清單（List）</td><td>一組待辦，對應一本日曆</td></tr>
+          <tr><td>待辦（Task）</td><td>單一事項，可設期限、優先度、子任務</td></tr>
+          <tr><td>與行事曆整合</td><td>有期限的待辦會顯示在 Calendar</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="steps" data-nav="使用步驟">
+      <h2 data-icon="steps">五步用起 Tasks</h2>
+      <ol class="steps">
+        <li><h3>打開 Tasks</h3><p>從 Apps 選單點「Tasks」。左側是清單。</p></li>
+        <li><h3>建立清單</h3><p>新增清單（例如「家事」「工作」），選顏色區分。</p></li>
+        <li><h3>加待辦</h3><p>在清單裡輸入待辦名稱按 Enter；點進去可設細節。</p></li>
+        <li><h3>設期限與優先度</h3><p>在待辦裡設到期日、優先度（高／中／低），可加子任務與備註。</p></li>
+        <li><h3>完成打勾</h3><p>做完把待辦打勾，會移到已完成，需要時可回顧或還原。</p></li>
+      </ol>
+      <div class="callout tip"><strong>和行事曆連動：</strong>設了到期日的待辦，會出現在 Calendar 對應的那本日曆裡，一眼看到今天要做什麼。</div>
+    </section>
+
+    <section id="sync" data-nav="跨裝置">
+      <h2 data-icon="companion">跨裝置同步</h2>
+      <ul>
+        <li>用 CalDAV 網址在手機的待辦／行事曆 app 加帳號，待辦雙向同步。</li>
+        <li>Android 可用支援 CalDAV 的待辦 app；iOS 提醒事項也能透過 CalDAV 整合。</li>
+        <li>桌面上和 Calendar 一起同步，不必分開設定。</li>
+      </ul>
+    </section>
+
+    <section id="troubleshoot" data-nav="Tasks 卡關">
+      <h2 data-icon="troubleshoot">Tasks 常見卡關</h2>
+      <ol class="steps">
+        <li><h3>找不到 Tasks</h3><p>Tasks 是獨立 app，可能未啟用，請管理員啟用（第 21 章）。</p></li>
+        <li><h3>待辦沒出現在行事曆</h3><p>確認待辦有設到期日；沒期限的不會顯示在日曆時間軸。</p></li>
+        <li><h3>手機同步不到</h3><p>檢查 CalDAV 帳號設定（建議用 App 密碼），確認指到正確清單。</p></li>
+        <li><h3>子任務展不開</h3><p>點待辦進入詳情頁查看子任務；清單視圖可能只顯示主任務。</p></li>
+      </ol>
+    </section>
+
+    <section id="faq" data-nav="FAQ">
+      <h2 data-icon="faq">Tasks 常見問題</h2>
+      <details class="faq"><summary>Tasks 和 Deck 該用哪個？</summary><div class="body">Tasks 適合個人／清單式待辦、和行事曆整合；Deck 適合看板式專案協作（第 14 章）。可以並用。</div></details>
+      <details class="faq"><summary>待辦能分享嗎？</summary><div class="body">能，分享對應的清單（日曆）給站內帳號，適合家庭共用家事清單。</div></details>
+      <details class="faq"><summary>和 iOS 提醒事項能同步嗎？</summary><div class="body">可透過 CalDAV 整合，設定較進階，參考官方文件。</div></details>
+      <details class="faq"><summary>完成的待辦會刪掉嗎？</summary><div class="body">不會，移到已完成，可回顧或還原。</div></details>
+      <details class="faq"><summary>可以設重複待辦嗎？</summary><div class="body">可以設重複規則（每天／每週），適合固定家事。</div></details>
+    </section>
+
+    <section id="sources" data-nav="官方來源">
+      <h2 data-icon="records">官方來源</h2>
+      <table class="data-table">
+        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://github.com/nextcloud/tasks" rel="noopener">Nextcloud Tasks（GitHub）</a></td><td>待辦、CalDAV 與行事曆整合</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="pager">
+      <a class="prev" href="ch16_notes.html">
+        <span class="label">← Previous</span>
+        <span class="title">16 · Notes 筆記</span>
+      </a>
+      <a class="next" href="ch18_desktop.html">
+        <span class="label">Next →</span>
+        <span class="title">18 · 桌面同步</span>
+      </a>
+    </div>
+
+    <footer class="site-footer">
+      <p>Nextcloud 自架雲端指南 is produced by <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">woowtech</a> and released under <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/deed.en">CC BY 4.0</a> — share and adapt freely, with attribution.</p>
+      <p class="footer-meta">截圖取自 Nextcloud 官方介面。Nextcloud 為其權利人的商標，本站與其無隸屬關係。 · <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">Source &amp; errata</a></p>
+    </footer>
+  </main>
+</div>
+<script id="ui-strings" type="application/json">{"tocToggle":"Contents","tocExpand":"Expand chapter navigation","tocCollapse":"Collapse chapter navigation"}</script>
+<script src="../assets/js/toc.js"></script>
+</body>
+</html>

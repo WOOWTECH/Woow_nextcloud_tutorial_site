@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Appendix B · 設定參數速查 · Nextcloud 自架雲端指南</title>
+  <meta name="description" content="Nextcloud 設定參數速查：trusted_domains、儲存、快取與效能。" />
+  <meta name="author" content="woowtech" />
+  <link rel="canonical" href="https://nextcloud-guide.woowtech.io/en/appendix_config.html" />
+  <meta name="robots" content="noindex, follow" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nextcloud 自架雲端指南" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="zh_TW" />
+  <meta property="og:title" content="Appendix B · 設定參數速查 · Nextcloud 自架雲端指南" />
+  <meta property="og:description" content="Nextcloud 設定參數速查：trusted_domains、儲存、快取與效能。" />
+  <meta property="og:url" content="https://nextcloud-guide.woowtech.io/en/appendix_config.html" />
+  <meta property="og:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Appendix B · 設定參數速查 · Nextcloud 自架雲端指南" />
+  <meta name="twitter:description" content="Nextcloud 設定參數速查：trusted_domains、儲存、快取與效能。" />
+  <meta name="twitter:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.en.png" />
+  <meta name="theme-color" content="#6183FC" />
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.en" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Yellowtail&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/i18n.css" />
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="brand" href="tutorial.html">Nextcloud 指南</a>
+    <div class="brand-sub">把檔案收在自己家</div>
+    <nav class="lang-switch" aria-label="Language"><a href="../appendix_config.html" lang="zh-Hant" hreflang="zh-Hant">中文</a><a class="active" href="appendix_config.html" lang="en" aria-current="page">EN</a></nav>
+    <a class="hub-link" href="index.html">◂ 資源總覽</a>
+    <h2>Chapters</h2>
+    <ol>
+      <li class="part-label">基礎：認識與登入</li>
+      <li data-i18n="pending"><a href="ch1_intro.html">開始前</a></li>
+      <li data-i18n="pending"><a href="ch2_install.html">安裝</a></li>
+      <li data-i18n="pending"><a href="ch3_first_open.html">第一次開啟</a></li>
+      <li data-i18n="pending"><a href="ch4_ui_tour.html">介面導覽</a></li>
+      <li data-i18n="pending"><a href="ch5_profile.html">帳號設定</a></li>
+      <li data-i18n="pending"><a href="ch6_files_basics.html">檔案基礎</a></li>
+      <li class="part-label">檔案：管理與分享</li>
+      <li data-i18n="pending"><a href="ch7_upload.html">上傳</a></li>
+      <li data-i18n="pending"><a href="ch8_share.html">檔案分享</a></li>
+      <li data-i18n="pending"><a href="ch9_share_manage.html">分享管理</a></li>
+      <li data-i18n="pending"><a href="ch10_photos.html">照片</a></li>
+      <li data-i18n="pending"><a href="ch11_calendar.html">行事曆</a></li>
+      <li data-i18n="pending"><a href="ch12_contacts.html">聯絡人</a></li>
+      <li class="part-label">協作：溝通與生產力</li>
+      <li data-i18n="pending"><a href="ch13_talk.html">Talk</a></li>
+      <li data-i18n="pending"><a href="ch14_deck.html">Deck</a></li>
+      <li data-i18n="pending"><a href="ch15_office.html">Office</a></li>
+      <li data-i18n="pending"><a href="ch16_notes.html">Notes</a></li>
+      <li data-i18n="pending"><a href="ch17_tasks.html">Tasks</a></li>
+      <li class="part-label">同步：跨裝置</li>
+      <li data-i18n="pending"><a href="ch18_desktop.html">桌面同步</a></li>
+      <li data-i18n="pending"><a href="ch19_mobile.html">手機 App</a></li>
+      <li data-i18n="pending"><a href="ch20_webdav.html">WebDAV</a></li>
+      <li class="part-label">管理：安全與維護</li>
+      <li data-i18n="pending"><a href="ch21_admin.html">管理員</a></li>
+      <li data-i18n="pending"><a href="ch22_security.html">安全排錯</a></li>
+    </ol>
+    <div class="toc-in-chapter">
+      <h2>This chapter</h2>
+      <a href="#why">為什麼要學</a>
+      <a href="#trusted">信任網域</a>
+      <a href="#table">參數速查</a>
+      <a href="#upload">上傳大小</a>
+      <a href="#backup">備份要點</a>
+      <a href="#troubleshoot">設定卡關</a>
+      <a href="#faq">FAQ</a>
+      <a href="#sources">官方來源</a>
+    </div>
+    <div class="toc-in-chapter">
+      <h2>Appendices</h2>
+      <a href="appendix_apps.html">Apps 商店</a>
+      <a href="appendix_config.html" class="active">設定速查</a>
+      <a href="appendix_integrations.html">外部整合</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="callout i18n-pending"><strong>This chapter has not been translated yet.</strong> You are reading the original Chinese text. <a href="../appendix_config.html" hreflang="zh-Hant">Open the Chinese version</a></div>
+    <div class="chapter-header">
+      <div class="kicker">Appendix B</div>
+      <h1>設定參數速查</h1>
+      <p class="lead">管理員最常碰的幾個 Nextcloud 設定：信任網域、上傳大小、儲存、快取與備份。這份附錄用速查表整理它們的意義與注意事項。</p>
+    </div>
+
+    <section id="why" data-nav="為什麼要學">
+      <h2 data-icon="why">少數幾個設定，影響最大</h2>
+      <p>Nextcloud 設定很多，但家庭／小團隊最常碰的就那幾個：信任網域、上傳上限、儲存、快取、備份。把這幾個弄懂，八成的設定問題都能解。</p>
+      <div class="callout danger"><strong>改設定前先備份：</strong><code>config.php</code> 改錯可能整站進不去。動手前備份，並一次只改一個。</div>
+    </section>
+
+    <section id="trusted" data-nav="信任網域">
+      <h2 data-icon="security">trusted_domains（信任網域）</h2>
+      <p>最常踩的一個。Nextcloud 只接受清單內網域的連線，用自訂網址對外時必須把它加進去。</p>
+      <pre class="code-block"><code>'trusted_domains' =&gt;
+  array (
+    0 =&gt; 'localhost',
+    1 =&gt; 'woowtech-nextcloud.woowtech.io',
+  ),</code></pre>
+      <div class="callout warn"><strong>症狀：</strong>「Access through untrusted domain」＝這個網址沒加進清單。在 add-on 設定或 <code>config.php</code> 補上即可。</div>
+    </section>
+
+    <section id="table" data-nav="參數速查">
+      <h2 data-icon="what">關鍵參數速查</h2>
+      <table class="data-table">
+        <thead><tr><th>設定</th><th>意義</th><th>注意</th></tr></thead>
+        <tbody>
+          <tr><td>trusted_domains</td><td>允許存取的網域清單</td><td>自訂網址一定要加</td></tr>
+          <tr><td>overwrite.cli.url</td><td>站台對外基準網址</td><td>設成你的 https 網址，連結才正確</td></tr>
+          <tr><td>上傳大小上限</td><td>單檔可上傳的最大值</td><td>由 PHP 的 upload_max_filesize／post_max_size 決定</td></tr>
+          <tr><td>datadirectory</td><td>檔案實際存放位置</td><td>備份要包含這個目錄</td></tr>
+          <tr><td>記憶體快取（APCu／Redis）</td><td>加速與檔案鎖</td><td>沒設好概覽會出現效能警告</td></tr>
+          <tr><td>background jobs</td><td>背景工作執行方式</td><td>建議 Cron 模式（第 21 章）</td></tr>
+          <tr><td>maintenance</td><td>維護模式開關</td><td>更新／備份時會用到，完成要關掉</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="upload" data-nav="上傳大小">
+      <h2 data-icon="upload">調整上傳大小上限</h2>
+      <ol class="steps">
+        <li><h3>確認現況</h3><p>上傳大檔失敗、顯示檔案過大，多半是上限太小。</p></li>
+        <li><h3>找 PHP 設定</h3><p>上限由 PHP 的 <code>upload_max_filesize</code> 與 <code>post_max_size</code> 決定。</p></li>
+        <li><h3>在 add-on 環境調整</h3><p>HA add-on 通常提供對應選項或設定檔，依 add-on 文件調整，不要直接改容器內檔案。</p></li>
+        <li><h3>重啟並驗證</h3><p>調整後重啟服務，再試上傳大檔確認生效。</p></li>
+      </ol>
+    </section>
+
+    <section id="backup" data-nav="備份要點">
+      <h2 data-icon="restore">備份要點</h2>
+      <ul>
+        <li><strong>三塊都要</strong>：資料庫 ＋ datadirectory（檔案）＋ config.php。</li>
+        <li><strong>一致性</strong>：備份時可先開維護模式，避免備到一半資料在變動。</li>
+        <li><strong>驗證</strong>：定期做還原演練，沒還原過的備份不算數。</li>
+        <li><strong>HA 情境</strong>：可搭配 Home Assistant 的快照與外部備份（附錄 C）。</li>
+      </ul>
+    </section>
+
+    <section id="troubleshoot" data-nav="設定卡關">
+      <h2 data-icon="troubleshoot">設定常見卡關</h2>
+      <ol class="steps">
+        <li><h3>改完整站進不去</h3><p><code>config.php</code> 語法錯（少逗號、引號）。還原備份或修正語法。</p></li>
+        <li><h3>連結網址不對</h3><p>設定 <code>overwrite.cli.url</code> 與信任網域一致。</p></li>
+        <li><h3>概覽效能警告</h3><p>設定記憶體快取（APCu／Redis）、背景工作改 Cron。</p></li>
+        <li><h3>卡在維護模式</h3><p>更新／備份後忘了關 maintenance。關掉即可恢復存取。</p></li>
+      </ol>
+    </section>
+
+    <section id="faq" data-nav="FAQ">
+      <h2 data-icon="faq">設定常見問題</h2>
+      <details class="faq"><summary>config.php 在哪？</summary><div class="body">在 Nextcloud 的 config 目錄。HA add-on 環境通常透過 add-on 設定或對應路徑管理，依 add-on 文件操作。</div></details>
+      <details class="faq"><summary>改設定要重啟嗎？</summary><div class="body">多數 config.php 變更即時生效；PHP／服務層的設定要重啟服務。</div></details>
+      <details class="faq"><summary>一般使用者能改這些嗎？</summary><div class="body">不能，這些是管理員層級設定。使用者層級設定見第 5 章。</div></details>
+      <details class="faq"><summary>上傳上限設多大好？</summary><div class="body">依需求，影片備份可設大一點；設太大也要注意伺服器記憶體與逾時。</div></details>
+      <details class="faq"><summary>維護模式是什麼？</summary><div class="body">暫停使用者存取以安全地更新／備份的狀態。完成後務必關閉。</div></details>
+    </section>
+
+    <section id="sources" data-nav="官方來源">
+      <h2 data-icon="records">官方來源</h2>
+      <table class="data-table">
+        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/config_sample_php_parameters.html" rel="noopener">Nextcloud：config.php 參數</a></td><td>trusted_domains、快取、背景工作等</td></tr>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/admin_manual/configuration_files/big_file_upload_configuration.html" rel="noopener">Nextcloud：大檔上傳設定</a></td><td>上傳大小上限</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="pager">
+      <a class="prev" href="appendix_apps.html">
+        <span class="label">← Appendix A</span>
+        <span class="title">A · Apps 商店</span>
+      </a>
+      <a class="next" href="appendix_integrations.html">
+        <span class="label">Next appendix →</span>
+        <span class="title">C · 外部整合</span>
+      </a>
+    </div>
+
+    <footer class="site-footer">
+      <p>Nextcloud 自架雲端指南 is produced by <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">woowtech</a> and released under <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/deed.en">CC BY 4.0</a> — share and adapt freely, with attribution.</p>
+      <p class="footer-meta">截圖取自 Nextcloud 官方介面。Nextcloud 為其權利人的商標，本站與其無隸屬關係。 · <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">Source &amp; errata</a></p>
+    </footer>
+  </main>
+</div>
+<script id="ui-strings" type="application/json">{"tocToggle":"Contents","tocExpand":"Expand chapter navigation","tocCollapse":"Collapse chapter navigation"}</script>
+<script src="../assets/js/toc.js"></script>
+</body>
+</html>

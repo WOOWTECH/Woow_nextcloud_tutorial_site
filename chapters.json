@@ -8,8 +8,10 @@
     "repoUrl": "https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site",
     "locale": "zh_TW",
     "description": "22 章＋3 附錄的繁體中文 Nextcloud 教學：從安裝、登入、檔案管理與分享，到 Photos、Calendar、Talk、桌面與手機同步、管理員設定、安全與排錯。",
+    "footerMeta": "截圖取自 Nextcloud 官方介面。Nextcloud 為其權利人的商標，本站與其無隸屬關係。",
     "ogImage": "assets/screenshots/ch4/01_ui_overview.png",
-    "license": {"name":"CC BY 4.0","url":"https://creativecommons.org/licenses/by/4.0/deed.zh-hant","holder":"woowtech"}
+    "license": {"name":"CC BY 4.0","url":"https://creativecommons.org/licenses/by/4.0/deed.zh-hant","holder":"woowtech"},
+    "chrome": {"manage404": false}
   },
   "hub": {
     "catalog": "tutorial.html",
@@ -45,5 +47,10 @@
     {"file":"appendix_config.html","num":"B","navLabel":"設定速查","title":"設定參數速查","pagerTitle":"B · 設定參數速查","card":"trusted_domains、儲存、快取等關鍵設定速查。","description":"Nextcloud 設定參數速查：trusted_domains、儲存、快取與效能。","part":"附錄"},
     {"file":"appendix_integrations.html","num":"C","navLabel":"外部整合","title":"外部整合","pagerTitle":"C · 外部整合","card":"與 Home Assistant、其他服務串接的整合方式。","description":"Nextcloud 外部整合：與 Home Assistant 及其他服務串接。","part":"附錄"}
   ],
-  "sectionLabels": {}
+  "sectionLabels": {},
+  "i18n": {
+    "_readme": "hreflang 給 zh 頁自指用；xDefault 指向哪個語系（en 或 primary），一行可反轉。語系清單在 i18n/locales.json。",
+    "hreflang": ["zh-Hant", "zh"],
+    "xDefault": "en"
+  }
 }

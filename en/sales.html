@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nextcloud 自架雲端方案 · 銷售手冊 · WoowTech 渥屋科技</title>
+  <meta name="description" content="把全家的檔案、照片、行事曆收進自己家：Nextcloud 自架雲端方案完整介紹 — 檔案同步、相簿備份、行事曆與協作，兩種部署方案，資料永遠留在你家。" />
+  <meta name="author" content="WoowTech" />
+  <meta name="theme-color" content="#6183FC" />
+  <link rel="canonical" href="https://nextcloud-guide.woowtech.io/en/sales.html" />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Yellowtail&display=swap" />
+  <style>
+:root {
+  --ww-blue: #6183FC; --ww-blue-600: #4A6DE8; --ww-blue-700: #3F63E8; --ww-blue-050: #EEF2FF;
+  --ink-900: #1B2033; --ink-700: #3A4054; --ink-500: #6B7186; --ink-100: #E7E9F0;
+  --paper: #F7F8FC; --surface: #FFFFFF; --surface-alt: #F1F3FA; --hairline: #E2E5EF;
+  --tip: #8CD37F; --warn: #E66D3E; --danger: #F45D6D;
+  --radius: 20px; --radius-sm: 12px; --radius-xs: 8px; --radius-pill: 999px;
+  --shadow-sm: 0 2px 6px rgba(27,32,51,0.05), 0 1px 2px rgba(27,32,51,0.04);
+  --shadow-float: 0 26px 60px -18px rgba(97,131,252,0.28);
+  --font-display: "Outfit", "Poppins", -apple-system, "Noto Sans TC", sans-serif;
+  --font-body: "Poppins", -apple-system, "Noto Sans TC", sans-serif;
+  --font-script: "Yellowtail", cursive; --sidebar-w: 268px; --max-content: 780px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; font-family: var(--font-body); color: var(--ink-900); background: var(--paper); line-height: 1.7; }
+html { scroll-behavior: smooth; }
+h1, h2, h3 { font-family: var(--font-display); }
+a { color: var(--ww-blue-600); text-decoration: none; }
+a:hover { color: var(--ww-blue-700); text-decoration: underline; }
+.layout { display: grid; grid-template-columns: var(--sidebar-w) 1fr; min-height: 100vh; }
+.sidebar { background: var(--surface); border-right: 1px solid var(--hairline); padding: 28px 22px; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+.sidebar .brand { display: block; font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--ink-900); margin-bottom: 4px; }
+.sidebar .brand-sub { font-size: 13px; color: var(--ink-500); margin-bottom: 6px; }
+.sidebar .hub-link { display: inline-block; font-size: 12.5px; color: var(--ink-500); margin-bottom: 22px; }
+.sidebar .hub-link:hover { color: var(--ww-blue-700); text-decoration: none; }
+.sidebar h2 { font-size: 12px; color: var(--ink-500); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin: 0 0 12px; }
+.sidebar .toc-in-chapter a { display: block; padding: 7px 12px; border-radius: var(--radius-xs); color: var(--ink-700); font-size: 13.5px; }
+.sidebar .toc-in-chapter a:hover { background: var(--surface-alt); text-decoration: none; }
+.content { padding: 56px 64px 96px; max-width: calc(var(--max-content) + 128px); }
+.chapter-header { margin-bottom: 40px; }
+.chapter-header .kicker-script { font-family: var(--font-script); font-size: 30px; color: var(--ww-blue); display: block; margin-bottom: 10px; }
+.chapter-header .kicker { color: var(--ww-blue); font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
+.chapter-header h1 { font-family: "Noto Sans TC", var(--font-display); font-size: 38px; font-weight: 700; margin: 0 0 14px; line-height: 1.25; }
+.chapter-header .lead { font-size: 17px; color: var(--ink-700); margin: 0; }
+.kpi-frame { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--surface); border: 1px solid var(--hairline); border-radius: var(--radius); box-shadow: var(--shadow-float); margin: 28px 0 8px; overflow: hidden; }
+.kpi { padding: 22px 20px; text-align: center; } .kpi + .kpi { border-left: 1px solid var(--hairline); }
+.kpi .num { font-family: var(--font-display); font-size: 26px; font-weight: 700; color: var(--ww-blue); }
+.kpi .cap { font-size: 13px; color: var(--ink-500); margin-top: 4px; }
+section { margin-bottom: 56px; scroll-margin-top: 24px; }
+section h2 { font-size: 24px; font-weight: 700; margin: 0 0 20px; display: flex; align-items: center; gap: 14px; }
+section h2::before { content: ""; display: inline-flex; flex-shrink: 0; width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--ww-blue-050); background-repeat: no-repeat; background-position: center; background-size: 22px 22px; }
+section.i-why h2::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%233F63E8' d='M12,2A7,7 0 0,1 19,9C19,11.38 17.81,13.47 16,14.74V17A1,1 0 0,1 15,18H9A1,1 0 0,1 8,17V14.74C6.19,13.47 5,11.38 5,9A7,7 0 0,1 12,2M9,21V20H15V21A1,1 0 0,1 14,22H10A1,1 0 0,1 9,21Z'/%3E%3C/svg%3E"); }
+section.i-what h2::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%233F63E8' d='M6,2A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6M6,4H13V9H18V20H6V4Z'/%3E%3C/svg%3E"); }
+section.i-ai h2::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%233F63E8' d='M12,1L9,9L1,12L9,15L12,23L15,15L23,12L15,9L12,1Z'/%3E%3C/svg%3E"); }
+section.i-sec h2::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%233F63E8' d='M11,13H13V16H16V11H18L12,6L6,11H8V16H11V13M12,1L21,5V11C21,16.55 17.16,21.74 12,23C6.84,21.74 3,16.55 3,11V5L12,1Z'/%3E%3C/svg%3E"); }
+section.i-cmp h2::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%233F63E8' d='M9,17H7V10H5V12H3V5H7V7H9V5H12V9H9V7H7V17M14,5V8H16V6H18V8H20V5H14M21,12H19V10H16V12H19V14H21V12M7,19H3V15H7V19Z'/%3E%3C/svg%3E"); }
+section.i-faq h2::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%233F63E8' d='M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M11,7V9H13V7H11M11,11V17H13V11H11Z'/%3E%3C/svg%3E"); }
+section.i-cta h2::before { background: transparent; }
+.callout { padding: 14px 18px; border-radius: var(--radius-sm); background: var(--surface-alt); border: 1px solid var(--hairline); margin: 18px 0; font-size: 14.5px; }
+.callout.tip { background: #F0FAEE; border-color: rgba(140,211,127,0.4); }
+.callout.warn { background: #FEF3EE; border-color: rgba(230,109,62,0.35); }
+.data-table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 14px; background: var(--surface); border: 1px solid var(--hairline); border-radius: var(--radius-sm); overflow: hidden; }
+.data-table th, .data-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--hairline); }
+.data-table th { background: var(--ww-blue-050); font-weight: 600; }
+.data-table tr:last-child td { border-bottom: 0; }
+.steps { list-style: none; counter-reset: s; margin: 18px 0; padding: 0; }
+.steps li { counter-increment: s; position: relative; padding: 0 0 16px 52px; }
+.steps li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 34px; height: 34px; border-radius: 50%; background: var(--ww-blue); color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.steps h3 { margin: 0 0 4px; font-size: 16px; } .steps p { margin: 0; color: var(--ink-700); font-size: 14.5px; }
+.cta-box { background: linear-gradient(135deg, #6183FC 0%, #4A6DE8 100%); color: #fff; border-radius: var(--radius); padding: 36px 34px; box-shadow: var(--shadow-float); }
+.cta-box h2 { color: #fff; } .cta-box p { color: rgba(255,255,255,0.92); }
+.cta-box a.btn { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--ww-blue-700); font-weight: 700; padding: 12px 26px; border-radius: var(--radius-pill); text-decoration: none; margin-top: 10px; }
+footer.site-footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--hairline); font-size: 13px; color: var(--ink-500); }
+@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } .sidebar { position: static; height: auto; } .content { padding: 32px 20px 64px; } .kpi-frame { grid-template-columns: 1fr; } }
+  </style>
+<!-- i18n:css --><link rel="stylesheet" href="../assets/css/i18n.css" /><!-- /i18n:css -->
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a class="brand" href="tutorial.html">Nextcloud 指南</a>
+      <div class="brand-sub">把檔案收在自己家</div>
+      <!-- i18n:switch --><nav class="lang-switch" aria-label="Language"><a href="../sales.html" lang="zh-Hant" hreflang="zh-Hant">中文</a><a class="active" href="sales.html" lang="en" aria-current="page">EN</a></nav><!-- /i18n:switch -->
+      <a class="hub-link" href="index.html">◂ 資源總覽</a>
+      <h2>本頁</h2>
+      <div class="toc-in-chapter">
+        <a href="#why">為什麼需要它</a>
+        <a href="#what">它是什麼</a>
+        <a href="#abilities">四大核心能力</a>
+        <a href="#privacy">資料在你家</a>
+        <a href="#day">一天的使用</a>
+        <a href="#compare">兩種方案比一比</a>
+        <a href="#faq">常見問題</a>
+        <a href="#cta">下一步</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="chapter-header">
+        <span class="kicker-script">your cloud, your home</span>
+        <div class="kicker">WoowTech 渥屋科技 · 銷售手冊</div>
+        <h1>把全家的檔案與回憶，收進自己家</h1>
+        <p class="lead">Nextcloud 自架雲端方案：檔案同步、照片備份、行事曆與線上協作，兩種部署方式任你選，而你家人的資料，永遠留在你家。</p>
+      </div>
+
+      <div class="kpi-frame">
+        <div class="kpi"><div class="num">100%</div><div class="cap">資料留在自己家</div></div>
+        <div class="kpi"><div class="num">一站</div><div class="cap">檔案／相簿／行事曆／協作</div></div>
+        <div class="kpi"><div class="num">跨裝置</div><div class="cap">電腦、手機自動同步</div></div>
+      </div>
+
+      <section id="why" data-nav="why" class="i-why"><h2>為什麼你家需要自架雲端</h2>
+        <p>現代人的資料散在各種雲端：檔案在 Google Drive、照片在 iCloud、行事曆在別處。方便，但要付月費、資料放別人機房、服務改規則就得跟著走。</p>
+        <p>Nextcloud 把「雲端硬碟＋相簿＋行事曆＋協作」整套搬回自己家。介面一樣好用，差別是資料在你手上。</p>
+        <div class="callout tip"><strong>一句話講給客戶聽：</strong>「雲端服務是租別人的倉庫，自架雲端是蓋自己的倉庫。東西都是你的，差在鑰匙在誰手上。」</div>
+      </section>
+
+      <section id="what" data-nav="what" class="i-what"><h2>Nextcloud 是什麼</h2>
+        <p>Nextcloud 是開源的自架雲端協作平台，一套涵蓋多種需求：</p>
+        <table class="data-table"><thead><tr><th>需求</th><th>對應功能</th></tr></thead><tbody>
+          <tr><td>檔案儲存與分享</td><td>Files：上傳、資料夾、分享連結</td></tr>
+          <tr><td>照片備份</td><td>Photos：手機自動上傳、時間軸、相簿</td></tr>
+          <tr><td>行事曆與聯絡人</td><td>Calendar、Contacts，跨裝置同步</td></tr>
+          <tr><td>溝通協作</td><td>Talk 視訊、Office 線上文件、Deck 看板</td></tr>
+          <tr><td>跨裝置同步</td><td>桌面 client、手機 App、WebDAV</td></tr>
+        </tbody></table>
+        <p>WoowTech 把它與 Home Assistant 智慧家庭整合，讓你的資料庫成為家中數位基礎設施的一環。</p>
+      </section>
+
+      <section id="abilities" data-nav="abilities" class="i-ai"><h2>四大核心能力</h2>
+        <table class="data-table"><thead><tr><th>能力</th><th>客戶看到的價值</th></tr></thead><tbody>
+          <tr><td><strong>檔案同步</strong></td><td>電腦、手機、雲端三邊自動一致，換裝置資料不落地</td></tr>
+          <tr><td><strong>照片自動備份</strong></td><td>手機照片拍完就進家裡，摔手機、換機都不怕</td></tr>
+          <tr><td><strong>分享與協作</strong></td><td>一個連結傳檔案給親友，或多人同時編輯文件</td></tr>
+          <tr><td><strong>行事曆與通訊錄</strong></td><td>全家共用行事曆、通訊錄集中備份</td></tr>
+        </tbody></table>
+      </section>
+
+      <section id="privacy" data-nav="privacy" class="i-sec"><h2>資料在你家，隱私你自己做主</h2>
+        <ul>
+          <li>檔案、照片、聯絡人都存在你自己的伺服器，不經第三方雲端。</li>
+          <li>分享連結由你控管，隨時收回。</li>
+          <li>不必為了空間一直付月費，容量看你自己的硬碟。</li>
+        </ul>
+        <div class="callout warn"><strong>誠實提醒：</strong>自架的好處是掌控，責任也在你。WoowTech 幫你顧好備份、更新、安全這三件事，讓你只享受掌控感，不揹維護壓力。</div>
+      </section>
+
+      <section id="day" data-nav="day" class="i-cmp"><h2>有了它的一天</h2>
+        <div class="steps">
+          <li><h3>早上出門</h3><p>昨晚拍的照片趁 Wi-Fi 自動備份進家裡；電腦上改的簡報也同步好了。</p></li>
+          <li><h3>公司協作</h3><p>用線上文件和同事同時編輯，看行事曆確認今天的會。</p></li>
+          <li><h3>晚上分享</h3><p>把聚會照片資料夾產生連結傳家人，看完就收回。</p></li>
+        </div>
+      </section>
+
+      <section id="compare" data-nav="compare" class="i-cmp"><h2>兩種部署方案</h2>
+        <table class="data-table"><thead><tr><th></th><th>HAOS 內建 + 代設定</th><th>雲端 PaaS 租用</th></tr></thead><tbody>
+          <tr><td><strong>適合</strong></td><td>已有 Home Assistant 主機的家庭</td><td>不想維護硬體、要外網隨時可用</td></tr>
+          <tr><td><strong>硬體</strong></td><td>用你現有的 HA 主機</td><td>WoowTech 雲端主機</td></tr>
+          <tr><td><strong>設定</strong></td><td>WoowTech 代設定（帳號、信任網域、備份）</td><td>WoowTech 代管</td></tr>
+          <tr><td><strong>維護</strong></td><td>自己顧硬體，WoowTech 協助</td><td>WoowTech 全權代管</td></tr>
+        </tbody></table>
+        <div class="callout"><strong>費用：</strong>建置費一次 ＋ 依方案不同（儲存用量或月租），詳洽經銷商。</div>
+      </section>
+
+      <section id="faq" data-nav="faq" class="i-faq"><h2>常見問題</h2>
+        <div class="callout"><strong>檔案會不會被看到？</strong><br>不會。資料在你自己的機器（或專屬雲端主機），除非你自己分享，否則外部看不到。</div>
+        <div class="callout"><strong>跟 Google Drive 比差在哪？</strong><br>體驗很像，但資料在你手上、不用月費、不受服務改規則影響，而且一站涵蓋檔案、相簿、行事曆、協作。</div>
+        <div class="callout"><strong>需要會架伺服器嗎？</strong><br>不用。使用端只要會開網頁、裝 App；架設與維護由 WoowTech 負責。</div>
+        <div class="callout"><strong>空間不夠怎麼辦？</strong><br>視方案可擴充儲存。雲端 PaaS 可依用量擴充。</div>
+        <div class="callout"><strong>手機照片會自動備份嗎？</strong><br>會。裝 App、開自動上傳，之後拍的照片在 Wi-Fi 下自動收進家裡。</div>
+      </section>
+
+      <section id="cta" data-nav="cta" class="i-cta"><div class="cta-box"><h2>下一步</h2>
+        <p>想親眼看看自架雲端長什麼樣、評估你家適合哪種方案，歡迎聯絡 WoowTech 或您的經銷商，我們安排實機展示與方案建議。</p>
+        <a class="btn" href="#">聯絡 WoowTech 或您的經銷商</a>
+      </div></section>
+
+      <footer class="site-footer"><p>《Nextcloud 自架雲端指南》由 <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">WoowTech</a> 製作，以 CC BY 4.0 授權釋出。Nextcloud 為其權利人的商標，本站與其無隸屬關係。</p></footer>
+    </main>
+  </div>
+</body>
+</html>

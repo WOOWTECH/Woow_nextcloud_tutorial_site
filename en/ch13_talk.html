@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chapter 13 · Talk 聊天與視訊 · Nextcloud 自架雲端指南</title>
+  <meta name="description" content="Nextcloud Talk 教學：對話、群組、視訊會議與螢幕分享。" />
+  <meta name="author" content="woowtech" />
+  <link rel="canonical" href="https://nextcloud-guide.woowtech.io/en/ch13_talk.html" />
+  <meta name="robots" content="noindex, follow" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nextcloud 自架雲端指南" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="zh_TW" />
+  <meta property="og:title" content="Chapter 13 · Talk 聊天與視訊 · Nextcloud 自架雲端指南" />
+  <meta property="og:description" content="Nextcloud Talk 教學：對話、群組、視訊會議與螢幕分享。" />
+  <meta property="og:url" content="https://nextcloud-guide.woowtech.io/en/ch13_talk.html" />
+  <meta property="og:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Chapter 13 · Talk 聊天與視訊 · Nextcloud 自架雲端指南" />
+  <meta name="twitter:description" content="Nextcloud Talk 教學：對話、群組、視訊會議與螢幕分享。" />
+  <meta name="twitter:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.en.png" />
+  <meta name="theme-color" content="#6183FC" />
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.en" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Yellowtail&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/i18n.css" />
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="brand" href="tutorial.html">Nextcloud 指南</a>
+    <div class="brand-sub">把檔案收在自己家</div>
+    <nav class="lang-switch" aria-label="Language"><a href="../ch13_talk.html" lang="zh-Hant" hreflang="zh-Hant">中文</a><a class="active" href="ch13_talk.html" lang="en" aria-current="page">EN</a></nav>
+    <a class="hub-link" href="index.html">◂ 資源總覽</a>
+    <h2>Chapters</h2>
+    <ol>
+      <li class="part-label">基礎：認識與登入</li>
+      <li data-i18n="pending"><a href="ch1_intro.html">開始前</a></li>
+      <li data-i18n="pending"><a href="ch2_install.html">安裝</a></li>
+      <li data-i18n="pending"><a href="ch3_first_open.html">第一次開啟</a></li>
+      <li data-i18n="pending"><a href="ch4_ui_tour.html">介面導覽</a></li>
+      <li data-i18n="pending"><a href="ch5_profile.html">帳號設定</a></li>
+      <li data-i18n="pending"><a href="ch6_files_basics.html">檔案基礎</a></li>
+      <li class="part-label">檔案：管理與分享</li>
+      <li data-i18n="pending"><a href="ch7_upload.html">上傳</a></li>
+      <li data-i18n="pending"><a href="ch8_share.html">檔案分享</a></li>
+      <li data-i18n="pending"><a href="ch9_share_manage.html">分享管理</a></li>
+      <li data-i18n="pending"><a href="ch10_photos.html">照片</a></li>
+      <li data-i18n="pending"><a href="ch11_calendar.html">行事曆</a></li>
+      <li data-i18n="pending"><a href="ch12_contacts.html">聯絡人</a></li>
+      <li class="part-label">協作：溝通與生產力</li>
+      <li data-i18n="pending"><a href="ch13_talk.html" class="active">Talk</a></li>
+      <li data-i18n="pending"><a href="ch14_deck.html">Deck</a></li>
+      <li data-i18n="pending"><a href="ch15_office.html">Office</a></li>
+      <li data-i18n="pending"><a href="ch16_notes.html">Notes</a></li>
+      <li data-i18n="pending"><a href="ch17_tasks.html">Tasks</a></li>
+      <li class="part-label">同步：跨裝置</li>
+      <li data-i18n="pending"><a href="ch18_desktop.html">桌面同步</a></li>
+      <li data-i18n="pending"><a href="ch19_mobile.html">手機 App</a></li>
+      <li data-i18n="pending"><a href="ch20_webdav.html">WebDAV</a></li>
+      <li class="part-label">管理：安全與維護</li>
+      <li data-i18n="pending"><a href="ch21_admin.html">管理員</a></li>
+      <li data-i18n="pending"><a href="ch22_security.html">安全排錯</a></li>
+    </ol>
+    <div class="toc-in-chapter">
+      <h2>This chapter</h2>
+      <a href="#why">為什麼要學</a>
+      <a href="#concept">Talk 觀念</a>
+      <a href="#steps">使用步驟</a>
+      <a href="#guest">邀外部參加</a>
+      <a href="#troubleshoot">Talk 卡關</a>
+      <a href="#faq">FAQ</a>
+      <a href="#sources">官方來源</a>
+    </div>
+    <div class="toc-in-chapter">
+      <h2>Appendices</h2>
+      <a href="appendix_apps.html">Apps 商店</a>
+      <a href="appendix_config.html">設定速查</a>
+      <a href="appendix_integrations.html">外部整合</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="callout i18n-pending"><strong>This chapter has not been translated yet.</strong> You are reading the original Chinese text. <a href="../ch13_talk.html" hreflang="zh-Hant">Open the Chinese version</a></div>
+    <div class="chapter-header">
+      <div class="kicker">Chapter 13</div>
+      <h1>Talk 聊天與視訊</h1>
+      <p class="lead">Talk 是 Nextcloud 內建的聊天與視訊會議。讀完這章，你能開一對一或群組對話、發起視訊會議、分享畫面，全部在自己家的伺服器上進行。</p>
+    </div>
+
+    <section id="why" data-nav="為什麼要學">
+      <h2 data-icon="why">自己家的視訊會議</h2>
+      <p>要和家人、同事即時溝通，通常得用第三方通訊軟體。Talk 讓你在自己的 Nextcloud 裡聊天、開會、分享畫面，訊息與通話資料都在自己家，隱私自己掌握。</p>
+      <div class="callout"><strong>本章任務：</strong>開一個對話、發訊息、發起視訊通話、了解分享畫面。</div>
+    </section>
+
+    <section id="concept" data-nav="Talk 觀念">
+      <h2 data-icon="concept">對話、通話與檔案</h2>
+      <table class="data-table">
+        <thead><tr><th>功能</th><th>說明</th></tr></thead>
+        <tbody>
+          <tr><td>一對一對話</td><td>和單一使用者的私訊</td></tr>
+          <tr><td>群組對話</td><td>多人聊天室，可命名、加人</td></tr>
+          <tr><td>視訊／語音通話</td><td>在對話裡發起，支援多人與分享畫面</td></tr>
+          <tr><td>公開對話連結</td><td>產生連結讓外部訪客加入會議</td></tr>
+        </tbody>
+      </table>
+      <div class="callout tip"><strong>和檔案整合：</strong>對話裡可以直接分享 Nextcloud 的檔案，對方點就能開，不用另外傳。</div>
+    </section>
+
+    <section id="steps" data-nav="使用步驟">
+      <h2 data-icon="steps">五步用起 Talk</h2>
+      <ol class="steps">
+        <li><h3>打開 Talk</h3><p>從 Apps 選單點「Talk」。左側是對話清單。</p></li>
+        <li><h3>開新對話</h3><p>按「＋」建立對話，選一位使用者（一對一）或建群組聊天室。</p></li>
+        <li><h3>發訊息</h3><p>在下方輸入框打字送出；可貼檔案、提及（@）某人。</p></li>
+        <li><h3>發起視訊通話</h3><p>在對話右上角按通話圖示，開始語音或視訊，其他成員可加入。</p></li>
+        <li><h3>分享畫面</h3><p>通話中按分享畫面圖示，選整個螢幕或某個視窗，適合簡報與教學。</p></li>
+      </ol>
+      <div class="callout warn"><strong>視訊需要頻寬：</strong>多人視訊很吃網路。人多或畫質差時，可關視訊只留語音，或請管理員設定 TURN 伺服器改善連線。</div>
+    </section>
+
+    <section id="guest" data-nav="邀外部參加">
+      <h2 data-icon="remote">邀請外部訪客</h2>
+      <ul>
+        <li>在對話設定產生「公開對話連結」，傳給沒有帳號的人。</li>
+        <li>可設密碼保護會議連結。</li>
+        <li>會議結束把連結停用，避免之後有人再進來。</li>
+      </ul>
+      <div class="callout danger"><strong>會議連結也是鑰匙：</strong>公開會議連結流出，陌生人可能加入。設密碼、開完就停用。</div>
+    </section>
+
+    <section id="troubleshoot" data-nav="Talk 卡關">
+      <h2 data-icon="troubleshoot">Talk 常見卡關</h2>
+      <ol class="steps">
+        <li><h3>通話連不上或一直轉圈</h3><p>多半是網路穿透問題，需要管理員設定 TURN 伺服器。先試同網段或改語音。</p></li>
+        <li><h3>對方聽不到我</h3><p>檢查瀏覽器的麥克風權限，確認選對輸入裝置。</p></li>
+        <li><h3>分享畫面沒畫面</h3><p>瀏覽器要授予螢幕分享權限；部分瀏覽器需在系統設定允許。</p></li>
+        <li><h3>找不到 Talk</h3><p>Talk 是獨立 app，可能尚未啟用，請管理員在 Apps 商店啟用（第 21 章）。</p></li>
+      </ol>
+    </section>
+
+    <section id="faq" data-nav="FAQ">
+      <h2 data-icon="faq">Talk 常見問題</h2>
+      <details class="faq"><summary>訊息會存在哪？</summary><div class="body">存在你自己的 Nextcloud 伺服器，不經第三方通訊平台。</div></details>
+      <details class="faq"><summary>手機能用 Talk 嗎？</summary><div class="body">能，有 Nextcloud Talk 手機 App，可收訊息與接通話。</div></details>
+      <details class="faq"><summary>視訊人數上限多少？</summary><div class="body">依伺服器效能與是否有 TURN／SFU 而定。小型家用建議人數別太多。</div></details>
+      <details class="faq"><summary>可以錄影會議嗎？</summary><div class="body">部分版本／設定支援錄製，需要額外元件，屬進階，由管理員設定。</div></details>
+      <details class="faq"><summary>外部訪客能看到我其他資料嗎？</summary><div class="body">不會。訪客只能進入你分享的那個對話／會議，看不到你別的檔案。</div></details>
+    </section>
+
+    <section id="sources" data-nav="官方來源">
+      <h2 data-icon="records">官方來源</h2>
+      <table class="data-table">
+        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/talk/index.html" rel="noopener">Nextcloud：Talk</a></td><td>對話、通話、分享畫面與訪客</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="pager">
+      <a class="prev" href="ch12_contacts.html">
+        <span class="label">← Previous</span>
+        <span class="title">12 · Contacts 聯絡人</span>
+      </a>
+      <a class="next" href="ch14_deck.html">
+        <span class="label">Next →</span>
+        <span class="title">14 · Deck 看板</span>
+      </a>
+    </div>
+
+    <footer class="site-footer">
+      <p>Nextcloud 自架雲端指南 is produced by <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">woowtech</a> and released under <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/deed.en">CC BY 4.0</a> — share and adapt freely, with attribution.</p>
+      <p class="footer-meta">截圖取自 Nextcloud 官方介面。Nextcloud 為其權利人的商標，本站與其無隸屬關係。 · <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">Source &amp; errata</a></p>
+    </footer>
+  </main>
+</div>
+<script id="ui-strings" type="application/json">{"tocToggle":"Contents","tocExpand":"Expand chapter navigation","tocCollapse":"Collapse chapter navigation"}</script>
+<script src="../assets/js/toc.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chapter 20 · WebDAV 進階 · Nextcloud 自架雲端指南</title>
+  <meta name="description" content="Nextcloud WebDAV 進階：第三方工具連線、掛載與自動化。" />
+  <meta name="author" content="woowtech" />
+  <link rel="canonical" href="https://nextcloud-guide.woowtech.io/en/ch20_webdav.html" />
+  <meta name="robots" content="noindex, follow" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nextcloud 自架雲端指南" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="zh_TW" />
+  <meta property="og:title" content="Chapter 20 · WebDAV 進階 · Nextcloud 自架雲端指南" />
+  <meta property="og:description" content="Nextcloud WebDAV 進階：第三方工具連線、掛載與自動化。" />
+  <meta property="og:url" content="https://nextcloud-guide.woowtech.io/en/ch20_webdav.html" />
+  <meta property="og:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Chapter 20 · WebDAV 進階 · Nextcloud 自架雲端指南" />
+  <meta name="twitter:description" content="Nextcloud WebDAV 進階：第三方工具連線、掛載與自動化。" />
+  <meta name="twitter:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.en.png" />
+  <meta name="theme-color" content="#6183FC" />
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.en" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Yellowtail&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/i18n.css" />
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="brand" href="tutorial.html">Nextcloud 指南</a>
+    <div class="brand-sub">把檔案收在自己家</div>
+    <nav class="lang-switch" aria-label="Language"><a href="../ch20_webdav.html" lang="zh-Hant" hreflang="zh-Hant">中文</a><a class="active" href="ch20_webdav.html" lang="en" aria-current="page">EN</a></nav>
+    <a class="hub-link" href="index.html">◂ 資源總覽</a>
+    <h2>Chapters</h2>
+    <ol>
+      <li class="part-label">基礎：認識與登入</li>
+      <li data-i18n="pending"><a href="ch1_intro.html">開始前</a></li>
+      <li data-i18n="pending"><a href="ch2_install.html">安裝</a></li>
+      <li data-i18n="pending"><a href="ch3_first_open.html">第一次開啟</a></li>
+      <li data-i18n="pending"><a href="ch4_ui_tour.html">介面導覽</a></li>
+      <li data-i18n="pending"><a href="ch5_profile.html">帳號設定</a></li>
+      <li data-i18n="pending"><a href="ch6_files_basics.html">檔案基礎</a></li>
+      <li class="part-label">檔案：管理與分享</li>
+      <li data-i18n="pending"><a href="ch7_upload.html">上傳</a></li>
+      <li data-i18n="pending"><a href="ch8_share.html">檔案分享</a></li>
+      <li data-i18n="pending"><a href="ch9_share_manage.html">分享管理</a></li>
+      <li data-i18n="pending"><a href="ch10_photos.html">照片</a></li>
+      <li data-i18n="pending"><a href="ch11_calendar.html">行事曆</a></li>
+      <li data-i18n="pending"><a href="ch12_contacts.html">聯絡人</a></li>
+      <li class="part-label">協作：溝通與生產力</li>
+      <li data-i18n="pending"><a href="ch13_talk.html">Talk</a></li>
+      <li data-i18n="pending"><a href="ch14_deck.html">Deck</a></li>
+      <li data-i18n="pending"><a href="ch15_office.html">Office</a></li>
+      <li data-i18n="pending"><a href="ch16_notes.html">Notes</a></li>
+      <li data-i18n="pending"><a href="ch17_tasks.html">Tasks</a></li>
+      <li class="part-label">同步：跨裝置</li>
+      <li data-i18n="pending"><a href="ch18_desktop.html">桌面同步</a></li>
+      <li data-i18n="pending"><a href="ch19_mobile.html">手機 App</a></li>
+      <li data-i18n="pending"><a href="ch20_webdav.html" class="active">WebDAV</a></li>
+      <li class="part-label">管理：安全與維護</li>
+      <li data-i18n="pending"><a href="ch21_admin.html">管理員</a></li>
+      <li data-i18n="pending"><a href="ch22_security.html">安全排錯</a></li>
+    </ol>
+    <div class="toc-in-chapter">
+      <h2>This chapter</h2>
+      <a href="#why">為什麼要學</a>
+      <a href="#concept">WebDAV 觀念</a>
+      <a href="#steps">連線步驟</a>
+      <a href="#tools">工具與自動化</a>
+      <a href="#troubleshoot">WebDAV 卡關</a>
+      <a href="#faq">FAQ</a>
+      <a href="#sources">官方來源</a>
+    </div>
+    <div class="toc-in-chapter">
+      <h2>Appendices</h2>
+      <a href="appendix_apps.html">Apps 商店</a>
+      <a href="appendix_config.html">設定速查</a>
+      <a href="appendix_integrations.html">外部整合</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="callout i18n-pending"><strong>This chapter has not been translated yet.</strong> You are reading the original Chinese text. <a href="../ch20_webdav.html" hreflang="zh-Hant">Open the Chinese version</a></div>
+    <div class="chapter-header">
+      <div class="kicker">Chapter 20</div>
+      <h1>WebDAV 進階</h1>
+      <p class="lead">WebDAV 讓你用系統檔案總管或第三方工具，像操作本機資料夾一樣直接存取 Nextcloud。讀完這章，你能把 Nextcloud 掛載成一個磁碟，或用工具自動化搬檔。</p>
+    </div>
+
+    <section id="why" data-nav="為什麼要學">
+      <h2 data-icon="why">不開瀏覽器也能存取</h2>
+      <p>除了瀏覽器與桌面 client，Nextcloud 還支援 <strong>WebDAV</strong>——一個檔案存取的標準協定。有了它，你能把 Nextcloud 掛載成系統裡的一個磁碟，或讓備份工具、腳本直接讀寫，適合進階與自動化。</p>
+      <div class="callout"><strong>本章任務：</strong>找到你的 WebDAV 網址、用系統或工具連線、了解自動化用途。</div>
+    </section>
+
+    <section id="concept" data-nav="WebDAV 觀念">
+      <h2 data-icon="concept">WebDAV 是什麼</h2>
+      <p>WebDAV 是「用 HTTP 存取遠端檔案」的協定。Nextcloud 給每個帳號一個 WebDAV 網址，格式類似：</p>
+      <pre class="code-block"><code>https://woowtech-nextcloud.woowtech.io/remote.php/dav/files/你的帳號/</code></pre>
+      <table class="data-table">
+        <thead><tr><th>用途</th><th>怎麼用</th></tr></thead>
+        <tbody>
+          <tr><td>掛載成磁碟</td><td>系統檔案總管連線 WebDAV</td></tr>
+          <tr><td>第三方工具</td><td>rclone、Cyberduck、WinSCP 等</td></tr>
+          <tr><td>自動化</td><td>腳本／備份工具定期讀寫</td></tr>
+        </tbody>
+      </table>
+      <div class="callout danger"><strong>一定用 App 密碼：</strong>WebDAV 要輸入帳密，務必用「App 密碼」（第 5 章）而非主密碼，並可單獨撤銷。</div>
+    </section>
+
+    <section id="steps" data-nav="連線步驟">
+      <h2 data-icon="steps">五步用 WebDAV 連線</h2>
+      <ol class="steps">
+        <li><h3>取得 WebDAV 網址</h3><p>在 Files 左下角「設定」或個人設定裡，可複製你的 WebDAV 網址。</p></li>
+        <li><h3>建立 App 密碼</h3><p>到個人設定「安全性」建立一組 App 密碼，專給 WebDAV 用。</p></li>
+        <li><h3>在系統掛載</h3><p>Windows「連線網路磁碟機」、macOS Finder「連接伺服器」、Linux 檔案總管都能連 WebDAV 網址。</p></li>
+        <li><h3>輸入帳號與 App 密碼</h3><p>用你的帳號與剛建立的 App 密碼登入。</p></li>
+        <li><h3>像本機一樣用</h3><p>掛載後 Nextcloud 變成一個資料夾，可直接拖放、開啟、刪除。</p></li>
+      </ol>
+    </section>
+
+    <section id="tools" data-nav="工具與自動化">
+      <h2 data-icon="advanced">工具與自動化</h2>
+      <ul>
+        <li><strong>rclone</strong>：把 Nextcloud 當一個 remote，做定期備份／同步（附錄 C 有整合方向）。</li>
+        <li><strong>Cyberduck／WinSCP</strong>：圖形化拖放搬檔。</li>
+        <li><strong>腳本</strong>：用 curl 或程式庫呼叫 WebDAV，做自動上傳／下載。</li>
+      </ul>
+      <div class="callout tip"><strong>掛載 vs 同步：</strong>WebDAV 掛載是「直接存取遠端」（不佔本機空間、但要連線）；桌面 client 是「雙向同步」（有本機副本、離線可用）。看需求選。</div>
+    </section>
+
+    <section id="troubleshoot" data-nav="WebDAV 卡關">
+      <h2 data-icon="troubleshoot">WebDAV 常見卡關</h2>
+      <ol class="steps">
+        <li><h3>登入失敗</h3><p>用 App 密碼而非主密碼；確認網址完整、含帳號路徑。</p></li>
+        <li><h3>掛載後很慢</h3><p>WebDAV 每次操作都走網路，大量小檔會慢。大批搬移改用桌面 client。</p></li>
+        <li><h3>Windows 掛不上</h3><p>Windows 內建 WebDAV 對大檔與長路徑支援有限，改用 rclone 或第三方工具較穩。</p></li>
+        <li><h3>中文檔名亂碼</h3><p>確認工具用 UTF-8；部分老工具支援不佳，換工具。</p></li>
+      </ol>
+    </section>
+
+    <section id="faq" data-nav="FAQ">
+      <h2 data-icon="faq">WebDAV 常見問題</h2>
+      <details class="faq"><summary>WebDAV 和桌面 client 差在哪？</summary><div class="body">WebDAV 是直接存取遠端（不佔本機空間、要連線）；client 是雙向同步（本機有副本、離線可用）。</div></details>
+      <details class="faq"><summary>一定要用 App 密碼嗎？</summary><div class="body">強烈建議。主密碼到處輸入風險高；App 密碼能單獨撤銷，較安全。</div></details>
+      <details class="faq"><summary>能用 rclone 備份到別的地方嗎？</summary><div class="body">能。rclone 支援 WebDAV，可把 Nextcloud 內容再備份到其他儲存，反之亦然。</div></details>
+      <details class="faq"><summary>手機能用 WebDAV 嗎？</summary><div class="body">能，用支援 WebDAV 的檔案 app，但日常還是官方 App 順（第 19 章）。</div></details>
+      <details class="faq"><summary>WebDAV 安全嗎？</summary><div class="body">走 HTTPS 加密傳輸，安全性取決於你的密碼管理。用 App 密碼並定期檢查已連線裝置。</div></details>
+    </section>
+
+    <section id="sources" data-nav="官方來源">
+      <h2 data-icon="records">官方來源</h2>
+      <table class="data-table">
+        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/files/access_webdav.html" rel="noopener">Nextcloud：WebDAV 存取</a></td><td>網址、掛載與工具</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="pager">
+      <a class="prev" href="ch19_mobile.html">
+        <span class="label">← Previous</span>
+        <span class="title">19 · 手機 App</span>
+      </a>
+      <a class="next" href="ch21_admin.html">
+        <span class="label">Next →</span>
+        <span class="title">21 · 管理員設定</span>
+      </a>
+    </div>
+
+    <footer class="site-footer">
+      <p>Nextcloud 自架雲端指南 is produced by <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">woowtech</a> and released under <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/deed.en">CC BY 4.0</a> — share and adapt freely, with attribution.</p>
+      <p class="footer-meta">截圖取自 Nextcloud 官方介面。Nextcloud 為其權利人的商標，本站與其無隸屬關係。 · <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">Source &amp; errata</a></p>
+    </footer>
+  </main>
+</div>
+<script id="ui-strings" type="application/json">{"tocToggle":"Contents","tocExpand":"Expand chapter navigation","tocCollapse":"Collapse chapter navigation"}</script>
+<script src="../assets/js/toc.js"></script>
+</body>
+</html>

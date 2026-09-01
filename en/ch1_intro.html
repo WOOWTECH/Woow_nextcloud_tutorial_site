@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chapter 1 · 開始前 · Nextcloud 自架雲端指南</title>
+  <meta name="description" content="Nextcloud 自架雲端使用前規劃：自架價值、帳號角色、公開範圍與安全邊界。" />
+  <meta name="author" content="woowtech" />
+  <link rel="canonical" href="https://nextcloud-guide.woowtech.io/en/ch1_intro.html" />
+  <meta name="robots" content="noindex, follow" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nextcloud 自架雲端指南" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="zh_TW" />
+  <meta property="og:title" content="Chapter 1 · 開始前 · Nextcloud 自架雲端指南" />
+  <meta property="og:description" content="Nextcloud 自架雲端使用前規劃：自架價值、帳號角色、公開範圍與安全邊界。" />
+  <meta property="og:url" content="https://nextcloud-guide.woowtech.io/en/ch1_intro.html" />
+  <meta property="og:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Chapter 1 · 開始前 · Nextcloud 自架雲端指南" />
+  <meta name="twitter:description" content="Nextcloud 自架雲端使用前規劃：自架價值、帳號角色、公開範圍與安全邊界。" />
+  <meta name="twitter:image" content="https://nextcloud-guide.woowtech.io/assets/screenshots/ch4/01_ui_overview.en.png" />
+  <meta name="theme-color" content="#6183FC" />
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.en" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Yellowtail&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/i18n.css" />
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="brand" href="tutorial.html">Nextcloud 指南</a>
+    <div class="brand-sub">把檔案收在自己家</div>
+    <nav class="lang-switch" aria-label="Language"><a href="../ch1_intro.html" lang="zh-Hant" hreflang="zh-Hant">中文</a><a class="active" href="ch1_intro.html" lang="en" aria-current="page">EN</a></nav>
+    <a class="hub-link" href="index.html">◂ 資源總覽</a>
+    <h2>Chapters</h2>
+    <ol>
+      <li class="part-label">基礎：認識與登入</li>
+      <li data-i18n="pending"><a href="ch1_intro.html" class="active">開始前</a></li>
+      <li data-i18n="pending"><a href="ch2_install.html">安裝</a></li>
+      <li data-i18n="pending"><a href="ch3_first_open.html">第一次開啟</a></li>
+      <li data-i18n="pending"><a href="ch4_ui_tour.html">介面導覽</a></li>
+      <li data-i18n="pending"><a href="ch5_profile.html">帳號設定</a></li>
+      <li data-i18n="pending"><a href="ch6_files_basics.html">檔案基礎</a></li>
+      <li class="part-label">檔案：管理與分享</li>
+      <li data-i18n="pending"><a href="ch7_upload.html">上傳</a></li>
+      <li data-i18n="pending"><a href="ch8_share.html">檔案分享</a></li>
+      <li data-i18n="pending"><a href="ch9_share_manage.html">分享管理</a></li>
+      <li data-i18n="pending"><a href="ch10_photos.html">照片</a></li>
+      <li data-i18n="pending"><a href="ch11_calendar.html">行事曆</a></li>
+      <li data-i18n="pending"><a href="ch12_contacts.html">聯絡人</a></li>
+      <li class="part-label">協作：溝通與生產力</li>
+      <li data-i18n="pending"><a href="ch13_talk.html">Talk</a></li>
+      <li data-i18n="pending"><a href="ch14_deck.html">Deck</a></li>
+      <li data-i18n="pending"><a href="ch15_office.html">Office</a></li>
+      <li data-i18n="pending"><a href="ch16_notes.html">Notes</a></li>
+      <li data-i18n="pending"><a href="ch17_tasks.html">Tasks</a></li>
+      <li class="part-label">同步：跨裝置</li>
+      <li data-i18n="pending"><a href="ch18_desktop.html">桌面同步</a></li>
+      <li data-i18n="pending"><a href="ch19_mobile.html">手機 App</a></li>
+      <li data-i18n="pending"><a href="ch20_webdav.html">WebDAV</a></li>
+      <li class="part-label">管理：安全與維護</li>
+      <li data-i18n="pending"><a href="ch21_admin.html">管理員</a></li>
+      <li data-i18n="pending"><a href="ch22_security.html">安全排錯</a></li>
+    </ol>
+    <div class="toc-in-chapter">
+      <h2>This chapter</h2>
+      <a href="#why">為什麼要學</a>
+      <a href="#concept">Nextcloud 是什麼</a>
+      <a href="#what">這套的樣貌</a>
+      <a href="#choices">帳號與公開</a>
+      <a href="#security">安全邊界</a>
+      <a href="#faq">FAQ</a>
+      <a href="#sources">官方來源</a>
+    </div>
+    <div class="toc-in-chapter">
+      <h2>Appendices</h2>
+      <a href="appendix_apps.html">Apps 商店</a>
+      <a href="appendix_config.html">設定速查</a>
+      <a href="appendix_integrations.html">外部整合</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="callout i18n-pending"><strong>This chapter has not been translated yet.</strong> You are reading the original Chinese text. <a href="../ch1_intro.html" hreflang="zh-Hant">Open the Chinese version</a></div>
+    <div class="chapter-header">
+      <div class="kicker">Chapter 1</div>
+      <h1>開始前：把雲端收在自己家</h1>
+      <p class="lead">先弄清楚 Nextcloud 是什麼、為什麼要自架雲端，以及使用前要先想清楚的帳號角色與公開範圍。讀完這章，你會知道這套 WoowTech Nextcloud 能為你做什麼，以及哪些界線不該跨。</p>
+    </div>
+
+    <section id="why" data-nav="為什麼要學">
+      <h2 data-icon="why">為什麼要把雲端收在自己家</h2>
+      <p>現代人的檔案——文件、照片、通訊錄、行事曆——多半散在各種雲端服務：Google Drive、Dropbox、iCloud。這些服務方便，但也有幾個讓人不放心的地方：空間要月費、資料放別人機房、服務停掉或改規則時你只能跟著走。</p>
+      <p><strong>Nextcloud</strong> 是把「雲端硬碟 + 協作平台」整套搬回自己家的方案。檔案存在你自己的伺服器，用瀏覽器或 App 就能像雲端硬碟一樣上傳、分享、同步、協作，差別是資料在你手上。</p>
+      <div class="callout"><strong>本章目標：</strong>不是教你架伺服器，而是讓你在開始用之前，先看懂這套 WoowTech Nextcloud 的樣貌、帳號角色與安全邊界。真正動手從第 2 章安裝開始。</div>
+      <div class="callout warn"><strong>先講清楚：</strong>自架雲端的「安全」有一半是你自己負責。如果帳號密碼太弱、或把分享連結亂丟，再好的架構也擋不住。這套教學會反覆強調「最小暴露」。</div>
+    </section>
+
+    <section id="concept" data-nav="Nextcloud 是什麼">
+      <h2 data-icon="concept">Nextcloud 是什麼</h2>
+      <p>Nextcloud 是一個「自架（self-hosted）的雲端協作平台」，功能對應你熟悉的雲端服務，而且能擴充：</p>
+      <table class="data-table">
+        <thead><tr><th>能力</th><th>Nextcloud 對應的功能</th><th>你在什麼時候會用到</th></tr></thead>
+        <tbody>
+          <tr><td>檔案儲存與分享</td><td>Files：上傳、資料夾、分享連結、權限</td><td>備份文件、傳大檔給親友</td></tr>
+          <tr><td>照片備份</td><td>Photos：自動上傳、時間軸、相簿</td><td>手機照片自動收進家裡</td></tr>
+          <tr><td>行事曆與聯絡人</td><td>Calendar、Contacts</td><td>家庭共用行事曆、通訊錄</td></tr>
+          <tr><td>溝通協作</td><td>Talk（聊天視訊）、Office（文件）、Deck（看板）</td><td>視訊會議、線上文件、專案管理</td></tr>
+          <tr><td>跨裝置同步</td><td>桌面 client、手機 App、WebDAV</td><td>電腦手機檔案自動同步</td></tr>
+        </tbody>
+      </table>
+      <div class="callout tip"><strong>一句話記住：</strong>Nextcloud = 自架的「Google Drive + Google 相簿 + 行事曆 + Meet」的合體，而且能靠 Apps 無限擴充。</div>
+    </section>
+
+    <section id="what" data-nav="這套的樣貌">
+      <h2 data-icon="what">這套 WoowTech Nextcloud 長什麼樣子</h2>
+      <p>你現在要用的，是 WoowTech 已經架好、透過 <strong>Cloudflare Tunnel</strong> 對外提供的 Nextcloud 實例，入口是：</p>
+      <pre class="code-block"><code>https://woowtech-nextcloud.woowtech.io</code></pre>
+      <p>幾個你之後會一再看到的樣貌（以撰寫當下為準，介面改版時以實際畫面為主）：</p>
+      <ul>
+        <li><strong>入口</strong>：瀏覽器打開網址就能用，不需要裝任何東西（第 3 章）。</li>
+        <li><strong>登入</strong>：管理員帳號或一般使用者帳號，密碼登入（第 3 章）。</li>
+        <li><strong>首頁</strong>：登入後預設停在 Files（檔案），左上角有 Apps 選單可切換 Photos、Calendar、Talk 等（第 4 章）。</li>
+        <li><strong>擴充</strong>：Apps 商店可以加裝功能（附錄 A）。</li>
+      </ul>
+      <div class="callout"><strong>一句話記住架構：</strong>你（瀏覽器或 App）→ Cloudflare Tunnel（加密通道）→ WoowTech 伺服器上的 Nextcloud。中間不需要開任何對外的 port，也不用記 IP。</div>
+    </section>
+
+    <section id="choices" data-nav="帳號與公開">
+      <h2 data-icon="compare">先想清楚：帳號角色與公開範圍</h2>
+      <p>開始用之前，有兩個觀念會決定你後續所有操作的安全感：<strong>誰有帳號</strong>、<strong>什麼東西公開</strong>。</p>
+      <table class="data-table">
+        <thead><tr><th>角色</th><th>能做的事</th><th>適合誰</th></tr></thead>
+        <tbody>
+          <tr><td><strong>管理員（admin）</strong></td><td>管理使用者、儲存、Apps、全站設定</td><td>負責維護伺服器的人（通常是 WoowTech）</td></tr>
+          <tr><td><strong>一般使用者</strong></td><td>上傳、整理、分享自己的檔案</td><td>家人、一般使用情境</td></tr>
+        </tbody>
+      </table>
+      <p>公開範圍也有三種常見選擇，從最安全到最開放：</p>
+      <ol class="steps">
+        <li><h3>完全不公開</h3><p>只有登入帳號的人才看得到，連入口都要先通過帳號驗證。這是預設、也是最安全的使用方式。</p></li>
+        <li><h3>只分享特定檔案或資料夾</h3><p>用第 8 章的「分享連結」把某個檔案或資料夾開給親友，其他人看不到你別的內容。</p></li>
+        <li><h3>大範圍公開</h3><p>把整個檔案庫或管理介面公開給網際網路。這套教學不建議，除非你非常清楚風險。</p></li>
+      </ol>
+      <div class="callout danger"><strong>停止線：</strong>不要為了「方便」把管理介面、帳號密碼或整個檔案庫公開。需要給誰看，就只分享那一個檔案或資料夾，用完還能收回。</div>
+    </section>
+
+    <section id="security" data-nav="安全邊界">
+      <h2 data-icon="security">使用前的安全邊界</h2>
+      <p>Nextcloud 的安全不是「架好就結束」，而是幾條你每次操作都要守住的線：</p>
+      <ul>
+        <li><strong>帳號密碼</strong>：用夠長、不重複的密碼；管理員帳號更是如此。不要把密碼寫在記事本或群組聊天裡。</li>
+        <li><strong>HTTPS</strong>：入口網址一定是 <code>https://</code> 開頭。看到瀏覽器警告「不安全」就停下來，不要繼續輸入帳號。</li>
+        <li><strong>分享連結</strong>：分享出去的連結就是一把鑰匙，誰拿到誰就能看。預設只給需要的人，用密碼與期限控制。</li>
+        <li><strong>最小暴露</strong>：只公開必要的檔案，不公開整個站台；不把後台管理功能交給沒有需要的人。</li>
+      </ul>
+      <div class="callout tip"><strong>判斷原則：</strong>任何「公開範圍」的決定，都先問一句「這個東西被陌生人看到，我能接受嗎？」不能接受，就收緊。</div>
+    </section>
+
+    <section id="faq" data-nav="FAQ">
+      <h2 data-icon="faq">開始前常見問題</h2>
+      <details class="faq"><summary>Nextcloud 和 Google Drive 差在哪？</summary><div class="body">功能體驗很像，但 Nextcloud 的檔案存在你自己（或 WoowTech）的伺服器上，不是 Google 的機房。資料掌控權在你，但備份與維護的責任也相對在你這邊。</div></details>
+      <details class="faq"><summary>我需要會寫程式或架伺服器嗎？</summary><div class="body">使用端完全不需要。你只要會開瀏覽器、會用 App。架設與維護由 WoowTech 負責，這套教學只教你怎麼「用」。</div></details>
+      <details class="faq"><summary>檔案會不會被別人看到？</summary><div class="body">預設只有登入帳號的人看得到自己的檔案。除非你自己開了分享連結或把資料夾公開，否則外部看不到。使用時守住第 22 章的安全檢查即可。</div></details>
+      <details class="faq"><summary>儲存空間滿了怎麼辦？</summary><div class="body">先看用量，再整理（刪除重複、清回收桶、封存舊檔）。真正需要擴充時，聯絡管理員處理儲存，不要自己亂刪伺服器檔案。</div></details>
+      <details class="faq"><summary>入口網址打不開或顯示不安全，該怎麼辦？</summary><div class="body">先確認網址是 <code>https://woowtech-nextcloud.woowtech.io</code>（注意 https 與完整拼法）。若瀏覽器顯示憑證警告，先停下來聯絡管理員，不要跳過警告繼續登入。</div></details>
+    </section>
+
+    <section id="sources" data-nav="官方來源">
+      <h2 data-icon="records">官方來源</h2>
+      <table class="data-table">
+        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://nextcloud.com/" rel="noopener">Nextcloud 官網</a></td><td>產品定位、功能總覽、下載與文件入口</td></tr>
+          <tr><td><a href="https://docs.nextcloud.com/" rel="noopener">Nextcloud 文件</a></td><td>使用手冊、管理員手冊、自架概念</td></tr>
+          <tr><td><a href="https://github.com/nextcloud/server" rel="noopener">Nextcloud GitHub</a></td><td>版本、更新日誌、issue 與社群討論</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>版本提示：</strong>本教學以撰寫當下的 Nextcloud 介面為準；官方隨時在更新。介面改版時，以最新官方文件與實際畫面為準。</div>
+    </section>
+
+    <div class="pager">
+      <a class="prev disabled" href="tutorial.html">
+        <span class="label">← Previous</span>
+        <span class="title">Contents</span>
+      </a>
+      <a class="next" href="ch2_install.html">
+        <span class="label">Next →</span>
+        <span class="title">02 · 安裝 Nextcloud</span>
+      </a>
+    </div>
+
+    <footer class="site-footer">
+      <p>Nextcloud 自架雲端指南 is produced by <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">woowtech</a> and released under <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/deed.en">CC BY 4.0</a> — share and adapt freely, with attribution.</p>
+      <p class="footer-meta">截圖取自 Nextcloud 官方介面。Nextcloud 為其權利人的商標，本站與其無隸屬關係。 · <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">Source &amp; errata</a></p>
+    </footer>
+  </main>
+</div>
+<script id="ui-strings" type="application/json">{"tocToggle":"Contents","tocExpand":"Expand chapter navigation","tocCollapse":"Collapse chapter navigation"}</script>
+<script src="../assets/js/toc.js"></script>
+</body>
+</html>
