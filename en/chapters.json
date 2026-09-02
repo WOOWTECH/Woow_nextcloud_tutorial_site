@@ -7,13 +7,13 @@
     "baseUrl": "https://nextcloud-guide.woowtech.io/en",
     "repoUrl": "https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site",
     "locale": "en_US",
-    "description": "22 chapters + 3 appendices on Nextcloud: install, login, files and sharing, Photos, Calendar, Talk, desktop and mobile sync, admin, security and troubleshooting.",
+    "description": "A 22-chapter Nextcloud tutorial with 3 appendices: install, login, file management and sharing, then Photos, Calendar, Talk, desktop and mobile sync, admin settings, security and troubleshooting.",
     "footerMeta": "Screenshots are of the official Nextcloud interface. Nextcloud is a trademark of its respective owner; this site is not affiliated with it.",
     "ogImage": "assets/og/nextcloud-guide.en.png",
     "license": {
       "name": "CC BY 4.0",
       "url": "https://creativecommons.org/licenses/by/4.0/deed.en",
-      "holder": "WoowTech"
+      "holder": "woowtech"
     },
     "chrome": {
       "manage404": false
@@ -41,7 +41,7 @@
       "file": "ch1_intro.html",
       "num": "01",
       "navLabel": "Before you start",
-      "title": "Before you start: keep your cloud at home",
+      "title": "Before you start",
       "pagerTitle": "01 · Requirements and security boundaries",
       "card": "First, get clear on the role Nextcloud plays, what a self-hosted cloud is worth, and the security boundaries around accounts and public exposure.",
       "description": "Nextcloud self-hosted cloud, planning before you start: what self-hosting is worth, account roles, public exposure and security boundaries.",
@@ -292,7 +292,7 @@
   ],
   "sectionLabels": {},
   "i18n": {
-    "_readme": "hreflang 給 zh 頁自指用；xDefault 指向哪個語系（en 或 primary），一行可反轉。語系清單在 i18n/locales.json。",
+    "_readme": "hreflang is what the zh pages use to point at themselves; xDefault says which locale to point at (en or primary), and can be flipped in one line. The locale list is in i18n/locales.json.",
     "hreflang": [
       "zh-Hant",
       "zh"
