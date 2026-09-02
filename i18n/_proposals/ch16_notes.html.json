@@ -1,0 +1,26 @@
+{
+  "file": "ch16_notes.html",
+  "_note": "Chinese Markdown-syntax placeholders inside frozen code blocks. English forms are taken verbatim from i18n/glossary.json decisions.code_placeholders ('# 標題' -> '# Heading', '- 項目' -> '- Item', '**粗體**' -> '**Bold**', '[ ] 待辦' -> '[ ] To-do'). Each zh block occurs exactly once in en/ch16_notes.html. These are illustrative Markdown syntax, not commands or config keys, so an English reader needs the English words for the example to teach anything.",
+  "entries": [
+    {
+      "unit": "#concept",
+      "zh": "<code>**粗體**</code>",
+      "en": "<code>**Bold**</code>"
+    },
+    {
+      "unit": "#steps",
+      "zh": "<code># 標題</code>",
+      "en": "<code># Heading</code>"
+    },
+    {
+      "unit": "#steps",
+      "zh": "<code>- 項目</code>",
+      "en": "<code>- Item</code>"
+    },
+    {
+      "unit": "#steps",
+      "zh": "<code>[ ] 待辦</code>",
+      "en": "<code>[ ] To-do</code>"
+    }
+  ]
+}

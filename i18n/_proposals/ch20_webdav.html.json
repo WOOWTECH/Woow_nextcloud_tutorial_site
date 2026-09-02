@@ -1,0 +1,11 @@
+{
+  "file": "ch20_webdav.html",
+  "_note": "One frozen <pre class=\"code-block\"> in #concept carries the sample WebDAV URL with the Chinese placeholder 你的帳號. The English form is taken verbatim from i18n/glossary.json decisions.code_placeholders, which lists both '你的帳號' -> '<your-username>' and this whole URL. The hostname woowtech-nextcloud.woowtech.io stays verbatim, per the same decision block. Angle brackets are written as &lt;/&gt; so gate A's tag skeleton is unchanged. The block occurs exactly once in en/ch20_webdav.html.",
+  "entries": [
+    {
+      "unit": "#concept",
+      "zh": "<pre class=\"code-block\"><code>https://woowtech-nextcloud.woowtech.io/remote.php/dav/files/你的帳號/</code></pre>",
+      "en": "<pre class=\"code-block\"><code>https://woowtech-nextcloud.woowtech.io/remote.php/dav/files/&lt;your-username&gt;/</code></pre>"
+    }
+  ]
+}

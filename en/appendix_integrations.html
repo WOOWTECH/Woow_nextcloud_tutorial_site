@@ -68,13 +68,13 @@
     </ol>
     <div class="toc-in-chapter">
       <h2>This chapter</h2>
-      <a href="#why">為什麼要學</a>
-      <a href="#ha">接 Home Assistant</a>
-      <a href="#backup">備份整合</a>
-      <a href="#api">API 與自動化</a>
-      <a href="#troubleshoot">整合卡關</a>
+      <a href="#why">Why this matters</a>
+      <a href="#ha">Home Assistant</a>
+      <a href="#backup">Backup tools</a>
+      <a href="#api">APIs and automation</a>
+      <a href="#troubleshoot">Integration problems</a>
       <a href="#faq">FAQ</a>
-      <a href="#sources">官方來源</a>
+      <a href="#sources">Official sources</a>
     </div>
     <div class="toc-in-chapter">
       <h2>Appendices</h2>
@@ -88,79 +88,79 @@
     <div class="callout i18n-pending"><strong>This chapter has not been translated yet.</strong> You are reading the original Chinese text. <a href="../appendix_integrations.html" hreflang="zh-Hant">Open the Chinese version</a></div>
     <div class="chapter-header">
       <div class="kicker">Appendix C</div>
-      <h1>外部整合</h1>
-      <p class="lead">Nextcloud 不是孤島。這份附錄整理它和 Home Assistant、備份工具與其他服務串接的方向，讓你的雲端成為家中數位基礎設施的一環。</p>
+      <h1>External integrations</h1>
+      <p class="lead">Nextcloud is not an island. This appendix maps out how it connects to Home Assistant, to backup tools and to other services, so your cloud becomes one part of the digital infrastructure at home.</p>
     </div>
 
-    <section id="why" data-nav="為什麼要學">
-      <h2 data-icon="why">把雲端接進生活自動化</h2>
-      <p>Nextcloud 有開放的 API（WebDAV、OCS）與標準協定（CalDAV／CardDAV），能和 Home Assistant、備份工具、腳本串接。整合得好，檔案、行事曆、通知都能自動流動。</p>
-      <div class="callout"><strong>本附錄：</strong>介紹整合方向與注意事項，不是逐步安裝教學；實際串接依你用的工具而定。</div>
+    <section id="why" data-nav="Why this matters">
+      <h2 data-icon="why">Wire your cloud into home automation</h2>
+      <p>Nextcloud has open APIs (WebDAV, OCS) and standard protocols (CalDAV/CardDAV), so it can connect to Home Assistant, to backup tools and to scripts. Integrate it well and files, calendars and notifications all move on their own.</p>
+      <div class="callout"><strong>This appendix:</strong> it covers the integration options and what to watch out for, not step-by-step install instructions; how you actually connect depends on the tools you use.</div>
     </section>
 
-    <section id="ha" data-nav="接 Home Assistant">
-      <h2 data-icon="integration">與 Home Assistant 串接</h2>
+    <section id="ha" data-nav="Home Assistant">
+      <h2 data-icon="integration">Connecting to Home Assistant</h2>
       <table class="data-table">
-        <thead><tr><th>整合方式</th><th>能做什麼</th></tr></thead>
+        <thead><tr><th>Integration</th><th>What you can do with it</th></tr></thead>
         <tbody>
-          <tr><td>行事曆整合</td><td>把 Nextcloud Calendar（CalDAV）接進 HA，做行程觸發自動化</td></tr>
-          <tr><td>檔案／WebDAV</td><td>HA 產生的備份、快照、記錄丟進 Nextcloud 保存</td></tr>
-          <tr><td>通知</td><td>用 Nextcloud Talk 當 HA 的通知管道（依整合支援）</td></tr>
+          <tr><td>Calendar integration</td><td>Bring Nextcloud Calendar (CalDAV) into HA and trigger automations from events</td></tr>
+          <tr><td>Files / WebDAV</td><td>Keep the backups, snapshots and logs HA produces in Nextcloud</td></tr>
+          <tr><td>Notifications</td><td>Use Nextcloud Talk as HA's notification channel (where the integration supports it)</td></tr>
         </tbody>
       </table>
-      <div class="callout tip"><strong>同機共存：</strong>本站環境 Nextcloud 與 HA 都在同一台，內部互連更快；對外都走 Cloudflare Tunnel，不用各自開埠。</div>
+      <div class="callout tip"><strong>Both on one box:</strong> in this site's setup Nextcloud and HA are on the same machine, so they reach each other faster internally; both go out through Cloudflare Tunnel, so neither has to open a port of its own.</div>
     </section>
 
-    <section id="backup" data-nav="備份整合">
-      <h2 data-icon="restore">備份與同步工具</h2>
+    <section id="backup" data-nav="Backup tools">
+      <h2 data-icon="restore">Backup and sync tools</h2>
       <ul>
-        <li><strong>rclone</strong>：把 Nextcloud（WebDAV）當 remote，定期同步到別的儲存（異地備份），或反向把外部資料拉進來。</li>
-        <li><strong>HA 快照／備份</strong>：add-on 情境可搭配 HA 的備份機制，一起保護設定與資料。</li>
-        <li><strong>3-2-1 原則</strong>：至少三份、兩種媒介、一份異地。自架雲端也要有第二層備份。</li>
+        <li><strong>rclone</strong>: treat Nextcloud (WebDAV) as a remote and sync it to other storage on a schedule (an off-site backup), or pull outside data in the other direction.</li>
+        <li><strong>HA snapshots / backups</strong>: in an add-on setup you can pair this with HA's own backup mechanism and protect settings and data together.</li>
+        <li><strong>The 3-2-1 rule</strong>: at least three copies, two kinds of media, one of them off-site. A self-hosted cloud needs a second layer of backup as well.</li>
       </ul>
-      <div class="callout danger"><strong>Nextcloud 本身不是備份：</strong>它是你的主要儲存，還是要另外備份到別處，才擋得住硬碟壞掉或誤刪。</div>
+      <div class="callout danger"><strong>Nextcloud is not a backup:</strong> it is your primary storage, and you still have to back it up somewhere else — that is what stands between you and a dead disk or an accidental delete.</div>
     </section>
 
-    <section id="api" data-nav="API 與自動化">
-      <h2 data-icon="advanced">API 與自動化</h2>
+    <section id="api" data-nav="APIs and automation">
+      <h2 data-icon="advanced">APIs and automation</h2>
       <table class="data-table">
-        <thead><tr><th>介面</th><th>用途</th></tr></thead>
+        <thead><tr><th>Interface</th><th>What it is for</th></tr></thead>
         <tbody>
-          <tr><td>WebDAV</td><td>檔案讀寫、掛載、腳本搬檔（第 20 章）</td></tr>
-          <tr><td>OCS API</td><td>使用者、分享、capabilities 等管理操作</td></tr>
-          <tr><td>CalDAV／CardDAV</td><td>行事曆與聯絡人同步（第 11、12 章）</td></tr>
+          <tr><td>WebDAV</td><td>Reading and writing files, mounting, moving files from a script (Chapter 20)</td></tr>
+          <tr><td>OCS API</td><td>Admin operations such as users, shares and capabilities</td></tr>
+          <tr><td>CalDAV/CardDAV</td><td>Calendar and contact sync (Chapters 11 and 12)</td></tr>
         </tbody>
       </table>
-      <div class="callout warn"><strong>用 App 密碼：</strong>任何自動化串接都用 App 密碼（第 5 章），不要把主密碼寫進腳本或設定檔。</div>
+      <div class="callout warn"><strong>Use an app password:</strong> use an app password (Chapter 5) for every automated connection, and never write your main password into a script or a config file.</div>
     </section>
 
-    <section id="troubleshoot" data-nav="整合卡關">
-      <h2 data-icon="troubleshoot">整合常見卡關</h2>
+    <section id="troubleshoot" data-nav="Integration problems">
+      <h2 data-icon="troubleshoot">Common integration pitfalls</h2>
       <ol class="steps">
-        <li><h3>HA 接不到行事曆</h3><p>確認 CalDAV 網址、帳號與 App 密碼；時區要一致。</p></li>
-        <li><h3>rclone 連不上</h3><p>用 WebDAV 網址（含帳號路徑）與 App 密碼；確認 https 憑證有效。</p></li>
-        <li><h3>自動化沒觸發</h3><p>先手動測 API 是否通，再檢查自動化條件與權限。</p></li>
-        <li><h3>權限不足</h3><p>某些操作需要 admin 或特定權限；用對的帳號與 token。</p></li>
+        <li><h3>HA cannot reach the calendar</h3><p>Check the CalDAV URL, the account and the app password; the time zones have to match.</p></li>
+        <li><h3>rclone will not connect</h3><p>Use the WebDAV URL (including the account path) and an app password; check that the https certificate is valid.</p></li>
+        <li><h3>An automation never fires</h3><p>Test by hand first that the API responds, then check the automation's conditions and its permissions.</p></li>
+        <li><h3>Not enough permissions</h3><p>Some operations need admin or a specific permission; use the right account and token.</p></li>
       </ol>
     </section>
 
     <section id="faq" data-nav="FAQ">
-      <h2 data-icon="faq">整合常見問題</h2>
-      <details class="faq"><summary>一定要會寫程式才能整合嗎？</summary><div class="body">不一定。行事曆／聯絡人同步、rclone 備份多半是設定就好；深度自動化才需要一點腳本。</div></details>
-      <details class="faq"><summary>整合會不會有安全風險？</summary><div class="body">會，所以一律用 App 密碼、走 HTTPS、給最小權限，並定期檢查已連線裝置。</div></details>
-      <details class="faq"><summary>能把 Nextcloud 當唯一備份嗎？</summary><div class="body">不建議。它是主儲存，仍要用 rclone 等做第二層異地備份。</div></details>
-      <details class="faq"><summary>HA 和 Nextcloud 要分開兩台嗎？</summary><div class="body">看資源。同機省事、互連快；分開則互不影響、較好擴充。依需求決定。</div></details>
-      <details class="faq"><summary>OCS API 文件在哪？</summary><div class="body">在 Nextcloud 開發者文件，包含分享、使用者、capabilities 等端點。</div></details>
+      <h2 data-icon="faq">Integrations FAQ</h2>
+      <details class="faq"><summary>Do I have to know how to code before I can integrate anything?</summary><div class="body">Not necessarily. Calendar and contact sync, and rclone backups, are mostly a matter of configuration; only deeper automation takes a bit of scripting.</div></details>
+      <details class="faq"><summary>Do integrations bring a security risk?</summary><div class="body">They do, which is why you always use an app password, go over HTTPS, grant least privilege, and check your connected devices regularly.</div></details>
+      <details class="faq"><summary>Can I treat Nextcloud as my only backup?</summary><div class="body">We do not recommend it. It is your primary storage, and you still need a second, off-site layer with something like rclone.</div></details>
+      <details class="faq"><summary>Should HA and Nextcloud be on two separate machines?</summary><div class="body">It depends on your resources. One machine is less work and the link between them is faster; separate machines keep them from affecting each other and are easier to grow. Decide by what you need.</div></details>
+      <details class="faq"><summary>Where is the OCS API documentation?</summary><div class="body">In the Nextcloud developer documentation, which covers endpoints for shares, users, capabilities and more.</div></details>
     </section>
 
-    <section id="sources" data-nav="官方來源">
-      <h2 data-icon="records">官方來源</h2>
+    <section id="sources" data-nav="Official sources">
+      <h2 data-icon="records">Official sources</h2>
       <table class="data-table">
-        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <thead><tr><th>Source</th><th>What to verify</th></tr></thead>
         <tbody>
-          <tr><td><a href="https://docs.nextcloud.com/server/latest/developer_manual/" rel="noopener">Nextcloud 開發者文件</a></td><td>WebDAV、OCS API 等整合介面</td></tr>
-          <tr><td><a href="https://www.home-assistant.io/integrations/caldav/" rel="noopener">Home Assistant：CalDAV 整合</a></td><td>把 Nextcloud 行事曆接進 HA</td></tr>
-          <tr><td><a href="https://rclone.org/webdav/" rel="noopener">rclone：WebDAV</a></td><td>用 rclone 對接 Nextcloud 做備份／同步</td></tr>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/developer_manual/" rel="noopener">Nextcloud developer documentation</a></td><td>Integration interfaces such as WebDAV and the OCS API</td></tr>
+          <tr><td><a href="https://www.home-assistant.io/integrations/caldav/" rel="noopener">Home Assistant: CalDAV integration</a></td><td>Bringing a Nextcloud calendar into HA</td></tr>
+          <tr><td><a href="https://rclone.org/webdav/" rel="noopener">rclone: WebDAV</a></td><td>Using rclone against Nextcloud for backup and sync</td></tr>
         </tbody>
       </table>
     </section>

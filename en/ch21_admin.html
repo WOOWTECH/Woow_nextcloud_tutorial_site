@@ -68,14 +68,14 @@
     </ol>
     <div class="toc-in-chapter">
       <h2>This chapter</h2>
-      <a href="#why">為什麼要學</a>
-      <a href="#concept">後台入口</a>
-      <a href="#steps">開帳號步驟</a>
-      <a href="#cron">背景工作</a>
-      <a href="#update">版本更新</a>
-      <a href="#troubleshoot">管理卡關</a>
+      <a href="#why">Why this matters</a>
+      <a href="#concept">Admin area</a>
+      <a href="#steps">New user steps</a>
+      <a href="#cron">Background jobs</a>
+      <a href="#update">Version updates</a>
+      <a href="#troubleshoot">Management problems</a>
       <a href="#faq">FAQ</a>
-      <a href="#sources">官方來源</a>
+      <a href="#sources">Official sources</a>
     </div>
     <div class="toc-in-chapter">
       <h2>Appendices</h2>
@@ -89,86 +89,86 @@
     <div class="callout i18n-pending"><strong>This chapter has not been translated yet.</strong> You are reading the original Chinese text. <a href="../ch21_admin.html" hreflang="zh-Hant">Open the Chinese version</a></div>
     <div class="chapter-header">
       <div class="kicker">Chapter 21</div>
-      <h1>管理員設定</h1>
-      <p class="lead">認識管理員後台：使用者、儲存配額、Apps 與版本更新。讀完這章，管理員能開帳號、看空間、管 Apps，並理解背景工作的重要性。一般使用者可以略讀。</p>
+      <h1>Admin settings</h1>
+      <p class="lead">Get to know the admin area: users, storage quotas, Apps and version updates. By the end of this chapter, an admin can create accounts, check on space, manage Apps and understand why background jobs matter. Standard users can skim this one.</p>
     </div>
 
-    <section id="why" data-nav="為什麼要學">
-      <h2 data-icon="why">這章是給管理員的</h2>
-      <p>Nextcloud 是多人平台，總要有人開帳號、看空間、管 Apps、顧更新。這章是給管理員（admin）的實務參考。一般使用者讀個概念就好。</p>
-      <div class="callout warn"><strong>管理動作影響所有人：</strong>新增／停用使用者、改配額、裝停 Apps、更新版本都會影響整站。操作前確認範圍，拿不準的不要亂改。</div>
+    <section id="why" data-nav="Why this matters">
+      <h2 data-icon="why">This chapter is for admins</h2>
+      <p>Nextcloud is a multi-user platform, so somebody has to create accounts, keep an eye on space, manage Apps and stay on top of updates. This chapter is the practical reference for that person, the admin. Standard users only need the concepts.</p>
+      <div class="callout warn"><strong>Admin actions affect everyone:</strong> adding or disabling a user, changing a quota, installing or disabling an App and updating the version all affect the whole site. Check what you are about to affect before you act, and if you are not sure, leave it alone.</div>
     </section>
 
-    <section id="concept" data-nav="後台入口">
-      <h2 data-icon="concept">後台管理哪些東西</h2>
-      <p>管理員入口在右上角頭像選單的「管理設定（Administration settings）」。主要區塊：</p>
+    <section id="concept" data-nav="Admin area">
+      <h2 data-icon="concept">What the admin area covers</h2>
+      <p>The way in is "Administration settings" in your avatar menu at the top right. The main areas:</p>
       <table class="data-table">
-        <thead><tr><th>區塊</th><th>管什麼</th></tr></thead>
+        <thead><tr><th>Area</th><th>What it covers</th></tr></thead>
         <tbody>
-          <tr><td>使用者</td><td>建立、停用、群組、配額、密碼重設</td></tr>
-          <tr><td>基本設定</td><td>背景工作、email、預設語言</td></tr>
-          <tr><td>Apps</td><td>安裝、啟用、停用、更新 Apps</td></tr>
-          <tr><td>系統／概覽</td><td>版本、安全與設定警告、伺服器狀態</td></tr>
+          <tr><td>Users</td><td>Create, disable, groups, quotas, password resets</td></tr>
+          <tr><td>Basic settings</td><td>Background jobs, email, default language</td></tr>
+          <tr><td>Apps</td><td>Install, enable, disable and update Apps</td></tr>
+          <tr><td>System / Overview</td><td>Version, security and setup warnings, server status</td></tr>
         </tbody>
       </table>
     </section>
 
-    <section id="steps" data-nav="開帳號步驟">
-      <h2 data-icon="persons">六步開一個新使用者</h2>
+    <section id="steps" data-nav="New user steps">
+      <h2 data-icon="persons">Six steps to create a new user</h2>
       <ol class="steps">
-        <li><h3>進管理設定</h3><p>右上頭像 →「使用者」頁（需要 admin 權限）。</p></li>
-        <li><h3>新增使用者</h3><p>按「新增使用者」，填使用者名稱、顯示名稱、密碼（或讓系統寄設定信）。</p></li>
-        <li><h3>設群組與配額</h3><p>指定群組（家人／同事）與儲存配額，避免單一使用者塞爆空間。</p></li>
-        <li><h3>決定角色</h3><p>一般人給普通使用者；只有確定需要才設成管理員。</p></li>
-        <li><h3>安全交付登入資訊</h3><p>用私下管道把網址、帳號、密碼給對方，提醒第 3、5 章的安全事項。</p></li>
-        <li><h3>需要時停用而非刪除</h3><p>人離開先停用帳號（資料保留），確認不再需要才刪除。</p></li>
+        <li><h3>Open Administration settings</h3><p>Your avatar at the top right → the "Users" page (you need admin permissions).</p></li>
+        <li><h3>Add the user</h3><p>Click "New user" and fill in the username, display name and password (or let the system email them to set their own).</p></li>
+        <li><h3>Set the group and the quota</h3><p>Assign a group (family, colleagues) and a storage quota, so a single user cannot fill up all the space.</p></li>
+        <li><h3>Decide the role</h3><p>Give most people a standard user account; make someone an admin only when you are sure they need it.</p></li>
+        <li><h3>Hand over the login details safely</h3><p>Send the URL, the account and the password over a private channel, and point them at the security notes in Chapters 3 and 5.</p></li>
+        <li><h3>Disable rather than delete</h3><p>When someone leaves, disable the account first (the data stays) and delete it only once you are sure it is no longer needed.</p></li>
       </ol>
-      <div class="callout danger"><strong>最小權限：</strong>預設給普通使用者。管理員能改全站設定、刪帳號，給太多人風險大。</div>
+      <div class="callout danger"><strong>Least privilege:</strong> default to a standard user account. An admin can change site-wide settings and delete accounts, so handing that out widely is a real risk.</div>
     </section>
 
-    <section id="cron" data-nav="背景工作">
-      <h2 data-icon="advanced">背景工作與 Apps</h2>
-      <p><strong>背景工作（Background jobs）</strong>：Nextcloud 很多事（掃描檔案、產生預覽、寄通知、清理）靠背景工作定期跑。建議在基本設定把背景工作設為「Cron」模式，效能與可靠度最好。背景工作沒跑好，會出現預覽不更新、通知延遲等問題。</p>
-      <p><strong>Apps 管理</strong>：在 Apps 頁可安裝／啟用／停用功能（Photos、Calendar、Talk、Deck…）。停用前確認沒人在用；更新 App 前先看有沒有相容性提醒（附錄 A）。</p>
+    <section id="cron" data-nav="Background jobs">
+      <h2 data-icon="advanced">Background jobs and Apps</h2>
+      <p><strong>Background jobs</strong>: a lot of what Nextcloud does (scanning files, generating previews, sending notifications, cleaning up) runs on a schedule as a background job. We recommend setting background jobs to "Cron" mode in Basic settings, which gives the best performance and reliability. When background jobs are not running properly you get previews that never update and notifications that arrive late.</p>
+      <p><strong>Managing Apps</strong>: the Apps page is where you install, enable and disable features (Photos, Calendar, Talk, Deck and so on). Check that nobody is using an app before you disable it, and look for compatibility warnings before you update one (Appendix A).</p>
     </section>
 
-    <section id="update" data-nav="版本更新">
-      <h2 data-icon="restore">版本更新</h2>
+    <section id="update" data-nav="Version updates">
+      <h2 data-icon="restore">Version updates</h2>
       <ul>
-        <li>更新前<strong>務必先備份</strong>（資料庫＋資料目錄）。</li>
-        <li>看官方 release notes，注意跨大版本的破壞性變更。</li>
-        <li>用 add-on／官方更新機制更新，不要跳版（例如不要從很舊直接跳到最新）。</li>
-        <li>更新後到「概覽」看安全與設定警告，逐項處理。</li>
+        <li>Before you update, <strong>always back up first</strong> (the database + the data directory).</li>
+        <li>Read the official release notes, and watch for breaking changes across major versions.</li>
+        <li>Update through the add-on or the official update mechanism, and do not skip versions (for example, do not jump straight from a very old version to the latest).</li>
+        <li>After the update, go to "Overview", read the security and setup warnings, and work through them one at a time.</li>
       </ul>
-      <div class="callout danger"><strong>沒備份不要更新：</strong>「更新後才發現壞掉」是最痛的情境。備份是更新的前提。</div>
+      <div class="callout danger"><strong>No backup, no update:</strong> "it broke and I only found out after the update" is the most painful place to be. A backup is the precondition for updating.</div>
     </section>
 
-    <section id="troubleshoot" data-nav="管理卡關">
-      <h2 data-icon="troubleshoot">管理常見卡關</h2>
+    <section id="troubleshoot" data-nav="Management problems">
+      <h2 data-icon="troubleshoot">Common management pitfalls</h2>
       <ol class="steps">
-        <li><h3>找不到管理設定</h3><p>你的帳號不是管理員。確認角色，或請其他管理員處理。</p></li>
-        <li><h3>概覽一堆警告</h3><p>依提示逐項處理（背景工作、記憶體快取、標頭設定等），多半有官方文件連結。</p></li>
-        <li><h3>預覽／搜尋不更新</h3><p>背景工作沒正常跑。改用 Cron 模式並確認排程有在執行。</p></li>
-        <li><h3>裝 App 失敗</h3><p>可能相容性不符或伺服器缺套件，看錯誤訊息與 App 需求。</p></li>
+        <li><h3>You cannot find Administration settings</h3><p>Your account is not an admin. Check your role, or ask another admin to handle it.</p></li>
+        <li><h3>Overview is full of warnings</h3><p>Work through them one at a time as prompted (background jobs, memory caching, header settings and the like); most of them link to the official docs.</p></li>
+        <li><h3>Previews or search do not update</h3><p>Background jobs are not running properly. Switch to Cron mode and check that the schedule is actually running.</p></li>
+        <li><h3>Installing an App fails</h3><p>It may be a compatibility mismatch, or the server may be missing a package. Read the error message and the App's requirements.</p></li>
       </ol>
     </section>
 
     <section id="faq" data-nav="FAQ">
-      <h2 data-icon="faq">管理常見問題</h2>
-      <details class="faq"><summary>一般使用者看得到後台嗎？</summary><div class="body">看不到。只有管理員帳號的頭像選單才有「管理設定」。</div></details>
-      <details class="faq"><summary>可以停用帳號而不刪除嗎？</summary><div class="body">可以。停用讓對方無法登入但資料保留，比直接刪除安全。</div></details>
-      <details class="faq"><summary>配額怎麼設？</summary><div class="body">在使用者頁對每個帳號設儲存上限，避免單一使用者塞爆空間。</div></details>
-      <details class="faq"><summary>背景工作用哪種模式？</summary><div class="body">建議 Cron，效能與可靠度最好，需要在主機設定排程。</div></details>
-      <details class="faq"><summary>更新會不會弄壞資料？</summary><div class="body">照官方流程、先備份、不跳版，風險可控。備份是必要前提。</div></details>
+      <h2 data-icon="faq">Admin FAQ</h2>
+      <details class="faq"><summary>Can standard users see the admin area?</summary><div class="body">They cannot. Only an admin account has "Administration settings" in its avatar menu.</div></details>
+      <details class="faq"><summary>Can I disable an account instead of deleting it?</summary><div class="body">You can. Disabling stops them logging in but keeps their data, which is safer than deleting outright.</div></details>
+      <details class="faq"><summary>How do I set a quota?</summary><div class="body">On the Users page, set a storage limit for each account, so a single user cannot fill up all the space.</div></details>
+      <details class="faq"><summary>Which mode should background jobs use?</summary><div class="body">We recommend Cron, which gives the best performance and reliability. It needs a schedule set up on the host.</div></details>
+      <details class="faq"><summary>Can an update break my data?</summary><div class="body">Follow the official process, back up first and do not skip versions, and the risk stays manageable. A backup is a hard requirement.</div></details>
     </section>
 
-    <section id="sources" data-nav="官方來源">
-      <h2 data-icon="records">官方來源</h2>
+    <section id="sources" data-nav="Official sources">
+      <h2 data-icon="records">Official sources</h2>
       <table class="data-table">
-        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <thead><tr><th>Source</th><th>What to verify</th></tr></thead>
         <tbody>
-          <tr><td><a href="https://docs.nextcloud.com/server/latest/admin_manual/" rel="noopener">Nextcloud 管理員手冊</a></td><td>使用者、背景工作、Apps 與更新</td></tr>
-          <tr><td><a href="https://docs.nextcloud.com/server/latest/admin_manual/maintenance/upgrade.html" rel="noopener">Nextcloud：升級</a></td><td>版本更新流程與注意事項</td></tr>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/admin_manual/" rel="noopener">Nextcloud admin manual</a></td><td>Users, background jobs, Apps and updates</td></tr>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/admin_manual/maintenance/upgrade.html" rel="noopener">Nextcloud: upgrade</a></td><td>The version update process and what to watch for</td></tr>
         </tbody>
       </table>
     </section>

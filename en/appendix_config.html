@@ -68,14 +68,14 @@
     </ol>
     <div class="toc-in-chapter">
       <h2>This chapter</h2>
-      <a href="#why">為什麼要學</a>
-      <a href="#trusted">信任網域</a>
-      <a href="#table">參數速查</a>
-      <a href="#upload">上傳大小</a>
-      <a href="#backup">備份要點</a>
-      <a href="#troubleshoot">設定卡關</a>
+      <a href="#why">Why this matters</a>
+      <a href="#trusted">Trusted domains</a>
+      <a href="#table">Settings reference</a>
+      <a href="#upload">Upload size</a>
+      <a href="#backup">Backup essentials</a>
+      <a href="#troubleshoot">Settings problems</a>
       <a href="#faq">FAQ</a>
-      <a href="#sources">官方來源</a>
+      <a href="#sources">Official sources</a>
     </div>
     <div class="toc-in-chapter">
       <h2>Appendices</h2>
@@ -89,89 +89,89 @@
     <div class="callout i18n-pending"><strong>This chapter has not been translated yet.</strong> You are reading the original Chinese text. <a href="../appendix_config.html" hreflang="zh-Hant">Open the Chinese version</a></div>
     <div class="chapter-header">
       <div class="kicker">Appendix B</div>
-      <h1>設定參數速查</h1>
-      <p class="lead">管理員最常碰的幾個 Nextcloud 設定：信任網域、上傳大小、儲存、快取與備份。這份附錄用速查表整理它們的意義與注意事項。</p>
+      <h1>Settings reference</h1>
+      <p class="lead">The Nextcloud settings an admin touches most: trusted domains, upload size, storage, caching and backup. This appendix puts what each one controls, and what to watch out for, into quick reference tables.</p>
     </div>
 
-    <section id="why" data-nav="為什麼要學">
-      <h2 data-icon="why">少數幾個設定，影響最大</h2>
-      <p>Nextcloud 設定很多，但家庭／小團隊最常碰的就那幾個：信任網域、上傳上限、儲存、快取、備份。把這幾個弄懂，八成的設定問題都能解。</p>
-      <div class="callout danger"><strong>改設定前先備份：</strong><code>config.php</code> 改錯可能整站進不去。動手前備份，並一次只改一個。</div>
+    <section id="why" data-nav="Why this matters">
+      <h2 data-icon="why">A handful of settings matter most</h2>
+      <p>Nextcloud has a lot of settings, but a home or a small team only ever touches a few: trusted domains, the upload limit, storage, caching and backup. Understand those five and you have solved 80% of the settings problems you will ever hit.</p>
+      <div class="callout danger"><strong>Back up before you change settings:</strong> get <code>config.php</code> wrong and the whole site can become unreachable. Back up first, and change one thing at a time.</div>
     </section>
 
-    <section id="trusted" data-nav="信任網域">
-      <h2 data-icon="security">trusted_domains（信任網域）</h2>
-      <p>最常踩的一個。Nextcloud 只接受清單內網域的連線，用自訂網址對外時必須把它加進去。</p>
+    <section id="trusted" data-nav="Trusted domains">
+      <h2 data-icon="security">trusted_domains (trusted domains)</h2>
+      <p>The one people trip over most. Nextcloud only accepts connections on the domains in this list, so when you put the site behind your own URL you have to add it here.</p>
       <pre class="code-block"><code>'trusted_domains' =&gt;
   array (
     0 =&gt; 'localhost',
     1 =&gt; 'woowtech-nextcloud.woowtech.io',
   ),</code></pre>
-      <div class="callout warn"><strong>症狀：</strong>「Access through untrusted domain」＝這個網址沒加進清單。在 add-on 設定或 <code>config.php</code> 補上即可。</div>
+      <div class="callout warn"><strong>Symptom:</strong> "Access through untrusted domain" = this URL is not in the list. Add it in the add-on settings or in <code>config.php</code>.</div>
     </section>
 
-    <section id="table" data-nav="參數速查">
-      <h2 data-icon="what">關鍵參數速查</h2>
+    <section id="table" data-nav="Settings reference">
+      <h2 data-icon="what">Key settings reference</h2>
       <table class="data-table">
-        <thead><tr><th>設定</th><th>意義</th><th>注意</th></tr></thead>
+        <thead><tr><th>Setting</th><th>What it controls</th><th>Watch out</th></tr></thead>
         <tbody>
-          <tr><td>trusted_domains</td><td>允許存取的網域清單</td><td>自訂網址一定要加</td></tr>
-          <tr><td>overwrite.cli.url</td><td>站台對外基準網址</td><td>設成你的 https 網址，連結才正確</td></tr>
-          <tr><td>上傳大小上限</td><td>單檔可上傳的最大值</td><td>由 PHP 的 upload_max_filesize／post_max_size 決定</td></tr>
-          <tr><td>datadirectory</td><td>檔案實際存放位置</td><td>備份要包含這個目錄</td></tr>
-          <tr><td>記憶體快取（APCu／Redis）</td><td>加速與檔案鎖</td><td>沒設好概覽會出現效能警告</td></tr>
-          <tr><td>background jobs</td><td>背景工作執行方式</td><td>建議 Cron 模式（第 21 章）</td></tr>
-          <tr><td>maintenance</td><td>維護模式開關</td><td>更新／備份時會用到，完成要關掉</td></tr>
+          <tr><td>trusted_domains</td><td>The list of domains allowed to reach the site</td><td>A custom URL has to be added here</td></tr>
+          <tr><td>overwrite.cli.url</td><td>The site's public base URL</td><td>Set it to your https URL, or generated links come out wrong</td></tr>
+          <tr><td>The upload size limit</td><td>The largest single file that can be uploaded</td><td>Set by PHP's upload_max_filesize / post_max_size</td></tr>
+          <tr><td>datadirectory</td><td>Where the files actually live</td><td>Your backup has to include this directory</td></tr>
+          <tr><td>Memory caching (APCu / Redis)</td><td>Speed and file locking</td><td>Overview shows a performance warning if it is not set up</td></tr>
+          <tr><td>background jobs</td><td>How background jobs get run</td><td>Cron mode recommended (Chapter 21)</td></tr>
+          <tr><td>maintenance</td><td>The maintenance mode switch</td><td>Used for updates and backups; turn it off when you are done</td></tr>
         </tbody>
       </table>
     </section>
 
-    <section id="upload" data-nav="上傳大小">
-      <h2 data-icon="upload">調整上傳大小上限</h2>
+    <section id="upload" data-nav="Upload size">
+      <h2 data-icon="upload">Raising the upload size limit</h2>
       <ol class="steps">
-        <li><h3>確認現況</h3><p>上傳大檔失敗、顯示檔案過大，多半是上限太小。</p></li>
-        <li><h3>找 PHP 設定</h3><p>上限由 PHP 的 <code>upload_max_filesize</code> 與 <code>post_max_size</code> 決定。</p></li>
-        <li><h3>在 add-on 環境調整</h3><p>HA add-on 通常提供對應選項或設定檔，依 add-on 文件調整，不要直接改容器內檔案。</p></li>
-        <li><h3>重啟並驗證</h3><p>調整後重啟服務，再試上傳大檔確認生效。</p></li>
+        <li><h3>Confirm what is happening</h3><p>A large file fails to upload and you are told the file is too big: usually the limit is simply too low.</p></li>
+        <li><h3>Find the PHP settings</h3><p>The limit is set by PHP's <code>upload_max_filesize</code> and <code>post_max_size</code>.</p></li>
+        <li><h3>Change it the add-on way</h3><p>An HA add-on normally gives you the matching option or config file. Follow the add-on documentation, and do not edit files inside the container directly.</p></li>
+        <li><h3>Restart and verify</h3><p>Restart the service after the change, then upload a large file again to confirm it took effect.</p></li>
       </ol>
     </section>
 
-    <section id="backup" data-nav="備份要點">
-      <h2 data-icon="restore">備份要點</h2>
+    <section id="backup" data-nav="Backup essentials">
+      <h2 data-icon="restore">Backup essentials</h2>
       <ul>
-        <li><strong>三塊都要</strong>：資料庫 ＋ datadirectory（檔案）＋ config.php。</li>
-        <li><strong>一致性</strong>：備份時可先開維護模式，避免備到一半資料在變動。</li>
-        <li><strong>驗證</strong>：定期做還原演練，沒還原過的備份不算數。</li>
-        <li><strong>HA 情境</strong>：可搭配 Home Assistant 的快照與外部備份（附錄 C）。</li>
+        <li><strong>All three</strong>: the database + datadirectory (the files) + config.php.</li>
+        <li><strong>Consistency</strong>: turn on maintenance mode before you back up, so the data is not changing halfway through.</li>
+        <li><strong>Verify</strong>: run a restore drill regularly — a backup you have never restored does not count.</li>
+        <li><strong>On Home Assistant</strong>: pair it with Home Assistant snapshots and an external backup (Appendix C).</li>
       </ul>
     </section>
 
-    <section id="troubleshoot" data-nav="設定卡關">
-      <h2 data-icon="troubleshoot">設定常見卡關</h2>
+    <section id="troubleshoot" data-nav="Settings problems">
+      <h2 data-icon="troubleshoot">Common settings pitfalls</h2>
       <ol class="steps">
-        <li><h3>改完整站進不去</h3><p><code>config.php</code> 語法錯（少逗號、引號）。還原備份或修正語法。</p></li>
-        <li><h3>連結網址不對</h3><p>設定 <code>overwrite.cli.url</code> 與信任網域一致。</p></li>
-        <li><h3>概覽效能警告</h3><p>設定記憶體快取（APCu／Redis）、背景工作改 Cron。</p></li>
-        <li><h3>卡在維護模式</h3><p>更新／備份後忘了關 maintenance。關掉即可恢復存取。</p></li>
+        <li><h3>The whole site is unreachable after an edit</h3><p>A syntax error in <code>config.php</code> (a missing comma or quote). Restore your backup, or fix the syntax.</p></li>
+        <li><h3>Links point at the wrong URL</h3><p>Set <code>overwrite.cli.url</code> to match your trusted domain.</p></li>
+        <li><h3>A performance warning on Overview</h3><p>Set up memory caching (APCu / Redis), and switch background jobs to Cron.</p></li>
+        <li><h3>Stuck in maintenance mode</h3><p>Someone left maintenance on after an update or a backup. Turn it off and access comes back.</p></li>
       </ol>
     </section>
 
     <section id="faq" data-nav="FAQ">
-      <h2 data-icon="faq">設定常見問題</h2>
-      <details class="faq"><summary>config.php 在哪？</summary><div class="body">在 Nextcloud 的 config 目錄。HA add-on 環境通常透過 add-on 設定或對應路徑管理，依 add-on 文件操作。</div></details>
-      <details class="faq"><summary>改設定要重啟嗎？</summary><div class="body">多數 config.php 變更即時生效；PHP／服務層的設定要重啟服務。</div></details>
-      <details class="faq"><summary>一般使用者能改這些嗎？</summary><div class="body">不能，這些是管理員層級設定。使用者層級設定見第 5 章。</div></details>
-      <details class="faq"><summary>上傳上限設多大好？</summary><div class="body">依需求，影片備份可設大一點；設太大也要注意伺服器記憶體與逾時。</div></details>
-      <details class="faq"><summary>維護模式是什麼？</summary><div class="body">暫停使用者存取以安全地更新／備份的狀態。完成後務必關閉。</div></details>
+      <h2 data-icon="faq">Settings FAQ</h2>
+      <details class="faq"><summary>Where is config.php?</summary><div class="body">In Nextcloud's config directory. On an HA add-on it is normally managed through the add-on settings or the matching path, so go by the add-on documentation.</div></details>
+      <details class="faq"><summary>Do I have to restart after changing a setting?</summary><div class="body">Most config.php changes take effect immediately; settings at the PHP or service layer need a service restart.</div></details>
+      <details class="faq"><summary>Can a standard user change these?</summary><div class="body">No, these are admin-level settings. For user-level settings see Chapter 5.</div></details>
+      <details class="faq"><summary>How big should the upload limit be?</summary><div class="body">It depends on what you need — set it higher if you back up video. Set it too high and you also have to watch server memory and timeouts.</div></details>
+      <details class="faq"><summary>What is maintenance mode?</summary><div class="body">A state that suspends user access so you can update or back up safely. Always turn it off when you are done.</div></details>
     </section>
 
-    <section id="sources" data-nav="官方來源">
-      <h2 data-icon="records">官方來源</h2>
+    <section id="sources" data-nav="Official sources">
+      <h2 data-icon="records">Official sources</h2>
       <table class="data-table">
-        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <thead><tr><th>Source</th><th>What to verify</th></tr></thead>
         <tbody>
-          <tr><td><a href="https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/config_sample_php_parameters.html" rel="noopener">Nextcloud：config.php 參數</a></td><td>trusted_domains、快取、背景工作等</td></tr>
-          <tr><td><a href="https://docs.nextcloud.com/server/latest/admin_manual/configuration_files/big_file_upload_configuration.html" rel="noopener">Nextcloud：大檔上傳設定</a></td><td>上傳大小上限</td></tr>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/config_sample_php_parameters.html" rel="noopener">Nextcloud: config.php parameters</a></td><td>trusted_domains, caching, background jobs and more</td></tr>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/admin_manual/configuration_files/big_file_upload_configuration.html" rel="noopener">Nextcloud: big file upload configuration</a></td><td>The upload size limit</td></tr>
         </tbody>
       </table>
     </section>

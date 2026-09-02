@@ -68,13 +68,13 @@
     </ol>
     <div class="toc-in-chapter">
       <h2>This chapter</h2>
-      <a href="#why">為什麼要學</a>
-      <a href="#concept">WebDAV 觀念</a>
-      <a href="#steps">連線步驟</a>
-      <a href="#tools">工具與自動化</a>
-      <a href="#troubleshoot">WebDAV 卡關</a>
+      <a href="#why">Why this matters</a>
+      <a href="#concept">WebDAV basics</a>
+      <a href="#steps">Connection steps</a>
+      <a href="#tools">Tools and automation</a>
+      <a href="#troubleshoot">WebDAV problems</a>
       <a href="#faq">FAQ</a>
-      <a href="#sources">官方來源</a>
+      <a href="#sources">Official sources</a>
     </div>
     <div class="toc-in-chapter">
       <h2>Appendices</h2>
@@ -88,77 +88,77 @@
     <div class="callout i18n-pending"><strong>This chapter has not been translated yet.</strong> You are reading the original Chinese text. <a href="../ch20_webdav.html" hreflang="zh-Hant">Open the Chinese version</a></div>
     <div class="chapter-header">
       <div class="kicker">Chapter 20</div>
-      <h1>WebDAV 進階</h1>
-      <p class="lead">WebDAV 讓你用系統檔案總管或第三方工具，像操作本機資料夾一樣直接存取 Nextcloud。讀完這章，你能把 Nextcloud 掛載成一個磁碟，或用工具自動化搬檔。</p>
+      <h1>WebDAV, going further</h1>
+      <p class="lead">WebDAV lets you reach Nextcloud straight from your system file manager or a third-party tool, the way you would work with a local folder. By the end of this chapter you'll be able to mount Nextcloud as a drive, or use a tool to move files around automatically.</p>
     </div>
 
-    <section id="why" data-nav="為什麼要學">
-      <h2 data-icon="why">不開瀏覽器也能存取</h2>
-      <p>除了瀏覽器與桌面 client，Nextcloud 還支援 <strong>WebDAV</strong>——一個檔案存取的標準協定。有了它，你能把 Nextcloud 掛載成系統裡的一個磁碟，或讓備份工具、腳本直接讀寫，適合進階與自動化。</p>
-      <div class="callout"><strong>本章任務：</strong>找到你的 WebDAV 網址、用系統或工具連線、了解自動化用途。</div>
+    <section id="why" data-nav="Why this matters">
+      <h2 data-icon="why">Access without opening a browser</h2>
+      <p>Besides the browser and the desktop client, Nextcloud also supports <strong>WebDAV</strong> — a standard protocol for file access. With it you can mount Nextcloud as a drive on your system, or let a backup tool or a script read and write it directly, which suits advanced use and automation.</p>
+      <div class="callout"><strong>Chapter task:</strong> Find your WebDAV URL, connect to it from your system or a tool, and learn what it is good for in automation.</div>
     </section>
 
-    <section id="concept" data-nav="WebDAV 觀念">
-      <h2 data-icon="concept">WebDAV 是什麼</h2>
-      <p>WebDAV 是「用 HTTP 存取遠端檔案」的協定。Nextcloud 給每個帳號一個 WebDAV 網址，格式類似：</p>
+    <section id="concept" data-nav="WebDAV basics">
+      <h2 data-icon="concept">What WebDAV is</h2>
+      <p>WebDAV is a protocol for "accessing remote files over HTTP". Nextcloud gives every account a WebDAV URL, in a format like this:</p>
       <pre class="code-block"><code>https://woowtech-nextcloud.woowtech.io/remote.php/dav/files/你的帳號/</code></pre>
       <table class="data-table">
-        <thead><tr><th>用途</th><th>怎麼用</th></tr></thead>
+        <thead><tr><th>What it is for</th><th>How to use it</th></tr></thead>
         <tbody>
-          <tr><td>掛載成磁碟</td><td>系統檔案總管連線 WebDAV</td></tr>
-          <tr><td>第三方工具</td><td>rclone、Cyberduck、WinSCP 等</td></tr>
-          <tr><td>自動化</td><td>腳本／備份工具定期讀寫</td></tr>
+          <tr><td>Mounting it as a drive</td><td>Connect to WebDAV from your system file manager</td></tr>
+          <tr><td>Third-party tools</td><td>rclone, Cyberduck, WinSCP and the like</td></tr>
+          <tr><td>Automation</td><td>A script or backup tool reads and writes on a schedule</td></tr>
         </tbody>
       </table>
-      <div class="callout danger"><strong>一定用 App 密碼：</strong>WebDAV 要輸入帳密，務必用「App 密碼」（第 5 章）而非主密碼，並可單獨撤銷。</div>
+      <div class="callout danger"><strong>Always use an app password:</strong> WebDAV asks you to enter a username and password. Use an app password (Chapter 5) rather than your main password; it can be revoked on its own.</div>
     </section>
 
-    <section id="steps" data-nav="連線步驟">
-      <h2 data-icon="steps">五步用 WebDAV 連線</h2>
+    <section id="steps" data-nav="Connection steps">
+      <h2 data-icon="steps">Five steps to connect over WebDAV</h2>
       <ol class="steps">
-        <li><h3>取得 WebDAV 網址</h3><p>在 Files 左下角「設定」或個人設定裡，可複製你的 WebDAV 網址。</p></li>
-        <li><h3>建立 App 密碼</h3><p>到個人設定「安全性」建立一組 App 密碼，專給 WebDAV 用。</p></li>
-        <li><h3>在系統掛載</h3><p>Windows「連線網路磁碟機」、macOS Finder「連接伺服器」、Linux 檔案總管都能連 WebDAV 網址。</p></li>
-        <li><h3>輸入帳號與 App 密碼</h3><p>用你的帳號與剛建立的 App 密碼登入。</p></li>
-        <li><h3>像本機一樣用</h3><p>掛載後 Nextcloud 變成一個資料夾，可直接拖放、開啟、刪除。</p></li>
+        <li><h3>Get your WebDAV URL</h3><p>In Files, open "Settings" at the bottom left, or go to your personal settings, and copy your WebDAV URL.</p></li>
+        <li><h3>Create an app password</h3><p>In personal settings, go to "Security" and create an app password dedicated to WebDAV.</p></li>
+        <li><h3>Mount it on your system</h3><p>Windows "Map network drive", macOS Finder "Connect to Server" and the Linux file manager can all connect to a WebDAV URL.</p></li>
+        <li><h3>Enter your account and app password</h3><p>Log in with your account and the app password you created.</p></li>
+        <li><h3>Use it like a local folder</h3><p>Once it is mounted, Nextcloud turns into a folder you can drag into, open and delete from directly.</p></li>
       </ol>
     </section>
 
-    <section id="tools" data-nav="工具與自動化">
-      <h2 data-icon="advanced">工具與自動化</h2>
+    <section id="tools" data-nav="Tools and automation">
+      <h2 data-icon="advanced">Tools and automation</h2>
       <ul>
-        <li><strong>rclone</strong>：把 Nextcloud 當一個 remote，做定期備份／同步（附錄 C 有整合方向）。</li>
-        <li><strong>Cyberduck／WinSCP</strong>：圖形化拖放搬檔。</li>
-        <li><strong>腳本</strong>：用 curl 或程式庫呼叫 WebDAV，做自動上傳／下載。</li>
+        <li><strong>rclone</strong>: treat Nextcloud as a remote and run scheduled backups / syncs (Appendix C covers the integration options).</li>
+        <li><strong>Cyberduck / WinSCP</strong>: move files by drag and drop in a graphical client.</li>
+        <li><strong>Scripts</strong>: call WebDAV with curl or a library to upload / download automatically.</li>
       </ul>
-      <div class="callout tip"><strong>掛載 vs 同步：</strong>WebDAV 掛載是「直接存取遠端」（不佔本機空間、但要連線）；桌面 client 是「雙向同步」（有本機副本、離線可用）。看需求選。</div>
+      <div class="callout tip"><strong>Mounting vs syncing:</strong> a WebDAV mount is "direct access to the remote" (it takes no space on the machine, but you have to be online); the desktop client is "two-way sync" (there is a local copy, available offline). Pick the one your need calls for.</div>
     </section>
 
-    <section id="troubleshoot" data-nav="WebDAV 卡關">
-      <h2 data-icon="troubleshoot">WebDAV 常見卡關</h2>
+    <section id="troubleshoot" data-nav="WebDAV problems">
+      <h2 data-icon="troubleshoot">Common WebDAV pitfalls</h2>
       <ol class="steps">
-        <li><h3>登入失敗</h3><p>用 App 密碼而非主密碼；確認網址完整、含帳號路徑。</p></li>
-        <li><h3>掛載後很慢</h3><p>WebDAV 每次操作都走網路，大量小檔會慢。大批搬移改用桌面 client。</p></li>
-        <li><h3>Windows 掛不上</h3><p>Windows 內建 WebDAV 對大檔與長路徑支援有限，改用 rclone 或第三方工具較穩。</p></li>
-        <li><h3>中文檔名亂碼</h3><p>確認工具用 UTF-8；部分老工具支援不佳，換工具。</p></li>
+        <li><h3>Login fails</h3><p>Use an app password rather than your main password; check that the URL is complete and includes the account path.</p></li>
+        <li><h3>Slow once mounted</h3><p>Every WebDAV operation goes over the network, so a great many small files will be slow. For a large batch move, use the desktop client instead.</p></li>
+        <li><h3>Windows will not mount it</h3><p>The WebDAV built into Windows has limited support for large files and long paths; rclone or a third-party tool holds up better.</p></li>
+        <li><h3>Non-ASCII filenames show as garbage</h3><p>Check that the tool is using UTF-8; some older tools support it poorly, so switch tools. Note: any filename outside plain ASCII is affected the same way, accented letters included.</p></li>
       </ol>
     </section>
 
     <section id="faq" data-nav="FAQ">
-      <h2 data-icon="faq">WebDAV 常見問題</h2>
-      <details class="faq"><summary>WebDAV 和桌面 client 差在哪？</summary><div class="body">WebDAV 是直接存取遠端（不佔本機空間、要連線）；client 是雙向同步（本機有副本、離線可用）。</div></details>
-      <details class="faq"><summary>一定要用 App 密碼嗎？</summary><div class="body">強烈建議。主密碼到處輸入風險高；App 密碼能單獨撤銷，較安全。</div></details>
-      <details class="faq"><summary>能用 rclone 備份到別的地方嗎？</summary><div class="body">能。rclone 支援 WebDAV，可把 Nextcloud 內容再備份到其他儲存，反之亦然。</div></details>
-      <details class="faq"><summary>手機能用 WebDAV 嗎？</summary><div class="body">能，用支援 WebDAV 的檔案 app，但日常還是官方 App 順（第 19 章）。</div></details>
-      <details class="faq"><summary>WebDAV 安全嗎？</summary><div class="body">走 HTTPS 加密傳輸，安全性取決於你的密碼管理。用 App 密碼並定期檢查已連線裝置。</div></details>
+      <h2 data-icon="faq">WebDAV FAQ</h2>
+      <details class="faq"><summary>What is the difference between WebDAV and the desktop client?</summary><div class="body">WebDAV is direct access to the remote (it takes no space on the machine, but you have to be online); the client is two-way sync (there is a local copy, available offline).</div></details>
+      <details class="faq"><summary>Do I have to use an app password?</summary><div class="body">We strongly recommend it. Typing your main password in all over the place is risky; an app password can be revoked on its own, which is safer.</div></details>
+      <details class="faq"><summary>Can I use rclone to back up somewhere else?</summary><div class="body">You can. rclone supports WebDAV, so you can back up what is in Nextcloud to another storage, and the other way round too.</div></details>
+      <details class="faq"><summary>Can I use WebDAV on a phone?</summary><div class="body">You can, with a file app that supports WebDAV, but for day-to-day use the official app is smoother (Chapter 19).</div></details>
+      <details class="faq"><summary>Is WebDAV safe?</summary><div class="body">It travels encrypted over HTTPS, so how safe it is comes down to how you manage your passwords. Use an app password and check your connected devices regularly.</div></details>
     </section>
 
-    <section id="sources" data-nav="官方來源">
-      <h2 data-icon="records">官方來源</h2>
+    <section id="sources" data-nav="Official sources">
+      <h2 data-icon="records">Official sources</h2>
       <table class="data-table">
-        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <thead><tr><th>Source</th><th>What to verify</th></tr></thead>
         <tbody>
-          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/files/access_webdav.html" rel="noopener">Nextcloud：WebDAV 存取</a></td><td>網址、掛載與工具</td></tr>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/files/access_webdav.html" rel="noopener">Nextcloud: WebDAV access</a></td><td>URL, mounting and tools</td></tr>
         </tbody>
       </table>
     </section>

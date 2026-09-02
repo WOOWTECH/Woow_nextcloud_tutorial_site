@@ -68,13 +68,13 @@
     </ol>
     <div class="toc-in-chapter">
       <h2>This chapter</h2>
-      <a href="#why">為什麼要學</a>
-      <a href="#concept">Tasks 觀念</a>
-      <a href="#steps">使用步驟</a>
-      <a href="#sync">跨裝置</a>
-      <a href="#troubleshoot">Tasks 卡關</a>
+      <a href="#why">Why this matters</a>
+      <a href="#concept">Tasks basics</a>
+      <a href="#steps">Usage steps</a>
+      <a href="#sync">Across devices</a>
+      <a href="#troubleshoot">Tasks problems</a>
       <a href="#faq">FAQ</a>
-      <a href="#sources">官方來源</a>
+      <a href="#sources">Official sources</a>
     </div>
     <div class="toc-in-chapter">
       <h2>Appendices</h2>
@@ -88,75 +88,75 @@
     <div class="callout i18n-pending"><strong>This chapter has not been translated yet.</strong> You are reading the original Chinese text. <a href="../ch17_tasks.html" hreflang="zh-Hant">Open the Chinese version</a></div>
     <div class="chapter-header">
       <div class="kicker">Chapter 17</div>
-      <h1>Tasks 待辦</h1>
-      <p class="lead">Tasks 是 Nextcloud 的待辦清單，和行事曆整合、能跨裝置同步。讀完這章，你能建立待辦、設期限與優先度，並讓待辦出現在行事曆裡。</p>
+      <h1>Tasks</h1>
+      <p class="lead">Tasks is Nextcloud's to-do list. It is integrated with Calendar and syncs across your devices. By the end of this chapter, you'll be able to create tasks, set due dates and priorities, and make your tasks appear in your calendar.</p>
     </div>
 
-    <section id="why" data-nav="為什麼要學">
-      <h2 data-icon="why">待辦清單也自己管</h2>
-      <p>待辦事項用一般 app 記，換裝置就散掉。Tasks 把待辦存在 Nextcloud，和 Calendar 共用同一套資料，能設期限、優先度，還能跨裝置同步，事情不漏接。</p>
-      <div class="callout"><strong>本章任務：</strong>建一個待辦清單與項目、設期限與優先度、了解和行事曆的整合。</div>
+    <section id="why" data-nav="Why this matters">
+      <h2 data-icon="why">Run your own to-do list</h2>
+      <p>Keep your to-dos in an ordinary app and they scatter the moment you switch devices. Tasks keeps them in Nextcloud, on the same data Calendar uses, lets you set due dates and priorities, and syncs them across your devices, so nothing falls through the cracks.</p>
+      <div class="callout"><strong>Chapter task:</strong> create a list and a task in it, set a due date and a priority, and understand how Tasks integrates with Calendar.</div>
     </section>
 
-    <section id="concept" data-nav="Tasks 觀念">
-      <h2 data-icon="concept">Tasks 和 Calendar 是一家</h2>
-      <p>Tasks 和 Calendar 底層共用 <strong>CalDAV</strong>：一個「清單」其實對應一本日曆。所以待辦能和行事曆一起同步、一起顯示。</p>
+    <section id="concept" data-nav="Tasks basics">
+      <h2 data-icon="concept">Tasks and Calendar are the same thing underneath</h2>
+      <p>Tasks and Calendar share <strong>CalDAV</strong> underneath: a "list" is really a calendar. That is why your tasks sync alongside your calendar and show up in it.</p>
       <table class="data-table">
-        <thead><tr><th>概念</th><th>說明</th></tr></thead>
+        <thead><tr><th>Concept</th><th>What it means</th></tr></thead>
         <tbody>
-          <tr><td>清單（List）</td><td>一組待辦，對應一本日曆</td></tr>
-          <tr><td>待辦（Task）</td><td>單一事項，可設期限、優先度、子任務</td></tr>
-          <tr><td>與行事曆整合</td><td>有期限的待辦會顯示在 Calendar</td></tr>
+          <tr><td>List</td><td>A set of tasks, backed by one calendar</td></tr>
+          <tr><td>Task</td><td>A single item, which can carry a due date, a priority and subtasks</td></tr>
+          <tr><td>Calendar integration</td><td>A task with a due date shows up in Calendar</td></tr>
         </tbody>
       </table>
     </section>
 
-    <section id="steps" data-nav="使用步驟">
-      <h2 data-icon="steps">五步用起 Tasks</h2>
+    <section id="steps" data-nav="Usage steps">
+      <h2 data-icon="steps">Five steps to start using Tasks</h2>
       <ol class="steps">
-        <li><h3>打開 Tasks</h3><p>從 Apps 選單點「Tasks」。左側是清單。</p></li>
-        <li><h3>建立清單</h3><p>新增清單（例如「家事」「工作」），選顏色區分。</p></li>
-        <li><h3>加待辦</h3><p>在清單裡輸入待辦名稱按 Enter；點進去可設細節。</p></li>
-        <li><h3>設期限與優先度</h3><p>在待辦裡設到期日、優先度（高／中／低），可加子任務與備註。</p></li>
-        <li><h3>完成打勾</h3><p>做完把待辦打勾，會移到已完成，需要時可回顧或還原。</p></li>
+        <li><h3>Open Tasks</h3><p>Click "Tasks" in the Apps menu. The left-hand list holds your task lists.</p></li>
+        <li><h3>Create a list</h3><p>Add a list (for example "Chores" or "Work") and pick a color to tell them apart.</p></li>
+        <li><h3>Add a task</h3><p>Type a task name in the list and press Enter; click into it to fill in the details.</p></li>
+        <li><h3>Set a due date and a priority</h3><p>Inside a task, set the due date and the priority (high / medium / low). You can add subtasks and notes as well.</p></li>
+        <li><h3>Check it off</h3><p>Check a task off when it is done and it moves to Completed, where you can review it or restore it whenever you need to.</p></li>
       </ol>
-      <div class="callout tip"><strong>和行事曆連動：</strong>設了到期日的待辦，會出現在 Calendar 對應的那本日曆裡，一眼看到今天要做什麼。</div>
+      <div class="callout tip"><strong>Linked to your calendar:</strong> a task with a due date shows up in Calendar, in the calendar that matches its list, so a single glance tells you what needs doing today.</div>
     </section>
 
-    <section id="sync" data-nav="跨裝置">
-      <h2 data-icon="companion">跨裝置同步</h2>
+    <section id="sync" data-nav="Across devices">
+      <h2 data-icon="companion">Syncing across devices</h2>
       <ul>
-        <li>用 CalDAV 網址在手機的待辦／行事曆 app 加帳號，待辦雙向同步。</li>
-        <li>Android 可用支援 CalDAV 的待辦 app；iOS 提醒事項也能透過 CalDAV 整合。</li>
-        <li>桌面上和 Calendar 一起同步，不必分開設定。</li>
+        <li>Add an account in the to-do or calendar app on your phone using the CalDAV URL, and your tasks sync both ways.</li>
+        <li>On Android, use a to-do app that supports CalDAV; on iOS, Reminders can integrate over CalDAV too.</li>
+        <li>On the desktop it syncs together with Calendar, so there is nothing separate to set up.</li>
       </ul>
     </section>
 
-    <section id="troubleshoot" data-nav="Tasks 卡關">
-      <h2 data-icon="troubleshoot">Tasks 常見卡關</h2>
+    <section id="troubleshoot" data-nav="Tasks problems">
+      <h2 data-icon="troubleshoot">Common Tasks pitfalls</h2>
       <ol class="steps">
-        <li><h3>找不到 Tasks</h3><p>Tasks 是獨立 app，可能未啟用，請管理員啟用（第 21 章）。</p></li>
-        <li><h3>待辦沒出現在行事曆</h3><p>確認待辦有設到期日；沒期限的不會顯示在日曆時間軸。</p></li>
-        <li><h3>手機同步不到</h3><p>檢查 CalDAV 帳號設定（建議用 App 密碼），確認指到正確清單。</p></li>
-        <li><h3>子任務展不開</h3><p>點待辦進入詳情頁查看子任務；清單視圖可能只顯示主任務。</p></li>
+        <li><h3>Tasks is nowhere to be found</h3><p>Tasks is a separate app and may not be enabled. Ask your admin to enable it (Chapter 21).</p></li>
+        <li><h3>A task does not show up in your calendar</h3><p>Check that the task has a due date; one without a due date does not appear on the calendar timeline.</p></li>
+        <li><h3>Your phone will not sync</h3><p>Check the CalDAV account settings (an app password is recommended) and confirm they point at the right list.</p></li>
+        <li><h3>Subtasks will not expand</h3><p>Click a task to open its detail view and see the subtasks; the list view may show only the top-level tasks.</p></li>
       </ol>
     </section>
 
     <section id="faq" data-nav="FAQ">
-      <h2 data-icon="faq">Tasks 常見問題</h2>
-      <details class="faq"><summary>Tasks 和 Deck 該用哪個？</summary><div class="body">Tasks 適合個人／清單式待辦、和行事曆整合；Deck 適合看板式專案協作（第 14 章）。可以並用。</div></details>
-      <details class="faq"><summary>待辦能分享嗎？</summary><div class="body">能，分享對應的清單（日曆）給站內帳號，適合家庭共用家事清單。</div></details>
-      <details class="faq"><summary>和 iOS 提醒事項能同步嗎？</summary><div class="body">可透過 CalDAV 整合，設定較進階，參考官方文件。</div></details>
-      <details class="faq"><summary>完成的待辦會刪掉嗎？</summary><div class="body">不會，移到已完成，可回顧或還原。</div></details>
-      <details class="faq"><summary>可以設重複待辦嗎？</summary><div class="body">可以設重複規則（每天／每週），適合固定家事。</div></details>
+      <h2 data-icon="faq">Tasks FAQ</h2>
+      <details class="faq"><summary>Should I use Tasks or Deck?</summary><div class="body">Tasks suits personal, list-style to-dos and integrates with Calendar; Deck suits board-style project collaboration (Chapter 14). You can use both.</div></details>
+      <details class="faq"><summary>Can I share a task?</summary><div class="body">Yes. Share the list it belongs to (the calendar) with an account on this site, which works well for a household chore list.</div></details>
+      <details class="faq"><summary>Can it sync with Reminders on iOS?</summary><div class="body">It can, over CalDAV. The setup is on the advanced side, so go by the official docs.</div></details>
+      <details class="faq"><summary>Are completed tasks deleted?</summary><div class="body">No. They move to Completed, where you can review or restore them.</div></details>
+      <details class="faq"><summary>Can I set a recurring task?</summary><div class="body">Yes, you can set a recurrence rule (daily / weekly), which works well for regular chores.</div></details>
     </section>
 
-    <section id="sources" data-nav="官方來源">
-      <h2 data-icon="records">官方來源</h2>
+    <section id="sources" data-nav="Official sources">
+      <h2 data-icon="records">Official sources</h2>
       <table class="data-table">
-        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <thead><tr><th>Source</th><th>What to verify</th></tr></thead>
         <tbody>
-          <tr><td><a href="https://github.com/nextcloud/tasks" rel="noopener">Nextcloud Tasks（GitHub）</a></td><td>待辦、CalDAV 與行事曆整合</td></tr>
+          <tr><td><a href="https://github.com/nextcloud/tasks" rel="noopener">Nextcloud Tasks (GitHub)</a></td><td>Tasks, CalDAV and calendar integration</td></tr>
         </tbody>
       </table>
     </section>

@@ -68,13 +68,13 @@
     </ol>
     <div class="toc-in-chapter">
       <h2>This chapter</h2>
-      <a href="#why">為什麼要學</a>
-      <a href="#concept">App 觀念</a>
-      <a href="#steps">安裝步驟</a>
-      <a href="#settings">值得調的設定</a>
-      <a href="#troubleshoot">App 卡關</a>
+      <a href="#why">Why this matters</a>
+      <a href="#concept">App basics</a>
+      <a href="#steps">Install steps</a>
+      <a href="#settings">Settings to tweak</a>
+      <a href="#troubleshoot">App problems</a>
       <a href="#faq">FAQ</a>
-      <a href="#sources">官方來源</a>
+      <a href="#sources">Official sources</a>
     </div>
     <div class="toc-in-chapter">
       <h2>Appendices</h2>
@@ -88,77 +88,77 @@
     <div class="callout i18n-pending"><strong>This chapter has not been translated yet.</strong> You are reading the original Chinese text. <a href="../ch19_mobile.html" hreflang="zh-Hant">Open the Chinese version</a></div>
     <div class="chapter-header">
       <div class="kicker">Chapter 19</div>
-      <h1>手機 App</h1>
-      <p class="lead">在手機裝 Nextcloud App，連到你的伺服器，讓照片自動備份、檔案隨身帶。讀完這章，你手機的照片會自動收進家裡，重要檔案離線也能看。</p>
+      <h1>Mobile app</h1>
+      <p class="lead">Install the Nextcloud app on your phone, connect it to your server, and let your photos back themselves up while your files travel with you. By the end of this chapter, the photos on your phone land at home on their own, and the files that matter are readable offline.</p>
     </div>
 
-    <section id="why" data-nav="為什麼要學">
-      <h2 data-icon="why">手機是照片最多的地方</h2>
-      <p>手機是你拍照、存檔最頻繁的裝置，也最容易遺失或損壞。裝 Nextcloud App 開自動上傳，手機照片就會持續備份到家裡；需要的檔案也能隨身存取。</p>
-      <div class="callout"><strong>本章任務：</strong>安裝 App、登入伺服器、開自動上傳照片、了解離線存取。</div>
+    <section id="why" data-nav="Why this matters">
+      <h2 data-icon="why">Your phone holds the most photos</h2>
+      <p>Your phone is the device you take photos and save files on most often, and the one most easily lost or broken. Install the Nextcloud app and turn on auto upload, and the photos on your phone keep backing up to your server at home; the files you need travel with you as well.</p>
+      <div class="callout"><strong>Chapter task:</strong> Install the app, log in to your server, turn on auto upload for photos, and learn how offline access works.</div>
     </section>
 
-    <section id="concept" data-nav="App 觀念">
-      <h2 data-icon="concept">自動上傳 vs 手動</h2>
+    <section id="concept" data-nav="App basics">
+      <h2 data-icon="concept">Auto upload vs manual</h2>
       <table class="data-table">
-        <thead><tr><th>方式</th><th>做法</th><th>適合</th></tr></thead>
+        <thead><tr><th>Method</th><th>How it works</th><th>Best for</th></tr></thead>
         <tbody>
-          <tr><td>自動上傳</td><td>App 在背景把新照片傳上伺服器</td><td>日常，裝好就忘了它</td></tr>
-          <tr><td>手動上傳</td><td>手動選檔案上傳</td><td>補傳舊檔、控制時機</td></tr>
-          <tr><td>離線存取</td><td>把檔案標記為離線可用</td><td>沒網路也要看的重要檔</td></tr>
+          <tr><td>Auto upload</td><td>The app sends new photos to the server in the background</td><td>Day to day; set it up and forget it</td></tr>
+          <tr><td>Manual upload</td><td>You pick the files and upload them yourself</td><td>Catching up on old files, controlling the timing</td></tr>
+          <tr><td>Offline access</td><td>Mark a file as available offline</td><td>Files that matter and have to open with no network</td></tr>
         </tbody>
       </table>
-      <div class="callout tip"><strong>背景備份要權限：</strong>iOS／Android 會限制背景運作，App 要相應權限（照片、背景重新整理）才能自動備份。第一次設定時把權限開好。</div>
+      <div class="callout tip"><strong>Background backup needs permissions:</strong> iOS / Android restrict what runs in the background, so the app needs the matching permissions (photos, background refresh) before it can back up on its own. Grant them when you first set it up.</div>
     </section>
 
-    <section id="steps" data-nav="安裝步驟">
-      <h2 data-icon="app">六步設定手機備份</h2>
+    <section id="steps" data-nav="Install steps">
+      <h2 data-icon="app">Six steps to set up phone backup</h2>
       <ol class="steps">
-        <li><h3>下載 App</h3><p>App Store（iOS）或 Google Play（Android）搜尋「Nextcloud」安裝官方 App。</p></li>
-        <li><h3>輸入伺服器網址</h3><p>開 App，填 <code>https://woowtech-nextcloud.woowtech.io</code>（完整含 https）。</p></li>
-        <li><h3>登入授權</h3><p>用帳密登入並授權；建議搭配 App 密碼（第 5 章）。</p></li>
-        <li><h3>開自動上傳</h3><p>在 App 設定開「自動上傳（Auto upload）」，選相機相簿與目標資料夾。</p></li>
-        <li><h3>給權限</h3><p>允許存取照片、背景重新整理、通知，自動備份才會順。</p></li>
-        <li><h3>確認開始備份</h3><p>回 Web 的 Files／Photos，看到手機照片開始出現，代表生效。</p></li>
+        <li><h3>Download the app</h3><p>Search for "Nextcloud" in the App Store (iOS) or Google Play (Android) and install the official app.</p></li>
+        <li><h3>Enter the server URL</h3><p>Open the app and fill in <code>https://woowtech-nextcloud.woowtech.io</code> (the full address, including https).</p></li>
+        <li><h3>Log in and authorize</h3><p>Log in with your username and password and authorize the app; we recommend pairing it with an app password (Chapter 5).</p></li>
+        <li><h3>Turn on auto upload</h3><p>In the app settings turn on "Auto upload", then choose the camera album and the target folder.</p></li>
+        <li><h3>Grant the permissions</h3><p>Allow access to photos, background refresh and notifications, so the automatic backup runs smoothly.</p></li>
+        <li><h3>Confirm the backup has started</h3><p>Go back to Files / Photos on the web, and when the photos from your phone start showing up, it is working.</p></li>
       </ol>
-      <div class="callout warn"><strong>第一次備份很花時間：</strong>手機若已有大量照片，第一次全量備份會很久、耗流量。建議連 Wi-Fi 再開始，並讓 App 在前景一段時間。</div>
+      <div class="callout warn"><strong>The first backup takes a long time:</strong> If the phone already holds a great many photos, the first full backup runs long and eats data. Connect to Wi-Fi before you start, and leave the app in the foreground for a while.</div>
     </section>
 
-    <section id="settings" data-nav="值得調的設定">
-      <h2 data-icon="tips">值得調整的設定</h2>
+    <section id="settings" data-nav="Settings to tweak">
+      <h2 data-icon="tips">Settings worth adjusting</h2>
       <ul>
-        <li><strong>只在 Wi-Fi 上傳</strong>：省行動流量。</li>
-        <li><strong>包含影片</strong>：影片大、選擇性納入。</li>
-        <li><strong>原畫質</strong>：確認上傳原檔而非壓縮版。</li>
-        <li><strong>離線標記</strong>：把常用檔標為離線可用，沒網路也能開。</li>
+        <li><strong>Upload on Wi-Fi only</strong>: saves mobile data.</li>
+        <li><strong>Include videos</strong>: videos are large, so bring them in by choice.</li>
+        <li><strong>Original quality</strong>: check that it uploads the original file and not a compressed version.</li>
+        <li><strong>Offline marking</strong>: mark the files you use often as available offline, so they open with no network.</li>
       </ul>
     </section>
 
-    <section id="troubleshoot" data-nav="App 卡關">
-      <h2 data-icon="troubleshoot">App 常見卡關</h2>
+    <section id="troubleshoot" data-nav="App problems">
+      <h2 data-icon="troubleshoot">Common app pitfalls</h2>
       <ol class="steps">
-        <li><h3>連不上伺服器</h3><p>確認網址完整含 https、網路正常。用手機瀏覽器開同網址測試。</p></li>
-        <li><h3>背景備份不跑</h3><p>檢查照片、背景重新整理、通知權限；把 App 從省電最佳化排除。</p></li>
-        <li><h3>備份到一半停</h3><p>切 Wi-Fi、確認電量、把 App 開到前景繼續。大影片容易卡，先備份照片。</p></li>
-        <li><h3>照片重複</h3><p>確認自動上傳沒設重複來源；換手機時登入同帳號，不會重複上傳已備份的。</p></li>
+        <li><h3>It cannot reach the server</h3><p>Check that the URL is complete and includes https, and that your network is up. Open the same URL in the phone browser to test.</p></li>
+        <li><h3>Background backup does not run</h3><p>Check the photos, background refresh and notification permissions; exclude the app from battery optimization.</p></li>
+        <li><h3>The backup stops halfway</h3><p>Switch to Wi-Fi, check the battery level, and bring the app to the foreground to carry on. Large videos get stuck easily, so back up the photos first.</p></li>
+        <li><h3>Duplicate photos</h3><p>Check that auto upload has no duplicate source set; when you change phones, log in with the same account and anything already backed up is not uploaded again.</p></li>
       </ol>
     </section>
 
     <section id="faq" data-nav="FAQ">
-      <h2 data-icon="faq">手機 App 常見問題</h2>
-      <details class="faq"><summary>App 和 Web 資料一樣嗎？</summary><div class="body">一樣，連同一伺服器、同一帳號，檔案互通。</div></details>
-      <details class="faq"><summary>會用掉很多行動流量嗎？</summary><div class="body">會，尤其第一次全量備份。設「只在 Wi-Fi 上傳」，或先在 Wi-Fi 跑完第一次。</div></details>
-      <details class="faq"><summary>刪手機照片，伺服器的也會刪嗎？</summary><div class="body">自動上傳是「備份」，預設不會因刪手機照片而刪伺服器副本，但仍要看設定，先確認再刪。</div></details>
-      <details class="faq"><summary>換手機備份會重來嗎？</summary><div class="body">登入同帳號即可，已備份的不會重傳；新照片繼續備份。</div></details>
-      <details class="faq"><summary>手機也能用行事曆／聯絡人嗎？</summary><div class="body">能，透過 CalDAV／CardDAV 同步（第 11、12 章），或用對應官方 app。</div></details>
+      <h2 data-icon="faq">Mobile app FAQ</h2>
+      <details class="faq"><summary>Is the data the same in the app and on the web?</summary><div class="body">It is. They connect to the same server with the same account, and the files are shared between them.</div></details>
+      <details class="faq"><summary>Does it use a lot of mobile data?</summary><div class="body">It does, especially the first full backup. Set "Upload on Wi-Fi only", or run the first one through on Wi-Fi.</div></details>
+      <details class="faq"><summary>If I delete a photo on my phone, does the server copy go too?</summary><div class="body">Auto upload is a "backup", so by default deleting a photo on the phone does not delete the server copy. It still depends on your settings, so confirm before you delete.</div></details>
+      <details class="faq"><summary>Does the backup start over when I change phones?</summary><div class="body">Log in with the same account and that is all it takes. Anything already backed up is not sent again, and new photos keep backing up.</div></details>
+      <details class="faq"><summary>Can I use Calendar and Contacts on my phone too?</summary><div class="body">You can, over CalDAV / CardDAV sync (Chapters 11 and 12), or with the matching official apps.</div></details>
     </section>
 
-    <section id="sources" data-nav="官方來源">
-      <h2 data-icon="records">官方來源</h2>
+    <section id="sources" data-nav="Official sources">
+      <h2 data-icon="records">Official sources</h2>
       <table class="data-table">
-        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <thead><tr><th>Source</th><th>What to verify</th></tr></thead>
         <tbody>
-          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/files/access_mobile.html" rel="noopener">Nextcloud：行動 App</a></td><td>安裝、自動上傳與離線存取</td></tr>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/files/access_mobile.html" rel="noopener">Nextcloud: mobile apps</a></td><td>Install, auto upload and offline access</td></tr>
         </tbody>
       </table>
     </section>
