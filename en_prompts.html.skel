@@ -1,0 +1,410 @@
+html []
+head []
+meta []
+/meta
+meta []
+/meta
+title []
+/title
+meta []
+/meta
+meta []
+/meta
+meta []
+/meta
+link [('href', 'https://nextcloud-guide.woowtech.io/en/prompts.html')]
+/link
+meta []
+/meta
+link [('href', 'https://fonts.googleapis.com')]
+/link
+link [('href', 'https://fonts.gstatic.com')]
+/link
+link [('href', 'https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Yellowtail&display=swap')]
+/link
+style []
+/style
+link [('href', '../assets/css/i18n.css')]
+/link
+/head
+body []
+div [('class', 'layout')]
+aside [('class', 'sidebar')]
+a [('class', 'brand'), ('href', 'tutorial.html')]
+/a
+div [('class', 'brand-sub')]
+/div
+nav [('class', 'lang-switch')]
+a [('href', '../prompts.html')]
+/a
+a [('class', 'active'), ('href', 'prompts.html')]
+/a
+/nav
+a [('class', 'hub-link'), ('href', 'index.html')]
+/a
+h2 []
+/h2
+div [('class', 'toc-in-chapter')]
+a [('href', '#why')]
+/a
+a [('href', '#howto')]
+/a
+a [('href', '#cat-files')]
+/a
+a [('href', '#cat-share')]
+/a
+a [('href', '#cat-users')]
+/a
+a [('href', '#cat-backup')]
+/a
+a [('href', '#cat-groupware')]
+/a
+a [('href', '#cat-deck')]
+/a
+a [('href', '#cat-ops')]
+/a
+a [('href', '#faq')]
+/a
+/div
+/aside
+main [('class', 'content')]
+div [('class', 'chapter-header')]
+span [('class', 'kicker-script')]
+/span
+div [('class', 'kicker')]
+/div
+h1 []
+/h1
+p [('class', 'lead')]
+/p
+/div
+section [('data-nav', 'why'), ('id', 'why')]
+h2 []
+/h2
+p []
+strong []
+/strong
+strong []
+/strong
+strong []
+/strong
+/p
+div [('class', 'callout')]
+strong []
+/strong
+/div
+/section
+section [('data-nav', 'howto'), ('id', 'howto')]
+h2 []
+/h2
+p []
+/p
+div [('class', 'callout')]
+strong []
+/strong
+/div
+/section
+section [('data-nav', 'cat-files'), ('id', 'cat-files')]
+h2 []
+/h2
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+/section
+section [('data-nav', 'cat-share'), ('id', 'cat-share')]
+h2 []
+/h2
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+/section
+section [('data-nav', 'cat-users'), ('id', 'cat-users')]
+h2 []
+/h2
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+/section
+section [('data-nav', 'cat-backup'), ('id', 'cat-backup')]
+h2 []
+/h2
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+/section
+section [('data-nav', 'cat-groupware'), ('id', 'cat-groupware')]
+h2 []
+/h2
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+/section
+section [('data-nav', 'cat-deck'), ('id', 'cat-deck')]
+h2 []
+/h2
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+/section
+section [('data-nav', 'cat-ops'), ('id', 'cat-ops')]
+h2 []
+/h2
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+div [('class', 'prompt-card')]
+div [('class', 'p-label')]
+/div
+pre []
+/pre
+button [('class', 'copy-btn')]
+/button
+/div
+/section
+section [('data-nav', 'faq'), ('id', 'faq')]
+h2 []
+/h2
+div [('class', 'callout')]
+strong []
+/strong
+br []
+/div
+div [('class', 'callout')]
+strong []
+/strong
+br []
+/div
+div [('class', 'callout')]
+strong []
+/strong
+br []
+/div
+div [('class', 'callout')]
+strong []
+/strong
+br []
+/div
+/section
+footer [('class', 'site-footer')]
+p []
+a [('href', 'https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site')]
+/a
+/p
+/footer
+/main
+/div
+script []
+/script
+/body
+/html
