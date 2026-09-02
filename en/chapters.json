@@ -9,7 +9,7 @@
     "locale": "en_US",
     "description": "22 章＋3 附錄的繁體中文 Nextcloud 教學：從安裝、登入、檔案管理與分享，到 Photos、Calendar、Talk、桌面與手機同步、管理員設定、安全與排錯。",
     "footerMeta": "截圖取自 Nextcloud 官方介面。Nextcloud 為其權利人的商標，本站與其無隸屬關係。",
-    "ogImage": "assets/screenshots/ch4/01_ui_overview.en.png",
+    "ogImage": "assets/og/nextcloud-guide.en.png",
     "license": {
       "name": "CC BY 4.0",
       "url": "https://creativecommons.org/licenses/by/4.0/deed.en",
