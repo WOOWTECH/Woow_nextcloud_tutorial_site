@@ -68,13 +68,13 @@
     </ol>
     <div class="toc-in-chapter">
       <h2>This chapter</h2>
-      <a href="#why">為什麼要學</a>
-      <a href="#concept">Office 觀念</a>
-      <a href="#steps">使用步驟</a>
-      <a href="#collab">多人協作</a>
-      <a href="#troubleshoot">Office 卡關</a>
+      <a href="#why">Why this matters</a>
+      <a href="#concept">Office basics</a>
+      <a href="#steps">Usage steps</a>
+      <a href="#collab">Co-editing</a>
+      <a href="#troubleshoot">Office problems</a>
       <a href="#faq">FAQ</a>
-      <a href="#sources">官方來源</a>
+      <a href="#sources">Official sources</a>
     </div>
     <div class="toc-in-chapter">
       <h2>Appendices</h2>
@@ -88,76 +88,76 @@
     <div class="callout i18n-pending"><strong>This chapter has not been translated yet.</strong> You are reading the original Chinese text. <a href="../ch15_office.html" hreflang="zh-Hant">Open the Chinese version</a></div>
     <div class="chapter-header">
       <div class="kicker">Chapter 15</div>
-      <h1>Office 線上文件</h1>
-      <p class="lead">Nextcloud Office 讓你直接在瀏覽器編輯 Word／Excel／PowerPoint 文件，還能多人同時協作。讀完這章，你不用下載檔案就能改文件，改完自動存回雲端。</p>
+      <h1>Office: documents online</h1>
+      <p class="lead">Nextcloud Office lets you edit Word / Excel / PowerPoint documents right in your browser, and several people can work on the same file at once. By the end of this chapter, you'll be able to change a document without downloading it, and your edits save straight back to the cloud.</p>
     </div>
 
-    <section id="why" data-nav="為什麼要學">
-      <h2 data-icon="why">文件不用下載來下載去</h2>
-      <p>傳統流程是「下載→編輯→再上傳」，麻煩又容易版本混亂。Nextcloud Office 讓你直接在瀏覽器開文件、編輯、多人協作，改完就存回原檔，省掉來回搬檔的痛。</p>
-      <div class="callout"><strong>本章任務：</strong>用 Office 開一份文件、線上編輯、體驗多人協作。</div>
+    <section id="why" data-nav="Why this matters">
+      <h2 data-icon="why">No more downloading and re-uploading documents</h2>
+      <p>The traditional routine is "download → edit → re-upload" — tedious, and prone to version confusion. Nextcloud Office lets you open a document in the browser, edit it and collaborate on it; your changes save back to the original file, so you skip the pain of moving files back and forth.</p>
+      <div class="callout"><strong>Chapter task:</strong> open a document in Office, edit it online, and try co-editing with someone else.</div>
     </section>
 
-    <section id="concept" data-nav="Office 觀念">
-      <h2 data-icon="concept">Office 是什麼、怎麼來的</h2>
-      <p>Nextcloud Office 底層是 <strong>Collabora Online</strong> 或 <strong>OnlyOffice</strong>（依站台安裝哪個）。它們是開源的線上文書引擎，支援 <code>.docx</code>、<code>.xlsx</code>、<code>.pptx</code> 及 OpenDocument（<code>.odt/.ods/.odp</code>）。</p>
+    <section id="concept" data-nav="Office basics">
+      <h2 data-icon="concept">What Office is and where it comes from</h2>
+      <p>Under the hood, Nextcloud Office is <strong>Collabora Online</strong> or <strong>OnlyOffice</strong> (whichever the site has installed). Both are open-source online office engines, and they support <code>.docx</code>, <code>.xlsx</code> and <code>.pptx</code> as well as OpenDocument (<code>.odt/.ods/.odp</code>).</p>
       <table class="data-table">
-        <thead><tr><th>檔案類型</th><th>對應</th></tr></thead>
+        <thead><tr><th>File type</th><th>Equivalent</th></tr></thead>
         <tbody>
-          <tr><td>文件</td><td>Word（.docx）／ODF（.odt）</td></tr>
-          <tr><td>試算表</td><td>Excel（.xlsx）／ODF（.ods）</td></tr>
-          <tr><td>簡報</td><td>PowerPoint（.pptx）／ODF（.odp）</td></tr>
+          <tr><td>Document</td><td>Word (.docx) / ODF (.odt)</td></tr>
+          <tr><td>Spreadsheet</td><td>Excel (.xlsx) / ODF (.ods)</td></tr>
+          <tr><td>Presentation</td><td>PowerPoint (.pptx) / ODF (.odp)</td></tr>
         </tbody>
       </table>
-      <div class="callout tip"><strong>範本可直接用：</strong>Files 裡常見 <code>/Templates</code> 資料夾（發票、履歷、時間表等），開新文件時能套用。</div>
+      <div class="callout tip"><strong>Templates are ready to use:</strong> Files usually has a <code>/Templates</code> folder (invoices, resumes, schedules and so on) that you can apply when you create a new document.</div>
     </section>
 
-    <section id="steps" data-nav="使用步驟">
-      <h2 data-icon="steps">五步用起 Office</h2>
+    <section id="steps" data-nav="Usage steps">
+      <h2 data-icon="steps">Five steps to start using Office</h2>
       <ol class="steps">
-        <li><h3>在 Files 開文件</h3><p>點一個 <code>.docx</code> 或 <code>.xlsx</code> 檔，會直接在瀏覽器開啟編輯器。</p></li>
-        <li><h3>建立新文件</h3><p>在 Files 按「＋」→ 新增文件／試算表／簡報，命名後開始編輯。</p></li>
-        <li><h3>編輯與自動儲存</h3><p>像用桌面版一樣編輯，內容會自動存回原檔，不用手動上傳。</p></li>
-        <li><h3>邀人協作</h3><p>把文件分享給站內帳號（可編輯），大家能同時編輯，看到彼此的游標。</p></li>
-        <li><h3>下載或匯出</h3><p>需要離線版就用「下載」，可選原格式或轉 PDF。</p></li>
+        <li><h3>Open a document in Files</h3><p>Click a <code>.docx</code> or <code>.xlsx</code> file and the editor opens right in your browser.</p></li>
+        <li><h3>Create a new document</h3><p>In Files, click "+" → New document / spreadsheet / presentation, name it and start editing.</p></li>
+        <li><h3>Edit, and let it autosave</h3><p>Edit as you would in the desktop version. What you write saves back to the original file, with no manual upload.</p></li>
+        <li><h3>Invite people to collaborate</h3><p>Share the document with an account on this site and give it "can edit". Everyone can then edit at the same time and see each other's cursors.</p></li>
+        <li><h3>Download or export</h3><p>If you need an offline copy, use "Download" and pick the original format or convert to PDF.</p></li>
       </ol>
     </section>
 
-    <section id="collab" data-nav="多人協作">
-      <h2 data-icon="remote">多人即時協作</h2>
+    <section id="collab" data-nav="Co-editing">
+      <h2 data-icon="remote">Real-time collaboration</h2>
       <ul>
-        <li>多人同時編輯，看到彼此游標與變更。</li>
-        <li>用註解與追蹤修訂討論內容。</li>
-        <li>版本歷史可回溯（在檔案的版本或活動裡）。</li>
+        <li>Several people edit at the same time and see each other's cursors and changes.</li>
+        <li>Use comments and track changes to discuss the content.</li>
+        <li>Version history lets you go back (under the file's versions, or in Activity).</li>
       </ul>
-      <div class="callout warn"><strong>格式相容性：</strong>複雜的 Word／Excel 排版在開源引擎可能略有差異。重要文件下載後再確認一次排版。</div>
+      <div class="callout warn"><strong>Format compatibility:</strong> complex Word / Excel formatting can come out slightly differently in an open-source engine. For a document that matters, download it and check the formatting once more.</div>
     </section>
 
-    <section id="troubleshoot" data-nav="Office 卡關">
-      <h2 data-icon="troubleshoot">Office 常見卡關</h2>
+    <section id="troubleshoot" data-nav="Office problems">
+      <h2 data-icon="troubleshoot">Common Office pitfalls</h2>
       <ol class="steps">
-        <li><h3>點檔案打不開編輯器</h3><p>Office 元件（Collabora／OnlyOffice）可能未安裝或未啟動，屬管理員設定（第 21 章）。</p></li>
-        <li><h3>載入很久或空白</h3><p>Office 引擎較吃資源，首次載入慢。伺服器效能不足時會明顯。</p></li>
-        <li><h3>排版跑掉</h3><p>複雜格式在開源引擎可能有差異，重要文件下載回原軟體確認。</p></li>
-        <li><h3>協作時卡住</h3><p>多人同時編輯很吃連線，網路差時會延遲，減少同時人數。</p></li>
+        <li><h3>Clicking a file does not open the editor</h3><p>The Office component (Collabora / OnlyOffice) may not be installed or not started. That is an admin setting (Chapter 21).</p></li>
+        <li><h3>It loads for a long time, or stays blank</h3><p>The Office engine is fairly resource-hungry, so the first load is slow. It shows most on a server that is short of capacity.</p></li>
+        <li><h3>The formatting shifts</h3><p>Complex formatting can differ in an open-source engine. For a document that matters, download it and check it in the original software.</p></li>
+        <li><h3>It stalls while you collaborate</h3><p>Several people editing at once is demanding on the connection, and a poor network shows up as lag. Cut the number of people editing at the same time.</p></li>
       </ol>
     </section>
 
     <section id="faq" data-nav="FAQ">
-      <h2 data-icon="faq">Office 常見問題</h2>
-      <details class="faq"><summary>要另外付費嗎？</summary><div class="body">Collabora／OnlyOffice 的社群版是開源免費的；企業版有額外功能。本站用哪個由管理員決定。</div></details>
-      <details class="faq"><summary>能開 Google 文件嗎？</summary><div class="body">先把 Google 文件匯出成 .docx／.xlsx 上傳，再用 Office 開。</div></details>
-      <details class="faq"><summary>編輯會自動存嗎？</summary><div class="body">會，編輯內容自動存回原檔，並保留版本歷史。</div></details>
-      <details class="faq"><summary>手機能編輯嗎？</summary><div class="body">能，但小螢幕編輯體驗有限，複雜文件建議在電腦上做。</div></details>
-      <details class="faq"><summary>會不會把我的文件傳到外部？</summary><div class="body">不會。Office 引擎在你自己的伺服器上跑，文件不外傳。</div></details>
+      <h2 data-icon="faq">Office FAQ</h2>
+      <details class="faq"><summary>Do I have to pay extra?</summary><div class="body">The community editions of Collabora / OnlyOffice are open source and free of charge; the enterprise editions add extra features. Which one this site runs is your admin's decision.</div></details>
+      <details class="faq"><summary>Can I open Google documents?</summary><div class="body">Export the Google document to .docx / .xlsx first and upload it, then open it with Office.</div></details>
+      <details class="faq"><summary>Do my edits save automatically?</summary><div class="body">Yes. What you edit saves back to the original file, and the version history is kept.</div></details>
+      <details class="faq"><summary>Can I edit on my phone?</summary><div class="body">You can, but editing on a small screen is limited; do complex documents on a computer.</div></details>
+      <details class="faq"><summary>Do my documents get sent anywhere outside?</summary><div class="body">No. The Office engine runs on your own server, and documents never leave it.</div></details>
     </section>
 
-    <section id="sources" data-nav="官方來源">
-      <h2 data-icon="records">官方來源</h2>
+    <section id="sources" data-nav="Official sources">
+      <h2 data-icon="records">Official sources</h2>
       <table class="data-table">
-        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <thead><tr><th>Source</th><th>What to verify</th></tr></thead>
         <tbody>
-          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/office/index.html" rel="noopener">Nextcloud：Office</a></td><td>線上編輯與協作</td></tr>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/office/index.html" rel="noopener">Nextcloud: Office</a></td><td>Editing and collaborating online</td></tr>
         </tbody>
       </table>
     </section>

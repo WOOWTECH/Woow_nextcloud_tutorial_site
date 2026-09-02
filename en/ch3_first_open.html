@@ -68,14 +68,14 @@
     </ol>
     <div class="toc-in-chapter">
       <h2>This chapter</h2>
-      <a href="#why">為什麼要學</a>
-      <a href="#concept">帳號觀念</a>
-      <a href="#steps">登入步驟</a>
-      <a href="#dashboard">登入後畫面</a>
-      <a href="#security">登入安全</a>
-      <a href="#troubleshoot">登入卡關</a>
+      <a href="#why">Why this matters</a>
+      <a href="#concept">Account basics</a>
+      <a href="#steps">Login steps</a>
+      <a href="#dashboard">After login</a>
+      <a href="#security">Login security</a>
+      <a href="#troubleshoot">Login problems</a>
       <a href="#faq">FAQ</a>
-      <a href="#sources">官方來源</a>
+      <a href="#sources">Official sources</a>
     </div>
     <div class="toc-in-chapter">
       <h2>Appendices</h2>
@@ -89,88 +89,88 @@
     <div class="callout i18n-pending"><strong>This chapter has not been translated yet.</strong> You are reading the original Chinese text. <a href="../ch3_first_open.html" hreflang="zh-Hant">Open the Chinese version</a></div>
     <div class="chapter-header">
       <div class="kicker">Chapter 3</div>
-      <h1>第一次開啟與登入</h1>
-      <p class="lead">用瀏覽器打開 Nextcloud、登入你的帳號，並認識登入後的第一個畫面。讀完這章，你就能安全地進出這套雲端，也知道登入卡住時往哪查。</p>
+      <h1>First open and login</h1>
+      <p class="lead">Open Nextcloud in a browser, log in to your account, and get to know the first screen you land on. By the end of this chapter, you'll be able to get in and out of this cloud safely, and you'll know where to look when a login will not go through.</p>
     </div>
 
-    <section id="why" data-nav="為什麼要學">
-      <h2 data-icon="why">登入是這套雲端的門</h2>
-      <p>Nextcloud 是多人平台：每個人有自己的帳號，登入後才看得到自己的檔案與應用。這道「門」保護你的資料，也決定你能用到哪些功能。學會正確登入，是後面所有章節的起點。</p>
-      <div class="callout"><strong>本章任務：</strong>完成一次登入、認識登入後的儀表板、學會登出。全程不變更任何設定。</div>
+    <section id="why" data-nav="Why this matters">
+      <h2 data-icon="why">Logging in is the door to this cloud</h2>
+      <p>Nextcloud is a multi-user platform: everyone has their own account, and only after you log in do you see your own files and apps. That "door" protects your data, and it also decides which features you get to use. Learning to log in properly is the starting point for every chapter that follows.</p>
+      <div class="callout"><strong>Chapter task:</strong> log in once, get to know the Dashboard you land on, and learn how to log out. You change no settings along the way.</div>
     </section>
 
-    <section id="concept" data-nav="帳號觀念">
-      <h2 data-icon="concept">帳號與角色</h2>
-      <p>Nextcloud 帳號由管理員建立，你會拿到一組「使用者名稱 ＋ 密碼」。角色分兩種：</p>
+    <section id="concept" data-nav="Account basics">
+      <h2 data-icon="concept">Accounts and roles</h2>
+      <p>Nextcloud accounts are created by an admin, and you are handed a "username + password" pair. There are two roles:</p>
       <table class="data-table">
-        <thead><tr><th>角色</th><th>能做的事</th></tr></thead>
+        <thead><tr><th>Role</th><th>What they can do</th></tr></thead>
         <tbody>
-          <tr><td>管理員（admin）</td><td>管理使用者、儲存、Apps、全站設定</td></tr>
-          <tr><td>一般使用者</td><td>上傳、整理、分享自己的檔案與應用</td></tr>
+          <tr><td>Admin</td><td>Manage users, storage, Apps and site-wide settings</td></tr>
+          <tr><td>Standard user</td><td>Upload, organize and share their own files and apps</td></tr>
         </tbody>
       </table>
-      <div class="callout warn"><strong>密碼別共用：</strong>Nextcloud 密碼不要跟其他服務相同，管理員帳號尤其要用強密碼。</div>
+      <div class="callout warn"><strong>Do not reuse passwords:</strong> your Nextcloud password should not be the same as the one you use for any other service, and the admin account in particular needs a strong password.</div>
     </section>
 
-    <section id="steps" data-nav="登入步驟">
-      <h2 data-icon="login">五步完成登入</h2>
+    <section id="steps" data-nav="Login steps">
+      <h2 data-icon="login">Five steps to log in</h2>
       <ol class="steps">
-        <li><h3>打開入口網址</h3><p>在網址列輸入 <code>https://woowtech-nextcloud.woowtech.io</code>，注意是 <code>https</code>。會自動導到登入頁 <code>/login</code>，看到「Log in to Nextcloud」。</p></li>
-        <li><h3>輸入帳號</h3><p>在使用者欄位輸入你的帳號（管理員為 <code>admin</code>）。</p></li>
-        <li><h3>輸入密碼</h3><p>在密碼欄位輸入密碼。右側有「顯示密碼」眼睛圖示可暫時檢視。</p></li>
-        <li><h3>按 Log in</h3><p>按「Log in」按鈕或按 Enter。成功後會進到儀表板 <code>/apps/dashboard/</code>。</p></li>
-        <li><h3>確認是自己的帳號</h3><p>看右上角「設定選單」（頭像），確認顯示的是你的名字。確認無誤，登入完成。</p></li>
+        <li><h3>Open the site URL</h3><p>Type <code>https://woowtech-nextcloud.woowtech.io</code> into the address bar, and note that it is <code>https</code>. You are redirected to the login page at <code>/login</code>, where you see "Log in to Nextcloud".</p></li>
+        <li><h3>Type your username</h3><p>Type your username into the user field (for an admin, that is <code>admin</code>).</p></li>
+        <li><h3>Type your password</h3><p>Type your password into the password field. The "Show password" eye icon on the right lets you check it for a moment.</p></li>
+        <li><h3>Press Log in</h3><p>Press the "Log in" button, or hit Enter. On success you land on the Dashboard at <code>/apps/dashboard/</code>.</p></li>
+        <li><h3>Confirm it is your own account</h3><p>Open the settings menu (your avatar) at the top right and confirm the name shown is yours. If it is, you are logged in.</p></li>
       </ol>
-      <figure class="shot"><img src="../assets/screenshots/ch3/01_login.png" alt="Nextcloud 登入頁的使用者名稱、密碼與 Log in 按鈕" /><figcaption><strong>圖 3-1</strong>登入頁只有三個關鍵：使用者名稱、密碼與 Log in；先確認網址是 https 再輸入帳密。</figcaption></figure>
-      <div class="callout tip"><strong>保持登入：</strong>登入頁的「保持登入（remember me）」勾選後，短時間內不用重打密碼。公用電腦不要勾。「用裝置登入」是 Passkey／安全金鑰選項，進階使用者才需要。</div>
+      <figure class="shot"><img src="../assets/screenshots/ch3/01_login.png" alt="The username field, password field and Log in button on the Nextcloud login page" /><figcaption><strong>Figure 3-1</strong> The login page has only three things that matter: the username, the password and Log in. Confirm the URL is https before you type your credentials.</figcaption></figure>
+      <div class="callout tip"><strong>Stay logged in:</strong> ticking "remember me" on the login page means you do not have to retype your password for a while. Do not tick it on a public computer. "Log in with a device" is the Passkey / security key option, which only advanced users need.</div>
     </section>
 
-    <section id="dashboard" data-nav="登入後畫面">
-      <h2 data-icon="tabs">登入後看到什麼</h2>
-      <p>登入後預設停在<strong>儀表板（Dashboard）</strong>，這是一個總覽頁：</p>
+    <section id="dashboard" data-nav="After login">
+      <h2 data-icon="tabs">What you see after you log in</h2>
+      <p>By default you land on the <strong>Dashboard</strong>, an overview page:</p>
       <ul>
-        <li>上方有問候語（早安／午安），下方是可自訂的小工具（建議的檔案、行事曆、待辦等）。</li>
-        <li>最上方一排是 App 導覽：儀表板、檔案、照片、活動…（依裝了哪些 App 而不同）。</li>
-        <li>右上角有統一搜尋、通知、聯絡人選單，以及你的頭像（設定選單）。</li>
-        <li>頁面右下角常有「自訂」可以調整儀表板小工具。</li>
+        <li>At the top there is a greeting (Good morning / Good afternoon), and below it the widgets you can customize (Recommended files, Calendar, Tasks and so on).</li>
+        <li>The row along the very top is the app navigation: Dashboard, Files, Photos, Activity… (which apps appear depends on which ones are installed).</li>
+        <li>At the top right you have unified search, notifications, the Contacts menu, and your avatar (the settings menu).</li>
+        <li>At the bottom right of the page there is usually a "Customize" link for adjusting the Dashboard widgets.</li>
       </ul>
-      <div class="callout"><strong>下一章：</strong>第 4 章會把頂欄、Apps 選單與 Files 首頁一次認完。</div>
+      <div class="callout"><strong>Next chapter:</strong> Chapter 4 covers the top bar, the Apps menu and the Files home page in one go.</div>
     </section>
 
-    <section id="security" data-nav="登入安全">
-      <h2 data-icon="security">登入安全與登出</h2>
+    <section id="security" data-nav="Login security">
+      <h2 data-icon="security">Login security and logging out</h2>
       <ol class="steps">
-        <li><h3>確認 https 與憑證</h3><p>網址列要是 <code>https</code> 且有鎖頭。看到「不安全」警告就停，不要輸入帳密。</p></li>
-        <li><h3>公用電腦一定登出</h3><p>從右上角頭像（設定選單）選「登出」，並關閉瀏覽器。</p></li>
-        <li><h3>不要把帳密貼在群組</h3><p>登入資訊用私下管道傳遞，不要貼在公開聊天或記事本。</p></li>
+        <li><h3>Check https and the certificate</h3><p>The address bar has to show <code>https</code> with the padlock. If you see a "Not secure" warning, stop, and do not type your credentials.</p></li>
+        <li><h3>Always log out on a public computer</h3><p>From your avatar at the top right (the settings menu), choose "Log out", then close the browser.</p></li>
+        <li><h3>Do not post your credentials in a group chat</h3><p>Pass login details through a private channel. Do not post them in a public chat or leave them in a notepad.</p></li>
       </ol>
     </section>
 
-    <section id="troubleshoot" data-nav="登入卡關">
-      <h2 data-icon="troubleshoot">登入常見卡關</h2>
+    <section id="troubleshoot" data-nav="Login problems">
+      <h2 data-icon="troubleshoot">Common login pitfalls</h2>
       <ol class="steps">
-        <li><h3>出現「untrusted domain」</h3><p>網址未加進信任網域，屬管理員設定（第 22 章、附錄 B），登入頁會擋。聯絡管理員處理。</p></li>
-        <li><h3>密碼錯誤</h3><p>檢查大小寫、輸入法是否誤開全形、前後空格。連錯多次可能被暫時鎖定，稍等再試。</p></li>
-        <li><h3>忘了密碼</h3><p>Nextcloud 一般由管理員重設密碼；若站台有設 email，可用「忘記密碼」寄重設信。</p></li>
-        <li><h3>登入後畫面空白或轉圈</h3><p>重新整理；仍不行可能是伺服器忙碌或正在更新，稍等再試。</p></li>
+        <li><h3>You get "untrusted domain"</h3><p>The URL has not been added to the trusted domains, so the login page blocks it. That is an admin setting (Chapter 22, Appendix B), so ask your admin to handle it.</p></li>
+        <li><h3>The password is wrong</h3><p>Check the capitalization, whether your input method has slipped into full-width characters, and whether there is a space at either end. Several wrong attempts in a row can lock you out temporarily, so wait a moment and try again.</p></li>
+        <li><h3>You forgot your password</h3><p>On Nextcloud an admin normally resets the password for you. If the site has email configured, you can use "Forgot password" to have a reset message sent to you.</p></li>
+        <li><h3>The screen is blank or spinning after login</h3><p>Refresh the page. If it still does not come up, the server may be busy or updating, so wait a moment and try again.</p></li>
       </ol>
     </section>
 
     <section id="faq" data-nav="FAQ">
-      <h2 data-icon="faq">登入常見問題</h2>
-      <details class="faq"><summary>我沒有帳號，怎麼申請？</summary><div class="body">Nextcloud 帳號由管理員建立，不能自己註冊。向管理員索取帳號與初始密碼（第 21 章）。</div></details>
-      <details class="faq"><summary>可以在手機和電腦同時登入嗎？</summary><div class="body">可以。同一帳號可在瀏覽器、桌面 client 與手機 App 同時使用（第 18、19 章）。</div></details>
-      <details class="faq"><summary>「用裝置登入」是什麼？</summary><div class="body">Passkey／WebAuthn 安全金鑰登入，比密碼更安全，但需要先設定。一般用密碼登入即可。</div></details>
-      <details class="faq"><summary>登出後檔案會不見嗎？</summary><div class="body">不會。登出只是離開這台裝置的登入狀態，檔案仍在伺服器上。</div></details>
-      <details class="faq"><summary>我能自己改密碼嗎？</summary><div class="body">可以，在個人設定裡改（第 5 章）。找不到就請管理員協助。</div></details>
+      <h2 data-icon="faq">Login FAQ</h2>
+      <details class="faq"><summary>I do not have an account. How do I get one?</summary><div class="body">Nextcloud accounts are created by an admin; you cannot register one yourself. Ask your admin for an account and an initial password (Chapter 21).</div></details>
+      <details class="faq"><summary>Can I be logged in on my phone and my computer at the same time?</summary><div class="body">Yes. The same account can be used in a browser, in the desktop client and in the mobile app at the same time (Chapters 18 and 19).</div></details>
+      <details class="faq"><summary>What is "Log in with a device"?</summary><div class="body">It is login with a Passkey / WebAuthn security key. It is safer than a password, but it has to be set up first. For normal use, logging in with a password is fine.</div></details>
+      <details class="faq"><summary>Do my files disappear after I log out?</summary><div class="body">No. Logging out only ends the login on that one device; the files stay on the server.</div></details>
+      <details class="faq"><summary>Can I change my own password?</summary><div class="body">Yes, in your personal settings (Chapter 5). If you cannot find it, ask your admin for help.</div></details>
     </section>
 
-    <section id="sources" data-nav="官方來源">
-      <h2 data-icon="records">官方來源</h2>
+    <section id="sources" data-nav="Official sources">
+      <h2 data-icon="records">Official sources</h2>
       <table class="data-table">
-        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <thead><tr><th>Source</th><th>What to verify</th></tr></thead>
         <tbody>
-          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/" rel="noopener">Nextcloud 使用手冊</a></td><td>登入與基本操作</td></tr>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/" rel="noopener">Nextcloud user manual</a></td><td>Logging in and the basics</td></tr>
         </tbody>
       </table>
     </section>

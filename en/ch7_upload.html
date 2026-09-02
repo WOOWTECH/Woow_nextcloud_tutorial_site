@@ -68,13 +68,13 @@
     </ol>
     <div class="toc-in-chapter">
       <h2>This chapter</h2>
-      <a href="#why">為什麼要學</a>
-      <a href="#concept">上傳觀念</a>
-      <a href="#steps">上傳步驟</a>
-      <a href="#big">大檔與大量</a>
-      <a href="#troubleshoot">上傳卡關</a>
+      <a href="#why">Why this matters</a>
+      <a href="#concept">Upload basics</a>
+      <a href="#steps">Upload steps</a>
+      <a href="#big">Large uploads</a>
+      <a href="#troubleshoot">Upload problems</a>
       <a href="#faq">FAQ</a>
-      <a href="#sources">官方來源</a>
+      <a href="#sources">Official sources</a>
     </div>
     <div class="toc-in-chapter">
       <h2>Appendices</h2>
@@ -88,75 +88,75 @@
     <div class="callout i18n-pending"><strong>This chapter has not been translated yet.</strong> You are reading the original Chinese text. <a href="../ch7_upload.html" hreflang="zh-Hant">Open the Chinese version</a></div>
     <div class="chapter-header">
       <div class="kicker">Chapter 7</div>
-      <h1>上傳檔案與資料夾</h1>
-      <p class="lead">把電腦裡的檔案與整個資料夾送進 Nextcloud。讀完這章，你會用拖放與上傳鈕搬入大量檔案，看懂進度，並知道失敗時怎麼重試。</p>
+      <h1>Upload files and folders</h1>
+      <p class="lead">Move files and whole folders from your computer into Nextcloud. By the end of this chapter, you'll be able to bring in large batches with drag and drop and the upload button, read the progress display, and know how to retry when an upload fails.</p>
     </div>
 
-    <section id="why" data-nav="為什麼要學">
-      <h2 data-icon="why">先把東西搬進來</h2>
-      <p>Nextcloud 的價值從「把檔案集中進來」開始。無論是文件備份、照片、還是整個專案資料夾，先學會穩定地上傳，後面的分享、同步、協作才有基礎。</p>
-      <div class="callout"><strong>本章任務：</strong>用拖放與上傳鈕搬入檔案與資料夾，看懂進度與失敗處理。</div>
+    <section id="why" data-nav="Why this matters">
+      <h2 data-icon="why">Move your files in first</h2>
+      <p>Nextcloud only starts to pay off once your files are gathered in one place. Document backups, photos, an entire project folder — whatever it is, learn to upload reliably first, and the sharing, syncing and collaboration that follow all have something to stand on.</p>
+      <div class="callout"><strong>Chapter task:</strong> bring files and folders in with drag and drop and the upload button, and learn to read the progress display and handle failures.</div>
     </section>
 
-    <section id="concept" data-nav="上傳觀念">
-      <h2 data-icon="concept">兩種上傳方式</h2>
+    <section id="concept" data-nav="Upload basics">
+      <h2 data-icon="concept">Two ways to upload</h2>
       <table class="data-table">
-        <thead><tr><th>方式</th><th>怎麼做</th><th>適合</th></tr></thead>
+        <thead><tr><th>Method</th><th>How</th><th>Best for</th></tr></thead>
         <tbody>
-          <tr><td>拖放</td><td>把檔案或資料夾從電腦拖進 Files 畫面</td><td>一次搬很多、整個資料夾</td></tr>
-          <tr><td>上傳鈕</td><td>按「＋」→「上傳檔案／資料夾」再選取</td><td>精準選檔、不習慣拖放</td></tr>
+          <tr><td>Drag and drop</td><td>Drag files or folders from your computer onto the Files screen</td><td>Moving a lot at once, or a whole folder</td></tr>
+          <tr><td>The upload button</td><td>Click "+" → "Upload file / folder", then pick what you want</td><td>Picking exact files, or if drag and drop is not for you</td></tr>
         </tbody>
       </table>
-      <div class="callout tip"><strong>先切到目標資料夾：</strong>上傳會放進你當前所在的資料夾。先進對地方再上傳，省得之後搬。</div>
+      <div class="callout tip"><strong>Switch to the target folder first:</strong> an upload lands in whichever folder you are currently in. Go to the right place before you upload and you save yourself moving things later.</div>
     </section>
 
-    <section id="steps" data-nav="上傳步驟">
-      <h2 data-icon="upload">六步完成上傳</h2>
+    <section id="steps" data-nav="Upload steps">
+      <h2 data-icon="upload">Six steps to complete an upload</h2>
       <ol class="steps">
-        <li><h3>進入目標資料夾</h3><p>在 Files 點進要放檔案的資料夾（例如「文件」）。</p></li>
-        <li><h3>拖放或按上傳</h3><p>把檔案拖進畫面；或按「＋」→「上傳檔案」，也可「上傳資料夾」整個搬。</p></li>
-        <li><h3>看上傳進度</h3><p>畫面會顯示上傳進度。大檔或大量檔案需要時間，不要關分頁。</p></li>
-        <li><h3>處理同名檔</h3><p>若已有同名檔，會問你要「保留兩者」還是「覆蓋」。看清楚再選。</p></li>
-        <li><h3>確認完成</h3><p>進度跑完，檔案出現在清單即成功。</p></li>
-        <li><h3>抽查檔案</h3><p>點開幾個確認內容完整、大小正常。</p></li>
+        <li><h3>Open the target folder</h3><p>In Files, click into the folder where the files should go (for example "Documents").</p></li>
+        <li><h3>Drag and drop, or use the upload button</h3><p>Drag the files onto the page; or click "+" → "Upload file", and use "Upload folder" to bring in a whole folder at once.</p></li>
+        <li><h3>Watch the upload progress</h3><p>The page shows the upload progress. Large files and large batches take time, so do not close the tab.</p></li>
+        <li><h3>Handle files with the same name</h3><p>If a file with the same name is already there, you are asked whether to "Keep both" or "Overwrite". Read the prompt before you choose.</p></li>
+        <li><h3>Confirm it finished</h3><p>Once the progress finishes and the files appear in the list, the upload worked.</p></li>
+        <li><h3>Spot-check the files</h3><p>Open a few of them and check that the contents are complete and the sizes look right.</p></li>
       </ol>
-      <div class="callout warn"><strong>上傳中別關瀏覽器：</strong>上傳是即時進行的，關掉分頁會中斷未完成的部分。等進度走完再離開。</div>
+      <div class="callout warn"><strong>Do not close the browser mid-upload:</strong> the upload happens live, and closing the tab interrupts whatever has not finished. Wait for the progress to finish before you leave.</div>
     </section>
 
-    <section id="big" data-nav="大檔與大量">
-      <h2 data-icon="hardware">大檔與大量檔案</h2>
+    <section id="big" data-nav="Large uploads">
+      <h2 data-icon="hardware">Large files and large batches</h2>
       <ul>
-        <li><strong>大量小檔</strong>：用「上傳資料夾」比一個個選快，但很多小檔會比較久。</li>
-        <li><strong>單一大檔</strong>：影片、備份檔可能受站台的單檔大小上限限制，超過要請管理員調整（附錄 B）。</li>
-        <li><strong>更穩的做法</strong>：大量或定期的搬移，用桌面同步（第 18 章）或 WebDAV（第 20 章）比瀏覽器上傳更穩。</li>
+        <li><strong>Lots of small files</strong>: "Upload folder" is faster than picking them one by one, but a large number of small files still takes a while.</li>
+        <li><strong>A single large file</strong>: videos and backup files may run into the site's per-file size limit; if a file is over it, ask your admin to adjust it (Appendix B).</li>
+        <li><strong>A more reliable route</strong>: for large or regular transfers, desktop sync (Chapter 18) or WebDAV (Chapter 20) is steadier than uploading through the browser.</li>
       </ul>
     </section>
 
-    <section id="troubleshoot" data-nav="上傳卡關">
-      <h2 data-icon="troubleshoot">上傳常見卡關</h2>
+    <section id="troubleshoot" data-nav="Upload problems">
+      <h2 data-icon="troubleshoot">Common upload pitfalls</h2>
       <ol class="steps">
-        <li><h3>上傳到一半失敗</h3><p>確認網路穩定後重試。大檔失敗機率高，可分批或改用桌面 client。</p></li>
-        <li><h3>顯示檔案太大</h3><p>超過站台單檔上限。請管理員調整上傳大小限制（附錄 B）。</p></li>
-        <li><h3>空間不足</h3><p>你的配額或伺服器空間滿了。清回收桶、刪重複，或請管理員加配額。</p></li>
-        <li><h3>資料夾上傳只進了部分</h3><p>可能中途中斷。重新上傳，同名會問你覆蓋或保留。</p></li>
+        <li><h3>The upload fails halfway</h3><p>Check that your network is stable, then try again. Large files fail more often, so upload in batches or switch to the desktop client.</p></li>
+        <li><h3>It says the file is too large</h3><p>You are over the site's per-file limit. Ask your admin to adjust the upload size limit (Appendix B).</p></li>
+        <li><h3>Out of space</h3><p>Your quota or the server's disk is full. Empty the trash bin, delete duplicates, or ask your admin to raise your quota.</p></li>
+        <li><h3>Only part of a folder uploaded</h3><p>It was probably interrupted. Upload again; for files with the same name you will be asked whether to overwrite or keep both.</p></li>
       </ol>
     </section>
 
     <section id="faq" data-nav="FAQ">
-      <h2 data-icon="faq">上傳常見問題</h2>
-      <details class="faq"><summary>支援上傳資料夾嗎？</summary><div class="body">支援。用「＋ → 上傳資料夾」或直接把資料夾拖進畫面，會連子資料夾一起上傳。</div></details>
-      <details class="faq"><summary>上傳會壓縮或改我的檔案嗎？</summary><div class="body">不會。Nextcloud 原封不動保存檔案，不改內容也不壓縮。</div></details>
-      <details class="faq"><summary>單檔最大能傳多大？</summary><div class="body">看站台設定的上傳上限。超過要請管理員調整（附錄 B 有相關參數）。</div></details>
-      <details class="faq"><summary>上傳後電腦的原檔可以刪嗎？</summary><div class="body">建議先確認都上傳成功、必要時保留一份備份，再刪本機原檔。</div></details>
-      <details class="faq"><summary>有沒有比瀏覽器更穩的上傳方式？</summary><div class="body">有。桌面同步 client（第 18 章）與 WebDAV（第 20 章）更適合大量或定期上傳。</div></details>
+      <h2 data-icon="faq">Upload FAQ</h2>
+      <details class="faq"><summary>Can I upload a folder?</summary><div class="body">Yes. Use "+ → Upload folder", or drag the folder straight onto the page; subfolders come along with it.</div></details>
+      <details class="faq"><summary>Does uploading compress or change my files?</summary><div class="body">No. Nextcloud stores files exactly as they are: it does not alter the contents and it does not compress them.</div></details>
+      <details class="faq"><summary>What is the largest single file I can upload?</summary><div class="body">It depends on the upload limit configured on the site. If you are over it, ask your admin to adjust it (Appendix B lists the relevant settings).</div></details>
+      <details class="faq"><summary>Can I delete the originals on my computer after uploading?</summary><div class="body">Confirm everything uploaded successfully first, keep a backup if the files matter, and only then delete the local originals.</div></details>
+      <details class="faq"><summary>Is there a more reliable way to upload than the browser?</summary><div class="body">Yes. The desktop sync client (Chapter 18) and WebDAV (Chapter 20) suit large or regular uploads better.</div></details>
     </section>
 
-    <section id="sources" data-nav="官方來源">
-      <h2 data-icon="records">官方來源</h2>
+    <section id="sources" data-nav="Official sources">
+      <h2 data-icon="records">Official sources</h2>
       <table class="data-table">
-        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <thead><tr><th>Source</th><th>What to verify</th></tr></thead>
         <tbody>
-          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/files/access_webgui.html" rel="noopener">Nextcloud：透過網頁存取檔案</a></td><td>上傳與檔案操作</td></tr>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/files/access_webgui.html" rel="noopener">Nextcloud: accessing files through the web interface</a></td><td>Uploading and file actions</td></tr>
         </tbody>
       </table>
     </section>

@@ -68,14 +68,14 @@
     </ol>
     <div class="toc-in-chapter">
       <h2>This chapter</h2>
-      <a href="#why">為什麼要學</a>
-      <a href="#concept">add-on 觀念</a>
-      <a href="#steps">安裝步驟</a>
-      <a href="#trusted">信任網域</a>
-      <a href="#test">安裝驗收</a>
-      <a href="#troubleshoot">安裝卡關</a>
+      <a href="#why">Why this matters</a>
+      <a href="#concept">Add-on basics</a>
+      <a href="#steps">Install steps</a>
+      <a href="#trusted">Trusted domains</a>
+      <a href="#test">Install check</a>
+      <a href="#troubleshoot">Install problems</a>
       <a href="#faq">FAQ</a>
-      <a href="#sources">官方來源</a>
+      <a href="#sources">Official sources</a>
     </div>
     <div class="toc-in-chapter">
       <h2>Appendices</h2>
@@ -89,88 +89,88 @@
     <div class="callout i18n-pending"><strong>This chapter has not been translated yet.</strong> You are reading the original Chinese text. <a href="../ch2_install.html" hreflang="zh-Hant">Open the Chinese version</a></div>
     <div class="chapter-header">
       <div class="kicker">Chapter 2</div>
-      <h1>安裝 Nextcloud</h1>
-      <p class="lead">把 Nextcloud 裝進 Home Assistant，並認識安裝後的初始狀態。讀完這章，你會知道 add-on 是什麼、啟動時在忙什麼，以及第一次開啟前該確認哪些事。</p>
+      <h1>Install Nextcloud</h1>
+      <p class="lead">Install Nextcloud into Home Assistant, and get to know the state it is in once it is there. By the end of this chapter, you'll know what an add-on is, what it is busy doing while it starts, and what to confirm before you open it for the first time.</p>
     </div>
 
-    <section id="why" data-nav="為什麼要學">
-      <h2 data-icon="why">先把地基裝好</h2>
-      <p>Nextcloud 是一整套雲端服務，得先「裝起來」才能用。在 Home Assistant（HA）上，最省事的方式是透過 <strong>add-on（附加元件）</strong>安裝：不用自己弄伺服器、資料庫、憑證，按幾下就跑起來。</p>
-      <p>這章帶你把 add-on 裝好、啟動，並理解啟動時它在背景做什麼，避免你以為「怎麼開不起來」其實只是還在初始化。</p>
-      <div class="callout"><strong>本章任務：</strong>加入套件來源、安裝 add-on、啟動，並確認狀態正常。真正登入使用從第 3 章開始。</div>
+    <section id="why" data-nav="Why this matters">
+      <h2 data-icon="why">Lay the foundation first</h2>
+      <p>Nextcloud is a whole cloud service, and it has to be installed before you can use it. On Home Assistant (HA), the route with the least work is to install it as an <strong>add-on</strong>: no server, database or certificate to put together yourself, and a few clicks bring it up.</p>
+      <p>This chapter takes you through installing the add-on, starting it, and understanding what it does in the background while it starts, so you do not read "why will it not open" into something that is only still initializing.</p>
+      <div class="callout"><strong>Chapter task:</strong> add the repository, install the add-on, start it, and confirm the status is healthy. Logging in and actually using it starts in Chapter 3.</div>
     </section>
 
-    <section id="concept" data-nav="add-on 觀念">
-      <h2 data-icon="concept">add-on 是什麼、幫你省了什麼</h2>
-      <p>add-on 可以想成「一鍵安裝的伺服器套裝」。Nextcloud 本體需要 PHP、資料庫、Web 伺服器，add-on 把這些打包成一個容器，你只要按安裝，它會自動把該裝的都裝好。</p>
+    <section id="concept" data-nav="Add-on basics">
+      <h2 data-icon="concept">What an add-on is and what it saves you</h2>
+      <p>Think of an add-on as a one-click server bundle. Nextcloud itself needs PHP, a database and a web server; the add-on packs all of that into one container, so you press install and it puts everything that belongs there in place.</p>
       <table class="data-table">
-        <thead><tr><th>你不用自己做的事</th><th>add-on 幫你處理</th></tr></thead>
+        <thead><tr><th>What you skip</th><th>What the add-on handles</th></tr></thead>
         <tbody>
-          <tr><td>裝資料庫</td><td>內建或連好資料庫</td></tr>
-          <tr><td>設定 Web 伺服器</td><td>容器內已設好</td></tr>
-          <tr><td>處理對外連線</td><td>搭配 Cloudflare Tunnel（本站環境）從外部安全連入</td></tr>
+          <tr><td>Installing a database</td><td>A database is built in or already wired up</td></tr>
+          <tr><td>Configuring a web server</td><td>Already configured inside the container</td></tr>
+          <tr><td>Handling access from outside</td><td>Paired with Cloudflare Tunnel (this site's setup) for secure access from outside</td></tr>
         </tbody>
       </table>
-      <div class="callout tip"><strong>本站環境：</strong>你要用的這台已由 WoowTech 裝好、對外網址是 <code>https://woowtech-nextcloud.woowtech.io</code>。如果只是要「使用」，可以略過安裝、直接看第 3 章登入。</div>
+      <div class="callout tip"><strong>This site's setup:</strong> the machine you will be using has already been installed by WoowTech, and its public URL is <code>https://woowtech-nextcloud.woowtech.io</code>. If all you want is to use it, skip the install and go straight to logging in in Chapter 3.</div>
     </section>
 
-    <section id="steps" data-nav="安裝步驟">
-      <h2 data-icon="steps">六步把 Nextcloud 裝起來</h2>
+    <section id="steps" data-nav="Install steps">
+      <h2 data-icon="steps">Six steps to install Nextcloud</h2>
       <ol class="steps">
-        <li><h3>打開 HA 的 Apps 商店</h3><p>在 Home Assistant 左側選單找到「設定 → 附加元件（Add-ons）」，進入附加元件商店。</p></li>
-        <li><h3>加入 WoowTech 套件來源</h3><p>在商店右上角選單選「套件來源（Repositories）」，貼上 WoowTech 的 repository 網址並加入。</p></li>
-        <li><h3>找到 Nextcloud add-on 並安裝</h3><p>重新整理商店，找到 Nextcloud，點進去按「安裝」。首次安裝會下載映像檔，需要幾分鐘，別中途關掉。</p></li>
-        <li><h3>檢視設定選項</h3><p>安裝後先看「設定（Configuration）」分頁，確認資料目錄、管理員帳密等選項。第一次可以先用預設，之後再依需要調整。</p></li>
-        <li><h3>啟動 add-on</h3><p>回到「資訊（Info）」分頁按「啟動（Start）」。第一次啟動會初始化資料庫與 Nextcloud，需要等一段時間。</p></li>
-        <li><h3>確認狀態與日誌</h3><p>啟動後看「日誌（Log）」分頁，出現初始化完成的訊息表示就緒。狀態顯示執行中即可進入第 3 章。</p></li>
+        <li><h3>Open the Apps store in HA</h3><p>In the Home Assistant sidebar, find "Settings → Add-ons" and open the add-on store.</p></li>
+        <li><h3>Add the WoowTech repository</h3><p>From the menu at the top right of the store, choose "Repositories", paste in WoowTech's repository URL and add it.</p></li>
+        <li><h3>Find the Nextcloud add-on and install it</h3><p>Refresh the store, find Nextcloud, open it and press "Install". The first install downloads the image, which takes a few minutes, so do not close it partway through.</p></li>
+        <li><h3>Review the configuration options</h3><p>Once it is installed, open the "Configuration" tab and confirm the data directory, the admin username and password, and the other options. Leave the defaults for the first run and adjust them later as you need to.</p></li>
+        <li><h3>Start the add-on</h3><p>Go back to the "Info" tab and press "Start". The first start initializes the database and Nextcloud, so expect to wait a while.</p></li>
+        <li><h3>Confirm the status and the log</h3><p>After it starts, open the "Log" tab; a message saying initialization finished means it is ready. Once the status shows running, move on to Chapter 3.</p></li>
       </ol>
-      <div class="callout warn"><strong>初次啟動要有耐心：</strong>第一次啟動要建資料庫、產生設定，可能要好幾分鐘。日誌還在跑就代表正常，不要反覆重啟。</div>
+      <div class="callout warn"><strong>First start takes a while:</strong> the first start has to create the database and generate the configuration, which can take several minutes. As long as the log is still moving, it is behaving normally, so do not restart it over and over.</div>
     </section>
 
-    <section id="trusted" data-nav="信任網域">
-      <h2 data-icon="security">對外網址與信任網域</h2>
-      <p>Nextcloud 有一個安全機制叫 <strong>trusted_domains（信任網域）</strong>：只接受清單內網域的連線。用自訂網址（如 <code>woowtech-nextcloud.woowtech.io</code>）對外時，這個網址必須加進信任網域，否則會看到「Access through untrusted domain」錯誤。</p>
-      <div class="callout danger"><strong>看到「untrusted domain」時：</strong>不是壞掉，是這個網址還沒被加進信任清單。這屬於管理員設定（第 22 章、附錄 B），請聯絡管理員處理，不要自行改伺服器檔案。</div>
+    <section id="trusted" data-nav="Trusted domains">
+      <h2 data-icon="security">Your public URL and trusted domains</h2>
+      <p>Nextcloud has a security mechanism called <strong>trusted_domains (trusted domains)</strong>: it accepts connections only from the domains on that list. When you expose it on a custom URL (such as <code>woowtech-nextcloud.woowtech.io</code>), that URL has to be added to the trusted domains, or you will see an "Access through untrusted domain" error.</p>
+      <div class="callout danger"><strong>If you see "untrusted domain":</strong> nothing is broken. The URL has not been added to the trusted list yet. That is an admin setting (Chapter 22, Appendix B), so ask your admin to handle it and do not edit server files yourself.</div>
     </section>
 
-    <section id="test" data-nav="安裝驗收">
-      <h2 data-icon="test">安裝完成的驗收</h2>
+    <section id="test" data-nav="Install check">
+      <h2 data-icon="test">Acceptance check after install</h2>
       <table class="data-table">
-        <thead><tr><th>檢查項</th><th>通過條件</th></tr></thead>
+        <thead><tr><th>Check</th><th>Passing condition</th></tr></thead>
         <tbody>
-          <tr><td>add-on 狀態</td><td>顯示「執行中」</td></tr>
-          <tr><td>日誌</td><td>沒有反覆錯誤，出現就緒訊息</td></tr>
-          <tr><td>開啟網址</td><td>能看到 Nextcloud 登入頁（第 3 章）</td></tr>
+          <tr><td>Add-on status</td><td>Shows "Running"</td></tr>
+          <tr><td>Log</td><td>No repeating errors, and a ready message appears</td></tr>
+          <tr><td>Opening the URL</td><td>The Nextcloud login page appears (Chapter 3)</td></tr>
         </tbody>
       </table>
     </section>
 
-    <section id="troubleshoot" data-nav="安裝卡關">
-      <h2 data-icon="troubleshoot">安裝常見卡關</h2>
+    <section id="troubleshoot" data-nav="Install problems">
+      <h2 data-icon="troubleshoot">Common install pitfalls</h2>
       <ol class="steps">
-        <li><h3>安裝一直轉圈</h3><p>首次下載映像檔本來就慢，確認網路正常、耐心等。真的卡住看日誌有沒有錯誤。</p></li>
-        <li><h3>啟動後狀態變回停止</h3><p>看日誌找第一個錯誤訊息（多半是設定或連接埠衝突），修正後再啟動。</p></li>
-        <li><h3>開網址出現 untrusted domain</h3><p>網址未加進信任網域，屬管理員設定，見第 22 章、附錄 B。</p></li>
-        <li><h3>找不到 add-on</h3><p>確認套件來源網址加對、商店有重新整理；必要時重開商店頁面。</p></li>
+        <li><h3>The install spinner never stops</h3><p>The first image download is slow by nature, so confirm your network is fine and wait it out. If it really is stuck, check the log for errors.</p></li>
+        <li><h3>The status goes back to stopped after starting</h3><p>Read the log and find the first error message (usually a configuration problem or a port conflict), fix it, then start it again.</p></li>
+        <li><h3>Opening the URL returns untrusted domain</h3><p>The URL has not been added to the trusted domains. That is an admin setting; see Chapter 22 and Appendix B.</p></li>
+        <li><h3>The add-on is nowhere to be found</h3><p>Confirm the repository URL was added correctly and that the store has been refreshed; reload the store page if you have to.</p></li>
       </ol>
     </section>
 
     <section id="faq" data-nav="FAQ">
-      <h2 data-icon="faq">安裝常見問題</h2>
-      <details class="faq"><summary>我只是要用，需要自己安裝嗎？</summary><div class="body">不用。本站環境已由 WoowTech 裝好，直接看第 3 章登入即可。這章是給要自己裝的人參考。</div></details>
-      <details class="faq"><summary>安裝會佔很多空間嗎？</summary><div class="body">Nextcloud 本體加資料庫會佔一些空間，之後上傳的檔案才是主要用量。安裝前確認主機有足夠儲存。</div></details>
-      <details class="faq"><summary>可以裝在非 HA 的環境嗎？</summary><div class="body">可以，Nextcloud 有官方 Docker、AIO 等多種安裝方式。本教學以 HA add-on 情境為主，其他方式請參考官方文件。</div></details>
-      <details class="faq"><summary>安裝後要先做什麼設定？</summary><div class="body">先確認管理員帳密、資料目錄與對外網址（信任網域）。細節在第 21、22 章與附錄 B。</div></details>
-      <details class="faq"><summary>啟動很久是正常的嗎？</summary><div class="body">第一次啟動要初始化資料庫與設定，幾分鐘內都算正常。看日誌還在動就別重啟。</div></details>
+      <h2 data-icon="faq">Install FAQ</h2>
+      <details class="faq"><summary>I only want to use it. Do I have to install it myself?</summary><div class="body">No. This site's setup has already been installed by WoowTech, so go straight to Chapter 3 and log in. This chapter is for people doing the install themselves.</div></details>
+      <details class="faq"><summary>Does the install take up a lot of space?</summary><div class="body">Nextcloud itself plus the database takes up some space, but the files you upload later are the main consumer. Confirm the host has enough storage before you install.</div></details>
+      <details class="faq"><summary>Can I install it somewhere other than HA?</summary><div class="body">Yes. Nextcloud has several official install methods, including Docker and AIO. This guide works through the HA add-on case; for the other methods, go by the official docs.</div></details>
+      <details class="faq"><summary>What should I set up first after installing?</summary><div class="body">Confirm the admin username and password, the data directory and the public URL (trusted domains). The details are in Chapters 21 and 22 and Appendix B.</div></details>
+      <details class="faq"><summary>Is it normal for the start to take so long?</summary><div class="body">The first start has to initialize the database and the configuration, so anything within a few minutes is normal. If the log is still moving, do not restart it.</div></details>
     </section>
 
-    <section id="sources" data-nav="官方來源">
-      <h2 data-icon="records">官方來源</h2>
+    <section id="sources" data-nav="Official sources">
+      <h2 data-icon="records">Official sources</h2>
       <table class="data-table">
-        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <thead><tr><th>Source</th><th>What to verify</th></tr></thead>
         <tbody>
-          <tr><td><a href="https://docs.nextcloud.com/server/latest/admin_manual/installation/" rel="noopener">Nextcloud 安裝文件</a></td><td>各種安裝方式與需求</td></tr>
-          <tr><td><a href="https://nextcloud.com/" rel="noopener">Nextcloud 官網</a></td><td>產品與下載</td></tr>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/admin_manual/installation/" rel="noopener">Nextcloud installation docs</a></td><td>The install methods and what each one requires</td></tr>
+          <tr><td><a href="https://nextcloud.com/" rel="noopener">Nextcloud website</a></td><td>The product and downloads</td></tr>
         </tbody>
       </table>
     </section>

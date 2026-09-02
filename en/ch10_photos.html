@@ -68,13 +68,13 @@
     </ol>
     <div class="toc-in-chapter">
       <h2>This chapter</h2>
-      <a href="#why">為什麼要學</a>
-      <a href="#concept">Photos 觀念</a>
-      <a href="#steps">使用步驟</a>
-      <a href="#privacy">隱私提醒</a>
-      <a href="#troubleshoot">照片卡關</a>
+      <a href="#why">Why this matters</a>
+      <a href="#concept">Photos basics</a>
+      <a href="#steps">Usage steps</a>
+      <a href="#privacy">Privacy notes</a>
+      <a href="#troubleshoot">Photo problems</a>
       <a href="#faq">FAQ</a>
-      <a href="#sources">官方來源</a>
+      <a href="#sources">Official sources</a>
     </div>
     <div class="toc-in-chapter">
       <h2>Appendices</h2>
@@ -88,76 +88,76 @@
     <div class="callout i18n-pending"><strong>This chapter has not been translated yet.</strong> You are reading the original Chinese text. <a href="../ch10_photos.html" hreflang="zh-Hant">Open the Chinese version</a></div>
     <div class="chapter-header">
       <div class="kicker">Chapter 10</div>
-      <h1>Photos 照片管理</h1>
-      <p class="lead">Nextcloud 的 Photos 讓你像雲端相簿一樣瀏覽照片、建相簿，並搭配手機 App 自動備份。讀完這章，你的照片會有時間軸、相簿與（依版本）人物地點整理。</p>
+      <h1>Photos</h1>
+      <p class="lead">Photos in Nextcloud lets you browse your pictures like a cloud photo album, create albums, and pair it with automatic backup from the mobile app. By the end of this chapter, your photos will have a timeline, albums and (depending on your version) organization by people and places.</p>
     </div>
 
-    <section id="why" data-nav="為什麼要學">
-      <h2 data-icon="why">照片不只是檔案</h2>
-      <p>照片放在 Files 裡只是一堆檔案；透過 Photos App，它們會依拍攝時間排成時間軸、能建相簿、能用地點與人物找。搭配手機自動備份，就是一個自架的相簿服務。</p>
-      <div class="callout"><strong>本章任務：</strong>認識 Photos 的時間軸與相簿，了解手機自動備份怎麼接。全程唯讀瀏覽。</div>
+    <section id="why" data-nav="Why this matters">
+      <h2 data-icon="why">Photos are more than files</h2>
+      <p>Photos sitting in Files are only a pile of files. Through the Photos app they line up on a timeline by capture time, you can gather them into albums, and you can find them by place and by person. Add automatic backup from your phone and you have a self-hosted photo album service.</p>
+      <div class="callout"><strong>Chapter task:</strong> get to know the timeline and albums in Photos, and see how automatic phone backup hooks up. Browsing only, read-only throughout.</div>
     </section>
 
-    <section id="concept" data-nav="Photos 觀念">
-      <h2 data-icon="concept">Photos 與 Files 的關係</h2>
-      <p>Photos 不是另一個儲存空間，而是把 Files 裡的照片「用相簿的方式呈現」。照片實體仍在 Files 的資料夾（常見是 <code>/Photos</code> 或手機備份資料夾）。</p>
+    <section id="concept" data-nav="Photos basics">
+      <h2 data-icon="concept">How Photos relates to Files</h2>
+      <p>Photos is not another storage space; it "presents the photos already in Files as albums". The photos themselves still sit in a folder under Files (commonly <code>/Photos</code> or your phone backup folder).</p>
       <table class="data-table">
-        <thead><tr><th>Photos 功能</th><th>說明</th></tr></thead>
+        <thead><tr><th>Photos feature</th><th>What it means</th></tr></thead>
         <tbody>
-          <tr><td>時間軸</td><td>依拍攝時間由新到舊排列</td></tr>
-          <tr><td>相簿</td><td>手動整理的照片集合（不搬動原檔）</td></tr>
-          <tr><td>我的最愛</td><td>標記的照片集中一處</td></tr>
-          <tr><td>地點／人物</td><td>依版本與設定，用地圖與人臉整理</td></tr>
+          <tr><td>Timeline</td><td>Sorted by capture time, newest first</td></tr>
+          <tr><td>Albums</td><td>A set of photos you gather by hand (the original files stay where they are)</td></tr>
+          <tr><td>Favorites</td><td>Every photo you have marked, in one place</td></tr>
+          <tr><td>Places / People</td><td>Depending on your version and settings, organized by map and by face</td></tr>
         </tbody>
       </table>
-      <div class="callout tip"><strong>時間依 EXIF：</strong>照片依內嵌的拍攝時間排序，跟上傳時間無關。日期怪怪的通常是 EXIF 缺失。</div>
+      <div class="callout tip"><strong>Dates come from EXIF:</strong> photos are sorted by the capture time embedded in the file, not by when they were uploaded. A date that looks wrong usually means the EXIF data is missing.</div>
     </section>
 
-    <section id="steps" data-nav="使用步驟">
-      <h2 data-icon="album">五步用起 Photos</h2>
+    <section id="steps" data-nav="Usage steps">
+      <h2 data-icon="album">Five steps to start using Photos</h2>
       <ol class="steps">
-        <li><h3>打開 Photos</h3><p>頂欄點「照片」進入，預設看到時間軸。</p></li>
-        <li><h3>瀏覽時間軸</h3><p>往下捲看更早的照片，點縮圖開大圖，用方向鍵切換。</p></li>
-        <li><h3>建立相簿</h3><p>左側「相簿」→ 新增，命名後把照片加進去（不影響原檔位置）。</p></li>
-        <li><h3>標最愛</h3><p>在照片上標最愛，之後從左側「我的最愛」一次找到。</p></li>
-        <li><h3>接手機自動備份</h3><p>裝手機 App（第 19 章）開自動上傳，手機新照片會自動進 Nextcloud，並出現在 Photos。</p></li>
+        <li><h3>Open Photos</h3><p>Click "Photos" in the top bar. The timeline is what you see by default.</p></li>
+        <li><h3>Browse the timeline</h3><p>Scroll down for older photos, click a thumbnail to open it full size, and use the arrow keys to move between them.</p></li>
+        <li><h3>Create an album</h3><p>On the left, "Albums" → add a new one, name it, then put photos in it (this does not move the original files).</p></li>
+        <li><h3>Mark favorites</h3><p>Mark a photo as a favorite, and you can find all of them at once under "Favorites" on the left.</p></li>
+        <li><h3>Connect automatic phone backup</h3><p>Install the mobile app (Chapter 19) and turn on auto upload. New photos from your phone go into Nextcloud on their own and show up in Photos.</p></li>
       </ol>
     </section>
 
-    <section id="privacy" data-nav="隱私提醒">
-      <h2 data-icon="security">照片的隱私</h2>
+    <section id="privacy" data-nav="Privacy notes">
+      <h2 data-icon="security">Photo privacy</h2>
       <ul>
-        <li>照片存在你自己的伺服器，AI／人臉辨識（若啟用）也在本機跑，不外傳。</li>
-        <li>相簿分享等同檔案分享（第 8 章），連結就是鑰匙，設密碼與期限。</li>
-        <li>敏感照片可放進有存取限制的資料夾，或不要分享。</li>
+        <li>Your photos live on your own server, and AI / face recognition (if you turn it on) runs locally too. Nothing goes out.</li>
+        <li>Sharing an album is the same as sharing files (Chapter 8): a link is a key, so set a password and an expiry.</li>
+        <li>Keep sensitive photos in a folder with restricted access, or do not share them at all.</li>
       </ul>
     </section>
 
-    <section id="troubleshoot" data-nav="照片卡關">
-      <h2 data-icon="troubleshoot">照片常見卡關</h2>
+    <section id="troubleshoot" data-nav="Photo problems">
+      <h2 data-icon="troubleshoot">Common photo pitfalls</h2>
       <ol class="steps">
-        <li><h3>照片沒出現在 Photos</h3><p>確認照片在 Photos 掃描的資料夾內；剛上傳可能要等產生縮圖與索引。</p></li>
-        <li><h3>縮圖一直轉圈</h3><p>大量照片首次索引需要時間；伺服器背景任務跑完會變順（第 21 章的背景工作）。</p></li>
-        <li><h3>日期排錯</h3><p>多半是 EXIF 拍攝時間缺失或錯誤，屬照片本身的中繼資料問題。</p></li>
-        <li><h3>沒有人物／地點</h3><p>這些功能依版本與是否啟用對應 app／設定，不是每台都有。</p></li>
+        <li><h3>A photo is missing from Photos</h3><p>Check that the photo is in a folder Photos scans; something you uploaded a moment ago may still need time for thumbnails and indexing.</p></li>
+        <li><h3>Thumbnails keep spinning</h3><p>Indexing a large batch for the first time takes a while; it smooths out once the server has finished its background jobs (Chapter 21).</p></li>
+        <li><h3>The dates are in the wrong order</h3><p>Usually the EXIF capture time is missing or wrong, which is a problem with the photo's own metadata.</p></li>
+        <li><h3>No People / Places</h3><p>These features depend on your version and on whether the matching app / setting is enabled, so not every server has them.</p></li>
       </ol>
     </section>
 
     <section id="faq" data-nav="FAQ">
-      <h2 data-icon="faq">照片常見問題</h2>
-      <details class="faq"><summary>Photos 和把照片放 Files 有什麼差？</summary><div class="body">照片實體都在 Files，Photos 只是用相簿與時間軸的方式呈現，方便瀏覽與整理。</div></details>
-      <details class="faq"><summary>手機照片會自動進來嗎？</summary><div class="body">裝手機 App 並開自動上傳後會（第 19 章）。之後拍的照片在 Wi-Fi 下自動備份。</div></details>
-      <details class="faq"><summary>建相簿會複製照片、佔兩份空間嗎？</summary><div class="body">不會。相簿是「收錄」，同一張照片可在多個相簿，只佔一份空間。</div></details>
-      <details class="faq"><summary>可以分享整本相簿嗎？</summary><div class="body">可以，等同分享資料夾／集合，用連結加密碼與期限（第 8 章）。</div></details>
-      <details class="faq"><summary>刪照片會怎樣？</summary><div class="body">刪除會進回收桶（第 6 章），期限內可還原。相簿移除只是移出相簿，不刪原檔。</div></details>
+      <h2 data-icon="faq">Photos FAQ</h2>
+      <details class="faq"><summary>What is the difference between Photos and keeping photos in Files?</summary><div class="body">The photos themselves are all in Files. Photos only presents them as albums and a timeline, which is a more convenient way to browse and organize them.</div></details>
+      <details class="faq"><summary>Do photos from my phone come in automatically?</summary><div class="body">They do once you install the mobile app and turn on auto upload (Chapter 19). After that, anything you shoot is backed up automatically over Wi-Fi.</div></details>
+      <details class="faq"><summary>Does creating an album copy the photos and take up twice the space?</summary><div class="body">No. An album is a collection, so the same photo can sit in several albums and still take up space only once.</div></details>
+      <details class="faq"><summary>Can I share a whole album?</summary><div class="body">Yes, it works like sharing a folder or a collection: a link with a password and an expiry (Chapter 8).</div></details>
+      <details class="faq"><summary>What happens when I delete a photo?</summary><div class="body">Deleting puts it in the trash bin (Chapter 6), and you can restore it until the retention period runs out. Removing a photo from an album only takes it out of that album; the original file stays.</div></details>
     </section>
 
-    <section id="sources" data-nav="官方來源">
-      <h2 data-icon="records">官方來源</h2>
+    <section id="sources" data-nav="Official sources">
+      <h2 data-icon="records">Official sources</h2>
       <table class="data-table">
-        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <thead><tr><th>Source</th><th>What to verify</th></tr></thead>
         <tbody>
-          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/photos.html" rel="noopener">Nextcloud：Photos</a></td><td>時間軸、相簿與整理</td></tr>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/photos.html" rel="noopener">Nextcloud: Photos</a></td><td>Timeline, albums and organizing</td></tr>
         </tbody>
       </table>
     </section>

@@ -68,13 +68,13 @@
     </ol>
     <div class="toc-in-chapter">
       <h2>This chapter</h2>
-      <a href="#why">為什麼要學</a>
-      <a href="#concept">分享清單</a>
-      <a href="#steps">盤點步驟</a>
-      <a href="#security">最小暴露</a>
-      <a href="#troubleshoot">管理卡關</a>
+      <a href="#why">Why this matters</a>
+      <a href="#concept">Share lists</a>
+      <a href="#steps">Review steps</a>
+      <a href="#security">Minimal exposure</a>
+      <a href="#troubleshoot">Management problems</a>
       <a href="#faq">FAQ</a>
-      <a href="#sources">官方來源</a>
+      <a href="#sources">Official sources</a>
     </div>
     <div class="toc-in-chapter">
       <h2>Appendices</h2>
@@ -88,78 +88,78 @@
     <div class="callout i18n-pending"><strong>This chapter has not been translated yet.</strong> You are reading the original Chinese text. <a href="../ch9_share_manage.html" hreflang="zh-Hant">Open the Chinese version</a></div>
     <div class="chapter-header">
       <div class="kicker">Chapter 9</div>
-      <h1>分享管理與收回</h1>
-      <p class="lead">分享出去容易，管好不容易。這章教你盤點所有分享、修改權限、停用連結與收回，讓「方便」不會變成「過度公開」。</p>
+      <h1>Manage and revoke shares</h1>
+      <p class="lead">Creating a share takes seconds; keeping it under control does not. By the end of this chapter, you'll be able to take stock of every share, change permissions, disable links and revoke access, so that "convenient" never turns into "far more public than you meant".</p>
     </div>
 
-    <section id="why" data-nav="為什麼要學">
-      <h2 data-icon="why">分享要收得回來</h2>
-      <p>分享連結像借出去的鑰匙。借出去後如果從不盤點、從不收回，久了你根本不知道有多少人還能看你的東西。定期管理分享，是自架雲端最重要的安全習慣之一。</p>
-      <div class="callout"><strong>本章任務：</strong>盤點你分享出去與別人分享給你的內容，修改權限、停用不需要的連結。全程只做「收緊」，不刪檔。</div>
+    <section id="why" data-nav="Why this matters">
+      <h2 data-icon="why">A share you cannot take back is a problem</h2>
+      <p>A share link is a key you have lent out. If you never take stock of what you lent and never revoke anything, before long you have no idea how many people can still see your files. Reviewing your shares regularly is one of the most important security habits in a self-hosted cloud.</p>
+      <div class="callout"><strong>Chapter task:</strong> take stock of what you have shared and what other people have shared with you, then change permissions and disable the links you no longer need. Throughout, you only tighten access; you delete no files.</div>
     </section>
 
-    <section id="concept" data-nav="分享清單">
-      <h2 data-icon="concept">兩種分享清單</h2>
-      <p>在 Files 左側的「分享」分類裡，通常會看到：</p>
+    <section id="concept" data-nav="Share lists">
+      <h2 data-icon="concept">The share lists</h2>
+      <p>Under the "Shares" category on the left in Files, you will usually see:</p>
       <table class="data-table">
-        <thead><tr><th>清單</th><th>內容</th></tr></thead>
+        <thead><tr><th>List</th><th>What is in it</th></tr></thead>
         <tbody>
-          <tr><td>你分享的（Shared by you）</td><td>你分享給別人的檔案與連結</td></tr>
-          <tr><td>分享給你的（Shared with you）</td><td>別人分享給你的檔案</td></tr>
-          <tr><td>分享連結（Shared by link）</td><td>你建立的公開連結</td></tr>
-          <tr><td>待接受</td><td>還沒接受的分享邀請</td></tr>
+          <tr><td>Shared by you</td><td>The files and links you have shared with other people</td></tr>
+          <tr><td>Shared with you</td><td>Files other people have shared with you</td></tr>
+          <tr><td>Shared by link</td><td>The public links you have created</td></tr>
+          <tr><td>Pending</td><td>Share invitations you have not accepted yet</td></tr>
         </tbody>
       </table>
     </section>
 
-    <section id="steps" data-nav="盤點步驟">
-      <h2 data-icon="steps">五步盤點與收回</h2>
+    <section id="steps" data-nav="Review steps">
+      <h2 data-icon="steps">Five steps to review and revoke</h2>
       <ol class="steps">
-        <li><h3>打開「你分享的」</h3><p>Files 左側「分享 → 你分享的／分享連結」，看目前對外開了哪些。</p></li>
-        <li><h3>逐一檢查</h3><p>點檔案的分享面板，看每個分享的對象、權限、密碼與到期日。</p></li>
-        <li><h3>修改權限</h3><p>把不該可編輯的改回唯讀；沒設期限的補上到期日。</p></li>
-        <li><h3>停用或刪除連結</h3><p>不再需要的連結，直接在分享面板移除，立刻失效。</p></li>
-        <li><h3>檢查「分享給你的」</h3><p>別人分享給你的，用不到的可以移除，保持清爽。</p></li>
+        <li><h3>Open "Shared by you"</h3><p>In Files, go to "Shares → Shared by you / Shared by link" on the left and see what is currently open to the outside.</p></li>
+        <li><h3>Check them one by one</h3><p>Open the sharing panel on a file and look at who each share is with, its permissions, its password and its expiration date.</p></li>
+        <li><h3>Change the permissions</h3><p>Set anything that should not be editable back to read-only, and add an expiration date to anything that has no expiry.</p></li>
+        <li><h3>Disable or delete the link</h3><p>Remove a link you no longer need straight from the sharing panel; it stops working immediately.</p></li>
+        <li><h3>Check "Shared with you"</h3><p>Remove anything other people have shared with you that you never use, and keep the list clean.</p></li>
       </ol>
-      <div class="callout tip"><strong>養成節奏：</strong>每月做一次分享盤點，尤其臨時分享給廠商、活動的連結，用完立刻收回。</div>
+      <div class="callout tip"><strong>Build a rhythm:</strong> review your shares once a month, and for a link you shared temporarily with a supplier or for an event, revoke it the moment you are done.</div>
     </section>
 
-    <section id="security" data-nav="最小暴露">
-      <h2 data-icon="security">最小暴露原則</h2>
+    <section id="security" data-nav="Minimal exposure">
+      <h2 data-icon="security">The minimal-exposure principle</h2>
       <ul>
-        <li>只分享真正需要的檔案或資料夾，不整個檔案庫開出去。</li>
-        <li>對外連結預設加密碼、設期限。</li>
-        <li>能用站內分享就別用公開連結（對方要登入，較安全）。</li>
-        <li>定期檢查「分享連結」清單，把忘了收的收回。</li>
+        <li>Share only the files or folders that genuinely need sharing, never your whole file library.</li>
+        <li>Put a password and an expiry on an external link by default.</li>
+        <li>Share to an account on this site rather than a public link whenever you can (the other person has to log in, which is safer).</li>
+        <li>Check the "Shared by link" list regularly and revoke the ones you forgot about.</li>
       </ul>
-      <div class="callout danger"><strong>發現連結外流：</strong>立刻停用該連結，重新產生新的（若還需要），並評估外流範圍。</div>
+      <div class="callout danger"><strong>If a link leaks:</strong> disable that link immediately, generate a new one if you still need it, and work out how far the leak reached.</div>
     </section>
 
-    <section id="troubleshoot" data-nav="管理卡關">
-      <h2 data-icon="troubleshoot">管理常見卡關</h2>
+    <section id="troubleshoot" data-nav="Management problems">
+      <h2 data-icon="troubleshoot">Common management pitfalls</h2>
       <ol class="steps">
-        <li><h3>找不到某個分享</h3><p>用「分享連結」清單或搜尋檔名；分享是掛在檔案上的。</p></li>
-        <li><h3>停用了對方還能看</h3><p>對方可能已下載副本。停用只擋後續存取，已下載的無法收回。</p></li>
-        <li><h3>想一次收回全部</h3><p>需逐一處理；把重要的先收，臨時的優先清。</p></li>
-        <li><h3>對方一直收到通知</h3><p>調整通知設定，或移除分享關係。</p></li>
+        <li><h3>You cannot find a share</h3><p>Use the "Shared by link" list, or search for the file name; a share hangs off the file itself.</p></li>
+        <li><h3>You disabled it and they can still see it</h3><p>They may already have downloaded a copy. Disabling only blocks further access; anything already downloaded cannot be taken back.</p></li>
+        <li><h3>You want to revoke everything at once</h3><p>You have to work through them one at a time. Revoke the important ones first, and clear out the temporary ones as a priority.</p></li>
+        <li><h3>The other person keeps getting notifications</h3><p>Adjust the notification settings, or remove the share.</p></li>
       </ol>
     </section>
 
     <section id="faq" data-nav="FAQ">
-      <h2 data-icon="faq">分享管理常見問題</h2>
-      <details class="faq"><summary>停用連結後對方就完全看不到了嗎？</summary><div class="body">後續無法再用該連結存取，但對方先前已下載的副本無法收回。所以敏感內容分享要謹慎。</div></details>
-      <details class="faq"><summary>可以看到誰下載過嗎？</summary><div class="body">檔案的「活動」會記錄存取／下載等事件，可作為稽核參考。</div></details>
-      <details class="faq"><summary>別人分享給我的可以移除嗎？</summary><div class="body">可以移除自己這端的分享關係，不影響對方的原檔。</div></details>
-      <details class="faq"><summary>群組分享怎麼收回？</summary><div class="body">在分享面板移除該群組即可，整個群組會一起失去存取。</div></details>
-      <details class="faq"><summary>多久盤點一次比較好？</summary><div class="body">建議每月一次；有臨時分享時，用完就立刻收回。</div></details>
+      <h2 data-icon="faq">Share management FAQ</h2>
+      <details class="faq"><summary>Once I disable a link, can the other person see nothing at all?</summary><div class="body">They can no longer reach it through that link, but a copy they downloaded earlier cannot be taken back. So share sensitive content with care.</div></details>
+      <details class="faq"><summary>Can I see who has downloaded something?</summary><div class="body">The file's "Activity" logs events such as access and downloads, which gives you something to audit against.</div></details>
+      <details class="faq"><summary>Can I remove something someone shared with me?</summary><div class="body">You can remove the share on your own side, and it does not affect their original file.</div></details>
+      <details class="faq"><summary>How do I revoke a group share?</summary><div class="body">Remove that group in the sharing panel and the whole group loses access together.</div></details>
+      <details class="faq"><summary>How often should I review my shares?</summary><div class="body">Once a month is a good rhythm. If you set up a temporary share, revoke it the moment you are done.</div></details>
     </section>
 
-    <section id="sources" data-nav="官方來源">
-      <h2 data-icon="records">官方來源</h2>
+    <section id="sources" data-nav="Official sources">
+      <h2 data-icon="records">Official sources</h2>
       <table class="data-table">
-        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <thead><tr><th>Source</th><th>What to verify</th></tr></thead>
         <tbody>
-          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/files/sharing.html" rel="noopener">Nextcloud：分享與管理</a></td><td>分享清單、權限與收回</td></tr>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/files/sharing.html" rel="noopener">Nextcloud: Sharing and management</a></td><td>Share lists, permissions and revoking</td></tr>
         </tbody>
       </table>
     </section>

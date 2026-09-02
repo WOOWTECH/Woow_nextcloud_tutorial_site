@@ -68,13 +68,13 @@
     </ol>
     <div class="toc-in-chapter">
       <h2>This chapter</h2>
-      <a href="#why">為什麼要學</a>
-      <a href="#concept">行事曆觀念</a>
-      <a href="#steps">使用步驟</a>
-      <a href="#share">共享日曆</a>
-      <a href="#troubleshoot">行事曆卡關</a>
+      <a href="#why">Why this matters</a>
+      <a href="#concept">Calendar basics</a>
+      <a href="#steps">Usage steps</a>
+      <a href="#share">Shared calendars</a>
+      <a href="#troubleshoot">Calendar problems</a>
       <a href="#faq">FAQ</a>
-      <a href="#sources">官方來源</a>
+      <a href="#sources">Official sources</a>
     </div>
     <div class="toc-in-chapter">
       <h2>Appendices</h2>
@@ -88,75 +88,75 @@
     <div class="callout i18n-pending"><strong>This chapter has not been translated yet.</strong> You are reading the original Chinese text. <a href="../ch11_calendar.html" hreflang="zh-Hant">Open the Chinese version</a></div>
     <div class="chapter-header">
       <div class="kicker">Chapter 11</div>
-      <h1>Calendar 行事曆</h1>
-      <p class="lead">用 Nextcloud 的 Calendar 建立事件、設提醒、共享日曆，並和手機／電腦的行事曆同步。讀完這章，全家或團隊能有一本共用、自己掌控的行事曆。</p>
+      <h1>Calendar</h1>
+      <p class="lead">Use Calendar in Nextcloud to create events, set reminders, share calendars, and sync with the calendar on your phone or computer. By the end of this chapter, your family or your team will have one shared calendar that you control.</p>
     </div>
 
-    <section id="why" data-nav="為什麼要學">
-      <h2 data-icon="why">自己的行事曆自己管</h2>
-      <p>行事曆是家庭與團隊協調的核心。用 Nextcloud Calendar，事件資料存在自己家，還能共享日曆、跨裝置同步，不必把行程交給第三方雲端。</p>
-      <div class="callout"><strong>本章任務：</strong>建立一個日曆與事件、設提醒，並了解怎麼共享與同步。</div>
+    <section id="why" data-nav="Why this matters">
+      <h2 data-icon="why">Run your own calendar</h2>
+      <p>A calendar is the heart of how a family or a team coordinates. With Nextcloud Calendar your event data stays at home, you can still share calendars and sync across devices, and you never hand your schedule to a third-party cloud.</p>
+      <div class="callout"><strong>Chapter task:</strong> create a calendar and an event, set a reminder, and learn how sharing and syncing work.</div>
     </section>
 
-    <section id="concept" data-nav="行事曆觀念">
-      <h2 data-icon="concept">日曆、事件與同步協定</h2>
+    <section id="concept" data-nav="Calendar basics">
+      <h2 data-icon="concept">Calendars, events and sync protocols</h2>
       <table class="data-table">
-        <thead><tr><th>概念</th><th>說明</th></tr></thead>
+        <thead><tr><th>Concept</th><th>What it means</th></tr></thead>
         <tbody>
-          <tr><td>日曆（Calendar）</td><td>一組事件的集合，可多本（工作、家庭、生日）</td></tr>
-          <tr><td>事件（Event）</td><td>單一行程，含時間、地點、提醒、參與者</td></tr>
-          <tr><td>CalDAV</td><td>行事曆同步的標準協定，手機／電腦靠它同步</td></tr>
-          <tr><td>訂閱（ICS）</td><td>唯讀訂閱外部日曆（如國定假日）</td></tr>
+          <tr><td>Calendar</td><td>A set of events; you can keep several (work, family, birthdays)</td></tr>
+          <tr><td>Event</td><td>A single entry, with a time, a place, reminders and attendees</td></tr>
+          <tr><td>CalDAV</td><td>The standard protocol for calendar sync; it is what your phone and computer sync through</td></tr>
+          <tr><td>Subscription (ICS)</td><td>A read-only subscription to an external calendar (public holidays, for example)</td></tr>
         </tbody>
       </table>
     </section>
 
-    <section id="steps" data-nav="使用步驟">
-      <h2 data-icon="steps">五步用起行事曆</h2>
+    <section id="steps" data-nav="Usage steps">
+      <h2 data-icon="steps">Five steps to start using Calendar</h2>
       <ol class="steps">
-        <li><h3>打開 Calendar</h3><p>頂欄或 Apps 選單點「行事曆」。左側是你的日曆清單。</p></li>
-        <li><h3>建立新日曆</h3><p>左側「＋ 新增日曆」，命名（例如「家庭」）並選顏色，方便區分。</p></li>
-        <li><h3>建立事件</h3><p>在日期格點一下，填標題、時間、地點；可設「整天」或重複。</p></li>
-        <li><h3>設提醒與參與者</h3><p>在事件裡加提醒（幾分鐘前）、加參與者 email 發送邀請。</p></li>
-        <li><h3>共享或訂閱</h3><p>把日曆分享給站內帳號或用連結；也可「訂閱」外部 ICS 日曆（唯讀）。</p></li>
+        <li><h3>Open Calendar</h3><p>Click "Calendar" in the top bar or the Apps menu. Your list of calendars is on the left.</p></li>
+        <li><h3>Create a new calendar</h3><p>On the left, "+ New calendar". Name it (for example "Family") and pick a color so you can tell them apart.</p></li>
+        <li><h3>Create an event</h3><p>Click a day cell and fill in the title, time and place. You can mark it "all-day" or make it repeat.</p></li>
+        <li><h3>Set reminders and attendees</h3><p>Inside the event, add a reminder (so many minutes before) and add attendees by email to send invitations.</p></li>
+        <li><h3>Share or subscribe</h3><p>Share the calendar with an account on this site or through a link. You can also "subscribe" to an external ICS calendar (read-only).</p></li>
       </ol>
-      <div class="callout tip"><strong>跨裝置同步：</strong>用 CalDAV 網址（設定裡可複製）在手機／電腦行事曆加帳號，事件就會雙向同步。</div>
+      <div class="callout tip"><strong>Sync across devices:</strong> add an account to the calendar on your phone or computer with the CalDAV URL (you can copy it from the settings), and your events stay in two-way sync.</div>
     </section>
 
-    <section id="share" data-nav="共享日曆">
-      <h2 data-icon="remote">共享與訂閱</h2>
+    <section id="share" data-nav="Shared calendars">
+      <h2 data-icon="remote">Sharing and subscribing</h2>
       <ul>
-        <li><strong>共享給站內帳號</strong>：對方能看到（或編輯）你的日曆，適合家庭共用。</li>
-        <li><strong>公開連結</strong>：產生唯讀連結給沒帳號的人看。</li>
-        <li><strong>訂閱外部</strong>：貼上國定假日、球隊賽程等 ICS 網址，唯讀顯示在你的行事曆。</li>
+        <li><strong>Share with an account on this site</strong>: they can see (or edit) your calendar, which suits a family sharing one.</li>
+        <li><strong>Public link</strong>: generate a read-only link for people without an account.</li>
+        <li><strong>Subscribe to an external calendar</strong>: paste the ICS URL for public holidays, a sports team's schedule and the like, and it shows up read-only in your calendar.</li>
       </ul>
     </section>
 
-    <section id="troubleshoot" data-nav="行事曆卡關">
-      <h2 data-icon="troubleshoot">行事曆常見卡關</h2>
+    <section id="troubleshoot" data-nav="Calendar problems">
+      <h2 data-icon="troubleshoot">Common calendar pitfalls</h2>
       <ol class="steps">
-        <li><h3>時間差一小時</h3><p>時區沒設對。到個人設定確認時區（第 5 章），事件時間才正確。</p></li>
-        <li><h3>手機同步不到</h3><p>檢查 CalDAV 網址與帳密（建議用 App 密碼），或用官方 app 設定。</p></li>
-        <li><h3>提醒沒響</h3><p>確認事件有加提醒、通知設定有開（第 5 章），手機端也要允許通知。</p></li>
-        <li><h3>重複事件全改到</h3><p>編輯重複事件時，看清楚是改「這一個」還是「整個系列」。</p></li>
+        <li><h3>Times are off by an hour</h3><p>The time zone is not set correctly. Confirm your time zone in personal settings (Chapter 5) so event times come out right.</p></li>
+        <li><h3>The phone will not sync</h3><p>Check the CalDAV URL and your credentials (an app password is recommended), or set it up with the official app.</p></li>
+        <li><h3>No reminder went off</h3><p>Check that the event actually has a reminder and that your notification settings are on (Chapter 5), and that your phone allows notifications too.</p></li>
+        <li><h3>Editing one recurring event changed them all</h3><p>When you edit a recurring event, look carefully at whether you are changing "this one" or "the whole series".</p></li>
       </ol>
     </section>
 
     <section id="faq" data-nav="FAQ">
-      <h2 data-icon="faq">行事曆常見問題</h2>
-      <details class="faq"><summary>能和 Google 行事曆同步嗎？</summary><div class="body">可用 CalDAV 或訂閱／匯入 ICS 的方式互通，設定較進階，細節見官方文件。</div></details>
-      <details class="faq"><summary>可以有很多本日曆嗎？</summary><div class="body">可以，用不同顏色區分工作、家庭、生日等，各自可獨立共享。</div></details>
-      <details class="faq"><summary>共享日曆對方能改嗎？</summary><div class="body">看你給的權限。可設唯讀或可編輯，家庭共用常給可編輯。</div></details>
-      <details class="faq"><summary>訂閱的外部日曆能編輯嗎？</summary><div class="body">不能，訂閱是唯讀。要編輯得是你自己的日曆。</div></details>
-      <details class="faq"><summary>手機上要用哪個 App？</summary><div class="body">用系統行事曆加 CalDAV 帳號，或 Nextcloud 官方相關 app。iOS／Android 皆支援 CalDAV。</div></details>
+      <h2 data-icon="faq">Calendar FAQ</h2>
+      <details class="faq"><summary>Can I sync with Google Calendar?</summary><div class="body">You can connect the two through CalDAV, or by subscribing to / importing an ICS file. The setup is on the advanced side, so go by the official docs for the details.</div></details>
+      <details class="faq"><summary>Can I have several calendars?</summary><div class="body">Yes. Use different colors for work, family, birthdays and so on, and each one can be shared separately.</div></details>
+      <details class="faq"><summary>Can the people I share a calendar with edit it?</summary><div class="body">It depends on the permissions you give. You can set read-only or can edit; for a family calendar, can edit is the common choice.</div></details>
+      <details class="faq"><summary>Can I edit an external calendar I subscribe to?</summary><div class="body">No, a subscription is read-only. To edit, it has to be your own calendar.</div></details>
+      <details class="faq"><summary>Which app should I use on my phone?</summary><div class="body">Add a CalDAV account to your system calendar, or use the matching official Nextcloud app. Both iOS and Android support CalDAV.</div></details>
     </section>
 
-    <section id="sources" data-nav="官方來源">
-      <h2 data-icon="records">官方來源</h2>
+    <section id="sources" data-nav="Official sources">
+      <h2 data-icon="records">Official sources</h2>
       <table class="data-table">
-        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <thead><tr><th>Source</th><th>What to verify</th></tr></thead>
         <tbody>
-          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/groupware/calendar.html" rel="noopener">Nextcloud：Calendar</a></td><td>事件、共享、CalDAV 與訂閱</td></tr>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/groupware/calendar.html" rel="noopener">Nextcloud: Calendar</a></td><td>Events, sharing, CalDAV and subscriptions</td></tr>
         </tbody>
       </table>
     </section>

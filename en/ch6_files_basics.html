@@ -68,13 +68,13 @@
     </ol>
     <div class="toc-in-chapter">
       <h2>This chapter</h2>
-      <a href="#why">為什麼要學</a>
-      <a href="#concept">Files 版面</a>
-      <a href="#steps">基本操作</a>
-      <a href="#tips">好用功能</a>
-      <a href="#troubleshoot">檔案卡關</a>
+      <a href="#why">Why this matters</a>
+      <a href="#concept">Files layout</a>
+      <a href="#steps">Basic actions</a>
+      <a href="#tips">Handy features</a>
+      <a href="#troubleshoot">File problems</a>
       <a href="#faq">FAQ</a>
-      <a href="#sources">官方來源</a>
+      <a href="#sources">Official sources</a>
     </div>
     <div class="toc-in-chapter">
       <h2>Appendices</h2>
@@ -88,79 +88,79 @@
     <div class="callout i18n-pending"><strong>This chapter has not been translated yet.</strong> You are reading the original Chinese text. <a href="../ch6_files_basics.html" hreflang="zh-Hant">Open the Chinese version</a></div>
     <div class="chapter-header">
       <div class="kicker">Chapter 6</div>
-      <h1>Files 檔案管理基礎</h1>
-      <p class="lead">Files 是 Nextcloud 最核心的 App。這章帶你建資料夾、上傳、下載、重新命名與移動，並認識回收桶。讀完，你就能像用雲端硬碟一樣管理檔案。</p>
+      <h1>Files basics</h1>
+      <p class="lead">Files is the core app in Nextcloud. Create a folder, upload, download, rename and move files, and get to know the trash bin. By the end you'll be able to manage your files the way you would on any cloud drive.</p>
     </div>
 
-    <section id="why" data-nav="為什麼要學">
-      <h2 data-icon="why">檔案是雲端的核心</h2>
-      <p>不管你之後用照片、行事曆還是協作，底層都是檔案。先把 Files 的基本操作練熟，後面一切都順。這章是純基礎，沒有風險。</p>
-      <div class="callout"><strong>本章任務：</strong>建一個資料夾、上傳一個檔案、下載、重新命名與移動。刪除會先進回收桶，可還原。</div>
+    <section id="why" data-nav="Why this matters">
+      <h2 data-icon="why">Files are the core of your cloud</h2>
+      <p>Whether you go on to use Photos, Calendar or the collaboration apps, files sit underneath all of them. Get comfortable with the basic Files actions first and everything that follows goes smoothly. This chapter is pure groundwork: nothing here puts anything at risk.</p>
+      <div class="callout"><strong>Chapter task:</strong> create a folder, upload a file, download it, rename it and move it. Anything you delete goes to the trash bin first, so you can restore it.</div>
     </section>
 
-    <section id="concept" data-nav="Files 版面">
-      <h2 data-icon="concept">Files 的版面</h2>
-      <p>點頂欄「檔案」進入 Files：</p>
+    <section id="concept" data-nav="Files layout">
+      <h2 data-icon="concept">The Files layout</h2>
+      <p>Click "Files" in the top bar to open the app:</p>
       <table class="data-table">
-        <thead><tr><th>區域</th><th>內容</th></tr></thead>
+        <thead><tr><th>Screen area</th><th>What is in it</th></tr></thead>
         <tbody>
-          <tr><td>左側清單</td><td>所有檔案、最愛、最近、分享、回收桶等分類</td></tr>
-          <tr><td>中間主區</td><td>目前資料夾的檔案與子資料夾清單</td></tr>
-          <tr><td>上方「＋」</td><td>新增：上傳檔案、新資料夾、新文件</td></tr>
-          <tr><td>每列右側「⋯」</td><td>單一檔案的操作：分享、重新命名、移動、刪除、下載</td></tr>
+          <tr><td>The left-hand list</td><td>Categories such as All files, Favorites, Recent, Shared and Trash bin</td></tr>
+          <tr><td>The main area in the middle</td><td>The files and subfolders in the folder you are in</td></tr>
+          <tr><td>The "+" at the top</td><td>New: Upload file, New folder, New document</td></tr>
+          <tr><td>The "⋯" at the end of each row</td><td>Actions on a single file: share, rename, move, delete, download</td></tr>
         </tbody>
       </table>
-      <div class="callout tip"><strong>麵包屑導覽：</strong>上方會顯示你目前在哪個資料夾路徑，點路徑上一層可以往回。</div>
+      <div class="callout tip"><strong>Breadcrumbs:</strong> the path across the top shows which folder you are in; click a level higher up that path to go back.</div>
     </section>
 
-    <section id="steps" data-nav="基本操作">
-      <h2 data-icon="steps">六步練熟基本操作</h2>
+    <section id="steps" data-nav="Basic actions">
+      <h2 data-icon="steps">Six steps to master the basics</h2>
       <ol class="steps">
-        <li><h3>建立新資料夾</h3><p>按上方「＋」→「新資料夾」，命名（例如「文件」）後建立。</p></li>
-        <li><h3>進入資料夾並上傳</h3><p>點進資料夾，按「＋」→「上傳檔案」，選一個檔案上傳。也可直接把檔案拖進畫面（第 7 章詳談）。</p></li>
-        <li><h3>下載檔案</h3><p>在檔案列右側「⋯」選「下載」，或點檔名開啟後下載。</p></li>
-        <li><h3>重新命名</h3><p>「⋯」→「重新命名」，改完按 Enter。</p></li>
-        <li><h3>移動或複製</h3><p>「⋯」→「移動或複製」，選目標資料夾。也可直接拖曳。</p></li>
-        <li><h3>刪除與回收桶</h3><p>「⋯」→「刪除」。刪除的檔案會進左側「刪除的檔案（回收桶）」，可在期限內還原。</p></li>
+        <li><h3>Create a new folder</h3><p>Click "+" at the top → "New folder", give it a name (for example "Documents") and create it.</p></li>
+        <li><h3>Open the folder and upload</h3><p>Click into the folder, then "+" → "Upload file", and pick a file to upload. You can also drag a file straight onto the page (Chapter 7 goes into detail).</p></li>
+        <li><h3>Download a file</h3><p>Open the "⋯" at the end of the file's row and choose "Download", or click the file name to open it and download from there.</p></li>
+        <li><h3>Rename</h3><p>"⋯" → "Rename", then press Enter when you are done.</p></li>
+        <li><h3>Move or copy</h3><p>"⋯" → "Move or copy", then pick the target folder. You can also drag and drop.</p></li>
+        <li><h3>Delete and the trash bin</h3><p>"⋯" → "Delete". Deleted files go to "Deleted files (trash bin)" on the left, and you can restore them until the retention period runs out.</p></li>
       </ol>
-      <div class="callout warn"><strong>刪除不是永久：</strong>刪掉的檔案先進回收桶，過保留期或手動清空才真的消失。誤刪先去回收桶找。</div>
+      <div class="callout warn"><strong>Deleting is not permanent:</strong> a deleted file goes to the trash bin first, and only disappears for good once the retention period passes or you empty the bin by hand. If you delete something by mistake, look in the trash bin first.</div>
     </section>
 
-    <section id="tips" data-nav="好用功能">
-      <h2 data-icon="tips">幾個馬上好用的功能</h2>
+    <section id="tips" data-nav="Handy features">
+      <h2 data-icon="tips">A few features you will use right away</h2>
       <ul>
-        <li><strong>最愛</strong>：在檔案上標星號，之後從左側「最愛」一次找到。</li>
-        <li><strong>檔案資訊面板</strong>：點檔案右側資訊圖示，看大小、修改時間、分享與活動。</li>
-        <li><strong>排序</strong>：點欄位標題（名稱、大小、修改時間）切換排序。</li>
-        <li><strong>選取多個</strong>：勾選多個檔案，可一次移動、下載或刪除。</li>
+        <li><strong>Favorites</strong>: star a file, and you can pull it up later from "Favorites" on the left.</li>
+        <li><strong>The file info panel</strong>: click the info icon at the end of a file's row to see its size, when it was modified, its shares and its activity.</li>
+        <li><strong>Sorting</strong>: click a column heading (name, size, modified) to switch the sort order.</li>
+        <li><strong>Selecting several</strong>: tick several files and move, download or delete them in one go.</li>
       </ul>
     </section>
 
-    <section id="troubleshoot" data-nav="檔案卡關">
-      <h2 data-icon="troubleshoot">檔案常見卡關</h2>
+    <section id="troubleshoot" data-nav="File problems">
+      <h2 data-icon="troubleshoot">Common file pitfalls</h2>
       <ol class="steps">
-        <li><h3>檔案不見了</h3><p>先看回收桶、最愛與搜尋；可能被移到別的資料夾或誤刪。</p></li>
-        <li><h3>重新命名失敗</h3><p>檔名不能含特殊字元，或同資料夾已有同名檔。換個名字。</p></li>
-        <li><h3>下載很慢</h3><p>大檔或大量檔案本來就慢；多檔下載會打包成 zip，需要時間。</p></li>
-        <li><h3>移動後找不到</h3><p>用麵包屑或搜尋回到目標資料夾；移動只是換位置，檔案還在。</p></li>
+        <li><h3>A file has vanished</h3><p>Check the trash bin, Favorites and search first; it may have been moved to another folder or deleted by mistake.</p></li>
+        <li><h3>Renaming fails</h3><p>A file name cannot contain special characters, or there is already a file with the same name in that folder. Pick a different name.</p></li>
+        <li><h3>Downloading is slow</h3><p>Large files and large batches are slow by nature; a multi-file download is packed into a zip, which takes time.</p></li>
+        <li><h3>You cannot find a file after moving it</h3><p>Use the breadcrumbs or search to get back to the target folder; moving only changes where a file sits, the file is still there.</p></li>
       </ol>
     </section>
 
     <section id="faq" data-nav="FAQ">
-      <h2 data-icon="faq">檔案常見問題</h2>
-      <details class="faq"><summary>回收桶的檔案會自動清除嗎？</summary><div class="body">會，依站台設定的保留期。期限內可還原，之後自動清除。也可手動清空回收桶釋放空間。</div></details>
-      <details class="faq"><summary>可以直接在 Nextcloud 編輯文件嗎？</summary><div class="body">可以，搭配 Office App 線上編輯 docx／xlsx（第 15 章）；文字檔與 Markdown 也能直接編輯。</div></details>
-      <details class="faq"><summary>檔名有長度或字元限制嗎？</summary><div class="body">有。避免使用 <code>/ \ : * ? " &lt; &gt; |</code> 等字元，檔名也不宜過長。</div></details>
-      <details class="faq"><summary>怎麼一次下載整個資料夾？</summary><div class="body">在資料夾列「⋯」選下載，會打包成 zip；大資料夾需要一點時間。</div></details>
-      <details class="faq"><summary>刪除會影響有分享的人嗎？</summary><div class="body">會。刪掉已分享的檔案，對方也會失去存取。刪除前先確認沒有人還需要它。</div></details>
+      <h2 data-icon="faq">Files FAQ</h2>
+      <details class="faq"><summary>Are files in the trash bin cleared automatically?</summary><div class="body">Yes, according to the retention period configured on the site. You can restore a file within that window, after which it is cleared automatically. You can also empty the trash bin by hand to free up space.</div></details>
+      <details class="faq"><summary>Can I edit documents directly in Nextcloud?</summary><div class="body">Yes. With the Office app you can edit docx/xlsx online (Chapter 15); text files and Markdown can be edited directly too.</div></details>
+      <details class="faq"><summary>Are there limits on file name length or characters?</summary><div class="body">Yes. Avoid characters such as <code>/ \ : * ? " &lt; &gt; |</code>, and do not make file names too long.</div></details>
+      <details class="faq"><summary>How do I download a whole folder at once?</summary><div class="body">Open the "⋯" on the folder's row and choose download; it is packed into a zip, and a large folder takes a little time.</div></details>
+      <details class="faq"><summary>Does deleting affect the people I have shared with?</summary><div class="body">Yes. Delete a file you have shared and the other side loses access to it as well. Check that nobody still needs it before you delete.</div></details>
     </section>
 
-    <section id="sources" data-nav="官方來源">
-      <h2 data-icon="records">官方來源</h2>
+    <section id="sources" data-nav="Official sources">
+      <h2 data-icon="records">Official sources</h2>
       <table class="data-table">
-        <thead><tr><th>來源</th><th>查證重點</th></tr></thead>
+        <thead><tr><th>Source</th><th>What to verify</th></tr></thead>
         <tbody>
-          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/files/index.html" rel="noopener">Nextcloud：Files 使用手冊</a></td><td>檔案操作、回收桶與版本</td></tr>
+          <tr><td><a href="https://docs.nextcloud.com/server/latest/user_manual/en/files/index.html" rel="noopener">Nextcloud: the Files user manual</a></td><td>File actions, the trash bin and versions</td></tr>
         </tbody>
       </table>
     </section>
