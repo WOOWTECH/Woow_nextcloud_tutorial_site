@@ -844,7 +844,8 @@
       "HAOS 內建 + 代設定": "Built into HAOS + we set it up",
       "雲端 PaaS 租用": "Hosted cloud PaaS",
       "工具": "Tool",
-      "何時用": "When to use it"
+      "何時用": "When to use it",
+      "（空白表頭）": "(leave it empty - do not invent a header; sales.html #compare, first cell of the header row)"
     },
     "code_placeholders": {
       "_readme": "Code is frozen (gate B). Do NOT edit these in en/; file i18n/_proposals/<file>.json with the whole block verbatim as zh and the same block with ONLY the Chinese replaced as en. The hostname woowtech-nextcloud.woowtech.io always sits inside <code> - it stays verbatim everywhere, including in the WebDAV URL.",
@@ -954,6 +955,7 @@
       "資源總覽": "Resource Hub",
       "章節": "Chapters",
       "本章": "This chapter",
+      "本頁": "This page  <-- sales/prompts/skills sidebar h2; strings.en.json owns 章節/本章/附錄, this one is hardcoded in the page",
       "附錄": "Appendices",
       "四本手冊": "Four handbooks",
       "相關連結": "Related links",
