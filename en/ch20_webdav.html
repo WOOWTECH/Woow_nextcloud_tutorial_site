@@ -89,11 +89,11 @@
     <div class="chapter-header">
       <div class="kicker">Chapter 20</div>
       <h1>WebDAV, going further</h1>
-      <p class="lead">WebDAV lets you reach Nextcloud straight from your system file manager or a third-party tool, the way you would work with a local folder. By the end of this chapter you'll be able to mount Nextcloud as a drive, or use a tool to move files around automatically.</p>
+      <p class="lead">WebDAV lets you reach Nextcloud straight from your system file manager or a third-party tool, the way you would work with a local folder. By the end of this chapter, you'll be able to mount Nextcloud as a drive, or use a tool to move files around automatically.</p>
     </div>
 
     <section id="why" data-nav="Why this matters">
-      <h2 data-icon="why">Access without opening a browser</h2>
+      <h2 data-icon="why">Access it without opening a browser</h2>
       <p>Besides the browser and the desktop client, Nextcloud also supports <strong>WebDAV</strong> — a standard protocol for file access. With it you can mount Nextcloud as a drive on your system, or let a backup tool or a script read and write it directly, which suits advanced use and automation.</p>
       <div class="callout"><strong>Chapter task:</strong> Find your WebDAV URL, connect to it from your system or a tool, and learn what it is good for in automation.</div>
     </section>
@@ -131,14 +131,14 @@
         <li><strong>Cyberduck / WinSCP</strong>: move files by drag and drop in a graphical client.</li>
         <li><strong>Scripts</strong>: call WebDAV with curl or a library to upload / download automatically.</li>
       </ul>
-      <div class="callout tip"><strong>Mounting vs syncing:</strong> a WebDAV mount is "direct access to the remote" (it takes no space on the machine, but you have to be online); the desktop client is "two-way sync" (there is a local copy, available offline). Pick the one your need calls for.</div>
+      <div class="callout tip"><strong>Mounting vs syncing:</strong> a WebDAV mount is "direct access to the remote" (it takes no space on the machine, but you have to be online); the desktop client is "two-way sync" (there is a local copy, available offline). Pick the one that matches what you need.</div>
     </section>
 
     <section id="troubleshoot" data-nav="WebDAV problems">
       <h2 data-icon="troubleshoot">Common WebDAV pitfalls</h2>
       <ol class="steps">
         <li><h3>Login fails</h3><p>Use an app password rather than your main password; check that the URL is complete and includes the account path.</p></li>
-        <li><h3>Slow once mounted</h3><p>Every WebDAV operation goes over the network, so a great many small files will be slow. For a large batch move, use the desktop client instead.</p></li>
+        <li><h3>Slow once mounted</h3><p>Every WebDAV operation goes over the network, so many small files are slow. For moving a large batch, use the desktop client instead.</p></li>
         <li><h3>Windows will not mount it</h3><p>The WebDAV built into Windows has limited support for large files and long paths; rclone or a third-party tool holds up better.</p></li>
         <li><h3>Non-ASCII filenames show as garbage</h3><p>Check that the tool is using UTF-8; some older tools support it poorly, so switch tools. Note: any filename outside plain ASCII is affected the same way, accented letters included.</p></li>
       </ol>
@@ -147,8 +147,8 @@
     <section id="faq" data-nav="FAQ">
       <h2 data-icon="faq">WebDAV FAQ</h2>
       <details class="faq"><summary>What is the difference between WebDAV and the desktop client?</summary><div class="body">WebDAV is direct access to the remote (it takes no space on the machine, but you have to be online); the client is two-way sync (there is a local copy, available offline).</div></details>
-      <details class="faq"><summary>Do I have to use an app password?</summary><div class="body">We strongly recommend it. Typing your main password in all over the place is risky; an app password can be revoked on its own, which is safer.</div></details>
-      <details class="faq"><summary>Can I use rclone to back up somewhere else?</summary><div class="body">You can. rclone supports WebDAV, so you can back up what is in Nextcloud to another storage, and the other way round too.</div></details>
+      <details class="faq"><summary>Do I have to use an app password?</summary><div class="body">We strongly recommend it. Typing your main password all over the place is risky; an app password can be revoked on its own, which is safer.</div></details>
+      <details class="faq"><summary>Can I use rclone to back up somewhere else?</summary><div class="body">You can. rclone supports WebDAV, so you can back up what is in Nextcloud to other storage, and the other way around too.</div></details>
       <details class="faq"><summary>Can I use WebDAV on a phone?</summary><div class="body">You can, with a file app that supports WebDAV, but for day-to-day use the official app is smoother (Chapter 19).</div></details>
       <details class="faq"><summary>Is WebDAV safe?</summary><div class="body">It travels encrypted over HTTPS, so how safe it is comes down to how you manage your passwords. Use an app password and check your connected devices regularly.</div></details>
     </section>

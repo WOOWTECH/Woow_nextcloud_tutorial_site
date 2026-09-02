@@ -89,12 +89,12 @@
     <div class="chapter-header">
       <div class="kicker">Chapter 22</div>
       <h1>Security and troubleshooting</h1>
-      <p class="lead">Work through one systematic security and maintenance check, from trusted domains and HTTPS to backups and everyday troubleshooting. By the end of this chapter, you'll know how to narrow a problem down layer by layer, and which security habits are worth keeping up for the long run.</p>
+      <p class="lead">Work through one systematic security and maintenance check, from trusted domains and HTTPS to backups and common troubleshooting. By the end of this chapter, you'll know how to narrow a problem down layer by layer, and which security habits are worth holding on to for the long run.</p>
     </div>
 
     <section id="why" data-nav="Why this matters">
       <h2 data-icon="why">Stay calm, work in layers, do not just restart</h2>
-      <p>When your cloud goes wrong, the most common mistake is to play the odds with "let me restart it" and "let me change a setting", which usually washes the evidence away. The right move is to look at the symptom first, work down through the layers, and act only once you have found the evidence. Security is a different matter: a few habits you keep up over the long run.</p>
+      <p>When your cloud goes wrong, the most common mistake is to try your luck with "let me restart it" and "let me change a setting", which usually washes the clues away. The right move is to look at the symptom first, work down through the layers, and act only once you have found the evidence. Security, meanwhile, comes down to a few habits you keep up over the long term.</p>
       <div class="callout"><strong>Chapter task:</strong> learn the security checklist and the layered troubleshooting routine.</div>
     </section>
 
@@ -110,7 +110,7 @@
         <li><h3>The entry point is https</h3><p>The address bar shows <code>https</code> and a padlock. If you get a certificate warning, stop there and do not type your account or password.</p></li>
         <li><h3>Strong passwords and two-factor</h3><p>Make passwords long enough and do not reuse them; turn on two-factor authentication for admin accounts.</p></li>
         <li><h3>Take stock of the accounts</h3><p>Do not leave an account enabled that should be disabled, and demote the admins you do not need (Chapter 21).</p></li>
-        <li><h3>Take stock of the shares</h3><p>Disable the share links you no longer need, and give public links a password and an expiry date (Chapter 9).</p></li>
+        <li><h3>Take stock of the shares</h3><p>Disable the share links you no longer need, and set a password and an expiry on public links (Chapter 9).</p></li>
         <li><h3>Check connected devices</h3><p>In personal settings, under "Security", revoke any app password or session you do not recognize (Chapter 5).</p></li>
         <li><h3>Confirm the backups</h3><p>The admin confirms that the database and the data directory are backed up on a schedule, and that a restore drill has actually been run.</p></li>
       </ol>
@@ -122,9 +122,9 @@
       <table class="data-table">
         <thead><tr><th>What to back up</th><th>What it is</th></tr></thead>
         <tbody>
-          <tr><td>The database</td><td>Structural data: users, shares, metadata and so on</td></tr>
-          <tr><td>The data directory</td><td>The file contents themselves</td></tr>
-          <tr><td>The config file</td><td>Site settings such as <code>config.php</code></td></tr>
+          <tr><td>Database</td><td>Structural data: users, shares, metadata and so on</td></tr>
+          <tr><td>Data directory</td><td>The file contents themselves</td></tr>
+          <tr><td>Config file</td><td>Site settings such as <code>config.php</code></td></tr>
         </tbody>
       </table>
       <div class="callout danger"><strong>Verify your backups:</strong> a backup you have never restored does not count. Run a restore drill on a schedule and confirm you really can get everything back.</div>
@@ -148,7 +148,7 @@
       <details class="faq"><summary>How do I fix "untrusted domain"?</summary><div class="body">Add the public URL to trusted_domains (in the add-on settings or config.php). That is an admin job (Appendix B).</div></details>
       <details class="faq"><summary>Should I turn on two-factor authentication?</summary><div class="body">Strongly recommended, especially for admin accounts. It is the single most effective step you can take for account security.</div></details>
       <details class="faq"><summary>How often should I back up?</summary><div class="body">It depends on how often your data changes: daily or weekly at the least, and verify a restore on a schedule.</div></details>
-      <details class="faq"><summary>What should I include when I report a problem?</summary><div class="body">The time, what you did, the error message (redact anything sensitive) and how far it reaches (only you or everyone). The more complete it is, the easier it is to deal with.</div></details>
+      <details class="faq"><summary>What should I include when I report a problem?</summary><div class="body">The time, what you did, the error message (redact anything sensitive) and what it affects (only you or everyone). The more complete it is, the easier it is to deal with.</div></details>
     </section>
 
     <section id="sources" data-nav="Official sources">
