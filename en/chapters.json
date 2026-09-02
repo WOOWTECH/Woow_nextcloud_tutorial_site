@@ -1,19 +1,19 @@
 {
   "_readme": "Single source for the en/ site root (nav, SEO, catalog, sitemap). Human-readable fields are translation units tracked in i18n/ledger.json. Rebuild with: SITE_ROOT=en node scripts/build_nav.js",
   "site": {
-    "title": "Nextcloud 自架雲端指南",
-    "brand": "Nextcloud 指南",
-    "subtitle": "把檔案收在自己家",
+    "title": "Nextcloud Self-Hosted Cloud Guide",
+    "brand": "Nextcloud Guide",
+    "subtitle": "Keep your files at home",
     "baseUrl": "https://nextcloud-guide.woowtech.io/en",
     "repoUrl": "https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site",
     "locale": "en_US",
-    "description": "22 章＋3 附錄的繁體中文 Nextcloud 教學：從安裝、登入、檔案管理與分享，到 Photos、Calendar、Talk、桌面與手機同步、管理員設定、安全與排錯。",
-    "footerMeta": "截圖取自 Nextcloud 官方介面。Nextcloud 為其權利人的商標，本站與其無隸屬關係。",
+    "description": "22 chapters + 3 appendices on Nextcloud: install, login, files and sharing, Photos, Calendar, Talk, desktop and mobile sync, admin, security and troubleshooting.",
+    "footerMeta": "Screenshots are of the official Nextcloud interface. Nextcloud is a trademark of its respective owner; this site is not affiliated with it.",
     "ogImage": "assets/og/nextcloud-guide.en.png",
     "license": {
       "name": "CC BY 4.0",
       "url": "https://creativecommons.org/licenses/by/4.0/deed.en",
-      "holder": "woowtech"
+      "holder": "WoowTech"
     },
     "chrome": {
       "manage404": false
@@ -29,7 +29,7 @@
   },
   "hub": {
     "catalog": "tutorial.html",
-    "navLabel": "資源總覽",
+    "navLabel": "Resource Hub",
     "pages": [
       "sales.html",
       "prompts.html",
@@ -40,254 +40,254 @@
     {
       "file": "ch1_intro.html",
       "num": "01",
-      "navLabel": "開始前",
-      "title": "開始前",
-      "pagerTitle": "01 · 需求與安全邊界",
-      "card": "先確認 Nextcloud 的角色、自架雲端的價值，以及帳號與公開範圍的安全邊界。",
-      "description": "Nextcloud 自架雲端使用前規劃：自架價值、帳號角色、公開範圍與安全邊界。",
-      "part": "基礎：認識與登入"
+      "navLabel": "Before you start",
+      "title": "Before you start: keep your cloud at home",
+      "pagerTitle": "01 · Requirements and security boundaries",
+      "card": "First, get clear on the role Nextcloud plays, what a self-hosted cloud is worth, and the security boundaries around accounts and public exposure.",
+      "description": "Nextcloud self-hosted cloud, planning before you start: what self-hosting is worth, account roles, public exposure and security boundaries.",
+      "part": "Basics: get to know it and log in"
     },
     {
       "file": "ch2_install.html",
       "num": "02",
-      "navLabel": "安裝",
-      "title": "安裝 Nextcloud",
-      "pagerTitle": "02 · 安裝 Nextcloud",
-      "card": "把 Nextcloud add-on 裝進 Home Assistant，認識安裝後的初始狀態。",
-      "description": "Home Assistant Nextcloud add-on 安裝教學：加入安裝、啟動與首次開啟準備。",
-      "part": "基礎：認識與登入"
+      "navLabel": "Install",
+      "title": "Install Nextcloud",
+      "pagerTitle": "02 · Install Nextcloud",
+      "card": "Install the Nextcloud add-on into Home Assistant and learn what state it is in right after the install.",
+      "description": "Home Assistant Nextcloud add-on install guide: add and install it, start it, and get ready for the first open.",
+      "part": "Basics: get to know it and log in"
     },
     {
       "file": "ch3_first_open.html",
       "num": "03",
-      "navLabel": "第一次開啟",
-      "title": "第一次開啟與登入",
-      "pagerTitle": "03 · 第一次開啟與登入",
-      "card": "開啟 Web UI、用管理員帳號登入，認識登入後的畫面。",
-      "description": "Nextcloud 首次開啟：Web UI、管理員登入與登入後畫面。",
-      "part": "基礎：認識與登入"
+      "navLabel": "First open",
+      "title": "First open and login",
+      "pagerTitle": "03 · First open and login",
+      "card": "Open the Web UI, log in with the admin account, and get to know the screen you land on.",
+      "description": "Nextcloud first open: the Web UI, admin login, and the screen you land on.",
+      "part": "Basics: get to know it and log in"
     },
     {
       "file": "ch4_ui_tour.html",
       "num": "04",
-      "navLabel": "介面導覽",
-      "title": "介面導覽",
-      "pagerTitle": "04 · 介面導覽",
-      "card": "頂欄、Apps 選單、Files 首頁與搜尋，一次認完不再迷路。",
-      "description": "Nextcloud 介面導覽：頂欄、Apps 選單、Files 首頁與全域搜尋。",
-      "part": "基礎：認識與登入"
+      "navLabel": "Interface tour",
+      "title": "Interface tour",
+      "pagerTitle": "04 · Interface tour",
+      "card": "Learn the top bar, the Apps menu, the Files home screen and search once, and you stop getting lost.",
+      "description": "Nextcloud interface tour: the top bar, the Apps menu, the Files home screen and unified search.",
+      "part": "Basics: get to know it and log in"
     },
     {
       "file": "ch5_profile.html",
       "num": "05",
-      "navLabel": "帳號設定",
-      "title": "帳號與個人設定",
-      "pagerTitle": "05 · 帳號與個人設定",
-      "card": "改密碼、語言、顯示名稱與個人資料。",
-      "description": "Nextcloud 個人設定：密碼、語言、顯示名稱與個人資料。",
-      "part": "基礎：認識與登入"
+      "navLabel": "Account settings",
+      "title": "Accounts and personal settings",
+      "pagerTitle": "05 · Accounts and personal settings",
+      "card": "Change your password, language, display name and personal info.",
+      "description": "Nextcloud personal settings: password, language, display name and personal info.",
+      "part": "Basics: get to know it and log in"
     },
     {
       "file": "ch6_files_basics.html",
       "num": "06",
-      "navLabel": "檔案基礎",
-      "title": "Files 檔案管理基礎",
-      "pagerTitle": "06 · 檔案管理基礎",
-      "card": "上傳、下載、資料夾、重新命名與移動。",
-      "description": "Nextcloud Files 基礎：上傳、下載、資料夾、重新命名與移動。",
-      "part": "基礎：認識與登入"
+      "navLabel": "File basics",
+      "title": "Files basics",
+      "pagerTitle": "06 · File management basics",
+      "card": "Upload, download, folders, renaming and moving.",
+      "description": "Nextcloud Files basics: upload, download, folders, renaming and moving.",
+      "part": "Basics: get to know it and log in"
     },
     {
       "file": "ch7_upload.html",
       "num": "07",
-      "navLabel": "上傳",
-      "title": "上傳檔案與資料夾",
-      "pagerTitle": "07 · 上傳檔案與資料夾",
-      "card": "拖放上傳、大量上傳、進度與失敗重試。",
-      "description": "Nextcloud 上傳教學：拖放、大量上傳、進度與失敗處理。",
-      "part": "檔案：管理與分享"
+      "navLabel": "Upload",
+      "title": "Upload files and folders",
+      "pagerTitle": "07 · Upload files and folders",
+      "card": "Drag-and-drop uploads, bulk uploads, progress and retrying failures.",
+      "description": "Nextcloud upload guide: drag and drop, bulk uploads, progress and handling failures.",
+      "part": "Files: manage and share"
     },
     {
       "file": "ch8_share.html",
       "num": "08",
-      "navLabel": "檔案分享",
-      "title": "檔案與資料夾分享",
-      "pagerTitle": "08 · 檔案與資料夾分享",
-      "card": "分享連結、密碼、期限與權限。",
-      "description": "Nextcloud 分享教學：分享連結、密碼、期限與權限設定。",
-      "part": "檔案：管理與分享"
+      "navLabel": "File sharing",
+      "title": "Share files and folders",
+      "pagerTitle": "08 · Share files and folders",
+      "card": "Share links, passwords, expiry and permissions.",
+      "description": "Nextcloud sharing guide: share links, passwords, expiry and permission settings.",
+      "part": "Files: manage and share"
     },
     {
       "file": "ch9_share_manage.html",
       "num": "09",
-      "navLabel": "分享管理",
-      "title": "分享管理與收回",
-      "pagerTitle": "09 · 分享管理與收回",
-      "card": "盤點分享、修改權限、停用與收回。",
-      "description": "Nextcloud 分享管理：盤點、修改權限、停用與收回分享。",
-      "part": "檔案：管理與分享"
+      "navLabel": "Share management",
+      "title": "Manage and revoke shares",
+      "pagerTitle": "09 · Manage and revoke shares",
+      "card": "Review your shares, change permissions, disable and revoke.",
+      "description": "Nextcloud share management: review, change permissions, disable and revoke shares.",
+      "part": "Files: manage and share"
     },
     {
       "file": "ch10_photos.html",
       "num": "10",
-      "navLabel": "照片",
-      "title": "Photos 照片管理",
-      "pagerTitle": "10 · Photos 照片管理",
-      "card": "照片自動上傳、時間軸、相簿與人物。",
-      "description": "Nextcloud Photos 教學：自動上傳、時間軸、相簿與人物辨識。",
-      "part": "檔案：管理與分享"
+      "navLabel": "Photos",
+      "title": "Photos",
+      "pagerTitle": "10 · Photos",
+      "card": "Photo auto upload, the timeline, albums and people.",
+      "description": "Nextcloud Photos guide: auto upload, the timeline, albums and face recognition.",
+      "part": "Files: manage and share"
     },
     {
       "file": "ch11_calendar.html",
       "num": "11",
-      "navLabel": "行事曆",
-      "title": "Calendar 行事曆",
-      "pagerTitle": "11 · Calendar 行事曆",
-      "card": "建立事件、提醒、共享日曆與外部訂閱。",
-      "description": "Nextcloud Calendar 教學：事件、提醒、共享日曆與外部訂閱。",
-      "part": "檔案：管理與分享"
+      "navLabel": "Calendar",
+      "title": "Calendar",
+      "pagerTitle": "11 · Calendar",
+      "card": "Create events, set reminders, share calendars and subscribe to external ones.",
+      "description": "Nextcloud Calendar guide: events, reminders, shared calendars and external subscriptions.",
+      "part": "Files: manage and share"
     },
     {
       "file": "ch12_contacts.html",
       "num": "12",
-      "navLabel": "聯絡人",
-      "title": "Contacts 聯絡人",
-      "pagerTitle": "12 · Contacts 聯絡人",
-      "card": "通訊錄、群組、匯入與 vCard。",
-      "description": "Nextcloud Contacts 教學：通訊錄、群組、匯入與 vCard。",
-      "part": "檔案：管理與分享"
+      "navLabel": "Contacts",
+      "title": "Contacts",
+      "pagerTitle": "12 · Contacts",
+      "card": "Address books, groups, importing and vCard.",
+      "description": "Nextcloud Contacts guide: address books, groups, importing and vCard.",
+      "part": "Files: manage and share"
     },
     {
       "file": "ch13_talk.html",
       "num": "13",
       "navLabel": "Talk",
-      "title": "Talk 聊天與視訊",
-      "pagerTitle": "13 · Talk 聊天與視訊",
-      "card": "對話、群組、視訊會議與分享畫面。",
-      "description": "Nextcloud Talk 教學：對話、群組、視訊會議與螢幕分享。",
-      "part": "協作：溝通與生產力"
+      "title": "Talk: chat and video",
+      "pagerTitle": "13 · Talk: chat and video",
+      "card": "Conversations, groups, video meetings and screen sharing.",
+      "description": "Nextcloud Talk guide: conversations, groups, video meetings and screen sharing.",
+      "part": "Collaboration: communication and productivity"
     },
     {
       "file": "ch14_deck.html",
       "num": "14",
       "navLabel": "Deck",
-      "title": "Deck 看板",
-      "pagerTitle": "14 · Deck 看板",
-      "card": "看板、卡片、列表與任務追蹤。",
-      "description": "Nextcloud Deck 教學：看板、卡片、列表與任務追蹤。",
-      "part": "協作：溝通與生產力"
+      "title": "Deck boards",
+      "pagerTitle": "14 · Deck boards",
+      "card": "Boards, cards, lists and task tracking.",
+      "description": "Nextcloud Deck guide: boards, cards, lists and task tracking.",
+      "part": "Collaboration: communication and productivity"
     },
     {
       "file": "ch15_office.html",
       "num": "15",
       "navLabel": "Office",
-      "title": "Office 線上文件",
-      "pagerTitle": "15 · Office 線上文件",
-      "card": "線上編輯文件、試算表與共同協作。",
-      "description": "Nextcloud Office 教學：線上編輯文件、試算表與共同協作。",
-      "part": "協作：溝通與生產力"
+      "title": "Office: documents online",
+      "pagerTitle": "15 · Office: documents online",
+      "card": "Edit documents and spreadsheets online and work on them together.",
+      "description": "Nextcloud Office guide: edit documents and spreadsheets online and work on them together.",
+      "part": "Collaboration: communication and productivity"
     },
     {
       "file": "ch16_notes.html",
       "num": "16",
       "navLabel": "Notes",
-      "title": "Notes 筆記",
-      "pagerTitle": "16 · Notes 筆記",
-      "card": "Markdown 筆記、分類與跨裝置同步。",
-      "description": "Nextcloud Notes 教學：Markdown 筆記、分類與跨裝置同步。",
-      "part": "協作：溝通與生產力"
+      "title": "Notes",
+      "pagerTitle": "16 · Notes",
+      "card": "Markdown notes, categories and syncing across devices.",
+      "description": "Nextcloud Notes guide: Markdown notes, categories and syncing across devices.",
+      "part": "Collaboration: communication and productivity"
     },
     {
       "file": "ch17_tasks.html",
       "num": "17",
       "navLabel": "Tasks",
-      "title": "Tasks 待辦",
-      "pagerTitle": "17 · Tasks 待辦",
-      "card": "待辦清單、期限與行事曆整合。",
-      "description": "Nextcloud Tasks 教學：待辦清單、期限與行事曆整合。",
-      "part": "協作：溝通與生產力"
+      "title": "Tasks",
+      "pagerTitle": "17 · Tasks",
+      "card": "To-do lists, due dates and calendar integration.",
+      "description": "Nextcloud Tasks guide: to-do lists, due dates and calendar integration.",
+      "part": "Collaboration: communication and productivity"
     },
     {
       "file": "ch18_desktop.html",
       "num": "18",
-      "navLabel": "桌面同步",
-      "title": "桌面同步",
-      "pagerTitle": "18 · 桌面同步",
-      "card": "Desktop client、同步資料夾與衝突處理。",
-      "description": "Nextcloud 桌面同步：Desktop client、同步資料夾與衝突處理。",
-      "part": "同步：跨裝置"
+      "navLabel": "Desktop sync",
+      "title": "Desktop sync",
+      "pagerTitle": "18 · Desktop sync",
+      "card": "The desktop client, sync folders and handling conflicts.",
+      "description": "Nextcloud desktop sync: the desktop client, sync folders and handling conflicts.",
+      "part": "Sync: across your devices"
     },
     {
       "file": "ch19_mobile.html",
       "num": "19",
-      "navLabel": "手機 App",
-      "title": "手機 App",
-      "pagerTitle": "19 · 手機 App",
-      "card": "安裝 App、自動上傳照片與離線存取。",
-      "description": "Nextcloud 手機 App：安裝、自動上傳照片與離線存取。",
-      "part": "同步：跨裝置"
+      "navLabel": "Mobile app",
+      "title": "Mobile app",
+      "pagerTitle": "19 · Mobile app",
+      "card": "Install the app, auto upload your photos and get offline access.",
+      "description": "The Nextcloud mobile app: install it, auto upload photos and offline access.",
+      "part": "Sync: across your devices"
     },
     {
       "file": "ch20_webdav.html",
       "num": "20",
       "navLabel": "WebDAV",
-      "title": "WebDAV 進階",
-      "pagerTitle": "20 · WebDAV 進階",
-      "card": "第三方工具連線、掛載與自動化。",
-      "description": "Nextcloud WebDAV 進階：第三方工具連線、掛載與自動化。",
-      "part": "同步：跨裝置"
+      "title": "WebDAV, going further",
+      "pagerTitle": "20 · WebDAV, going further",
+      "card": "Connect third-party tools, mount your files and automate.",
+      "description": "Nextcloud WebDAV, going further: third-party tools, mounting and automation.",
+      "part": "Sync: across your devices"
     },
     {
       "file": "ch21_admin.html",
       "num": "21",
-      "navLabel": "管理員",
-      "title": "管理員設定",
-      "pagerTitle": "21 · 管理員設定",
-      "card": "使用者、儲存、apps 與版本更新。",
-      "description": "Nextcloud 管理員設定：使用者、儲存、apps 與版本更新。",
-      "part": "管理：安全與維護"
+      "navLabel": "Admin",
+      "title": "Admin settings",
+      "pagerTitle": "21 · Admin settings",
+      "card": "Users, storage, apps and version updates.",
+      "description": "Nextcloud admin settings: users, storage, apps and version updates.",
+      "part": "Admin: security and maintenance"
     },
     {
       "file": "ch22_security.html",
       "num": "22",
-      "navLabel": "安全排錯",
-      "title": "安全與排錯",
-      "pagerTitle": "22 · 安全與排錯",
-      "card": "trusted_domains、憑證、備份與常見排錯。",
-      "description": "Nextcloud 安全與排錯：trusted_domains、憑證、備份與常見問題。",
-      "part": "管理：安全與維護"
+      "navLabel": "Security and troubleshooting",
+      "title": "Security and troubleshooting",
+      "pagerTitle": "22 · Security and troubleshooting",
+      "card": "trusted_domains, certificates, backups and common troubleshooting.",
+      "description": "Nextcloud security and troubleshooting: trusted_domains, certificates, backups and common questions.",
+      "part": "Admin: security and maintenance"
     }
   ],
   "appendices": [
     {
       "file": "appendix_apps.html",
       "num": "A",
-      "navLabel": "Apps 商店",
-      "title": "Apps 商店與常用 apps",
-      "pagerTitle": "A · Apps 商店",
-      "card": "安裝、啟用與停用 apps，推薦常用清單。",
-      "description": "Nextcloud Apps 商店：安裝、啟用、停用與常用 apps 清單。",
-      "part": "附錄"
+      "navLabel": "Apps store",
+      "title": "The Apps store and the apps worth having",
+      "pagerTitle": "A · Apps store",
+      "card": "Install, enable and disable apps, and a recommended list of the common ones.",
+      "description": "The Nextcloud Apps store: install, enable, disable, and a list of the common apps.",
+      "part": "Appendices"
     },
     {
       "file": "appendix_config.html",
       "num": "B",
-      "navLabel": "設定速查",
-      "title": "設定參數速查",
-      "pagerTitle": "B · 設定參數速查",
-      "card": "trusted_domains、儲存、快取等關鍵設定速查。",
-      "description": "Nextcloud 設定參數速查：trusted_domains、儲存、快取與效能。",
-      "part": "附錄"
+      "navLabel": "Settings reference",
+      "title": "Settings reference",
+      "pagerTitle": "B · Settings reference",
+      "card": "A quick reference for the key settings: trusted_domains, storage, caching and more.",
+      "description": "Nextcloud settings reference: trusted_domains, storage, caching and performance.",
+      "part": "Appendices"
     },
     {
       "file": "appendix_integrations.html",
       "num": "C",
-      "navLabel": "外部整合",
-      "title": "外部整合",
-      "pagerTitle": "C · 外部整合",
-      "card": "與 Home Assistant、其他服務串接的整合方式。",
-      "description": "Nextcloud 外部整合：與 Home Assistant 及其他服務串接。",
-      "part": "附錄"
+      "navLabel": "External integrations",
+      "title": "External integrations",
+      "pagerTitle": "C · External integrations",
+      "card": "How to connect Nextcloud to Home Assistant and other services.",
+      "description": "Nextcloud external integrations: connecting to Home Assistant and other services.",
+      "part": "Appendices"
     }
   ],
   "sectionLabels": {},
