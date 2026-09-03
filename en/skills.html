@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nextcloud AI Agent Skill Handbook · WoowTech</title>
-  <meta name="description" content="A catalog of AI agent skills for Nextcloud files and collaboration: picked skills and ecosystem tools, an install quick reference, the SKILL.md spec and the safety rules (2026-08 ecosystem survey)." />
+  <title>Nextcloud AI agent Skill Handbook · WoowTech</title>
+  <meta name="description" content="A catalog of AI agent skills for Nextcloud files and collaboration: picked, practical skills and ecosystem tools, an install quick reference, the SKILL.md spec and the safety rules (2026-08 ecosystem survey)." />
   <meta name="author" content="WoowTech" />
   <meta name="theme-color" content="#6183FC" />
   <link rel="canonical" href="https://nextcloud-guide.woowtech.io/en/skills.html" />
@@ -73,11 +73,11 @@ footer.site-footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid 
 
       <section id="why" data-nav="why"><h2>What a skill is and why you would install one</h2>
         <p>Think of a skill as an "SOP manual for an AI": one <code>SKILL.md</code> spells out what task it applies to, what steps to follow, which tools to use and what to watch out for. Once an agent has read it, it can do one more thing, and it does it the same way every time instead of guessing from scratch.</p>
-        <p>For Nextcloud the common skill scenarios are: bulk file cleanup, reviewing and revoking shares, auditing user quotas, taking stock of backups, and calendar/contacts upkeep. Install the matching skill and you only have to give the order — the agent works to the SOP.</p>
+        <p>For Nextcloud the common skill scenarios are: bulk file cleanup, reviewing and revoking shares, auditing user quotas, taking stock of backups, and Calendar / Contacts upkeep. Install the matching skill and you only have to give the order — the agent works to the SOP.</p>
       </section>
 
       <section id="install" data-nav="install"><h2>How to install one (the 3-minute version)</h2>
-        <div class="callout"><strong>Prerequisite:</strong> your agent has to support skills (for example Pi Agent or Claude Code). The idea is the same everywhere: put the skill folder into the skills directory.</div>
+        <div class="callout"><strong>Prerequisite:</strong> your agent has to support skills (for example Pi Agent, Claude Code and others). The idea is the same everywhere: put the skill folder into the skills directory.</div>
         <ol>
           <li>Find the skill's GitHub repo and note the URL.</li>
           <li>In your agent's skill install panel, paste the repo URL or pick the directory.</li>
@@ -86,13 +86,13 @@ footer.site-footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid 
       </section>
 
       <section id="picks" data-nav="picks"><h2>Picked file-management skills (from a home perspective)</h2>
-        <p>These are the kinds of skills worth looking for, drawn from what running a home cloud actually asks of you. Star counts follow GitHub as it stands (2026-08), and before you install anything, check that the repo is still maintained.</p>
+        <p>These are the kinds of skills worth looking for, drawn from the real needs you run into when "managing a home cloud". Star counts follow GitHub as it stands (2026-08), and be sure to confirm the repo is still maintained before you install anything.</p>
         <div class="skill-card"><h3>Bulk file cleanup</h3><div class="meta">Category: cleanup · triggers WebDAV</div><p>Sorts files into folders by rule (date, extension, size), with duplicate detection and a dry-run mode (report first, then act).</p></div>
         <div class="skill-card"><h3>Share audit</h3><div class="meta">Category: security · triggers OCS API</div><p>Scans every share, flags the risky ones with no password, no expiry or public access, and can bulk-add passwords or revoke them.</p></div>
-        <div class="skill-card"><h3>User and quota audit</h3><div class="meta">Category: admin · OCS Provisioning API</div><p>Takes stock of account status, groups and quota usage, and finds accounts that are disabled but still taking up space, or over quota.</p></div>
+        <div class="skill-card"><h3>User and quota audit</h3><div class="meta">Category: management · OCS Provisioning API</div><p>Takes stock of account status, groups and quota usage, and finds accounts that are disabled but still taking up space, or over quota.</p></div>
         <div class="skill-card"><h3>Backup and restore drills</h3><div class="meta">Category: operations · database + files</div><p>Takes stock of your backup state, produces the restore steps, and plans off-site backup with rclone.</p></div>
-        <div class="skill-card"><h3>Calendar / contacts upkeep</h3><div class="meta">Category: cleanup · CalDAV/CardDAV</div><p>De-duplicates contacts, exports backups, and takes stock of calendars nobody has updated in a long time.</p></div>
-        <div class="callout warn"><strong>Names and star counts follow GitHub as it stands:</strong> the ecosystem moves fast. The "categories" listed on this page are stable needs; check the actual repo names and star counts again before you install.</div>
+        <div class="skill-card"><h3>Calendar / Contacts upkeep</h3><div class="meta">Category: cleanup · CalDAV/CardDAV</div><p>De-duplicates contacts, exports backups, and takes stock of calendars nobody has updated in a long time.</p></div>
+        <div class="callout warn"><strong>Names and star counts follow GitHub as it stands:</strong> the ecosystem moves fast. The "kinds" listed on this page are stable needs; check the actual repo names and star counts again before you install.</div>
       </section>
 
       <section id="tools" data-nav="tools"><h2>Ecosystem tools (not just skills)</h2>
@@ -100,10 +100,10 @@ footer.site-footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid 
         <table class="data-table"><thead><tr><th>Tool</th><th>What it is for</th><th>When to use it</th></tr></thead><tbody>
           <tr><td><strong>nextcloud/server</strong></td><td>The official main repo</td><td>Check the docs, follow updates, file an issue</td></tr>
           <tr><td><strong>Desktop client / mobile app</strong></td><td>The official sync clients</td><td>Everyday file and photo sync (Chapters 18 and 19)</td></tr>
-          <tr><td><strong>rclone</strong></td><td>A sync tool that speaks WebDAV</td><td>Off-site backup, moving files in bulk</td></tr>
+          <tr><td><strong>rclone</strong></td><td>A sync tool that supports WebDAV</td><td>Off-site backup, moving files in bulk</td></tr>
           <tr><td><strong>nextcloudcmd</strong></td><td>Command-line sync</td><td>Scripting, syncing between servers</td></tr>
           <tr><td><strong>DAVx5 (Android)</strong></td><td>CalDAV/CardDAV sync</td><td>Calendar and contacts sync on your phone</td></tr>
-          <tr><td><strong>Home Assistant integration</strong></td><td>Connects Nextcloud into HA</td><td>Calendar-triggered automations, pushing backups to the cloud (Appendix C)</td></tr>
+          <tr><td><strong>Home Assistant integration</strong></td><td>Connects Nextcloud to HA</td><td>Calendar-triggered automations, pushing backups to the cloud (Appendix C)</td></tr>
         </tbody></table>
       </section>
 
@@ -116,30 +116,30 @@ footer.site-footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid 
       </section>
 
       <section id="safety" data-nav="safety"><h2>Safety rules</h2>
-        <div class="callout danger"><strong>Never let a skill delete anything directly:</strong> every action follows "report first → you confirm → then act", and anything deleted goes to the trash bin first.</div>
+        <div class="callout danger"><strong>Never let a skill delete anything directly:</strong> every action follows "report first → you confirm → then act", and deletions always go to the trash bin first.</div>
         <div class="callout warn"><strong>Use an app password and never let it out:</strong> before you install a third-party skill, check whether it sends passwords or file paths outside. If it is from an unknown source, do not install it.</div>
-        <div class="callout"><strong>Dry run first:</strong> for a bulk operation, ask the skill for a preview that says "N items will be affected", and let it run only once you have checked that preview.</div>
+        <div class="callout"><strong>Dry run first:</strong> for a bulk operation, ask the skill for a preview that says "N items will be affected", and let it run only once you have confirmed the preview is correct.</div>
       </section>
 
       <section id="spec" data-nav="spec"><h2>SKILL.md spec reference</h2>
         <p>If you want to write a Nextcloud skill yourself, the core of it is a single <code>SKILL.md</code>:</p>
         <pre class="code-block">---
 name: nextcloud-share-auditor
-description: 掃描 Nextcloud 分享、標出風險項並可批次收回，附乾跑模式
+description: Scan Nextcloud shares, flag risky ones and revoke them in bulk, with a dry-run mode
 ---
-# 用途
-用 OCS API 盤點所有分享，找出無密碼／無期限／公開的風險項。
+# Purpose
+Use the OCS API to inventory every share and find the ones with no password, no expiry, or public access.
 
-## 步驟
-1. 呼叫 OCS Shares API 取得所有分享
-2. 標記風險項，產生「預覽清單」（影響 N 筆）
-3. 等使用者確認後才批次補密碼／設期限／停用
-4. 回報結果與例外
+## Steps
+1. Call the OCS Shares API to fetch every share
+2. Flag the risky ones and produce a "preview list" (N affected)
+3. Only after the user confirms, bulk-add passwords, set expiry dates or disable them
+4. Report the results and any exceptions
 
-## 安全
-- 永不直接刪檔，只調整分享設定
-- 批次操作前必須先回報影響範圍
-- 一律用 App 密碼</pre>
+## Safety
+- Never delete a file directly, only change share settings
+- Always report the blast radius before a bulk operation
+- Always use an app password</pre>
         <p>For the full spec, see the skill documentation for the agent you are using.</p>
       </section>
 

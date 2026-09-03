@@ -60,7 +60,7 @@
     {
       "unit": "#cat-users",
       "zh": "<pre>幫我建一個使用者「爸爸」，加入「家人」群組，配額 50GB，並回傳初始設定資訊（不要在對話貼明碼）。</pre>",
-      "en": "<pre>Create a user named \"dad\", add them to the \"Family\" group with a 50GB quota, and return the initial setup details (do not paste the password in the conversation). Answer in English.</pre>"
+      "en": "<pre>Create a user named \"dad\", add them to the \"Family\" group, give the account a 50GB quota, and return the initial setup details (do not paste the plaintext password in the conversation). Answer in English.</pre>"
     },
     {
       "unit": "#cat-users",

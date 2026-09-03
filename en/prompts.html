@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nextcloud API/WebDAV Prompt Library · WoowTech</title>
-  <meta name="description" content="30 natural-language prompts for driving Nextcloud through the API, WebDAV and OCS: file cleanup, share review, user management, backups, calendar and contacts, Deck, metadata and troubleshooting. Every prompt is ready to copy." />
+  <meta name="description" content="30 natural-language prompts for driving Nextcloud through the API, WebDAV and OCS: file cleanup, share review, user management, backups, Calendar and Contacts, Deck, metadata and troubleshooting. Every prompt is ready to copy." />
   <meta name="author" content="WoowTech" />
   <meta name="theme-color" content="#6183FC" />
   <link rel="canonical" href="https://nextcloud-guide.woowtech.io/en/prompts.html" />
@@ -77,66 +77,66 @@ footer.site-footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid 
       </section>
 
       <section id="howto" data-nav="howto"><h2>How to use these prompts</h2>
-        <p>Copy → paste into the agent → replace the placeholders with your own wording → send. What matters is being clear about the scope and the action, so you do not touch the whole library by mistake.</p>
-        <div class="callout"><strong>Safe habit:</strong> for any delete, bulk-edit or share action, make the agent report "N items will be affected" and wait for your confirmation before it runs. Always use an app password, never your main password.</div>
+        <p>Copy → paste into the agent → replace the placeholders with your own wording → send. What matters is being clear about the "scope" and "what to do", so you do not touch the whole library by mistake.</p>
+        <div class="callout"><strong>Safe habit:</strong> for any "delete, bulk-edit or share" action, make the agent report "N items will be affected" and wait for your confirmation before it runs. Always use an app password, never your main password.</div>
       </section>
 
       <section id="cat-files" data-nav="cat-files"><h2>File cleanup</h2>
-        <div class="prompt-card"><div class="p-label">Inventory the biggest files</div><pre>用 WebDAV 掃描我的檔案，列出前 20 大的檔案（含路徑與大小），先不要刪，讓我決定。</pre><button class="copy-btn">Copy</button></div>
-        <div class="prompt-card"><div class="p-label">Tidy up a folder</div><pre>把「下載」資料夾裡超過一年沒動過的檔案，整理到「封存/2025」資料夾（先列清單讓我確認）。</pre><button class="copy-btn">Copy</button></div>
-        <div class="prompt-card"><div class="p-label">Find duplicates</div><pre>找出內容重複的檔案（用雜湊比對），列出重複組別與可釋放空間，不要自動刪。</pre><button class="copy-btn">Copy</button></div>
-        <div class="prompt-card"><div class="p-label">Sort by file extension</div><pre>把某個資料夾裡的檔案依副檔名分到子資料夾（圖片、文件、影片），先給我預覽對照表。</pre><button class="copy-btn">Copy</button></div>
-        <div class="prompt-card"><div class="p-label">Empty the trash bin</div><pre>列出回收桶內容與各自佔用空間，計算清空可釋放多少，等我確認再清。</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Review the biggest files</div><pre>Use WebDAV to scan my files and list the 20 largest ones (with path and size). Do not delete anything yet; let me decide. Answer in English.</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Tidy up a folder</div><pre>Move the files in the "Downloads" folder that have not been touched for over a year into an "Archive/2025" folder (list them first so I can confirm). Answer in English.</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Find duplicates</div><pre>Find files with duplicate contents (compare hashes), list the duplicate groups and how much space they would free, and do not delete anything automatically. Answer in English.</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Sort by file extension</div><pre>Sort the files in one folder into subfolders by file extension (images, documents, videos), and show me a preview table first. Answer in English.</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Empty the trash bin</div><pre>List what is in the trash bin and how much space each item takes, work out how much emptying it would free, and wait for my confirmation before you empty it. Answer in English.</pre><button class="copy-btn">Copy</button></div>
       </section>
 
       <section id="cat-share" data-nav="cat-share"><h2>Share review</h2>
-        <div class="prompt-card"><div class="p-label">Inventory every share</div><pre>用 OCS API 列出我所有的分享：對象、權限、有無密碼與到期日，標出「公開且無密碼」的風險項。</pre><button class="copy-btn">Copy</button></div>
-        <div class="prompt-card"><div class="p-label">Find shares expiring soon</div><pre>列出 7 天內到期的分享連結，讓我決定要續期還是收回。</pre><button class="copy-btn">Copy</button></div>
-        <div class="prompt-card"><div class="p-label">Revoke old shares</div><pre>找出建立超過 90 天、且是公開連結的分享，列出清單，等我確認後停用。</pre><button class="copy-btn">Copy</button></div>
-        <div class="prompt-card"><div class="p-label">Add passwords in bulk</div><pre>把所有沒設密碼的公開分享，補上密碼與 30 天到期（先列出會影響幾個）。</pre><button class="copy-btn">Copy</button></div>
-        <div class="prompt-card"><div class="p-label">Create a share</div><pre>幫資料夾「聚會照片」建一個公開分享連結，唯讀、加密碼、7 天到期，回傳連結。</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Review every share</div><pre>Use the OCS API to list all of my shares: who they are shared with, the permissions, whether they have a password and an expiration date. Flag the risky ones that are public with no password. Answer in English.</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Find shares expiring soon</div><pre>List the share links that expire within 7 days, so I can decide whether to extend or revoke them. Answer in English.</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Revoke old shares</div><pre>Find the shares that are public links and were created more than 90 days ago, list them, and disable them after I confirm. Answer in English.</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Add passwords in bulk</div><pre>Add a password and a 30-day expiration date to every public share that has no password (list how many will be affected first). Answer in English.</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Create a share</div><pre>Create a public share link for the folder "Party photos": read-only, with a password, expiring in 7 days, and return the link. Answer in English.</pre><button class="copy-btn">Copy</button></div>
       </section>
 
       <section id="cat-users" data-nav="cat-users"><h2>User management (admins)</h2>
-        <div class="prompt-card"><div class="p-label">Inventory the accounts</div><pre>用 OCS API 列出所有使用者：狀態（啟用/停用）、群組、配額與已用空間，標出停用中仍佔空間的。</pre><button class="copy-btn">Copy</button></div>
-        <div class="prompt-card"><div class="p-label">Create an account</div><pre>幫我建一個使用者「爸爸」，加入「家人」群組，配額 50GB，並回傳初始設定資訊（不要在對話貼明碼）。</pre><button class="copy-btn">Copy</button></div>
-        <div class="prompt-card"><div class="p-label">Quota check</div><pre>列出配額使用率超過 80% 的使用者，提醒我可能要加配額或請他們清理。</pre><button class="copy-btn">Copy</button></div>
-        <div class="prompt-card"><div class="p-label">Disable instead of delete</div><pre>把離開的成員帳號停用（不刪資料），列出被停用的帳號讓我複核。</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Review the accounts</div><pre>Use the OCS API to list every user: status (enabled/disabled), groups, quota and space used. Flag the disabled ones that are still taking up space. Answer in English.</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Create an account</div><pre>Create a user named "dad", add them to the "Family" group, give the account a 50GB quota, and return the initial setup details (do not paste the plaintext password in the conversation). Answer in English.</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Quota check</div><pre>List the users whose quota usage is over 80%, and remind me that I may need to raise their quota or ask them to clean up. Answer in English.</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Disable instead of delete</div><pre>Disable the accounts of members who have left (do not delete their data), and list the disabled accounts so I can double-check. Answer in English.</pre><button class="copy-btn">Copy</button></div>
       </section>
 
       <section id="cat-backup" data-nav="cat-backup"><h2>Backup strategy</h2>
-        <div class="prompt-card"><div class="p-label">Backup inventory</div><pre>盤點目前 Nextcloud 的備份狀態：資料庫、資料目錄、config.php 各有沒有備份機制，缺口在哪。</pre><button class="copy-btn">Copy</button></div>
-        <div class="prompt-card"><div class="p-label">Restore drill</div><pre>寫一份 Nextcloud 災難還原步驟：假設伺服器掛了，怎麼從備份把資料庫與檔案還原回來。</pre><button class="copy-btn">Copy</button></div>
-        <div class="prompt-card"><div class="p-label">Off-site backup with rclone</div><pre>規畫用 rclone 透過 WebDAV 把我的 Nextcloud 每日增量備份到另一個儲存，給我設定步驟。</pre><button class="copy-btn">Copy</button></div>
-        <div class="prompt-card"><div class="p-label">Capacity forecast</div><pre>依過去一年的成長量，預估多久會用到儲存上限，並建議清理或擴充。</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Backup review</div><pre>Take stock of the current Nextcloud backup situation: whether the database, the data directory and config.php each have a backup mechanism, and where the gaps are. Answer in English.</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Restore drill</div><pre>Write a Nextcloud disaster recovery procedure: assume the server is down, and describe how to restore the database and the files from a backup. Answer in English.</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Off-site backup with rclone</div><pre>Plan a daily incremental backup of my Nextcloud to another storage target with rclone over WebDAV, and give me the setup steps. Answer in English.</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Capacity forecast</div><pre>Based on the past year's growth, estimate how long it will be until I hit the storage limit, and suggest what to clean up or expand. Answer in English.</pre><button class="copy-btn">Copy</button></div>
       </section>
 
       <section id="cat-groupware" data-nav="cat-groupware"><h2>Calendar and contacts</h2>
-        <div class="prompt-card"><div class="p-label">Export an address book</div><pre>透過 CardDAV 把「家人」通訊錄匯出成 vCard 備份一份。</pre><button class="copy-btn">Copy</button></div>
-        <div class="prompt-card"><div class="p-label">De-duplicate contacts</div><pre>找出通訊錄裡疑似重複的聯絡人（同名或同電話），列出待合併清單讓我確認。</pre><button class="copy-btn">Copy</button></div>
-        <div class="prompt-card"><div class="p-label">Create an event</div><pre>在「家庭」日曆建一個下週六下午 2 點的事件「大掃除」，提前一天提醒。</pre><button class="copy-btn">Copy</button></div>
-        <div class="prompt-card"><div class="p-label">Inventory the calendars</div><pre>列出我所有日曆與事件數量，標出很久沒更新、可以封存的。</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Export an address book</div><pre>Use CardDAV to export the "Family" address book as vCard and keep a backup copy. Answer in English.</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">De-duplicate contacts</div><pre>Find contacts in the address book that look like duplicates (same name or same phone number), and list the merge candidates so I can confirm. Answer in English.</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Create an event</div><pre>Create an event called "Spring cleaning" in the "Family" calendar for next Saturday at 2 PM, with a reminder one day before. Answer in English.</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Review the calendars</div><pre>List all of my calendars and how many events each one holds, and flag the ones that have not been updated in a long time and could be archived. Answer in English.</pre><button class="copy-btn">Copy</button></div>
       </section>
 
       <section id="cat-deck" data-nav="cat-deck"><h2>Deck and collaboration</h2>
-        <div class="prompt-card"><div class="p-label">Create a board</div><pre>幫我在 Deck 建一個「搬家計畫」看板，含待辦/進行中/完成三個列表，並加幾張常見任務卡片。</pre><button class="copy-btn">Copy</button></div>
-        <div class="prompt-card"><div class="p-label">Find overdue cards</div><pre>列出 Deck 裡所有已逾期、未完成的卡片，依看板分組，提醒我處理。</pre><button class="copy-btn">Copy</button></div>
-        <div class="prompt-card"><div class="p-label">Weekly report</div><pre>整理本週在 Deck 完成的卡片，做成一份簡短週報。</pre><button class="copy-btn">Copy</button></div>
-        <div class="prompt-card"><div class="p-label">Document inventory</div><pre>列出最近 30 天有多人編輯的 Office 文件，方便我掌握協作狀況。</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Create a board</div><pre>Create a "Moving plan" board in Deck with three lists, To do / In progress / Done, and add a few cards for the usual tasks. Answer in English.</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Review overdue cards</div><pre>List every overdue, unfinished card in Deck, grouped by board, and remind me to deal with them. Answer in English.</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Weekly report</div><pre>Pull together the cards completed in Deck this week and turn them into a short weekly report. Answer in English.</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Document review</div><pre>List the Office documents that more than one person has edited in the last 30 days, so I can see how collaboration is going. Answer in English.</pre><button class="copy-btn">Copy</button></div>
       </section>
 
       <section id="cat-ops" data-nav="cat-ops"><h2>Troubleshooting and operations</h2>
-        <div class="prompt-card"><div class="p-label">Health check</div><pre>做一次 Nextcloud 健康檢查：伺服器版本、安全與設定警告、背景工作、儲存，逐項回報與建議。</pre><button class="copy-btn">Copy</button></div>
-        <div class="prompt-card"><div class="p-label">Trusted domains</div><pre>檢查目前的 trusted_domains 設定，確認對外網址有在清單裡，沒有就提示我該加什麼。</pre><button class="copy-btn">Copy</button></div>
-        <div class="prompt-card"><div class="p-label">Background jobs</div><pre>檢查背景工作（cron）是否正常執行，找出最久沒跑的工作並建議處理。</pre><button class="copy-btn">Copy</button></div>
-        <div class="prompt-card"><div class="p-label">Storage alert</div><pre>當整體儲存低於 15% 時，列出釋放空間的優先順序（回收桶、重複檔、超額使用者）。</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Health check</div><pre>Run a Nextcloud health check: server version, security and setup warnings, background jobs, storage. Report each item in turn with a recommendation. Answer in English.</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Trusted domains</div><pre>Check the current trusted_domains setting, confirm the public URL is on the list, and if it is not, tell me what to add. Answer in English.</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Background jobs</div><pre>Check whether background jobs (cron) are running properly, find the job that has gone longest without running, and suggest how to handle it. Answer in English.</pre><button class="copy-btn">Copy</button></div>
+        <div class="prompt-card"><div class="p-label">Storage alert</div><pre>When overall storage drops below 15%, list the priority order for freeing space (trash bin, duplicate files, users over quota). Answer in English.</pre><button class="copy-btn">Copy</button></div>
       </section>
 
       <section id="faq" data-nav="faq"><h2>FAQ</h2>
-        <div class="callout"><strong>How do I edit a prompt so it does not touch the whole library by mistake?</strong><br>Always add two things: the scope, and "report first, then act". For example: "list the number of items this will affect and wait for my confirmation before you run it".</div>
-        <div class="callout"><strong>What do I authenticate with?</strong><br>Always an app password (create one under personal settings → Security). Never write your main password into an agent or a script.</div>
+        <div class="callout"><strong>How do I edit a prompt so it does not touch the whole library by mistake?</strong><br>Always add two things: "scope", and "report first, then act". For example: "list the number of items this will affect and wait for my confirmation before you run it".</div>
+        <div class="callout"><strong>What do I authenticate with?</strong><br>Always an app password (create one under personal settings → "Security"). Never write your main password into an agent or a script.</div>
         <div class="callout"><strong>Cannot find an API?</strong><br>Nextcloud's WebDAV, OCS and CalDAV/CardDAV endpoints are in the official developer documentation; versions differ slightly, so have the agent check the docs first.</div>
-        <div class="callout"><strong>Can I let the agent delete files directly?</strong><br>Turn direct deletion off and use "move to the trash bin + report" instead, for one more layer of protection.</div>
+        <div class="callout"><strong>Can I let the agent delete files directly?</strong><br>We recommend turning "direct deletion" off and using "move to the trash bin + report" instead, for one more layer of protection.</div>
       </section>
 
       <footer class="site-footer"><p>Nextcloud Self-Hosted Cloud Guide is produced by <a href="https://github.com/WOOWTECH/Woow_nextcloud_tutorial_site" rel="noopener">WoowTech</a> and released under CC BY 4.0. Nextcloud is a trademark of its respective owner; this site is not affiliated with it.</p></footer>
