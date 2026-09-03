@@ -1446,14 +1446,14 @@
   "en:sales.html#why": {
    "status": "complete",
    "sourceHash": "04622acab1913d2f",
-   "targetHash": "d4fd6a41c01664ab",
+   "targetHash": "a0ac0873cac4387a",
    "registeredAt": "2026-09-01",
    "translatedAt": "2026-09-03"
   },
   "en:sales.html#what": {
    "status": "complete",
    "sourceHash": "ded8bc64f0520388",
-   "targetHash": "37ff0d1224e2bffb",
+   "targetHash": "6cb79d6cb9e3f6f0",
    "registeredAt": "2026-09-01",
    "translatedAt": "2026-09-03"
   },
