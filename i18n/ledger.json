@@ -4,7 +4,7 @@
   "en:index.html#main": {
    "status": "complete",
    "sourceHash": "047f897f4f537703",
-   "targetHash": "849730f7f723c2aa",
+   "targetHash": "3d4afb17ac9cf96d",
    "registeredAt": "2026-09-01",
    "translatedAt": "2026-09-03"
   },
@@ -95,7 +95,7 @@
   "en:ch2_install.html#steps": {
    "status": "complete",
    "sourceHash": "851661e63d21742f",
-   "targetHash": "648ff764e493a0c1",
+   "targetHash": "b9d8e66b5775ee1e",
    "registeredAt": "2026-09-01",
    "translatedAt": "2026-09-03"
   },
@@ -1439,7 +1439,7 @@
   "en:sales.html#header": {
    "status": "complete",
    "sourceHash": "68bd065358c4db13",
-   "targetHash": "1844b635caf76d28",
+   "targetHash": "db7db39d281967fc",
    "registeredAt": "2026-09-01",
    "translatedAt": "2026-09-03"
   },
@@ -1460,42 +1460,42 @@
   "en:sales.html#abilities": {
    "status": "complete",
    "sourceHash": "0644e33d414d1841",
-   "targetHash": "b32f66e36aa64c5a",
+   "targetHash": "4948b8a768776343",
    "registeredAt": "2026-09-01",
    "translatedAt": "2026-09-03"
   },
   "en:sales.html#privacy": {
    "status": "complete",
    "sourceHash": "a19e327839dd5cf2",
-   "targetHash": "9a80de179b401f04",
+   "targetHash": "c4a4ac507f9f9ea5",
    "registeredAt": "2026-09-01",
    "translatedAt": "2026-09-03"
   },
   "en:sales.html#day": {
    "status": "complete",
    "sourceHash": "d9793615ba1f1600",
-   "targetHash": "a02b4e9cf75cc5fd",
+   "targetHash": "0810eea31dd3496e",
    "registeredAt": "2026-09-01",
    "translatedAt": "2026-09-03"
   },
   "en:sales.html#compare": {
    "status": "complete",
    "sourceHash": "211abfb1eda05d35",
-   "targetHash": "dc04c1a9b8312347",
+   "targetHash": "6af5bcd59b878c32",
    "registeredAt": "2026-09-01",
    "translatedAt": "2026-09-03"
   },
   "en:sales.html#faq": {
    "status": "complete",
    "sourceHash": "68f30fd8c6a1f306",
-   "targetHash": "085237a4875d141f",
+   "targetHash": "093d93d6db199f1d",
    "registeredAt": "2026-09-01",
    "translatedAt": "2026-09-03"
   },
   "en:sales.html#cta": {
    "status": "complete",
    "sourceHash": "7d7978ff0e865479",
-   "targetHash": "af5a00788d9a6530",
+   "targetHash": "8967ebfbc91980c7",
    "registeredAt": "2026-09-01",
    "translatedAt": "2026-09-03"
   },
